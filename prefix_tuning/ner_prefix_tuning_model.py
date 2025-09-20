@@ -17,27 +17,55 @@ class NERPrefixTuningModel(nn.Module):
         self.ner_tags = ner_tags
         self.num_tags = len(ner_tags)
         
-        # Un modulo di prefix tuning per ogni tag NER (tag negativo aggiunto precedentemente)
+        """ # Un modulo di prefix tuning per ogni tag NER (tag negativo aggiunto precedentemente)
         self.tag_prompts = nn.ModuleDict()
         for tag in self.ner_tags:
             self.tag_prompts[tag] = NERPrefixModule(
                 encoder_config=encoder_config,
                 prefix_length=prefix_length,
                 mid_dim=mid_dim
-            ) 
-        """ # Inizializza un singolo modulo di prefix tuning
+            )  """
+        # Inizializza un singolo modulo di prefix tuning
         self.prefix_module = NERPrefixModule(
             encoder_config=encoder_config,
             prefix_length=prefix_length,
             mid_dim=mid_dim
-        ) """
+        )
             
         # Un layer di classificazione finale
         self.classifier = nn.Linear(encoder_config.hidden_size, 1)
         self.dropout = nn.Dropout(encoder_config.hidden_dropout_prob)
     
-    
     def forward(self, input_ids, attention_mask):
+        batch_size, seq_len = input_ids.shape
+        
+        prefix_embeddings = self.prefix_module(bsz=batch_size)
+        input_embeddings = self.encoder.get_input_embeddings()(input_ids)
+        
+        # Soft prompt + input embedding
+        encoder_input_embeddings = torch.cat([prefix_embeddings, input_embeddings], dim=1)
+        
+        # Update della maschera di attenzione
+        prefix_attention_mask = torch.ones(batch_size, prefix_embeddings.shape[1], device=input_ids.device)
+        updated_attention_mask = torch.cat([prefix_attention_mask, attention_mask], dim=1)
+        
+        # Forward pass encoder
+        encoder_output = self.encoder(
+            attention_mask=updated_attention_mask,
+            inputs_embeds=encoder_input_embeddings
+        )
+        
+        last_hidden_states = encoder_output.last_hidden_state
+        text_hidden_states = last_hidden_states[:, prefix_embeddings.shape[1]:]
+        
+        # Dropout e layer lineare
+        tag_scores = self.classifier(self.dropout(text_hidden_states))
+        
+        return tag_scores
+    
+    """ 
+        
+        def forward(self, input_ids, attention_mask):
         batch_size, seq_len = input_ids.shape
         
         # Matrice per salvare gli score per ogni tag
@@ -79,7 +107,7 @@ class NERPrefixTuningModel(nn.Module):
         # SoftMax presente in nn.CrossEntropyLoss per il calcolo del loss
         # final_probabilities = torch.softmax(scores_matrix, dim=-1)
         
-        return scores_matrix
+        return scores_matrix """
     
 """ class NERPrefixTuningModelv2(nn.Module):
     def __init__(self, model_name: str, ner_tags: List[str], prefix_length: int = 10, mid_dim: int = 512):
