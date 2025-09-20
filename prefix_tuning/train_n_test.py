@@ -15,6 +15,8 @@ parser.add_argument('--model', type=str, default='bert-base-uncased',
                     help='Nome del modello base da Hugging Face.')
 parser.add_argument('--dataset', type=str, default='disi-unibo-nlp/bc5cdr',
                     help='Nome del dataset da Hugging Face nel formato "user/dataset".')
+parser.add_argument('--token_lenght', type=int, default=10,
+                    help='Dimensione del subset di dati da usare per l\'addestramento e il test.')
 parser.add_argument('--subset', type=int, default=-1,
                     help='Dimensione del subset di dati da usare per l\'addestramento e il test.')
 args = parser.parse_args()
@@ -23,7 +25,7 @@ args = parser.parse_args()
 
 MODEL_NAME = args.model
 DATASET_NAME = args.dataset
-PREFIX_LENGTH = 10
+PREFIX_LENGTH = args.token_lenght
 MID_DIM = 512
 BATCH_SIZE = 8
 LEARNING_RATE = 1e-4
@@ -36,9 +38,16 @@ FILE_NAME = MODEL_NAME.replace("/", "-") + "_" + DATASET_NAME.replace("/", "-") 
 print(f"Caricamento del dataset {DATASET_NAME}...")
 dataset_dict = load_dataset(DATASET_NAME)
 
-shuffled_train_dataset = dataset_dict['train'].shuffle(seed=42)
-train_dataset = shuffled_train_dataset.select(range(args.subset))
+# Se lo split 'validation' non esiste, prendiamo parte dal 'train' split
+if 'validation' not in dataset_dict:
+    train_validation_split = dataset_dict['train'].train_test_split(test_size=0.2, seed=42)
+    dataset_dict['train'] = train_validation_split['train']
+    dataset_dict['validation'] = train_validation_split['test']
 
+shuffled_train_dataset = dataset_dict['train'].shuffle(seed=42)
+
+train_dataset = shuffled_train_dataset.select(range(args.subset))
+validation_dataset = dataset_dict["validation"]
 test_dataset = dataset_dict['test']
 
 # Estrazione dei tag NER unici dal dataset + "O"
@@ -89,15 +98,19 @@ def tokenize_and_align(examples: Dict[str, List]) -> Dict[str, torch.Tensor]:
     tokenized_inputs["labels"] = labels
     return tokenized_inputs
 
-# Elaborare entrambi i dataset train e test
+# Elaborare entrambi i dataset train, validation e test
 processed_train_dataset = train_dataset.map(tokenize_and_align, batched=True)
 processed_train_dataset.set_format(type="torch", columns=['input_ids', 'attention_mask', 'labels'])
+
+processed_validation_dataset = validation_dataset.map(tokenize_and_align, batched=True)
+processed_validation_dataset.set_format(type="torch", columns=['input_ids', 'attention_mask', 'labels'])
 
 processed_test_dataset = test_dataset.map(tokenize_and_align, batched=True)
 processed_test_dataset.set_format(type="torch", columns=['input_ids', 'attention_mask', 'labels'])
 
 # DataLoader
 train_dataloader = DataLoader(processed_train_dataset, batch_size=BATCH_SIZE, shuffle=True)
+validation_dataloader = DataLoader(processed_validation_dataset, batch_size=BATCH_SIZE, shuffle=True)
 test_dataloader = DataLoader(processed_test_dataset, batch_size=BATCH_SIZE, shuffle=False)
 
 ## TRAINING DEL MODELLO
@@ -111,7 +124,7 @@ model = NERPrefixTuningModel(
 ).to(DEVICE)
 
 # Inizializza ottimizzatore
-trainable_params = list(model.tag_prompts.parameters()) + list(model.classifier.parameters())
+trainable_params = list(model.prefix_module.parameters()) + list(model.classifier.parameters())
 optimizer = AdamW(trainable_params, lr=LEARNING_RATE)
 criterion = nn.CrossEntropyLoss(ignore_index=-100)
 
@@ -142,7 +155,28 @@ for epoch in range(NUM_EPOCHS):
         total_loss += loss.item()
         
     avg_loss = total_loss / len(train_dataloader)
-    print(f"Epoca {epoch+1}/{NUM_EPOCHS}, Perdita (Loss): {avg_loss:.4f}")
+
+    # VALIDATION LOOP
+    model.eval()
+    validation_loss = 0
+    
+    with torch.no_grad():
+        for batch in tqdm(validation_dataloader, desc=f"Epoca {epoch+1}/{NUM_EPOCHS} Val"):
+            input_ids = batch['input_ids'].to(DEVICE)
+            attention_mask = batch['attention_mask'].to(DEVICE)
+            labels = batch['labels'].to(DEVICE)
+
+            outputs = model(input_ids, attention_mask=attention_mask)
+            
+            # Calcolo la loss e appiattire outputs e label
+            outputs = outputs.view(-1, len(NER_TAGS))
+            labels = labels.view(-1)
+            loss = criterion(outputs, labels)
+            
+            validation_loss += loss.item()
+
+    avg_validation_loss = validation_loss / len(validation_dataloader)
+    print(f"Epoca {epoch+1}/{NUM_EPOCHS}, Perdita (Loss): {avg_loss:.4f}, Perdita di Validazione (Loss): {avg_validation_loss:.4f}")
     
 print("\nAddestramento completato!")
 
