@@ -32,8 +32,8 @@ class NERPrefixTuningModel(nn.Module):
             mid_dim=mid_dim
         )
             
-        # Un layer di classificazione finale
-        self.classifier = nn.Linear(encoder_config.hidden_size, 1)
+        # Un layer di classificazione finale con un numero di output pari al numero di tag
+        self.classifier = nn.Linear(encoder_config.hidden_size, self.num_tags)
         self.dropout = nn.Dropout(encoder_config.hidden_dropout_prob)
     
     def forward(self, input_ids, attention_mask):
