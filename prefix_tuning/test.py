@@ -9,32 +9,38 @@ from tqdm import tqdm
 from ner_prefix_tuning_model import NERPrefixTuningModel
 from typing import Dict, List
 import argparse
+import sys
+
+def eprint(*args, **kwargs):
+    print(*args, file=sys.stderr, **kwargs)
 
 parser = argparse.ArgumentParser(description='Valuta un modello NER con Prefix Tuning.')
 parser.add_argument('--model', type=str, default='bert-base-uncased',
                     help='Nome del modello base da Hugging Face.')
 parser.add_argument('--dataset', type=str, default='disi-unibo-nlp/bc5cdr',
                     help='Nome del dataset da Hugging Face nel formato "user/dataset".')
+parser.add_argument('--token_lenght', type=int, default=10,
+                    help='Lunghezza del token')
 args = parser.parse_args()
 
 
 MODEL_NAME = args.model
 DATASET_NAME = args.dataset
-PREFIX_LENGTH = 10
+PREFIX_LENGTH = args.token_lenght
 MID_DIM = 512
 BATCH_SIZE = 8
 MAX_SEQ_LEN = 128
 DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-FILE_NAME = MODEL_NAME + "_" + DATASET_NAME.replace("/", "-") + ".pth"
+FILE_NAME = MODEL_NAME.replace("/", "-") + "_" + DATASET_NAME.replace("/", "-") + "_token-lenght-" + str(PREFIX_LENGTH) + ".pth"
 
 # Carica il dataset da Hugging Face
-print("Caricamento del dataset di test...")
+eprint("Caricamento del dataset di test...")
 dataset_dict = load_dataset(DATASET_NAME)
 # Seleziona un subset del dataset di test
 test_dataset = dataset_dict['test']
 
 # Estrai i tag NER unici dal dataset di addestramento per coerenza
-print("Estrazione dei tag NER unici...")
+eprint("Estrazione dei tag NER unici...")
 unique_tags = set()
 for example in dataset_dict['train']:
     for tag in example['ner_tags']:
@@ -46,7 +52,7 @@ NER_TAGS = ['O'] + sorted(list(unique_tags))
 TAG_TO_ID = {tag: i for i, tag in enumerate(NER_TAGS)}
 ID_TO_TAG = {i: tag for tag, i in TAG_TO_ID.items()}
 
-print(f"Tag NER trovati: {NER_TAGS}")
+eprint(f"Tag NER trovati: {NER_TAGS}")
 
 # Prepara il tokenizer
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
@@ -83,7 +89,7 @@ test_dataloader = DataLoader(processed_test_dataset, batch_size=BATCH_SIZE, shuf
 
 ## TEST
 
-print("\nInizializzazione del modello e caricamento dei pesi...")
+eprint("\nInizializzazione del modello e caricamento dei pesi...")
 model = NERPrefixTuningModel(
     model_name=MODEL_NAME,
     ner_tags=NER_TAGS,
@@ -93,12 +99,12 @@ model = NERPrefixTuningModel(
 
 model.load_state_dict(torch.load(FILE_NAME, map_location=DEVICE))
 model.eval()
-print("Modello caricato con successo!")
+eprint("Modello caricato con successo!")
 
 true_labels = []
 predicted_labels = []
 
-print("\nInizio della valutazione...")
+eprint("\nInizio della valutazione...")
 with torch.no_grad():
     for batch in tqdm(test_dataloader, desc="Valutazione"):
         input_ids = batch['input_ids'].to(DEVICE)
@@ -122,12 +128,13 @@ with torch.no_grad():
 
 ## STAMPA RISULTATI
 
-print("\nReport di classificazione (test):")
+eprint("\nReport di classificazione (test):")
+print(f"model = {MODEL_NAME}, dataset = {DATASET_NAME}, token lenght = {PREFIX_LENGTH}")
 print(classification_report(true_labels, predicted_labels, digits=4))
 
 
 
-print("\n\n")
+""" print("\n\n")
 
 # Stampa una tabella con parola, tag reale, tag previsto
 test_dataloader_five = DataLoader(processed_test_dataset.select(range(5)), batch_size=1, shuffle=False)
@@ -158,4 +165,4 @@ with torch.no_grad():
                 
                 print(f"{word:<15}\t{true_tag:<15}\t{predicted_tag:<15}")
                 
-            previous_word_idx = word_idx
+            previous_word_idx = word_idx """
