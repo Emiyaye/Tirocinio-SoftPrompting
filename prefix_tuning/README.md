@@ -1,8 +1,8 @@
 Per fare un training:
-    python train_n_test.py --model "$MODEL_NAME" --dataset "$DATASET_NAME" --subset "$SUBSET_SIZE"
+    python train_n_test.py --model "$MODEL_NAME" --dataset "$DATASET_NAME" --subset "$SUBSET_SIZE" --token_lenght "$LENGHT"
 
 Per fare solo un test:
-    python test.py --model "$MODEL_NAME" --dataset "$DATASET_NAME"
+    python test.py --model "$MODEL_NAME" --dataset "$DATASET_NAME" --token_lenght "$LENGHT"
 
 modelli testati:
 bert-base-uncased
