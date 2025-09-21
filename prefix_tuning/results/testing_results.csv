@@ -1,0 +1,154 @@
+Model;Dataset;Token Length;Category;Precision;Recall;F1-Score;Support
+medicalai/ClinicalBERT;disi-unibo-nlp/JNLPBA;1;CELL_LINE;0.1368;0.192;0.1597;500
+medicalai/ClinicalBERT;disi-unibo-nlp/JNLPBA;1;CELL_TYPE;0.4377;0.501;0.4672;1920
+medicalai/ClinicalBERT;disi-unibo-nlp/JNLPBA;1;DNA;0.163;0.2116;0.1841;1054
+medicalai/ClinicalBERT;disi-unibo-nlp/JNLPBA;1;PROTEIN;0.3896;0.5572;0.4586;5056
+medicalai/ClinicalBERT;disi-unibo-nlp/JNLPBA;1;RNA;0.0177;0.0169;0.0173;118
+medicalai/ClinicalBERT;disi-unibo-nlp/JNLPBA;1;micro avg;0.3531;0.4741;0.4048;8648
+medicalai/ClinicalBERT;disi-unibo-nlp/JNLPBA;1;macro avg;0.229;0.2957;0.2574;8648
+medicalai/ClinicalBERT;disi-unibo-nlp/JNLPBA;1;weighted avg;0.353;0.4741;0.4037;8648
+medicalai/ClinicalBERT;disi-unibo-nlp/JNLPBA;5;CELL_LINE;0.2143;0.372;0.2719;500
+medicalai/ClinicalBERT;disi-unibo-nlp/JNLPBA;5;CELL_TYPE;0.5184;0.5792;0.5471;1920
+medicalai/ClinicalBERT;disi-unibo-nlp/JNLPBA;5;DNA;0.3144;0.5095;0.3888;1054
+medicalai/ClinicalBERT;disi-unibo-nlp/JNLPBA;5;PROTEIN;0.4617;0.6161;0.5278;5056
+medicalai/ClinicalBERT;disi-unibo-nlp/JNLPBA;5;RNA;0.3655;0.4492;0.403;118
+medicalai/ClinicalBERT;disi-unibo-nlp/JNLPBA;5;micro avg;0.4308;0.5785;0.4939;8648
+medicalai/ClinicalBERT;disi-unibo-nlp/JNLPBA;5;macro avg;0.3749;0.5052;0.4278;8648
+medicalai/ClinicalBERT;disi-unibo-nlp/JNLPBA;5;weighted avg;0.4407;0.5785;0.4987;8648
+medicalai/ClinicalBERT;disi-unibo-nlp/JNLPBA;10;CELL_LINE;0.2329;0.368;0.2853;500
+medicalai/ClinicalBERT;disi-unibo-nlp/JNLPBA;10;CELL_TYPE;0.5312;0.6073;0.5667;1920
+medicalai/ClinicalBERT;disi-unibo-nlp/JNLPBA;10;DNA;0.4218;0.5655;0.4832;1054
+medicalai/ClinicalBERT;disi-unibo-nlp/JNLPBA;10;PROTEIN;0.4886;0.6327;0.5514;5056
+medicalai/ClinicalBERT;disi-unibo-nlp/JNLPBA;10;RNA;0.3626;0.5593;0.44;118
+medicalai/ClinicalBERT;disi-unibo-nlp/JNLPBA;10;micro avg;0.4683;0.6026;0.527;8648
+medicalai/ClinicalBERT;disi-unibo-nlp/JNLPBA;10;macro avg;0.4074;0.5466;0.4653;8648
+medicalai/ClinicalBERT;disi-unibo-nlp/JNLPBA;10;weighted avg;0.4734;0.6026;0.5296;8648
+medicalai/ClinicalBERT;disi-unibo-nlp/AnatEM;1;ANATOMY;0.5476;0.5403;0.5439;4577
+medicalai/ClinicalBERT;disi-unibo-nlp/AnatEM;1;micro avg;0.5476;0.5403;0.5439;4577
+medicalai/ClinicalBERT;disi-unibo-nlp/AnatEM;1;macro avg;0.5476;0.5403;0.5439;4577
+medicalai/ClinicalBERT;disi-unibo-nlp/AnatEM;1;weighted avg;0.5476;0.5403;0.5439;4577
+medicalai/ClinicalBERT;disi-unibo-nlp/AnatEM;5;ANATOMY;0.625;0.6369;0.6309;4577
+medicalai/ClinicalBERT;disi-unibo-nlp/AnatEM;5;micro avg;0.625;0.6369;0.6309;4577
+medicalai/ClinicalBERT;disi-unibo-nlp/AnatEM;5;macro avg;0.625;0.6369;0.6309;4577
+medicalai/ClinicalBERT;disi-unibo-nlp/AnatEM;5;weighted avg;0.625;0.6369;0.6309;4577
+medicalai/ClinicalBERT;disi-unibo-nlp/AnatEM;10;ANATOMY;0.6723;0.6662;0.6692;4577
+medicalai/ClinicalBERT;disi-unibo-nlp/AnatEM;10;micro avg;0.6723;0.6662;0.6692;4577
+medicalai/ClinicalBERT;disi-unibo-nlp/AnatEM;10;macro avg;0.6723;0.6662;0.6692;4577
+medicalai/ClinicalBERT;disi-unibo-nlp/AnatEM;10;weighted avg;0.6723;0.6662;0.6692;4577
+medicalai/ClinicalBERT;disi-unibo-nlp/bc5cdr;1;CHEMICAL;0.6989;0.7208;0.7096;5368
+medicalai/ClinicalBERT;disi-unibo-nlp/bc5cdr;1;DISEASE;0.513;0.5916;0.5495;4395
+medicalai/ClinicalBERT;disi-unibo-nlp/bc5cdr;1;micro avg;0.6101;0.6626;0.6352;9763
+medicalai/ClinicalBERT;disi-unibo-nlp/bc5cdr;1;macro avg;0.606;0.6562;0.6296;9763
+medicalai/ClinicalBERT;disi-unibo-nlp/bc5cdr;1;weighted avg;0.6152;0.6626;0.6376;9763
+medicalai/ClinicalBERT;disi-unibo-nlp/bc5cdr;5;CHEMICAL;0.7325;0.7779;0.7545;5368
+medicalai/ClinicalBERT;disi-unibo-nlp/bc5cdr;5;DISEASE;0.5378;0.7003;0.6084;4395
+medicalai/ClinicalBERT;disi-unibo-nlp/bc5cdr;5;micro avg;0.635;0.743;0.6848;9763
+medicalai/ClinicalBERT;disi-unibo-nlp/bc5cdr;5;macro avg;0.6352;0.7391;0.6815;9763
+medicalai/ClinicalBERT;disi-unibo-nlp/bc5cdr;5;weighted avg;0.6449;0.743;0.6888;9763
+medicalai/ClinicalBERT;disi-unibo-nlp/bc5cdr;10;CHEMICAL;0.7324;0.782;0.7564;5368
+medicalai/ClinicalBERT;disi-unibo-nlp/bc5cdr;10;DISEASE;0.5707;0.6817;0.6213;4395
+medicalai/ClinicalBERT;disi-unibo-nlp/bc5cdr;10;micro avg;0.6551;0.7369;0.6936;9763
+medicalai/ClinicalBERT;disi-unibo-nlp/bc5cdr;10;macro avg;0.6515;0.7319;0.6888;9763
+medicalai/ClinicalBERT;disi-unibo-nlp/bc5cdr;10;weighted avg;0.6596;0.7369;0.6956;9763
+dmis-lab/biobert-v1.1;disi-unibo-nlp/JNLPBA;1;CELL_LINE;0.2559;0.436;0.3225;500
+dmis-lab/biobert-v1.1;disi-unibo-nlp/JNLPBA;1;CELL_TYPE;0.438;0.5276;0.4786;1920
+dmis-lab/biobert-v1.1;disi-unibo-nlp/JNLPBA;1;DNA;0.2298;0.3292;0.2707;1054
+dmis-lab/biobert-v1.1;disi-unibo-nlp/JNLPBA;1;PROTEIN;0.4841;0.6866;0.5678;5057
+dmis-lab/biobert-v1.1;disi-unibo-nlp/JNLPBA;1;RNA;0.021;0.0254;0.023;118
+dmis-lab/biobert-v1.1;disi-unibo-nlp/JNLPBA;1;micro avg;0.4214;0.5842;0.4897;8649
+dmis-lab/biobert-v1.1;disi-unibo-nlp/JNLPBA;1;macro avg;0.2857;0.401;0.3325;8649
+dmis-lab/biobert-v1.1;disi-unibo-nlp/JNLPBA;1;weighted avg;0.4234;0.5842;0.4902;8649
+dmis-lab/biobert-v1.1;disi-unibo-nlp/JNLPBA;5;CELL_LINE;0.2929;0.55;0.3822;500
+dmis-lab/biobert-v1.1;disi-unibo-nlp/JNLPBA;5;CELL_TYPE;0.5674;0.6443;0.6034;1920
+dmis-lab/biobert-v1.1;disi-unibo-nlp/JNLPBA;5;DNA;0.5028;0.6774;0.5772;1054
+dmis-lab/biobert-v1.1;disi-unibo-nlp/JNLPBA;5;PROTEIN;0.5817;0.7069;0.6382;5057
+dmis-lab/biobert-v1.1;disi-unibo-nlp/JNLPBA;5;RNA;0.2586;0.3814;0.3082;118
+dmis-lab/biobert-v1.1;disi-unibo-nlp/JNLPBA;5;micro avg;0.5384;0.6759;0.5993;8649
+dmis-lab/biobert-v1.1;disi-unibo-nlp/JNLPBA;5;macro avg;0.4407;0.592;0.5019;8649
+dmis-lab/biobert-v1.1;disi-unibo-nlp/JNLPBA;5;weighted avg;0.5478;0.6759;0.6038;8649
+dmis-lab/biobert-v1.1;disi-unibo-nlp/JNLPBA;10;CELL_LINE;0.326;0.654;0.4351;500
+dmis-lab/biobert-v1.1;disi-unibo-nlp/JNLPBA;10;CELL_TYPE;0.664;0.6094;0.6355;1920
+dmis-lab/biobert-v1.1;disi-unibo-nlp/JNLPBA;10;DNA;0.5629;0.6831;0.6172;1054
+dmis-lab/biobert-v1.1;disi-unibo-nlp/JNLPBA;10;PROTEIN;0.6328;0.7305;0.6781;5057
+dmis-lab/biobert-v1.1;disi-unibo-nlp/JNLPBA;10;RNA;0.5112;0.7712;0.6149;118
+dmis-lab/biobert-v1.1;disi-unibo-nlp/JNLPBA;10;micro avg;0.5966;0.694;0.6416;8649
+dmis-lab/biobert-v1.1;disi-unibo-nlp/JNLPBA;10;macro avg;0.5394;0.6896;0.5962;8649
+dmis-lab/biobert-v1.1;disi-unibo-nlp/JNLPBA;10;weighted avg;0.6118;0.694;0.6463;8649
+dmis-lab/biobert-v1.1;disi-unibo-nlp/AnatEM;1;ANATOMY;0.6218;0.5065;0.5583;4582
+dmis-lab/biobert-v1.1;disi-unibo-nlp/AnatEM;1;micro avg;0.6218;0.5065;0.5583;4582
+dmis-lab/biobert-v1.1;disi-unibo-nlp/AnatEM;1;macro avg;0.6218;0.5065;0.5583;4582
+dmis-lab/biobert-v1.1;disi-unibo-nlp/AnatEM;1;weighted avg;0.6218;0.5065;0.5583;4582
+dmis-lab/biobert-v1.1;disi-unibo-nlp/AnatEM;5;ANATOMY;0.7018;0.675;0.6882;4582
+dmis-lab/biobert-v1.1;disi-unibo-nlp/AnatEM;5;micro avg;0.7018;0.675;0.6882;4582
+dmis-lab/biobert-v1.1;disi-unibo-nlp/AnatEM;5;macro avg;0.7018;0.675;0.6882;4582
+dmis-lab/biobert-v1.1;disi-unibo-nlp/AnatEM;5;weighted avg;0.7018;0.675;0.6882;4582
+dmis-lab/biobert-v1.1;disi-unibo-nlp/AnatEM;10;ANATOMY;0.738;0.766;0.7518;4582
+dmis-lab/biobert-v1.1;disi-unibo-nlp/AnatEM;10;micro avg;0.738;0.766;0.7518;4582
+dmis-lab/biobert-v1.1;disi-unibo-nlp/AnatEM;10;macro avg;0.738;0.766;0.7518;4582
+dmis-lab/biobert-v1.1;disi-unibo-nlp/AnatEM;10;weighted avg;0.738;0.766;0.7518;4582
+dmis-lab/biobert-v1.1;disi-unibo-nlp/bc5cdr;1;CHEMICAL;0.7785;0.7021;0.7383;5367
+dmis-lab/biobert-v1.1;disi-unibo-nlp/bc5cdr;1;DISEASE;0.6018;0.5575;0.5788;4395
+dmis-lab/biobert-v1.1;disi-unibo-nlp/bc5cdr;1;micro avg;0.6978;0.637;0.666;9762
+dmis-lab/biobert-v1.1;disi-unibo-nlp/bc5cdr;1;macro avg;0.6902;0.6298;0.6586;9762
+dmis-lab/biobert-v1.1;disi-unibo-nlp/bc5cdr;1;weighted avg;0.699;0.637;0.6665;9762
+dmis-lab/biobert-v1.1;disi-unibo-nlp/bc5cdr;5;CHEMICAL;0.7991;0.8072;0.8031;5367
+dmis-lab/biobert-v1.1;disi-unibo-nlp/bc5cdr;5;DISEASE;0.6541;0.7279;0.689;4395
+dmis-lab/biobert-v1.1;disi-unibo-nlp/bc5cdr;5;micro avg;0.7303;0.7715;0.7503;9762
+dmis-lab/biobert-v1.1;disi-unibo-nlp/bc5cdr;5;macro avg;0.7266;0.7675;0.7461;9762
+dmis-lab/biobert-v1.1;disi-unibo-nlp/bc5cdr;5;weighted avg;0.7338;0.7715;0.7517;9762
+dmis-lab/biobert-v1.1;disi-unibo-nlp/bc5cdr;10;CHEMICAL;0.7849;0.8159;0.8001;5367
+dmis-lab/biobert-v1.1;disi-unibo-nlp/bc5cdr;10;DISEASE;0.6494;0.7408;0.6921;4395
+dmis-lab/biobert-v1.1;disi-unibo-nlp/bc5cdr;10;micro avg;0.7208;0.7821;0.7502;9762
+dmis-lab/biobert-v1.1;disi-unibo-nlp/bc5cdr;10;macro avg;0.7171;0.7784;0.7461;9762
+dmis-lab/biobert-v1.1;disi-unibo-nlp/bc5cdr;10;weighted avg;0.7239;0.7821;0.7515;9762
+bert-base-uncased;disi-unibo-nlp/JNLPBA;1;CELL_LINE;0.146;0.318;0.2001;500
+bert-base-uncased;disi-unibo-nlp/JNLPBA;1;CELL_TYPE;0.4488;0.5115;0.4781;1920
+bert-base-uncased;disi-unibo-nlp/JNLPBA;1;DNA;0.2351;0.2951;0.2617;1054
+bert-base-uncased;disi-unibo-nlp/JNLPBA;1;PROTEIN;0.4393;0.6327;0.5186;5058
+bert-base-uncased;disi-unibo-nlp/JNLPBA;1;RNA;0.1268;0.1525;0.1385;118
+bert-base-uncased;disi-unibo-nlp/JNLPBA;1;micro avg;0.3883;0.5399;0.4517;8650
+bert-base-uncased;disi-unibo-nlp/JNLPBA;1;macro avg;0.2792;0.3819;0.3194;8650
+bert-base-uncased;disi-unibo-nlp/JNLPBA;1;weighted avg;0.3953;0.5399;0.4547;8650
+bert-base-uncased;disi-unibo-nlp/JNLPBA;5;CELL_LINE;0.2523;0.504;0.3362;500
+bert-base-uncased;disi-unibo-nlp/JNLPBA;5;CELL_TYPE;0.5541;0.6219;0.586;1920
+bert-base-uncased;disi-unibo-nlp/JNLPBA;5;DNA;0.3916;0.5806;0.4677;1054
+bert-base-uncased;disi-unibo-nlp/JNLPBA;5;PROTEIN;0.5005;0.672;0.5737;5058
+bert-base-uncased;disi-unibo-nlp/JNLPBA;5;RNA;0.3744;0.6441;0.4735;118
+bert-base-uncased;disi-unibo-nlp/JNLPBA;5;micro avg;0.4725;0.6397;0.5435;8650
+bert-base-uncased;disi-unibo-nlp/JNLPBA;5;macro avg;0.4146;0.6045;0.4874;8650
+bert-base-uncased;disi-unibo-nlp/JNLPBA;5;weighted avg;0.4831;0.6397;0.5484;8650
+bert-base-uncased;disi-unibo-nlp/JNLPBA;10;CELL_LINE;0.2783;0.496;0.3566;500
+bert-base-uncased;disi-unibo-nlp/JNLPBA;10;CELL_TYPE;0.5889;0.5984;0.5936;1920
+bert-base-uncased;disi-unibo-nlp/JNLPBA;10;DNA;0.4887;0.6157;0.5449;1054
+bert-base-uncased;disi-unibo-nlp/JNLPBA;10;PROTEIN;0.569;0.6613;0.6117;5058
+bert-base-uncased;disi-unibo-nlp/JNLPBA;10;RNA;0.4483;0.661;0.5342;118
+bert-base-uncased;disi-unibo-nlp/JNLPBA;10;micro avg;0.535;0.6323;0.5796;8650
+bert-base-uncased;disi-unibo-nlp/JNLPBA;10;macro avg;0.4746;0.6065;0.5282;8650
+bert-base-uncased;disi-unibo-nlp/JNLPBA;10;weighted avg;0.5452;0.6323;0.5837;8650
+bert-base-uncased;disi-unibo-nlp/AnatEM;1;ANATOMY;0.6138;0.6092;0.6115;4586
+bert-base-uncased;disi-unibo-nlp/AnatEM;1;micro avg;0.6138;0.6092;0.6115;4586
+bert-base-uncased;disi-unibo-nlp/AnatEM;1;macro avg;0.6138;0.6092;0.6115;4586
+bert-base-uncased;disi-unibo-nlp/AnatEM;1;weighted avg;0.6138;0.6092;0.6115;4586
+bert-base-uncased;disi-unibo-nlp/AnatEM;5;ANATOMY;0.6382;0.6897;0.663;4586
+bert-base-uncased;disi-unibo-nlp/AnatEM;5;micro avg;0.6382;0.6897;0.663;4586
+bert-base-uncased;disi-unibo-nlp/AnatEM;5;macro avg;0.6382;0.6897;0.663;4586
+bert-base-uncased;disi-unibo-nlp/AnatEM;5;weighted avg;0.6382;0.6897;0.663;4586
+bert-base-uncased;disi-unibo-nlp/AnatEM;10;ANATOMY;0.6862;0.6795;0.6828;4586
+bert-base-uncased;disi-unibo-nlp/AnatEM;10;micro avg;0.6862;0.6795;0.6828;4586
+bert-base-uncased;disi-unibo-nlp/AnatEM;10;macro avg;0.6862;0.6795;0.6828;4586
+bert-base-uncased;disi-unibo-nlp/AnatEM;10;weighted avg;0.6862;0.6795;0.6828;4586
+bert-base-uncased;disi-unibo-nlp/bc5cdr;1;CHEMICAL;0.7168;0.7257;0.7213;5371
+bert-base-uncased;disi-unibo-nlp/bc5cdr;1;DISEASE;0.4894;0.6189;0.5466;4395
+bert-base-uncased;disi-unibo-nlp/bc5cdr;1;micro avg;0.6019;0.6777;0.6375;9766
+bert-base-uncased;disi-unibo-nlp/bc5cdr;1;macro avg;0.6031;0.6723;0.6339;9766
+bert-base-uncased;disi-unibo-nlp/bc5cdr;1;weighted avg;0.6145;0.6777;0.6426;9766
+bert-base-uncased;disi-unibo-nlp/bc5cdr;5;CHEMICAL;0.6785;0.8289;0.7462;5371
+bert-base-uncased;disi-unibo-nlp/bc5cdr;5;DISEASE;0.5498;0.6826;0.609;4395
+bert-base-uncased;disi-unibo-nlp/bc5cdr;5;micro avg;0.62;0.7631;0.6841;9766
+bert-base-uncased;disi-unibo-nlp/bc5cdr;5;macro avg;0.6141;0.7557;0.6776;9766
+bert-base-uncased;disi-unibo-nlp/bc5cdr;5;weighted avg;0.6205;0.7631;0.6844;9766
+bert-base-uncased;disi-unibo-nlp/bc5cdr;10;CHEMICAL;0.7451;0.8045;0.7737;5371
+bert-base-uncased;disi-unibo-nlp/bc5cdr;10;DISEASE;0.6045;0.6708;0.6359;4395
+bert-base-uncased;disi-unibo-nlp/bc5cdr;10;micro avg;0.6809;0.7443;0.7112;9766
+bert-base-uncased;disi-unibo-nlp/bc5cdr;10;macro avg;0.6748;0.7376;0.7048;9766
+bert-base-uncased;disi-unibo-nlp/bc5cdr;10;weighted avg;0.6818;0.7443;0.7117;9766

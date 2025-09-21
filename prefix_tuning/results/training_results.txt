@@ -1,0 +1,217 @@
+--model "bert-base-uncased" --dataset "disi-unibo-nlp/JNLPBA" --token_lenght "1"
+
+Epoca 1/5, Perdita (Loss): 0.6433, Perdita di Validazione (Loss): 0.4578
+Epoca 2/5, Perdita (Loss): 0.4512, Perdita di Validazione (Loss): 0.3980
+Epoca 3/5, Perdita (Loss): 0.4080, Perdita di Validazione (Loss): 0.3599
+Epoca 4/5, Perdita (Loss): 0.3836, Perdita di Validazione (Loss): 0.3386
+Epoca 5/5, Perdita (Loss): 0.3684, Perdita di Validazione (Loss): 0.3250
+
+--model "bert-base-uncased" --dataset "disi-unibo-nlp/JNLPBA" --token_lenght "5"
+
+Epoca 1/5, Perdita (Loss): 0.5651, Perdita di Validazione (Loss): 0.4010
+Epoca 2/5, Perdita (Loss): 0.3890, Perdita di Validazione (Loss): 0.3285
+Epoca 3/5, Perdita (Loss): 0.3425, Perdita di Validazione (Loss): 0.2927
+Epoca 4/5, Perdita (Loss): 0.3241, Perdita di Validazione (Loss): 0.2866
+Epoca 5/5, Perdita (Loss): 0.3109, Perdita di Validazione (Loss): 0.2870 # !
+
+--model "bert-base-uncased" --dataset "disi-unibo-nlp/JNLPBA" --token_lenght "10"
+
+Epoca 1/5, Perdita (Loss): 0.5422, Perdita di Validazione (Loss): 0.3780
+Epoca 2/5, Perdita (Loss): 0.3665, Perdita di Validazione (Loss): 0.3178
+Epoca 3/5, Perdita (Loss): 0.3193, Perdita di Validazione (Loss): 0.2813
+Epoca 4/5, Perdita (Loss): 0.2986, Perdita di Validazione (Loss): 0.2815 # minimo locale?
+Epoca 5/5, Perdita (Loss): 0.2876, Perdita di Validazione (Loss): 0.2593
+
+--model "bert-base-uncased" --dataset "disi-unibo-nlp/AnatEM" --token_lenght "1"
+
+Epoca 1/5, Perdita (Loss): 0.2616, Perdita di Validazione (Loss): 0.1367
+Epoca 2/5, Perdita (Loss): 0.1619, Perdita di Validazione (Loss): 0.1076
+Epoca 3/5, Perdita (Loss): 0.1395, Perdita di Validazione (Loss): 0.1003
+Epoca 4/5, Perdita (Loss): 0.1272, Perdita di Validazione (Loss): 0.0915
+Epoca 5/5, Perdita (Loss): 0.1207, Perdita di Validazione (Loss): 0.0879
+
+--model "bert-base-uncased" --dataset "disi-unibo-nlp/AnatEM" --token_lenght "5"
+
+Epoca 1/5, Perdita (Loss): 0.2285, Perdita di Validazione (Loss): 0.1159
+Epoca 2/5, Perdita (Loss): 0.1417, Perdita di Validazione (Loss): 0.0983
+Epoca 3/5, Perdita (Loss): 0.1210, Perdita di Validazione (Loss): 0.0837
+Epoca 4/5, Perdita (Loss): 0.1098, Perdita di Validazione (Loss): 0.0900
+Epoca 5/5, Perdita (Loss): 0.1054, Perdita di Validazione (Loss): 0.0752
+
+--model "bert-base-uncased" --dataset "disi-unibo-nlp/AnatEM" --token_lenght "10"
+
+Epoca 1/5, Perdita (Loss): 0.2216, Perdita di Validazione (Loss): 0.1116
+Epoca 2/5, Perdita (Loss): 0.1328, Perdita di Validazione (Loss): 0.0884
+Epoca 3/5, Perdita (Loss): 0.1122, Perdita di Validazione (Loss): 0.0773
+Epoca 4/5, Perdita (Loss): 0.1002, Perdita di Validazione (Loss): 0.0686
+Epoca 5/5, Perdita (Loss): 0.0936, Perdita di Validazione (Loss): 0.0672
+
+--model "bert-base-uncased" --dataset "disi-unibo-nlp/bc5cdr" --token_lenght "1"
+
+Epoca 1/5, Perdita (Loss): 0.4227, Perdita di Validazione (Loss): 0.2455
+Epoca 2/5, Perdita (Loss): 0.2503, Perdita di Validazione (Loss): 0.2040
+Epoca 3/5, Perdita (Loss): 0.2176, Perdita di Validazione (Loss): 0.1826
+Epoca 4/5, Perdita (Loss): 0.1983, Perdita di Validazione (Loss): 0.1684
+Epoca 5/5, Perdita (Loss): 0.1874, Perdita di Validazione (Loss): 0.1638
+
+--model "bert-base-uncased" --dataset "disi-unibo-nlp/bc5cdr" --token_lenght "5"
+
+Epoca 1/5, Perdita (Loss): 0.3543, Perdita di Validazione (Loss): 0.2342
+Epoca 2/5, Perdita (Loss): 0.2191, Perdita di Validazione (Loss): 0.1804
+Epoca 3/5, Perdita (Loss): 0.1914, Perdita di Validazione (Loss): 0.1718
+Epoca 4/5, Perdita (Loss): 0.1744, Perdita di Validazione (Loss): 0.1611
+Epoca 5/5, Perdita (Loss): 0.1649, Perdita di Validazione (Loss): 0.1492
+
+--model "bert-base-uncased" --dataset "disi-unibo-nlp/bc5cdr" --token_lenght "10"
+
+Epoca 1/5, Perdita (Loss): 0.3646, Perdita di Validazione (Loss): 0.2096
+Epoca 2/5, Perdita (Loss): 0.2161, Perdita di Validazione (Loss): 0.1862
+Epoca 3/5, Perdita (Loss): 0.1907, Perdita di Validazione (Loss): 0.1585
+Epoca 4/5, Perdita (Loss): 0.1718, Perdita di Validazione (Loss): 0.1535
+Epoca 5/5, Perdita (Loss): 0.1632, Perdita di Validazione (Loss): 0.1366
+
+python training.py --model "dmis-lab/biobert-v1.1" --dataset "disi-unibo-nlp/JNLPBA" --token_lenght "1"
+
+Epoca 1/5, Perdita (Loss): 0.6528, Perdita di Validazione (Loss): 0.4632
+Epoca 2/5, Perdita (Loss): 0.4275, Perdita di Validazione (Loss): 0.3758
+Epoca 3/5, Perdita (Loss): 0.3669, Perdita di Validazione (Loss): 0.3386
+Epoca 4/5, Perdita (Loss): 0.3442, Perdita di Validazione (Loss): 0.3256
+Epoca 5/5, Perdita (Loss): 0.3253, Perdita di Validazione (Loss): 0.3064
+
+python training.py --model "dmis-lab/biobert-v1.1" --dataset "disi-unibo-nlp/JNLPBA" --token_lenght "5"
+
+Epoca 1/5, Perdita (Loss): 0.5507, Perdita di Validazione (Loss): 0.3429
+Epoca 2/5, Perdita (Loss): 0.3382, Perdita di Validazione (Loss): 0.2754
+Epoca 3/5, Perdita (Loss): 0.2919, Perdita di Validazione (Loss): 0.2545
+Epoca 4/5, Perdita (Loss): 0.2697, Perdita di Validazione (Loss): 0.2358
+Epoca 5/5, Perdita (Loss): 0.2571, Perdita di Validazione (Loss): 0.2380
+
+python training.py --model "dmis-lab/biobert-v1.1" --dataset "disi-unibo-nlp/JNLPBA" --token_lenght "10"
+
+Epoca 1/5, Perdita (Loss): 0.5378, Perdita di Validazione (Loss): 0.3239
+Epoca 2/5, Perdita (Loss): 0.3081, Perdita di Validazione (Loss): 0.2512
+Epoca 3/5, Perdita (Loss): 0.2639, Perdita di Validazione (Loss): 0.2469
+Epoca 4/5, Perdita (Loss): 0.2417, Perdita di Validazione (Loss): 0.2380
+Epoca 5/5, Perdita (Loss): 0.2313, Perdita di Validazione (Loss): 0.2339
+
+python training.py --model "dmis-lab/biobert-v1.1" --dataset "disi-unibo-nlp/AnatEM" --token_lenght "1"
+
+Epoca 1/5, Perdita (Loss): 0.3375, Perdita di Validazione (Loss): 0.1597
+Epoca 2/5, Perdita (Loss): 0.1840, Perdita di Validazione (Loss): 0.1221
+Epoca 3/5, Perdita (Loss): 0.1481, Perdita di Validazione (Loss): 0.1048
+Epoca 4/5, Perdita (Loss): 0.1289, Perdita di Validazione (Loss): 0.0934
+Epoca 5/5, Perdita (Loss): 0.1167, Perdita di Validazione (Loss): 0.0870
+
+python training.py --model "dmis-lab/biobert-v1.1" --dataset "disi-unibo-nlp/AnatEM" --token_lenght "5"
+
+Epoca 1/5, Perdita (Loss): 0.2407, Perdita di Validazione (Loss): 0.1197
+Epoca 2/5, Perdita (Loss): 0.1427, Perdita di Validazione (Loss): 0.1024
+Epoca 3/5, Perdita (Loss): 0.1221, Perdita di Validazione (Loss): 0.0796
+Epoca 4/5, Perdita (Loss): 0.1074, Perdita di Validazione (Loss): 0.0712
+Epoca 5/5, Perdita (Loss): 0.0962, Perdita di Validazione (Loss): 0.0645
+
+python training.py --model "dmis-lab/biobert-v1.1" --dataset "disi-unibo-nlp/AnatEM" --token_lenght "10"
+
+Epoca 1/5, Perdita (Loss): 0.2392, Perdita di Validazione (Loss): 0.1176
+Epoca 2/5, Perdita (Loss): 0.1216, Perdita di Validazione (Loss): 0.0811
+Epoca 3/5, Perdita (Loss): 0.0969, Perdita di Validazione (Loss): 0.0632
+Epoca 4/5, Perdita (Loss): 0.0823, Perdita di Validazione (Loss): 0.0570
+Epoca 5/5, Perdita (Loss): 0.0749, Perdita di Validazione (Loss): 0.0560
+
+python training.py --model "dmis-lab/biobert-v1.1" --dataset "disi-unibo-nlp/bc5cdr" --token_lenght "1"
+
+Epoca 1/5, Perdita (Loss): 0.5556, Perdita di Validazione (Loss): 0.3112
+Epoca 2/5, Perdita (Loss): 0.2858, Perdita di Validazione (Loss): 0.2190
+Epoca 3/5, Perdita (Loss): 0.2276, Perdita di Validazione (Loss): 0.1785
+Epoca 4/5, Perdita (Loss): 0.1960, Perdita di Validazione (Loss): 0.1589
+Epoca 5/5, Perdita (Loss): 0.1770, Perdita di Validazione (Loss): 0.1437
+
+python training.py --model "dmis-lab/biobert-v1.1" --dataset "disi-unibo-nlp/bc5cdr" --token_lenght "5"
+
+Epoca 1/5, Perdita (Loss): 0.4143, Perdita di Validazione (Loss): 0.2332
+Epoca 2/5, Perdita (Loss): 0.2260, Perdita di Validazione (Loss): 0.1764
+Epoca 3/5, Perdita (Loss): 0.1858, Perdita di Validazione (Loss): 0.1433
+Epoca 4/5, Perdita (Loss): 0.1633, Perdita di Validazione (Loss): 0.1327
+Epoca 5/5, Perdita (Loss): 0.1487, Perdita di Validazione (Loss): 0.1196
+
+python training.py --model "dmis-lab/biobert-v1.1" --dataset "disi-unibo-nlp/bc5cdr" --token_lenght "10"
+
+Risultati dell'addestramento per ogni epoca:
+Epoca 1/5, Perdita (Loss): 0.4053, Perdita di Validazione (Loss): 0.2996
+Epoca 2/5, Perdita (Loss): 0.2551, Perdita di Validazione (Loss): 0.1924
+Epoca 3/5, Perdita (Loss): 0.1894, Perdita di Validazione (Loss): 0.1442
+Epoca 4/5, Perdita (Loss): 0.1592, Perdita di Validazione (Loss): 0.1275
+Epoca 5/5, Perdita (Loss): 0.1512, Perdita di Validazione (Loss): 0.1234
+
+python training.py --model "medicalai/ClinicalBERT" --dataset "disi-unibo-nlp/JNLPBA" --token_lenght "1"
+
+Epoca 1/5, Perdita (Loss): 0.6413, Perdita di Validazione (Loss): 0.4793
+Epoca 2/5, Perdita (Loss): 0.4683, Perdita di Validazione (Loss): 0.4104
+Epoca 3/5, Perdita (Loss): 0.4306, Perdita di Validazione (Loss): 0.3893
+Epoca 4/5, Perdita (Loss): 0.4127, Perdita di Validazione (Loss): 0.3749
+Epoca 5/5, Perdita (Loss): 0.4022, Perdita di Validazione (Loss): 0.3661
+
+python training.py --model "medicalai/ClinicalBERT" --dataset "disi-unibo-nlp/JNLPBA" --token_lenght "5"
+
+Epoca 1/5, Perdita (Loss): 0.5833, Perdita di Validazione (Loss): 0.4162
+Epoca 2/5, Perdita (Loss): 0.4135, Perdita di Validazione (Loss): 0.3582
+Epoca 3/5, Perdita (Loss): 0.3749, Perdita di Validazione (Loss): 0.3449
+Epoca 4/5, Perdita (Loss): 0.3588, Perdita di Validazione (Loss): 0.3309
+Epoca 5/5, Perdita (Loss): 0.3478, Perdita di Validazione (Loss): 0.3164
+
+python training.py --model "medicalai/ClinicalBERT" --dataset "disi-unibo-nlp/JNLPBA" --token_lenght "10"
+
+Epoca 1/5, Perdita (Loss): 0.5777, Perdita di Validazione (Loss): 0.3984
+Epoca 2/5, Perdita (Loss): 0.3927, Perdita di Validazione (Loss): 0.3271
+Epoca 3/5, Perdita (Loss): 0.3506, Perdita di Validazione (Loss): 0.3126
+Epoca 4/5, Perdita (Loss): 0.3310, Perdita di Validazione (Loss): 0.3073
+Epoca 5/5, Perdita (Loss): 0.3192, Perdita di Validazione (Loss): 0.2940
+
+python training.py --model "medicalai/ClinicalBERT" --dataset "disi-unibo-nlp/AnatEM" --token_lenght "1"
+
+Epoca 1/5, Perdita (Loss): 0.2524, Perdita di Validazione (Loss): 0.1448
+Epoca 2/5, Perdita (Loss): 0.1696, Perdita di Validazione (Loss): 0.1271
+Epoca 3/5, Perdita (Loss): 0.1500, Perdita di Validazione (Loss): 0.1136
+Epoca 4/5, Perdita (Loss): 0.1388, Perdita di Validazione (Loss): 0.1155
+Epoca 5/5, Perdita (Loss): 0.1332, Perdita di Validazione (Loss): 0.1048
+
+python training.py --model "medicalai/ClinicalBERT" --dataset "disi-unibo-nlp/AnatEM" --token_lenght "5"
+
+Epoca 1/5, Perdita (Loss): 0.2265, Perdita di Validazione (Loss): 0.1260
+Epoca 2/5, Perdita (Loss): 0.1456, Perdita di Validazione (Loss): 0.1076
+Epoca 3/5, Perdita (Loss): 0.1282, Perdita di Validazione (Loss): 0.0926
+Epoca 4/5, Perdita (Loss): 0.1177, Perdita di Validazione (Loss): 0.0965
+Epoca 5/5, Perdita (Loss): 0.1125, Perdita di Validazione (Loss): 0.0856
+
+python training.py --model "medicalai/ClinicalBERT" --dataset "disi-unibo-nlp/AnatEM" --token_lenght "10"
+
+Epoca 1/5, Perdita (Loss): 0.2149, Perdita di Validazione (Loss): 0.1214
+Epoca 2/5, Perdita (Loss): 0.1399, Perdita di Validazione (Loss): 0.0982
+Epoca 3/5, Perdita (Loss): 0.1184, Perdita di Validazione (Loss): 0.0923
+Epoca 4/5, Perdita (Loss): 0.1105, Perdita di Validazione (Loss): 0.0820
+Epoca 5/5, Perdita (Loss): 0.1041, Perdita di Validazione (Loss): 0.0776
+
+python training.py --model "medicalai/ClinicalBERT" --dataset "disi-unibo-nlp/bc5cdr" --token_lenght "1"
+
+Epoca 1/5, Perdita (Loss): 0.4204, Perdita di Validazione (Loss): 0.2823
+Epoca 2/5, Perdita (Loss): 0.2722, Perdita di Validazione (Loss): 0.2192
+Epoca 3/5, Perdita (Loss): 0.2342, Perdita di Validazione (Loss): 0.1950
+Epoca 4/5, Perdita (Loss): 0.2130, Perdita di Validazione (Loss): 0.1828
+Epoca 5/5, Perdita (Loss): 0.2010, Perdita di Validazione (Loss): 0.1785
+
+python training.py --model "medicalai/ClinicalBERT" --dataset "disi-unibo-nlp/bc5cdr" --token_lenght "5"
+
+Epoca 1/5, Perdita (Loss): 0.3709, Perdita di Validazione (Loss): 0.2482
+Epoca 1/5, Perdita (Loss): 0.3709, Perdita di Validazione (Loss): 0.2482
+Epoca 2/5, Perdita (Loss): 0.2354, Perdita di Validazione (Loss): 0.1871
+Epoca 3/5, Perdita (Loss): 0.2008, Perdita di Validazione (Loss): 0.1739
+Epoca 4/5, Perdita (Loss): 0.1858, Perdita di Validazione (Loss): 0.1616
+Epoca 5/5, Perdita (Loss): 0.1766, Perdita di Validazione (Loss): 0.1612
+
+python training.py --model "medicalai/ClinicalBERT" --dataset "disi-unibo-nlp/bc5cdr" --token_lenght "10"
+
+Epoca 1/5, Perdita (Loss): 0.3630, Perdita di Validazione (Loss): 0.2331
+Epoca 2/5, Perdita (Loss): 0.2237, Perdita di Validazione (Loss): 0.1929
+Epoca 3/5, Perdita (Loss): 0.1912, Perdita di Validazione (Loss): 0.1651
+Epoca 4/5, Perdita (Loss): 0.1748, Perdita di Validazione (Loss): 0.1558
+Epoca 5/5, Perdita (Loss): 0.1685, Perdita di Validazione (Loss): 0.1582
