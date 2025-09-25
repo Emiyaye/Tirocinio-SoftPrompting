@@ -31,7 +31,7 @@ MID_DIM = 512
 BATCH_SIZE = 8
 MAX_SEQ_LEN = 128
 DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-FILE_NAME = MODEL_NAME.replace("/", "-") + "_" + DATASET_NAME.replace("/", "-") + "_token-lenght-" + str(PREFIX_LENGTH) + ".pth"
+FILE_NAME = MODEL_NAME.replace("/", "-") + "_" + DATASET_NAME.replace("/", "-") + "_token-lenght-" + str(PREFIX_LENGTH) + "prova.pth"
 
 # Carica il dataset da Hugging Face
 eprint("Caricamento del dataset di test...")

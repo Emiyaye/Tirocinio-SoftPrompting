@@ -32,7 +32,7 @@ LEARNING_RATE = 1e-4
 NUM_EPOCHS = 5
 MAX_SEQ_LEN = 128
 DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-FILE_NAME = MODEL_NAME.replace("/", "-") + "_" + DATASET_NAME.replace("/", "-") + "_token-lenght-" + str(PREFIX_LENGTH) + ".pth"
+FILE_NAME = MODEL_NAME.replace("/", "-") + "_" + DATASET_NAME.replace("/", "-") + "_token-lenght-" + str(PREFIX_LENGTH) + "prova.pth"
 
 # Carica il dataset da Hugging Face
 print(f"Caricamento del dataset {DATASET_NAME}...")
@@ -208,12 +208,12 @@ print("\nAddestramento completato!")
 
 # Stampa finale dei risultati
 print("\nRisultati dell'addestramento per ogni epoca:")
-for i in range(NUM_EPOCHS):
+for i in range(len(all_validation_losses)):
     print(f"Epoca {i+1}/{NUM_EPOCHS}, Perdita (Loss): {all_train_losses[i]:.4f}, Perdita di Validazione (Loss): {all_validation_losses[i]:.4f}")
 
 ## TEST DEL MODELLO
 
-""" # Carica lo stato addestrato del modello
+# Carica lo stato addestrato del modello
 print("\nCaricamento del modello per la valutazione...")
 model.load_state_dict(torch.load(FILE_NAME, map_location=DEVICE))
 model.eval()
@@ -248,4 +248,4 @@ with torch.no_grad():
             predicted_labels.append(pred_tags)
 
 print("\nReport di classificazione:")
-print(classification_report(true_labels, predicted_labels, digits=4)) """
+print(classification_report(true_labels, predicted_labels, digits=4))
