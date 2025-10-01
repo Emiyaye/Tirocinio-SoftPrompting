@@ -121,12 +121,13 @@ def train_ner_prefix_tuning_model(
     criterion = nn.CrossEntropyLoss(ignore_index=-100)
 
     total_steps = len(train_dataloader) * num_epochs
+    warmup_steps = num_warmup_steps if num_warmup_steps > 0 else int(0.1 * total_steps)
     scheduler = get_linear_schedule_with_warmup(
         optimizer,
-        num_warmup_steps=num_warmup_steps if num_warmup_steps > 0 else int(0.1 * total_steps),
+        num_warmup_steps=warmup_steps,
         num_training_steps=total_steps
     )
-    print(f"Configurazione Scheduler: Passi totali: {total_steps}, Passi Warmup: {scheduler.num_warmup_steps}")
+    print(f"Configurazione Scheduler: Passi totali: {total_steps}, Passi Warmup: {warmup_steps}")
 
     # Nome file per il salvataggio
     file_name = model_name.replace("/", "-") + "_" + dataset_name.replace("/", "-") + "_token-lenght-" + str(prefix_length) + "test.pth"
