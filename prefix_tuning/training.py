@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, Dataset
 from transformers import AutoTokenizer
+from transformers import get_linear_schedule_with_warmup 
 from torch.optim import AdamW
 from typing import List, Dict, Tuple
 from ner_prefix_tuning_model import NERPrefixTuningModel
@@ -22,6 +23,7 @@ def train_ner_prefix_tuning_model(
     max_seq_len: int = 128,
     subset_size: int = -1,
     patience: int = 2,
+    num_warmup_steps: int = 0,
     device: torch.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 ) -> Tuple[List[float], List[float], str]:
     
@@ -118,6 +120,14 @@ def train_ner_prefix_tuning_model(
     optimizer = AdamW(trainable_params, lr=learning_rate)
     criterion = nn.CrossEntropyLoss(ignore_index=-100)
 
+    total_steps = len(train_dataloader) * num_epochs
+    scheduler = get_linear_schedule_with_warmup(
+        optimizer,
+        num_warmup_steps=num_warmup_steps if num_warmup_steps > 0 else int(0.1 * total_steps),
+        num_training_steps=total_steps
+    )
+    print(f"Configurazione Scheduler: Passi totali: {total_steps}, Passi Warmup: {scheduler.num_warmup_steps}")
+
     # Nome file per il salvataggio
     file_name = model_name.replace("/", "-") + "_" + dataset_name.replace("/", "-") + "_token-lenght-" + str(prefix_length) + "test.pth"
 
@@ -152,6 +162,8 @@ def train_ner_prefix_tuning_model(
             # Backpropagation e aggioramento dei pesi
             loss.backward()
             optimizer.step()
+            # Aggiorna il learning rate dopo ogni epoca
+            scheduler.step() 
             
             total_loss += loss.item()
             
@@ -261,14 +273,16 @@ if __name__ == '__main__':
                         help='Dimensione del batch per l\'addestramento e la valutazione.')
     parser.add_argument('--learning_rate', type=float, default=1e-4,
                         help='Tasso di apprendimento (Learning Rate).')
-    parser.add_argument('--num_epochs', type=int, default=5,
+    parser.add_argument('--num_epochs', type=int, default=20,
                         help='Numero totale di epoche di addestramento.')
     parser.add_argument('--max_seq_len', type=int, default=128,
                         help='Lunghezza massima della sequenza.')
-    parser.add_argument('--patience', type=int, default=2,
+    parser.add_argument('--patience', type=int, default=4,
                         help='Numero di epoche senza miglioramento prima dell\'early stopping.')
     parser.add_argument('--subset_size', type=int, default=-1,
                         help='Dimensione del subset di dati da usare per l\'addestramento e il test (-1 per l\'intero dataset).')
+    parser.add_argument('--num_warmup_steps', type=int, default=0,
+                        help='Numero di warp up per ogni step')
     parser.add_argument('--device', type=str, default='cuda' if torch.cuda.is_available() else 'cpu',
                         help='Dispositivo da utilizzare (es. "cuda", "cpu").')
 
@@ -285,6 +299,7 @@ if __name__ == '__main__':
     MAX_SEQ_LEN = args.max_seq_len
     SUBSET_SIZE = args.subset_size
     PATIENCE = args.patience
+    NUM_WARMUP_STEPS = args.num_warmup_steps
     DEVICE = torch.device(args.device)
     
     train_losses, val_losses, _saved_model_path = train_ner_prefix_tuning_model(
@@ -298,6 +313,7 @@ if __name__ == '__main__':
         max_seq_len=MAX_SEQ_LEN,
         subset_size=SUBSET_SIZE,
         patience=PATIENCE,
+        num_warmup_steps=NUM_WARMUP_STEPS,
         device=DEVICE
     )
     for i in range(len(val_losses)):
