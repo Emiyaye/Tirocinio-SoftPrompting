@@ -1,0 +1,102 @@
+
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/AnatEM token_lenght = 1
+
+Report di classificazione finale:
+              precision    recall  f1-score   support
+
+     ANATOMY     0.8373    0.8557    0.8464      4582
+
+   micro avg     0.8373    0.8557    0.8464      4582
+   macro avg     0.8373    0.8557    0.8464      4582
+weighted avg     0.8373    0.8557    0.8464      4582
+
+Epoca 1, Perdita (Loss): 0.2587, Perdita di Validazione (Loss): 0.0548
+Epoca 2, Perdita (Loss): 0.0670, Perdita di Validazione (Loss): 0.0490
+Epoca 3, Perdita (Loss): 0.0527, Perdita di Validazione (Loss): 0.0406
+Epoca 4, Perdita (Loss): 0.0446, Perdita di Validazione (Loss): 0.0396
+Epoca 5, Perdita (Loss): 0.0402, Perdita di Validazione (Loss): 0.0363
+Epoca 6, Perdita (Loss): 0.0368, Perdita di Validazione (Loss): 0.0362
+Epoca 7, Perdita (Loss): 0.0346, Perdita di Validazione (Loss): 0.0377
+Epoca 8, Perdita (Loss): 0.0334, Perdita di Validazione (Loss): 0.0400
+Epoca 9, Perdita (Loss): 0.0323, Perdita di Validazione (Loss): 0.0381
+Epoca 10, Perdita (Loss): 0.0310, Perdita di Validazione (Loss): 0.0386
+
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/AnatEM token_lenght = 5
+
+Report di classificazione finale:
+              precision    recall  f1-score   support
+
+     ANATOMY     0.8756    0.8359    0.8553      4582
+
+   micro avg     0.8756    0.8359    0.8553      4582
+   macro avg     0.8756    0.8359    0.8553      4582
+weighted avg     0.8756    0.8359    0.8553      4582
+
+Epoca 1, Perdita (Loss): 0.2333, Perdita di Validazione (Loss): 0.0467
+Epoca 2, Perdita (Loss): 0.0571, Perdita di Validazione (Loss): 0.0502
+Epoca 3, Perdita (Loss): 0.0435, Perdita di Validazione (Loss): 0.0410
+Epoca 4, Perdita (Loss): 0.0352, Perdita di Validazione (Loss): 0.0392
+Epoca 5, Perdita (Loss): 0.0288, Perdita di Validazione (Loss): 0.0392
+Epoca 6, Perdita (Loss): 0.0247, Perdita di Validazione (Loss): 0.0436
+Epoca 7, Perdita (Loss): 0.0221, Perdita di Validazione (Loss): 0.0411
+Epoca 8, Perdita (Loss): 0.0205, Perdita di Validazione (Loss): 0.0419
+Epoca 9, Perdita (Loss): 0.0181, Perdita di Validazione (Loss): 0.0417
+
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/AnatEM token_lenght = 10
+
+Report di classificazione finale:
+              precision    recall  f1-score   support
+
+     ANATOMY     0.8424    0.8797    0.8607      4582
+
+   micro avg     0.8424    0.8797    0.8607      4582
+   macro avg     0.8424    0.8797    0.8607      4582
+weighted avg     0.8424    0.8797    0.8607      4582
+
+Epoca 1, Perdita (Loss): 0.2190, Perdita di Validazione (Loss): 0.0498
+Epoca 2, Perdita (Loss): 0.0535, Perdita di Validazione (Loss): 0.0439
+Epoca 3, Perdita (Loss): 0.0412, Perdita di Validazione (Loss): 0.0377
+Epoca 4, Perdita (Loss): 0.0319, Perdita di Validazione (Loss): 0.0367
+Epoca 5, Perdita (Loss): 0.0271, Perdita di Validazione (Loss): 0.0370
+Epoca 6, Perdita (Loss): 0.0227, Perdita di Validazione (Loss): 0.0425
+Epoca 7, Perdita (Loss): 0.0194, Perdita di Validazione (Loss): 0.0409
+Epoca 8, Perdita (Loss): 0.0172, Perdita di Validazione (Loss): 0.0422
+
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/AnatEM token_lenght = 20
+
+Report di classificazione finale:
+              precision    recall  f1-score   support
+
+     ANATOMY     0.8485    0.8804    0.8642      4582
+
+   micro avg     0.8485    0.8804    0.8642      4582
+   macro avg     0.8485    0.8804    0.8642      4582
+weighted avg     0.8485    0.8804    0.8642      4582
+
+Epoca 1, Perdita (Loss): 0.2073, Perdita di Validazione (Loss): 0.0602
+Epoca 2, Perdita (Loss): 0.0511, Perdita di Validazione (Loss): 0.0447
+Epoca 3, Perdita (Loss): 0.0386, Perdita di Validazione (Loss): 0.0403
+Epoca 4, Perdita (Loss): 0.0311, Perdita di Validazione (Loss): 0.0372
+Epoca 5, Perdita (Loss): 0.0256, Perdita di Validazione (Loss): 0.0347
+Epoca 6, Perdita (Loss): 0.0226, Perdita di Validazione (Loss): 0.0372
+Epoca 7, Perdita (Loss): 0.0179, Perdita di Validazione (Loss): 0.0439
+Epoca 8, Perdita (Loss): 0.0156, Perdita di Validazione (Loss): 0.0458
+Epoca 9, Perdita (Loss): 0.0141, Perdita di Validazione (Loss): 0.0456
+
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/AnatEM token_lengh = 50
+Report di classificazione finale:
+              precision    recall  f1-score   support
+
+     ANATOMY     0.8588    0.8638    0.8613      4582
+
+   micro avg     0.8588    0.8638    0.8613      4582
+   macro avg     0.8588    0.8638    0.8613      4582
+weighted avg     0.8588    0.8638    0.8613      4582
+
+Epoca 1, Perdita (Loss): 0.2021, Perdita di Validazione (Loss): 0.0465
+Epoca 2, Perdita (Loss): 0.0534, Perdita di Validazione (Loss): 0.0492
+Epoca 3, Perdita (Loss): 0.0399, Perdita di Validazione (Loss): 0.0341
+Epoca 4, Perdita (Loss): 0.0310, Perdita di Validazione (Loss): 0.0403
+Epoca 5, Perdita (Loss): 0.0251, Perdita di Validazione (Loss): 0.0411
+Epoca 6, Perdita (Loss): 0.0227, Perdita di Validazione (Loss): 0.0404
+Epoca 7, Perdita (Loss): 0.0190, Perdita di Validazione (Loss): 0.0384

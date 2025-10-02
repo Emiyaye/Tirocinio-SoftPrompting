@@ -314,9 +314,9 @@ if __name__ == '__main__':
     DEVICE = torch.device(args.device)
 
     # Nome file per il salvataggio
-    file_name = MODEL_NAME.replace("/", "-") + "_" + DATASET_NAME.replace("/", "-") + "_GELU_learning-rate-" + LEARNING_RATE+ ".pth"
+    file_name = MODEL_NAME.replace("/", "-") + "_" + DATASET_NAME.replace("/", "-") + "_GELU_token_lenght-" + str(PREFIX_LENGTH) + ".pth"
 
-    print(f"model = {MODEL_NAME} dataset = {DATASET_NAME} lr = {LEARNING_RATE}")
+    print(f"model = {MODEL_NAME} dataset = {DATASET_NAME} token_lenght = {PREFIX_LENGTH}")
     
     
     train_losses, val_losses, _saved_model_path = train_ner_prefix_tuning_model(
@@ -335,5 +335,6 @@ if __name__ == '__main__':
         device=DEVICE
     )
     for i in range(len(val_losses)):
-        eprint(f"Epoca {i+1}, Perdita (Loss): {train_losses[i]:.4f}, Perdita di Validazione (Loss): {val_losses[i]:.4f}")
+        print(f"Epoca {i+1}, Perdita (Loss): {train_losses[i]:.4f}, Perdita di Validazione (Loss): {val_losses[i]:.4f}")
+    print()
 
