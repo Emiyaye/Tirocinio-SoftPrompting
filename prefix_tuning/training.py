@@ -11,6 +11,10 @@ from tqdm import tqdm
 from seqeval.metrics import classification_report
 import argparse
 import os
+import sys
+
+def eprint(*args, **kwargs):
+    print(*args, file=sys.stderr, **kwargs)
 
 def train_ner_prefix_tuning_model(
     model_name: str,
@@ -22,13 +26,14 @@ def train_ner_prefix_tuning_model(
     num_epochs: int = 5,
     max_seq_len: int = 128,
     subset_size: int = -1,
+    file_name: str = "_.pth",
     patience: int = 2,
     num_warmup_steps: int = 0,
     device: torch.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 ) -> Tuple[List[float], List[float], str]:
     
     # Carica il dataset da Hugging Face
-    print(f"Caricamento del dataset {dataset_name} su {device}...")
+    eprint(f"Caricamento del dataset {dataset_name} su {device}...")
     dataset_dict = load_dataset(dataset_name)
 
     # Se lo split 'validation' non esiste, prendiamo parte dal 'train' split
@@ -40,9 +45,11 @@ def train_ner_prefix_tuning_model(
     # Se il subset è specificato, selezionare un subset del train_dataset
     if subset_size > 0:
         dataset_dict['train'] = dataset_dict['train'].shuffle(seed=42).select(range(subset_size))
+        dataset_dict['validation'] = dataset_dict['validation'].shuffle(seed=42).select(range(int(subset_size/10)))
+
 
     # Estrazione dei tag NER unici dal dataset + "O"
-    print("Estrazione dei tag NER unici...")
+    eprint("Estrazione dei tag NER unici...")
     unique_tags = set()
     for example in dataset_dict['train']:
         for tag in example['ner_tags']:
@@ -55,7 +62,7 @@ def train_ner_prefix_tuning_model(
     tag_to_id = {tag: i for i, tag in enumerate(ner_tags)}
     id_to_tag = {i: tag for tag, i in tag_to_id.items()}
 
-    print(f"Tag NER trovati: {ner_tags}")
+    eprint(f"Tag NER trovati: {ner_tags}")
 
     # Preparare il tokenizer
     tokenizer = AutoTokenizer.from_pretrained(model_name)
@@ -127,10 +134,9 @@ def train_ner_prefix_tuning_model(
         num_warmup_steps=warmup_steps,
         num_training_steps=total_steps
     )
-    print(f"Configurazione Scheduler: Passi totali: {total_steps}, Passi Warmup: {warmup_steps}")
+    eprint(f"Configurazione Scheduler: Passi totali: {total_steps}, Passi Warmup: {warmup_steps}")
 
-    # Nome file per il salvataggio
-    file_name = model_name.replace("/", "-") + "_" + dataset_name.replace("/", "-") + "_token-lenght-" + str(prefix_length) + "test.pth"
+    
 
     ## TRAINING LOOP
     # Liste per memorizzare le perdite di ogni epoca
@@ -140,7 +146,7 @@ def train_ner_prefix_tuning_model(
     best_validation_loss = float('inf')
     patience_counter = 0 
 
-    print("\nInizio dell'addestramento...")
+    eprint("\nInizio dell'addestramento...")
     for epoch in range(num_epochs):
         model.train()
         total_loss = 0
@@ -198,7 +204,7 @@ def train_ner_prefix_tuning_model(
 
         # Memorizza la perdita di validazione
         all_validation_losses.append(avg_validation_loss)
-        print(f"Epoca {epoch+1}/{num_epochs}, Perdita (Loss): {avg_loss:.4f}, Perdita di Validazione (Loss): {avg_validation_loss:.4f}")
+        eprint(f"Epoca {epoch+1}/{num_epochs}, Perdita (Loss): {avg_loss:.4f}, Perdita di Validazione (Loss): {avg_validation_loss:.4f}")
 
         # Salvo il modello solo se la loss della validazione è minore alla versione migliore
         if avg_validation_loss < best_validation_loss:
@@ -209,21 +215,21 @@ def train_ner_prefix_tuning_model(
         else:
             patience_counter += 1
             if patience_counter >= patience:
-                print(f"Early stopping attivato. Nessun miglioramento per {patience} epoche. Addestramento interrotto.")
+                eprint(f"Early stopping attivato. Nessun miglioramento per {patience} epoche. Addestramento interrotto.")
                 break
         
-    print("\nAddestramento completato!")
+    eprint("\nAddestramento completato!")
 
     ## TEST DEL MODELLO
     if os.path.exists(file_name):
-        print("\nCaricamento del modello migliore per la valutazione...")
+        eprint("\nCaricamento del modello migliore per la valutazione...")
         model.load_state_dict(torch.load(file_name, map_location=device))
         model.eval()
         
         true_labels = []
         predicted_labels = []
 
-        print("\nInizio della valutazione sul set di test...")
+        eprint("\nInizio della valutazione sul set di test...")
         with torch.no_grad():
             for batch in tqdm(test_dataloader, desc="Valutazione"):
                 input_ids = batch['input_ids'].to(device)
@@ -302,6 +308,12 @@ if __name__ == '__main__':
     PATIENCE = args.patience
     NUM_WARMUP_STEPS = args.num_warmup_steps
     DEVICE = torch.device(args.device)
+
+    # Nome file per il salvataggio
+    file_name = MODEL_NAME.replace("/", "-") + "_" + DATASET_NAME.replace("/", "-") + ".pth"
+
+    print(f"model = {MODEL_NAME} dataset = {DATASET_NAME}")
+    
     
     train_losses, val_losses, _saved_model_path = train_ner_prefix_tuning_model(
         model_name=MODEL_NAME,
@@ -313,10 +325,11 @@ if __name__ == '__main__':
         num_epochs=NUM_EPOCHS,
         max_seq_len=MAX_SEQ_LEN,
         subset_size=SUBSET_SIZE,
+        #file_name=file_name,
         patience=PATIENCE,
         num_warmup_steps=NUM_WARMUP_STEPS,
         device=DEVICE
     )
     for i in range(len(val_losses)):
-        print(f"Epoca {i+1}, Perdita (Loss): {train_losses[i]:.4f}, Perdita di Validazione (Loss): {val_losses[i]:.4f}")
+        eprint(f"Epoca {i+1}, Perdita (Loss): {train_losses[i]:.4f}, Perdita di Validazione (Loss): {val_losses[i]:.4f}")
 
