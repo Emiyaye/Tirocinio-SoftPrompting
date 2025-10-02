@@ -124,7 +124,7 @@ def train_ner_prefix_tuning_model(
     # Inizializza ottimizzatore e criterio
     # prefix_module e classifier sono parametri addestrabili
     trainable_params = list(model.prefix_module.parameters()) + list(model.classifier.parameters())
-    optimizer = AdamW(trainable_params, lr=learning_rate)
+    optimizer = AdamW(trainable_params, lr=learning_rate, weight_decay=0.01, eps=1e-8)
     criterion = nn.CrossEntropyLoss(ignore_index=-100)
 
     total_steps = len(train_dataloader) * num_epochs
