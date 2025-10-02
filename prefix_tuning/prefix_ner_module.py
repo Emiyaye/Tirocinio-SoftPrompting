@@ -26,8 +26,11 @@ class NERPrefixModule(nn.Module):
         target_dim = self.num_layers * 2 * self.n_embd
         self.control_trans = nn.Sequential(
             nn.Linear(self.n_embd, self.mid_dim),
-            nn.GELU(),
-            nn.Linear(self.mid_dim, target_dim))
+            #nn.Tanh(),
+            nn.GELU(), 
+            nn.Linear(self.mid_dim, target_dim),
+            nn.LayerNorm(target_dim))
+            
 
     def forward(self, bsz: int):
         """
