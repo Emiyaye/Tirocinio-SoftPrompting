@@ -29,7 +29,8 @@ class NERPrefixModule(nn.Module):
             #nn.Tanh(),
             nn.GELU(), 
             nn.Linear(self.mid_dim, target_dim),
-            nn.LayerNorm(target_dim))
+            nn.LayerNorm(target_dim)
+            )
             
 
     def forward(self, bsz: int):
