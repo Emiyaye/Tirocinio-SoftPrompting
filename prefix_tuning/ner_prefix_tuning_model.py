@@ -44,7 +44,8 @@ class NERPrefixTuningModel(nn.Module):
         outputs = self.encoder(
             input_ids=input_ids,
             attention_mask=updated_attention_mask,
-            past_key_values=past_key_values #!! DistilBert, non ha un argomento past_key_values
+            past_key_values=past_key_values, #!! DistilBert, non ha un argomento past_key_values
+            
         )
         
         last_hidden_states = outputs.last_hidden_state

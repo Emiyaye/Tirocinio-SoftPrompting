@@ -296,6 +296,9 @@ if __name__ == '__main__':
                         help='Numero di warp up per ogni step')
     parser.add_argument('--device', type=str, default='cuda' if torch.cuda.is_available() else 'cpu',
                         help='Dispositivo da utilizzare (es. "cuda", "cpu").')
+    
+    parser.add_argument('--file_name', type=str, default="",
+                        help='')
 
     args = parser.parse_args()
 
@@ -314,9 +317,15 @@ if __name__ == '__main__':
     DEVICE = torch.device(args.device)
 
     # Nome file per il salvataggio
-    file_name = MODEL_NAME.replace("/", "-") + "_" + DATASET_NAME.replace("/", "-") + "_GELU_token_lenght-" + str(PREFIX_LENGTH) + ".pth"
+    file_name = args.file_name
+    
+    if (file_name == ""):
+        file_name = MODEL_NAME.replace("/", "-") + "_" + DATASET_NAME.replace("/", "-") + "_token_lenght-" + str(PREFIX_LENGTH) + ".pth"
+        print(f"model = {MODEL_NAME} dataset = {DATASET_NAME} token_lenght = {PREFIX_LENGTH}")
+    else : 
+        print(f"model = {MODEL_NAME} dataset = {DATASET_NAME} learning_rate = {LEARNING_RATE}")
 
-    print(f"model = {MODEL_NAME} dataset = {DATASET_NAME} token_lenght = {PREFIX_LENGTH}")
+    
     
     
     train_losses, val_losses, _saved_model_path = train_ner_prefix_tuning_model(

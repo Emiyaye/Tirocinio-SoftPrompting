@@ -1,0 +1,19 @@
+Model;Dataset;learning_rate;Micro Avg F1-Score
+dmis-lab/biobert-v1.1;disi-unibo-nlp/AnatEM;0.001;0.775
+dmis-lab/biobert-v1.1;disi-unibo-nlp/AnatEM;0.0001;0.8495
+dmis-lab/biobert-v1.1;disi-unibo-nlp/AnatEM;1e-05;0.8485
+dmis-lab/biobert-v1.1;disi-unibo-nlp/JNLPBA;0.001;0.6464
+dmis-lab/biobert-v1.1;disi-unibo-nlp/JNLPBA;0.0001;0.7374
+dmis-lab/biobert-v1.1;disi-unibo-nlp/JNLPBA;1e-05;0.7284
+dmis-lab/biobert-v1.1;disi-unibo-nlp/bc5cdr;0.001;0.771
+dmis-lab/biobert-v1.1;disi-unibo-nlp/bc5cdr;0.0001;0.8586
+dmis-lab/biobert-v1.1;disi-unibo-nlp/bc5cdr;1e-05;0.8543
+bert-base-uncased;disi-unibo-nlp/AnatEM;0.001;0.5731
+bert-base-uncased;disi-unibo-nlp/AnatEM;0.0001;0.8294
+bert-base-uncased;disi-unibo-nlp/AnatEM;1e-05;0.8045
+bert-base-uncased;disi-unibo-nlp/JNLPBA;0.001;0.5814
+bert-base-uncased;disi-unibo-nlp/JNLPBA;0.0001;0.6905
+bert-base-uncased;disi-unibo-nlp/JNLPBA;1e-05;0.6695
+bert-base-uncased;disi-unibo-nlp/bc5cdr;0.001;0.7135
+bert-base-uncased;disi-unibo-nlp/bc5cdr;0.0001;0.8137
+bert-base-uncased;disi-unibo-nlp/bc5cdr;1e-05;0.7822
