@@ -319,11 +319,10 @@ if __name__ == '__main__':
     # Nome file per il salvataggio
     file_name = args.file_name
     
-    if (file_name == ""):
-        file_name = MODEL_NAME.replace("/", "-") + "_" + DATASET_NAME.replace("/", "-") + "_token_lenght-" + str(PREFIX_LENGTH) + ".pth"
-        print(f"model = {MODEL_NAME} dataset = {DATASET_NAME} token_lenght = {PREFIX_LENGTH}")
-    else : 
-        print(f"model = {MODEL_NAME} dataset = {DATASET_NAME} learning_rate = {LEARNING_RATE}")
+
+    file_name = MODEL_NAME.replace("/", "-") + "_" + DATASET_NAME.replace("/", "-") + "_GELU_token_lenght-" + str(PREFIX_LENGTH) + "_lr-" + str(LEARNING_RATE) + ".pth"
+    print(f"model = {MODEL_NAME} dataset = {DATASET_NAME} token_lenght = {PREFIX_LENGTH} learning_rate = {LEARNING_RATE}")
+
 
     
     
