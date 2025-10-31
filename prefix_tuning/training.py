@@ -6,12 +6,14 @@ from transformers import get_linear_schedule_with_warmup
 from torch.optim import AdamW
 from typing import List, Dict, Tuple
 from ner_prefix_tuning_model import NERPrefixTuningModel
+from soft_ner_model import NERSoftPromptModel
 from datasets import load_dataset
 from tqdm import tqdm
 from seqeval.metrics import classification_report
 import argparse
 import os
 import sys
+
 
 def eprint(*args, **kwargs):
     print(*args, file=sys.stderr, **kwargs)
@@ -114,7 +116,14 @@ def train_ner_prefix_tuning_model(
     ## TRAINING DEL MODELLO
 
     # Inizializza il modello
-    model = NERPrefixTuningModel(
+    """ model = NERPrefixTuningModel(
+        model_name=model_name,
+        ner_tags=ner_tags,
+        prefix_length=prefix_length,
+        mid_dim=mid_dim
+    ).to(device=device) """ 
+
+    model = NERSoftPromptModel(
         model_name=model_name,
         ner_tags=ner_tags,
         prefix_length=prefix_length,
