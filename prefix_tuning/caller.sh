@@ -2,7 +2,7 @@
 
 RUNNER_SCRIPT="./run.sh"
 
-MODELS=("bert-base-uncased" "dmis-lab/biobert-v1.1" "medicalai/ClinicalBERT" )
+MODELS=("medicalai/ClinicalBERT" )
 DATASETS=("disi-unibo-nlp/AnatEM" "disi-unibo-nlp/JNLPBA" "disi-unibo-nlp/bc5cdr")
 PREFIX_LENGTHS=("10" "20" "50")
 LEARNING_RATES=("1e-3" "1e-4" "1e-5")

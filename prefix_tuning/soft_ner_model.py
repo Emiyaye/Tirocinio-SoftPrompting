@@ -34,7 +34,9 @@ class NERSoftPromptModel(nn.Module):
             
         # Un layer di classificazione finale
         self.classifier = nn.Linear(encoder_config.hidden_size, self.num_tags)
-        self.dropout = nn.Dropout(encoder_config.hidden_dropout_prob)
+        # Per gestire diversi attributi di dropout (es. BERT vs DistilBERT)
+        dropout_prob = getattr(encoder_config, 'hidden_dropout_prob', getattr(encoder_config, 'dropout', 0.1))
+        self.dropout = nn.Dropout(dropout_prob)
     
     def forward(self, input_ids, attention_mask):
         batch_size, seq_len = input_ids.shape
