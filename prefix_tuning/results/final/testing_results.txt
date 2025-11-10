@@ -1,4 +1,4 @@
-model = bert-base-uncased dataset = disi-unibo-nlp/AnatEM token_lenght = 10 learning_rate = 0.001
+model = bert-base-uncased dataset = disi-unibo-nlp/AnatEM token_length = 10 learning_rate = 0.001
 Report di classificazione finale:
               precision    recall  f1-score   support
 
@@ -18,7 +18,7 @@ Epoca 7, Perdita (Loss): 0.0296, Perdita di Validazione (Loss): 0.0457
 Epoca 8, Perdita (Loss): 0.0267, Perdita di Validazione (Loss): 0.0471
 Epoca 9, Perdita (Loss): 0.0217, Perdita di Validazione (Loss): 0.0524
 
-model = bert-base-uncased dataset = disi-unibo-nlp/AnatEM token_lenght = 10 learning_rate = 0.0001
+model = bert-base-uncased dataset = disi-unibo-nlp/AnatEM token_length = 10 learning_rate = 0.0001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -39,7 +39,7 @@ Epoca 7, Perdita (Loss): 0.0353, Perdita di Validazione (Loss): 0.0435
 Epoca 8, Perdita (Loss): 0.0318, Perdita di Validazione (Loss): 0.0461
 Epoca 9, Perdita (Loss): 0.0278, Perdita di Validazione (Loss): 0.0450
 
-model = bert-base-uncased dataset = disi-unibo-nlp/AnatEM token_lenght = 10 learning_rate = 1e-05
+model = bert-base-uncased dataset = disi-unibo-nlp/AnatEM token_length = 10 learning_rate = 1e-05
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -71,7 +71,7 @@ Epoca 18, Perdita (Loss): 0.0447, Perdita di Validazione (Loss): 0.0469
 Epoca 19, Perdita (Loss): 0.0435, Perdita di Validazione (Loss): 0.0466
 Epoca 20, Perdita (Loss): 0.0438, Perdita di Validazione (Loss): 0.0465
 
-model = bert-base-uncased dataset = disi-unibo-nlp/AnatEM token_lenght = 20 learning_rate = 0.001
+model = bert-base-uncased dataset = disi-unibo-nlp/AnatEM token_length = 20 learning_rate = 0.001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -93,7 +93,7 @@ Epoca 8, Perdita (Loss): 0.0244, Perdita di Validazione (Loss): 0.0511
 Epoca 9, Perdita (Loss): 0.0224, Perdita di Validazione (Loss): 0.0532
 Epoca 10, Perdita (Loss): 0.0194, Perdita di Validazione (Loss): 0.0549
 
-model = bert-base-uncased dataset = disi-unibo-nlp/AnatEM token_lenght = 20 learning_rate = 0.0001
+model = bert-base-uncased dataset = disi-unibo-nlp/AnatEM token_length = 20 learning_rate = 0.0001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -113,7 +113,7 @@ Epoca 6, Perdita (Loss): 0.0369, Perdita di Validazione (Loss): 0.0488
 Epoca 7, Perdita (Loss): 0.0328, Perdita di Validazione (Loss): 0.0484
 Epoca 8, Perdita (Loss): 0.0299, Perdita di Validazione (Loss): 0.0538
 
-model = bert-base-uncased dataset = disi-unibo-nlp/AnatEM token_lenght = 20 learning_rate = 1e-05
+model = bert-base-uncased dataset = disi-unibo-nlp/AnatEM token_length = 20 learning_rate = 1e-05
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -142,7 +142,7 @@ Epoca 15, Perdita (Loss): 0.0461, Perdita di Validazione (Loss): 0.0474
 Epoca 16, Perdita (Loss): 0.0454, Perdita di Validazione (Loss): 0.0490
 Epoca 17, Perdita (Loss): 0.0439, Perdita di Validazione (Loss): 0.0471
 
-model = bert-base-uncased dataset = disi-unibo-nlp/AnatEM token_lenght = 50 learning_rate = 0.001
+model = bert-base-uncased dataset = disi-unibo-nlp/AnatEM token_length = 50 learning_rate = 0.001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -163,7 +163,7 @@ Epoca 7, Perdita (Loss): 0.0302, Perdita di Validazione (Loss): 0.0493
 Epoca 8, Perdita (Loss): 0.0259, Perdita di Validazione (Loss): 0.0483
 Epoca 9, Perdita (Loss): 0.0222, Perdita di Validazione (Loss): 0.0503
 
-model = bert-base-uncased dataset = disi-unibo-nlp/AnatEM token_lenght = 50 learning_rate = 0.0001
+model = bert-base-uncased dataset = disi-unibo-nlp/AnatEM token_length = 50 learning_rate = 0.0001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -183,7 +183,7 @@ Epoca 6, Perdita (Loss): 0.0346, Perdita di Validazione (Loss): 0.0517
 Epoca 7, Perdita (Loss): 0.0307, Perdita di Validazione (Loss): 0.0467
 Epoca 8, Perdita (Loss): 0.0268, Perdita di Validazione (Loss): 0.0499
 
-model = bert-base-uncased dataset = disi-unibo-nlp/AnatEM token_lenght = 50 learning_rate = 1e-05
+model = bert-base-uncased dataset = disi-unibo-nlp/AnatEM token_length = 50 learning_rate = 1e-05
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -215,7 +215,7 @@ Epoca 18, Perdita (Loss): 0.0444, Perdita di Validazione (Loss): 0.0467
 Epoca 19, Perdita (Loss): 0.0435, Perdita di Validazione (Loss): 0.0461
 Epoca 20, Perdita (Loss): 0.0426, Perdita di Validazione (Loss): 0.0461
 
-model = bert-base-uncased dataset = disi-unibo-nlp/JNLPBA token_lenght = 10 learning_rate = 0.001
+model = bert-base-uncased dataset = disi-unibo-nlp/JNLPBA token_length = 10 learning_rate = 0.001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -248,7 +248,7 @@ Epoca 15, Perdita (Loss): 0.1155, Perdita di Validazione (Loss): 0.1740
 Epoca 16, Perdita (Loss): 0.1119, Perdita di Validazione (Loss): 0.1760
 Epoca 17, Perdita (Loss): 0.1083, Perdita di Validazione (Loss): 0.1791
 
-model = bert-base-uncased dataset = disi-unibo-nlp/JNLPBA token_lenght = 10 learning_rate = 0.0001
+model = bert-base-uncased dataset = disi-unibo-nlp/JNLPBA token_length = 10 learning_rate = 0.0001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -280,7 +280,7 @@ Epoca 14, Perdita (Loss): 0.1340, Perdita di Validazione (Loss): 0.1731
 Epoca 15, Perdita (Loss): 0.1296, Perdita di Validazione (Loss): 0.1769
 Epoca 16, Perdita (Loss): 0.1267, Perdita di Validazione (Loss): 0.1757
 
-model = bert-base-uncased dataset = disi-unibo-nlp/JNLPBA token_lenght = 10 learning_rate = 1e-05
+model = bert-base-uncased dataset = disi-unibo-nlp/JNLPBA token_length = 10 learning_rate = 1e-05
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -316,7 +316,7 @@ Epoca 18, Perdita (Loss): 0.1816, Perdita di Validazione (Loss): 0.1900
 Epoca 19, Perdita (Loss): 0.1813, Perdita di Validazione (Loss): 0.1903
 Epoca 20, Perdita (Loss): 0.1818, Perdita di Validazione (Loss): 0.1895
 
-model = bert-base-uncased dataset = disi-unibo-nlp/JNLPBA token_lenght = 20 learning_rate = 0.001
+model = bert-base-uncased dataset = disi-unibo-nlp/JNLPBA token_length = 20 learning_rate = 0.001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -344,7 +344,7 @@ Epoca 10, Perdita (Loss): 0.1292, Perdita di Validazione (Loss): 0.1722
 Epoca 11, Perdita (Loss): 0.1225, Perdita di Validazione (Loss): 0.1732
 Epoca 12, Perdita (Loss): 0.1170, Perdita di Validazione (Loss): 0.1784
 
-model = bert-base-uncased dataset = disi-unibo-nlp/JNLPBA token_lenght = 20 learning_rate = 0.0001
+model = bert-base-uncased dataset = disi-unibo-nlp/JNLPBA token_length = 20 learning_rate = 0.0001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -375,7 +375,7 @@ Epoca 13, Perdita (Loss): 0.1280, Perdita di Validazione (Loss): 0.1767
 Epoca 14, Perdita (Loss): 0.1237, Perdita di Validazione (Loss): 0.1781
 Epoca 15, Perdita (Loss): 0.1212, Perdita di Validazione (Loss): 0.1763
 
-model = bert-base-uncased dataset = disi-unibo-nlp/JNLPBA token_lenght = 20 learning_rate = 1e-05
+model = bert-base-uncased dataset = disi-unibo-nlp/JNLPBA token_length = 20 learning_rate = 1e-05
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -411,7 +411,7 @@ Epoca 18, Perdita (Loss): 0.1768, Perdita di Validazione (Loss): 0.1887
 Epoca 19, Perdita (Loss): 0.1764, Perdita di Validazione (Loss): 0.1892
 Epoca 20, Perdita (Loss): 0.1749, Perdita di Validazione (Loss): 0.1891
 
-model = bert-base-uncased dataset = disi-unibo-nlp/JNLPBA token_lenght = 50 learning_rate = 0.001
+model = bert-base-uncased dataset = disi-unibo-nlp/JNLPBA token_length = 50 learning_rate = 0.001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -436,7 +436,7 @@ Epoca 7, Perdita (Loss): 0.1451, Perdita di Validazione (Loss): 0.1749
 Epoca 8, Perdita (Loss): 0.1369, Perdita di Validazione (Loss): 0.1768
 Epoca 9, Perdita (Loss): 0.1288, Perdita di Validazione (Loss): 0.1776
 
-model = bert-base-uncased dataset = disi-unibo-nlp/JNLPBA token_lenght = 50 learning_rate = 0.0001
+model = bert-base-uncased dataset = disi-unibo-nlp/JNLPBA token_length = 50 learning_rate = 0.0001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -465,7 +465,7 @@ Epoca 11, Perdita (Loss): 0.1335, Perdita di Validazione (Loss): 0.1742
 Epoca 12, Perdita (Loss): 0.1292, Perdita di Validazione (Loss): 0.1741
 Epoca 13, Perdita (Loss): 0.1237, Perdita di Validazione (Loss): 0.1726
 
-model = bert-base-uncased dataset = disi-unibo-nlp/JNLPBA token_lenght = 50 learning_rate = 1e-05
+model = bert-base-uncased dataset = disi-unibo-nlp/JNLPBA token_length = 50 learning_rate = 1e-05
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -501,7 +501,7 @@ Epoca 18, Perdita (Loss): 0.1786, Perdita di Validazione (Loss): 0.1887
 Epoca 19, Perdita (Loss): 0.1770, Perdita di Validazione (Loss): 0.1902
 Epoca 20, Perdita (Loss): 0.1761, Perdita di Validazione (Loss): 0.1895
 
-model = bert-base-uncased dataset = disi-unibo-nlp/bc5cdr token_lenght = 10 learning_rate = 0.001
+model = bert-base-uncased dataset = disi-unibo-nlp/bc5cdr token_length = 10 learning_rate = 0.001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -523,7 +523,7 @@ Epoca 7, Perdita (Loss): 0.0577, Perdita di Validazione (Loss): 0.1119
 Epoca 8, Perdita (Loss): 0.0507, Perdita di Validazione (Loss): 0.1068
 Epoca 9, Perdita (Loss): 0.0453, Perdita di Validazione (Loss): 0.1093
 
-model = bert-base-uncased dataset = disi-unibo-nlp/bc5cdr token_lenght = 10 learning_rate = 0.0001
+model = bert-base-uncased dataset = disi-unibo-nlp/bc5cdr token_length = 10 learning_rate = 0.0001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -547,7 +547,7 @@ Epoca 9, Perdita (Loss): 0.0553, Perdita di Validazione (Loss): 0.1034
 Epoca 10, Perdita (Loss): 0.0500, Perdita di Validazione (Loss): 0.1083
 Epoca 11, Perdita (Loss): 0.0448, Perdita di Validazione (Loss): 0.1099
 
-model = bert-base-uncased dataset = disi-unibo-nlp/bc5cdr token_lenght = 10 learning_rate = 1e-05
+model = bert-base-uncased dataset = disi-unibo-nlp/bc5cdr token_length = 10 learning_rate = 1e-05
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -580,7 +580,7 @@ Epoca 18, Perdita (Loss): 0.0915, Perdita di Validazione (Loss): 0.1079
 Epoca 19, Perdita (Loss): 0.0905, Perdita di Validazione (Loss): 0.1061
 Epoca 20, Perdita (Loss): 0.0881, Perdita di Validazione (Loss): 0.1066
 
-model = bert-base-uncased dataset = disi-unibo-nlp/bc5cdr token_lenght = 20 learning_rate = 0.001
+model = bert-base-uncased dataset = disi-unibo-nlp/bc5cdr token_length = 20 learning_rate = 0.001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -602,7 +602,7 @@ Epoca 7, Perdita (Loss): 0.0513, Perdita di Validazione (Loss): 0.1094
 Epoca 8, Perdita (Loss): 0.0458, Perdita di Validazione (Loss): 0.1381
 Epoca 9, Perdita (Loss): 0.0392, Perdita di Validazione (Loss): 0.1270
 
-model = bert-base-uncased dataset = disi-unibo-nlp/bc5cdr token_lenght = 20 learning_rate = 0.0001
+model = bert-base-uncased dataset = disi-unibo-nlp/bc5cdr token_length = 20 learning_rate = 0.0001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -625,7 +625,7 @@ Epoca 8, Perdita (Loss): 0.0571, Perdita di Validazione (Loss): 0.1026
 Epoca 9, Perdita (Loss): 0.0511, Perdita di Validazione (Loss): 0.1059
 Epoca 10, Perdita (Loss): 0.0473, Perdita di Validazione (Loss): 0.1196
 
-model = bert-base-uncased dataset = disi-unibo-nlp/bc5cdr token_lenght = 20 learning_rate = 1e-05
+model = bert-base-uncased dataset = disi-unibo-nlp/bc5cdr token_length = 20 learning_rate = 1e-05
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -654,7 +654,7 @@ Epoca 14, Perdita (Loss): 0.0949, Perdita di Validazione (Loss): 0.1088
 Epoca 15, Perdita (Loss): 0.0932, Perdita di Validazione (Loss): 0.1086
 Epoca 16, Perdita (Loss): 0.0908, Perdita di Validazione (Loss): 0.1059
 
-model = bert-base-uncased dataset = disi-unibo-nlp/bc5cdr token_lenght = 50 learning_rate = 0.001
+model = bert-base-uncased dataset = disi-unibo-nlp/bc5cdr token_length = 50 learning_rate = 0.001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -676,7 +676,7 @@ Epoca 7, Perdita (Loss): 0.0551, Perdita di Validazione (Loss): 0.1001
 Epoca 8, Perdita (Loss): 0.0458, Perdita di Validazione (Loss): 0.1422
 Epoca 9, Perdita (Loss): 0.0394, Perdita di Validazione (Loss): 0.1142
 
-model = bert-base-uncased dataset = disi-unibo-nlp/bc5cdr token_lenght = 50 learning_rate = 0.0001
+model = bert-base-uncased dataset = disi-unibo-nlp/bc5cdr token_length = 50 learning_rate = 0.0001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -700,7 +700,7 @@ Epoca 9, Perdita (Loss): 0.0475, Perdita di Validazione (Loss): 0.1085
 Epoca 10, Perdita (Loss): 0.0420, Perdita di Validazione (Loss): 0.1156
 Epoca 11, Perdita (Loss): 0.0384, Perdita di Validazione (Loss): 0.1113
 
-model = bert-base-uncased dataset = disi-unibo-nlp/bc5cdr token_lenght = 50 learning_rate = 1e-05
+model = bert-base-uncased dataset = disi-unibo-nlp/bc5cdr token_length = 50 learning_rate = 1e-05
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -731,7 +731,7 @@ Epoca 16, Perdita (Loss): 0.0945, Perdita di Validazione (Loss): 0.1043
 Epoca 17, Perdita (Loss): 0.0936, Perdita di Validazione (Loss): 0.1056
 Epoca 18, Perdita (Loss): 0.0911, Perdita di Validazione (Loss): 0.1055
 
-model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/AnatEM token_lenght = 10 learning_rate = 0.001
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/AnatEM token_length = 10 learning_rate = 0.001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -754,7 +754,7 @@ Epoca 9, Perdita (Loss): 0.0177, Perdita di Validazione (Loss): 0.0395
 Epoca 10, Perdita (Loss): 0.0149, Perdita di Validazione (Loss): 0.0398
 Epoca 11, Perdita (Loss): 0.0131, Perdita di Validazione (Loss): 0.0424
 
-model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/AnatEM token_lenght = 10 learning_rate = 0.0001
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/AnatEM token_length = 10 learning_rate = 0.0001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -774,7 +774,7 @@ Epoca 6, Perdita (Loss): 0.0237, Perdita di Validazione (Loss): 0.0407
 Epoca 7, Perdita (Loss): 0.0220, Perdita di Validazione (Loss): 0.0395
 Epoca 8, Perdita (Loss): 0.0185, Perdita di Validazione (Loss): 0.0419
 
-model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/AnatEM token_lenght = 10 learning_rate = 1e-05
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/AnatEM token_length = 10 learning_rate = 1e-05
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -797,7 +797,7 @@ Epoca 9, Perdita (Loss): 0.0353, Perdita di Validazione (Loss): 0.0420
 Epoca 10, Perdita (Loss): 0.0333, Perdita di Validazione (Loss): 0.0397
 Epoca 11, Perdita (Loss): 0.0319, Perdita di Validazione (Loss): 0.0416
 
-model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/AnatEM token_lenght = 20 learning_rate = 0.001
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/AnatEM token_length = 20 learning_rate = 0.001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -817,7 +817,7 @@ Epoca 6, Perdita (Loss): 0.0238, Perdita di Validazione (Loss): 0.0395
 Epoca 7, Perdita (Loss): 0.0194, Perdita di Validazione (Loss): 0.0476
 Epoca 8, Perdita (Loss): 0.0168, Perdita di Validazione (Loss): 0.0416
 
-model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/AnatEM token_lenght = 20 learning_rate = 0.0001
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/AnatEM token_length = 20 learning_rate = 0.0001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -836,7 +836,7 @@ Epoca 5, Perdita (Loss): 0.0267, Perdita di Validazione (Loss): 0.0384
 Epoca 6, Perdita (Loss): 0.0217, Perdita di Validazione (Loss): 0.0533
 Epoca 7, Perdita (Loss): 0.0197, Perdita di Validazione (Loss): 0.0440
 
-model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/AnatEM token_lenght = 20 learning_rate = 1e-05
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/AnatEM token_length = 20 learning_rate = 1e-05
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -860,7 +860,7 @@ Epoca 10, Perdita (Loss): 0.0333, Perdita di Validazione (Loss): 0.0400
 Epoca 11, Perdita (Loss): 0.0325, Perdita di Validazione (Loss): 0.0411
 Epoca 12, Perdita (Loss): 0.0307, Perdita di Validazione (Loss): 0.0411
 
-model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/AnatEM token_lenght = 50 learning_rate = 0.001
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/AnatEM token_length = 50 learning_rate = 0.001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -877,7 +877,7 @@ Epoca 3, Perdita (Loss): 0.3325, Perdita di Validazione (Loss): 0.2755
 Epoca 4, Perdita (Loss): 0.3316, Perdita di Validazione (Loss): 0.2749
 Epoca 5, Perdita (Loss): 0.3293, Perdita di Validazione (Loss): 0.2755
 
-model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/AnatEM token_lenght = 50 learning_rate = 0.0001
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/AnatEM token_length = 50 learning_rate = 0.0001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -901,7 +901,7 @@ Epoca 10, Perdita (Loss): 0.0120, Perdita di Validazione (Loss): 0.0499
 Epoca 11, Perdita (Loss): 0.0114, Perdita di Validazione (Loss): 0.0510
 Epoca 12, Perdita (Loss): 0.0098, Perdita di Validazione (Loss): 0.0510
 
-model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/AnatEM token_lenght = 50 learning_rate = 1e-05
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/AnatEM token_length = 50 learning_rate = 1e-05
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -927,7 +927,7 @@ Epoca 12, Perdita (Loss): 0.0306, Perdita di Validazione (Loss): 0.0403
 Epoca 13, Perdita (Loss): 0.0287, Perdita di Validazione (Loss): 0.0416
 Epoca 14, Perdita (Loss): 0.0286, Perdita di Validazione (Loss): 0.0410
 
-model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/JNLPBA token_lenght = 10 learning_rate = 0.001
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/JNLPBA token_length = 10 learning_rate = 0.001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -954,7 +954,7 @@ Epoca 9, Perdita (Loss): 0.1240, Perdita di Validazione (Loss): 0.1558
 Epoca 10, Perdita (Loss): 0.1196, Perdita di Validazione (Loss): 0.1543
 Epoca 11, Perdita (Loss): 0.1145, Perdita di Validazione (Loss): 0.1552
 
-model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/JNLPBA token_lenght = 10 learning_rate = 0.0001
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/JNLPBA token_length = 10 learning_rate = 0.0001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -988,7 +988,7 @@ Epoca 16, Perdita (Loss): 0.1124, Perdita di Validazione (Loss): 0.1595
 Epoca 17, Perdita (Loss): 0.1105, Perdita di Validazione (Loss): 0.1605
 Epoca 18, Perdita (Loss): 0.1080, Perdita di Validazione (Loss): 0.1620
 
-model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/JNLPBA token_lenght = 10 learning_rate = 1e-05
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/JNLPBA token_length = 10 learning_rate = 1e-05
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -1024,7 +1024,7 @@ Epoca 18, Perdita (Loss): 0.1494, Perdita di Validazione (Loss): 0.1649
 Epoca 19, Perdita (Loss): 0.1495, Perdita di Validazione (Loss): 0.1641
 Epoca 20, Perdita (Loss): 0.1484, Perdita di Validazione (Loss): 0.1641
 
-model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/JNLPBA token_lenght = 20 learning_rate = 0.001
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/JNLPBA token_length = 20 learning_rate = 0.001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -1050,7 +1050,7 @@ Epoca 8, Perdita (Loss): 0.1271, Perdita di Validazione (Loss): 0.1556
 Epoca 9, Perdita (Loss): 0.1211, Perdita di Validazione (Loss): 0.1527
 Epoca 10, Perdita (Loss): 0.1158, Perdita di Validazione (Loss): 0.1558
 
-model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/JNLPBA token_lenght = 20 learning_rate = 0.0001
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/JNLPBA token_length = 20 learning_rate = 0.0001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -1078,7 +1078,7 @@ Epoca 10, Perdita (Loss): 0.1260, Perdita di Validazione (Loss): 0.1625
 Epoca 11, Perdita (Loss): 0.1228, Perdita di Validazione (Loss): 0.1574
 Epoca 12, Perdita (Loss): 0.1177, Perdita di Validazione (Loss): 0.1548
 
-model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/JNLPBA token_lenght = 20 learning_rate = 1e-05
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/JNLPBA token_length = 20 learning_rate = 1e-05
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -1114,7 +1114,7 @@ Epoca 18, Perdita (Loss): 0.1481, Perdita di Validazione (Loss): 0.1621
 Epoca 19, Perdita (Loss): 0.1477, Perdita di Validazione (Loss): 0.1625
 Epoca 20, Perdita (Loss): 0.1476, Perdita di Validazione (Loss): 0.1627
 
-model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/JNLPBA token_lenght = 50 learning_rate = 0.001
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/JNLPBA token_length = 50 learning_rate = 0.001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -1141,7 +1141,7 @@ Epoca 9, Perdita (Loss): 0.1170, Perdita di Validazione (Loss): 0.1621
 Epoca 10, Perdita (Loss): 0.1102, Perdita di Validazione (Loss): 0.1569
 Epoca 11, Perdita (Loss): 0.1037, Perdita di Validazione (Loss): 0.1550
 
-model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/JNLPBA token_lenght = 50 learning_rate = 0.0001
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/JNLPBA token_length = 50 learning_rate = 0.0001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -1169,7 +1169,7 @@ Epoca 10, Perdita (Loss): 0.1255, Perdita di Validazione (Loss): 0.1564
 Epoca 11, Perdita (Loss): 0.1220, Perdita di Validazione (Loss): 0.1580
 Epoca 12, Perdita (Loss): 0.1171, Perdita di Validazione (Loss): 0.1604
 
-model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/JNLPBA token_lenght = 50 learning_rate = 1e-05
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/JNLPBA token_length = 50 learning_rate = 1e-05
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -1205,7 +1205,7 @@ Epoca 18, Perdita (Loss): 0.1464, Perdita di Validazione (Loss): 0.1613
 Epoca 19, Perdita (Loss): 0.1466, Perdita di Validazione (Loss): 0.1614
 Epoca 20, Perdita (Loss): 0.1455, Perdita di Validazione (Loss): 0.1623
 
-model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/bc5cdr token_lenght = 10 learning_rate = 0.001
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/bc5cdr token_length = 10 learning_rate = 0.001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -1225,7 +1225,7 @@ Epoca 5, Perdita (Loss): 0.5395, Perdita di Validazione (Loss): 0.5299
 Epoca 6, Perdita (Loss): 0.5345, Perdita di Validazione (Loss): 0.5354
 Epoca 7, Perdita (Loss): 0.5331, Perdita di Validazione (Loss): 0.5298
 
-model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/bc5cdr token_lenght = 10 learning_rate = 0.0001
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/bc5cdr token_length = 10 learning_rate = 0.0001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -1247,7 +1247,7 @@ Epoca 7, Perdita (Loss): 0.0491, Perdita di Validazione (Loss): 0.0819
 Epoca 8, Perdita (Loss): 0.0428, Perdita di Validazione (Loss): 0.1068
 Epoca 9, Perdita (Loss): 0.0372, Perdita di Validazione (Loss): 0.0903
 
-model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/bc5cdr token_lenght = 10 learning_rate = 1e-05
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/bc5cdr token_length = 10 learning_rate = 1e-05
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -1274,7 +1274,7 @@ Epoca 12, Perdita (Loss): 0.0687, Perdita di Validazione (Loss): 0.0853
 Epoca 13, Perdita (Loss): 0.0663, Perdita di Validazione (Loss): 0.0810
 Epoca 14, Perdita (Loss): 0.0655, Perdita di Validazione (Loss): 0.0807
 
-model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/bc5cdr token_lenght = 20 learning_rate = 0.001
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/bc5cdr token_length = 20 learning_rate = 0.001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -1294,7 +1294,7 @@ Epoca 5, Perdita (Loss): 0.0554, Perdita di Validazione (Loss): 0.0866
 Epoca 6, Perdita (Loss): 0.0477, Perdita di Validazione (Loss): 0.0834
 Epoca 7, Perdita (Loss): 0.0377, Perdita di Validazione (Loss): 0.0827
 
-model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/bc5cdr token_lenght = 20 learning_rate = 0.0001
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/bc5cdr token_length = 20 learning_rate = 0.0001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -1315,7 +1315,7 @@ Epoca 6, Perdita (Loss): 0.0532, Perdita di Validazione (Loss): 0.0806
 Epoca 7, Perdita (Loss): 0.0470, Perdita di Validazione (Loss): 0.0885
 Epoca 8, Perdita (Loss): 0.0403, Perdita di Validazione (Loss): 0.0955
 
-model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/bc5cdr token_lenght = 20 learning_rate = 1e-05
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/bc5cdr token_length = 20 learning_rate = 1e-05
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -1342,7 +1342,7 @@ Epoca 12, Perdita (Loss): 0.0675, Perdita di Validazione (Loss): 0.0825
 Epoca 13, Perdita (Loss): 0.0671, Perdita di Validazione (Loss): 0.0845
 Epoca 14, Perdita (Loss): 0.0648, Perdita di Validazione (Loss): 0.0883
 
-model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/bc5cdr token_lenght = 50 learning_rate = 0.001
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/bc5cdr token_length = 50 learning_rate = 0.001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -1364,7 +1364,7 @@ Epoca 7, Perdita (Loss): 0.0429, Perdita di Validazione (Loss): 0.0798
 Epoca 8, Perdita (Loss): 0.0366, Perdita di Validazione (Loss): 0.0874
 Epoca 9, Perdita (Loss): 0.0302, Perdita di Validazione (Loss): 0.0886
 
-model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/bc5cdr token_lenght = 50 learning_rate = 0.0001
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/bc5cdr token_length = 50 learning_rate = 0.0001
 
 Report di classificazione finale:
               precision    recall  f1-score   support
@@ -1387,7 +1387,7 @@ Epoca 8, Perdita (Loss): 0.0387, Perdita di Validazione (Loss): 0.0950
 Epoca 9, Perdita (Loss): 0.0340, Perdita di Validazione (Loss): 0.0898
 Epoca 10, Perdita (Loss): 0.0284, Perdita di Validazione (Loss): 0.0940
 
-model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/bc5cdr token_lenght = 50 learning_rate = 1e-05
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/bc5cdr token_length = 50 learning_rate = 1e-05
 
 Report di classificazione finale:
               precision    recall  f1-score   support
