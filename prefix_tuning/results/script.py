@@ -2,7 +2,7 @@ import pandas as pd
 import re
 from typing import List, Dict, Any
 
-def parse_logs(file_path: str, trained_param: str):
+def parse_logs(file_path: str, trained_param: str = ""):
     """
     parse with regex from txt into csv
     """
@@ -12,6 +12,8 @@ def parse_logs(file_path: str, trained_param: str):
     current_model = None
     current_dataset = None
     trained_param_value = None
+    current_tl = None
+    current_lr = None
 
     with open(file_path, 'r') as f:
         content = f.read()
@@ -23,14 +25,18 @@ def parse_logs(file_path: str, trained_param: str):
         if not block.strip():
             continue
 
-        model_match = re.search(fr'model = ([^\s]+) dataset = ([^\s]+) {trained_param} = ([^\s]+)', block)
+        #model_match = re.search(fr'model = ([^\s]+) dataset = ([^\s]+) {trained_param} = ([^\s]+)', block)
+        model_match = re.search(fr'model = ([^\s]+) dataset = ([^\s]+) token_length = ([^\s]+) learning_rate = ([^\s]+)', block)
         if model_match:
             current_model = model_match.group(1)
             current_dataset = model_match.group(2)
-            try:
+            """ try:
                 trained_param_value = int(model_match.group(3))
             except ValueError:
-                trained_param_value = model_match.group(3)
+                trained_param_value = model_match.group(3) """
+            current_tl = int(model_match.group(3))
+            current_lr = float(model_match.group(4))
+
         else:
             continue
             
@@ -42,15 +48,16 @@ def parse_logs(file_path: str, trained_param: str):
             data.append({
                 'Model': current_model,
                 'Dataset': current_dataset,
-                trained_param: trained_param_value,
+                'Token_Length': current_tl,
+                'Learning_Rate': current_lr,
                 'Micro Avg F1-Score': micro_avg_f1
             })
 
     return pd.DataFrame(data)
 
-file_path = "learning_rate/testing_results.txt"
-df = parse_logs(file_path, "learning_rate")
+file_path = "final/soft_testing_results.txt"
+df = parse_logs(file_path)
 
-output_path = 'testing_results.csv'
+output_path = 'soft_testing_results.csv'
 
 df.to_csv(output_path, index=False, sep=';')
