@@ -329,8 +329,8 @@ if __name__ == '__main__':
     file_name = args.file_name
     
 
-    file_name = MODEL_NAME.replace("/", "-") + "_" + DATASET_NAME.replace("/", "-") + "_GELU_token_lenght-" + str(PREFIX_LENGTH) + "_lr-" + str(LEARNING_RATE) + ".pth"
-    print(f"model = {MODEL_NAME} dataset = {DATASET_NAME} token_lenght = {PREFIX_LENGTH} learning_rate = {LEARNING_RATE}")
+    file_name = MODEL_NAME.replace("/", "-") + "_" + DATASET_NAME.replace("/", "-") + "_GELU_token_length-" + str(PREFIX_LENGTH) + "_lr-" + str(LEARNING_RATE) + ".pth"
+    print(f"model = {MODEL_NAME} dataset = {DATASET_NAME} token_length = {PREFIX_LENGTH} learning_rate = {LEARNING_RATE}")
 
 
     
