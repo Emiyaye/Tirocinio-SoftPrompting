@@ -52,6 +52,7 @@ dmis-lab/biobert-v1.1;disi-unibo-nlp/bc5cdr;20;0.0001;0.8264
 dmis-lab/biobert-v1.1;disi-unibo-nlp/bc5cdr;20;1e-05;0.6721
 dmis-lab/biobert-v1.1;disi-unibo-nlp/bc5cdr;50;0.001;0.831
 dmis-lab/biobert-v1.1;disi-unibo-nlp/bc5cdr;50;0.0001;0.8373
+dmis-lab/biobert-v1.1;disi-unibo-nlp/bc5cdr;50;1e-05;0.6686
 medicalai/ClinicalBERT;disi-unibo-nlp/AnatEM;10;0.001;0.7285
 medicalai/ClinicalBERT;disi-unibo-nlp/AnatEM;10;0.0001;0.6907
 medicalai/ClinicalBERT;disi-unibo-nlp/AnatEM;10;1e-05;0.6074

@@ -1598,6 +1598,39 @@ Epoca 15, Perdita (Loss): 0.0823, Perdita di Validazione (Loss): 0.1047
 Epoca 16, Perdita (Loss): 0.0813, Perdita di Validazione (Loss): 0.1188
 Epoca 17, Perdita (Loss): 0.0795, Perdita di Validazione (Loss): 0.1058
 
+model = dmis-lab/biobert-v1.1 dataset = disi-unibo-nlp/bc5cdr token_length = 50 learning_rate = 1e-05
+
+Report di classificazione finale:
+              precision    recall  f1-score   support
+
+    CHEMICAL     0.6635    0.7954    0.7235      5367
+     DISEASE     0.5436    0.6769    0.6030      4395
+
+   micro avg     0.6084    0.7421    0.6686      9762
+   macro avg     0.6035    0.7362    0.6632      9762
+weighted avg     0.6095    0.7421    0.6692      9762
+
+Epoca 1, Perdita (Loss): 1.6182, Perdita di Validazione (Loss): 1.3009
+Epoca 2, Perdita (Loss): 0.8912, Perdita di Validazione (Loss): 0.5104
+Epoca 3, Perdita (Loss): 0.4799, Perdita di Validazione (Loss): 0.4104
+Epoca 4, Perdita (Loss): 0.4085, Perdita di Validazione (Loss): 0.3609
+Epoca 5, Perdita (Loss): 0.3672, Perdita di Validazione (Loss): 0.3241
+Epoca 6, Perdita (Loss): 0.3349, Perdita di Validazione (Loss): 0.2968
+Epoca 7, Perdita (Loss): 0.3108, Perdita di Validazione (Loss): 0.2738
+Epoca 8, Perdita (Loss): 0.2916, Perdita di Validazione (Loss): 0.2612
+Epoca 9, Perdita (Loss): 0.2742, Perdita di Validazione (Loss): 0.2365
+Epoca 10, Perdita (Loss): 0.2598, Perdita di Validazione (Loss): 0.2259
+Epoca 11, Perdita (Loss): 0.2462, Perdita di Validazione (Loss): 0.2082
+Epoca 12, Perdita (Loss): 0.2322, Perdita di Validazione (Loss): 0.1985
+Epoca 13, Perdita (Loss): 0.2224, Perdita di Validazione (Loss): 0.1888
+Epoca 14, Perdita (Loss): 0.2136, Perdita di Validazione (Loss): 0.1824
+Epoca 15, Perdita (Loss): 0.2086, Perdita di Validazione (Loss): 0.1717
+Epoca 16, Perdita (Loss): 0.2012, Perdita di Validazione (Loss): 0.1681
+Epoca 17, Perdita (Loss): 0.1973, Perdita di Validazione (Loss): 0.1636
+Epoca 18, Perdita (Loss): 0.1953, Perdita di Validazione (Loss): 0.1634
+Epoca 19, Perdita (Loss): 0.1924, Perdita di Validazione (Loss): 0.1606
+Epoca 20, Perdita (Loss): 0.1929, Perdita di Validazione (Loss): 0.1612
+
 
 model = medicalai/ClinicalBERT dataset = disi-unibo-nlp/AnatEM token_length = 10 learning_rate = 0.001
 
