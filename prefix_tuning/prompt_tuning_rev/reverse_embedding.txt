@@ -1,0 +1,373 @@
+CONFIGURAZIONE ESPERIMENTO
+Modello:  dmis-lab/biobert-v1.1
+Dataset:  disi-unibo-nlp/bc5cdr
+Prefix:   50 token
+LR:       0.0001
+Output:   model_biobert-v1.1_bc5cdr_len50_lr0.0001.pth
+
+
+AVVIO ANALISI REVERSE EMBEDDING
+
+Analisi Soft Prompt (Salvati in: model_biobert-v1.1_bc5cdr_len50_lr0.0001_prefix_embeds.pt)
+Virtual Token 01: [CLS] | ##] | [MASK] | ##’ | ᵥ
+Virtual Token 02: prevention | pathways | prevent | cases | mechanisms
+Virtual Token 03: playback | ##ław | groundwater | Allmusic | ##uest
+Virtual Token 04: [SEP] | repetition | imaging | ##encing | image
+Virtual Token 05: diminished | III | progressed | • | insufficient
+Virtual Token 06: correction | ##ably | ##linary | propagation | requires
+Virtual Token 07: ##asis | ##truder | environment | breeding | dam
+Virtual Token 08: [MASK] | ##_ | ᵢ | ##⟩ | ე
+Virtual Token 09: survival | prevention | Prevention | methods | healthcare
+Virtual Token 10: survival | was | incidence | ##tub | Thus
+Virtual Token 11: • | ⁻ | 」 | ₀ | ##father
+Virtual Token 12: consistent | summary | concentrations | finding | concentration
+Virtual Token 13: ##tring | SP | substrate | switch | SL
+Virtual Token 14: ⇌ | ##stand | back | ##ğ | mothers
+Virtual Token 15: emerald | Knight | ##liga | Did | Grandpa
+Virtual Token 16: ##lore | ##oni | ##olin | ##oan | ##oro
+Virtual Token 17: eyelids | SL | [unused32] | 年 | 10
+Virtual Token 18: werewolf | Dracula | ##` | Archie | ##„
+Virtual Token 19: synthesized | evaluated | during | This | evaluating
+Virtual Token 20: enforcement | ##rado | disciplinary | broadband | OF
+Virtual Token 21: [SEP] | occupational | averaged | FIBA | CBN
+Virtual Token 22: Chevalier | villages | from | survival | sensory
+Virtual Token 23: ≥ | • | Eileen | plus | ##ović
+Virtual Token 24: ு | was | survivors | ##calated | than
+Virtual Token 25: Nobel | ##cton | ##bul | soil | enzyme
+Virtual Token 26: kinds | severely | ##rapped | ##ganized | reddish
+Virtual Token 27: ##CP | limb | ##LS | CB | intervention
+Virtual Token 28: calcium | indicates | ##calated | AG | indicating
+Virtual Token 29: ##≥ | ##≈ | disturbance | ##zation | reduction
+Virtual Token 30: survivors | deaths | ##rilla | WHO | fatal
+Virtual Token 31: entity | situations | diagnosis | ##bbed | ##sided
+Virtual Token 32: output | ##liner | survival | classification | restoration
+Virtual Token 33: and | younger | des | newer | dimensions
+Virtual Token 34: examine | currents | maze | research | Gill
+Virtual Token 35: ± | ##thest | ##neer | Willy | wipe
+Virtual Token 36: ##Ε | ##ნ | Chevalier | Deportivo | jewels
+Virtual Token 37: acidic | node | dire | watershed | environmental
+Virtual Token 38: [SEP] | and | imaging | [CLS] | using
+Virtual Token 39: poisoning | gasoline | gable | werewolf | ##ricks
+Virtual Token 40: and | maternal | configurations | placement | mothers
+Virtual Token 41: worries | rumors | receptor | mental | rating
+Virtual Token 42: forensic | ##rilla | injuries | slick | humidity
+Virtual Token 43: ñ | ị | ì | ##ević | ##ports
+Virtual Token 44: ##β | ##ases | score | survival | This
+Virtual Token 45: ± | ratings | [unused20] | soils | Clinical
+Virtual Token 46: survival | alive | expressed | recorded | included
+Virtual Token 47: ≥ | • | ⁻ | ‐ | ≤
+Virtual Token 48: Congregational | ₀ | ּ | failures | ##father
+Virtual Token 49: DS | ##ṇ | ##ų | thinner | Alejandro
+Virtual Token 50: ##dua | ##／ | None | ी | ু
+
+CONFIGURAZIONE ESPERIMENTO
+Modello:  bert-base-cased
+Dataset:  disi-unibo-nlp/bc5cdr
+Prefix:   50 token
+LR:       0.0001
+Output:   model_bert-base-cased_bc5cdr_len50_lr0.0001.pth
+
+
+AVVIO ANALISI REVERSE EMBEDDING
+
+Analisi Soft Prompt (Salvati in: model_bert-base-cased_bc5cdr_len50_lr0.0001_prefix_embeds.pt)
+Virtual Token 01: ##ı | aka | depending | writer | appoint
+Virtual Token 02: victim | Roche | ##і | ##rafford | Foley
+Virtual Token 03: ##† | − | kW | ##reaked | lbs
+Virtual Token 04: Freud | secondly | hormone | ##ghty | highlighted
+Virtual Token 05: robbed | basically | practically | ##morandum | Cromwell
+Virtual Token 06: [CLS] | ##cake | Collection | regardless | shopping
+Virtual Token 07: ##iovascular | 侍 | AIDS | ##ᵇ | ὶ
+Virtual Token 08: butter | hoped | grown | inaugural | ★
+Virtual Token 09: ##† | Authority | Saskatchewan | contestant | Manitoba
+Virtual Token 10: afterwards | Ontario | ##ims | after | legally
+Virtual Token 11: labelled | designated | displayed | labeled | constituted
+Virtual Token 12: ##Ψ | ‖ | ##書 | ##″ | ##♯
+Virtual Token 13: induce | breakthrough | medium | outlet | Mt
+Virtual Token 14: ##ductory | secondly | someday | savings | enabling
+Virtual Token 15: lesions | disorder | treatment | disorders | Treatment
+Virtual Token 16: achieved | advice | attained | generally | reluctantly
+Virtual Token 17: predecessor | Thin | Kaladin | Zagreb | İ
+Virtual Token 18: ##zable | prevented | induce | psychedelic | ##versible
+Virtual Token 19: ##省 | Brigham | ⱼ | Lennon | （
+Virtual Token 20: ##ultural | Majority | ##rricular | NGO | stepfather
+Virtual Token 21: enhanced | shook | grimaced | commented | reduced
+Virtual Token 22: Panic | failure | cruelty | ##ishing | ##ious
+Virtual Token 23: prevention | enzyme | ##⁄ | stronger | epidemic
+Virtual Token 24: smelled | ##省 | ₊ | ∘ | wives
+Virtual Token 25: ##rock | grinding | ##dr | maize | molecular
+Virtual Token 26: Honours | hormone | pressed | accelerated | ##elves
+Virtual Token 27: pills | pill | Angelina | ##mium | Thorpe
+Virtual Token 28: vitamin | ##uctive | pharmaceutical | clarinet | threatening
+Virtual Token 29: Masonic | ##Ħ | ##burst | ##ם | ##baum
+Virtual Token 30: centimetres | dragging | | | Harcourt | Copyright
+Virtual Token 31: AIDS | autism | ##mentary | symptoms | diabetes
+Virtual Token 32: ##rmaid | ##utrition | NGO | ##ultural | ##quito
+Virtual Token 33: diabetes | mice | PMID | receptor | antibodies
+Virtual Token 34: [SEP] | business | hoped | signing | dollar
+Virtual Token 35: outbreak | headline | treatment | profile | Bachelor
+Virtual Token 36: otherwise | vacated | rights | ⅓ | gubernatorial
+Virtual Token 37: ##† | gears | sparked | ##ropriations | ##enko
+Virtual Token 38: ‖ | 의 | terrifying | ##henian | Eliot
+Virtual Token 39: mouse | patron | happily | werewolf | Baku
+Virtual Token 40: ᴵ | ‖ | ##sitic | ##gratory | ##tized
+Virtual Token 41: Na | Magazine | Fear | sounded | featuring
+Virtual Token 42: secondly | happier | unrelated | ##chenko | ᴵ
+Virtual Token 43: ##: | ##ნ | cortex | 龸 | ầ
+Virtual Token 44: [SEP] | [CLS] | FM | Steam | Plays
+Virtual Token 45: whereas | aka | loomed | ##ₒ | presenting
+Virtual Token 46: monarch | steak | Traditionally | honesty | Normally
+Virtual Token 47: PMID | ##forth | ##ctional | ##〜 | underwent
+Virtual Token 48: speculated | doubted | hoped | sufficient | importantly
+Virtual Token 49: secondly | context | crystal | insight | PDF
+Virtual Token 50: meat | Updated | aggregator | secondly | lumber
+
+CONFIGURAZIONE ESPERIMENTO
+Modello:  bert-base-uncased
+Dataset:  disi-unibo-nlp/bc5cdr
+Prefix:   50 token
+LR:       0.0001
+Output:   model_bert-base-uncased_bc5cdr_len50_lr0.0001.pth
+
+
+AVVIO ANALISI REVERSE EMBEDDING
+
+Analisi Soft Prompt (Salvati in: model_bert-base-uncased_bc5cdr_len50_lr0.0001_prefix_embeds.pt)
+Virtual Token 01: ##kali | ##hosis | ##erved | archived | ##ulously
+Virtual Token 02: ry | ¿ | \ | bwf | ¨
+Virtual Token 03: 鈴 | medicine | ##ntino | 仮 | sacrament
+Virtual Token 04: condom | vhs | [SEP] | boyfriend | smashwords
+Virtual Token 05: classes | clubs | minor | major | churches
+Virtual Token 06: peripheral | confederate | asked | nipple | asks
+Virtual Token 07: larvae | thoughts | hips | ##ental | symptoms
+Virtual Token 08: [CLS] | [MASK] | ##ibly | ##京 | ##chule
+Virtual Token 09: rowing | nomination | acting | prospect | lodge
+Virtual Token 10: louisa | branded | chest | chests | byzantine
+Virtual Token 11: judge | ##tres | ##ror | remembrance | venture
+Virtual Token 12: bree | edmonton | ##yn | salford | shuffled
+Virtual Token 13: syndrome | contamination | pathogen | causal | susceptible
+Virtual Token 14: smackdown | mighty | playoff | buenos | shove
+Virtual Token 15: ##lit | ##iot | brit | rr | eps
+Virtual Token 16: constellation | ##sions | 》 | ##ـ | ##twined
+Virtual Token 17: pmid | ##iography | aquatics | bacterium | medalist
+Virtual Token 18: phillies | certificate | lucha | certification | supervision
+Virtual Token 19: you | katherine | ##child | \ | your
+Virtual Token 20: clement | bookstore | publishing | frowned | welcomed
+Virtual Token 21: bbc | breaths | 《 | bulgarian | 艹
+Virtual Token 22: cromwell | ##cles | [SEP] | ##hett | ##aint
+Virtual Token 23: [SEP] | [CLS] | failing | after | books
+Virtual Token 24: ##ـ | ##neuve | ##patient | ##～ | venerable
+Virtual Token 25: hepatitis | ##” | ##‘ | ᅪ | [CLS]
+Virtual Token 26: mutiny | recorded | congress | scratch | anybody
+Virtual Token 27: athenian | [CLS] | roman | percussion | clapped
+Virtual Token 28: ##า | ##ensburg | ᅪ | ##亻 | ##書
+Virtual Token 29: scare | prevalence | doll | ##patient | clinical
+Virtual Token 30: blouse | isbn | issn | 『 | ¨
+Virtual Token 31: ##₹ | cbn | motorway | bwv | prescription
+Virtual Token 32: flank | extinct | deputy | ##net | ronan
+Virtual Token 33: ##patient | ##亻 | ##க | ##puted | guys
+Virtual Token 34: hull | wicket | ( | oclc | onboard
+Virtual Token 35: affair | nodded | throughout | glanced | glance
+Virtual Token 36: ##phobic | breuning | whether | intersects | sonata
+Virtual Token 37: [CLS] | referendum | [MASK] | werewolf | ?
+Virtual Token 38: ian | ##ে | stared | averaging | averaged
+Virtual Token 39: hemingway | ##bians | cyprus | ##oulos | ##tablished
+Virtual Token 40: smashwords | nitrate | tortricidae | lithium | jasmine
+Virtual Token 41: typically | generally | commonly | often | usually
+Virtual Token 42: diseases | impairment | disease | ##esthesia | brain
+Virtual Token 43: ##titled | cremated | ##村 | ##twined | tightened
+Virtual Token 44: raw | righteous | peacekeeping | largest | rhino
+Virtual Token 45: explorer | = | ##ා | ##× | sensed
+Virtual Token 46: ᵘ | ##puted | ##ے | ᵒ | ᆫ
+Virtual Token 47: correctional | ་ | ¨ | pmid | brigham
+Virtual Token 48: ##patient | ་ | techniques | julie | ##า
+Virtual Token 49: cesar | zoning | ##fus | censorship | ko
+Virtual Token 50: complications | ##orestation | ##ᵀ | ##urgent | symptoms
+
+
+CONFIGURAZIONE ESPERIMENTO
+Modello:  medicalai/ClinicalBERT
+Dataset:  disi-unibo-nlp/bc5cdr
+Prefix:   50 token
+LR:       0.0001
+Output:   model_ClinicalBERT_bc5cdr_len50_lr0.0001.pth
+
+
+AVVIO ANALISI REVERSE EMBEDDING
+
+Analisi Soft Prompt (Salvati in: model_ClinicalBERT_bc5cdr_len50_lr0.0001_prefix_embeds.pt)
+Virtual Token 01: পানিহান | kasagaran | ##حيح | галаксија | لمشيخة
+Virtual Token 02: gjithë | краљ | vattenytor | अलावा | ##れに
+Virtual Token 03: matoari | beubeulahan | contestants | ##یستان | ##حدة
+Virtual Token 04: Sjön | ##ući | धासा | ##uuden | მიეკუთვნება
+Virtual Token 05: ##ویش | kabanay | kolovoza | юьртан | engelska
+Virtual Token 06: Калифорнија | ##ôida | زمانی | کندی | gerekend
+Virtual Token 07: 加 | Parmi | Kroatien | 톡 | niger
+Virtual Token 08: создана | команд | ##plos | 蚬 | ##ГБ
+Virtual Token 09: ##ської | 折 | მისი | 鼻 | ##ुक
+Virtual Token 10: ##äsart | 评 | havien | 鉴 | ireo
+Virtual Token 11: شود | ##вами | plutôt | озын | ##ویش
+Virtual Token 12: 168 | szócikk | exhaustif | 】 | ర
+Virtual Token 13: pagina | species | ? | Aquitania | bisbe
+Virtual Token 14: gebuer | municipalitat | ##tuksen | dzimis | helyi
+Virtual Token 15: [SEP] | ##ნად | அது | ##ĕн | olisi
+Virtual Token 16: שלו | ##urs | ##мин | ##ם | mengebor
+Virtual Token 17: [SEP] | കിലോമീറ്റർ | ##에서는 | ingkang | حول
+Virtual Token 18: 球 | augmentation | vor | ##hen | шарахь
+Virtual Token 19: descrisă | завършва | ##فورد | Aragó | ##чĕ
+Virtual Token 20: Tots | neskôr | ##ّل | ##yeng | ##tut
+Virtual Token 21: ##ვრა | ##צגה | Spesies | Province | Omgivningarna
+Virtual Token 22: ##ladı | ##zahl | ##wyr | yards | ##το
+Virtual Token 23: 船 | 指 | （ | руски | ##ken
+Virtual Token 24: ##עיון | lawah | পানিহান | крају | ##schodzie
+Virtual Token 25: vlinder | polski | banco | എന്നിവ | ##ดา
+Virtual Token 26: 白 | dl | 年 | 人 | ep
+Virtual Token 27: ##ネル | яўляецца | ##iste | ##כריז | ##padne
+Virtual Token 28: ##wyr | animales | defend | spre | urdd
+Virtual Token 29: ##ै | ##ა | » | ##ïde | მისი
+Virtual Token 30: ##оа | gia | 많은 | 劝 | 哥
+Virtual Token 31: ##ibility | jolla | ##ობაში | solution | ##iology
+Virtual Token 32: ##ʻ | n | wird | mid | ##chn
+Virtual Token 33: allo | born | sju | dzimis | koje
+Virtual Token 34: ##べき | hilabihan | сайтындағы | ##대는 | ##dski
+Virtual Token 35: шарахь | piramidea | ##ッチ | чемпионом | чкъор
+Virtual Token 36: ##рого | vele | później | ##ėmė | ##ędkość
+Virtual Token 37: наук | urbs | huvudstaden | atque | Mathematik
+Virtual Token 38: ##حيح | ##ôida | департаментінде | পানিহান | Аьхка
+Virtual Token 39: ##न्दा | 簸 | ##임을 | 畴 | వారం
+Virtual Token 40: का | Đây | 100m | 暂 | kasagaran
+Virtual Token 41: 枪 | [SEP] | ##ru | ##ʻ | paghatag
+Virtual Token 42: 鲶 | peuvent | Omaha | Velika | daitezke
+Virtual Token 43: voms | vaikka | obwohl | tipli | {
+Virtual Token 44: value | ##вського | amount | described | ricerca
+Virtual Token 45: юхса | ##のである | percorso | ##● | ##vire
+Virtual Token 46: koje | ##niji | koji | koja | iz
+Virtual Token 47: inning | pagasta | Meyrick | promedio | threw
+Virtual Token 48: био | magnitud | провинция | башкы | diri
+Virtual Token 49: аьхкенан | ##ნად | beubeulahan | memulai | ##せた
+Virtual Token 50: ##thesis | appeared | interpretazione | ##олнении | ##mony
+
+CONFIGURAZIONE ESPERIMENTO
+Modello:  roberta-base
+Dataset:  disi-unibo-nlp/bc5cdr
+Prefix:   50 token
+LR:       0.0001
+Output:   model_roberta-base_bc5cdr_len50_lr0.0001.pth
+
+
+AVVIO ANALISI REVERSE EMBEDDING
+
+Analisi Soft Prompt (Salvati in: model_roberta-base_bc5cdr_len50_lr0.0001_prefix_embeds.pt)
+Virtual Token 01: <s> | <mask> | Ġto | </s> | Ġwith
+Virtual Token 02: Ġ(); | Prosecut | Market | Ġblockbuster | ();
+Virtual Token 03: phrine | Ġcoli | Ġenthusi | Ġinjection | Ġcataly
+Virtual Token 04: Ġgenerously | Ġunwittingly | Ġseemingly | Ġcongratulations | Ġpreviously
+Virtual Token 05: <mask> | <s> | Ġcompares | ĠFrances | Ġrefrigerator
+Virtual Token 06: Ġsubstance | Ġremedy | Ġcataly | Ġdrink | Ġcatalyst
+Virtual Token 07: Ġiod | ĠTo | efully | ĠTar | Ġprepar
+Virtual Token 08: Ġadip | Skin | Ġsurg | Ġwomb | upuncture
+Virtual Token 09: Ġexperiencing | Ġoutbreaks | Ġindu | Ġilluminating | Exactly
+Virtual Token 10: Ġfracturing | (_ | ĠGleaming | Ġexacerbated | Ġclearer
+Virtual Token 11: ĠTakeru | ĠPayton | ĠPrimordial | ĠKenneth | ĠmM
+Virtual Token 12: Ġmicrobiota | ocytes | Ġcoli | Ġembryonic | ĠMcMahon
+Virtual Token 13: ô | ocusing | anoia | Ġuneasy | Ġturbulence
+Virtual Token 14: Ġhistoric | Ġlos | Were | Market | Even
+Virtual Token 15: Ġwiping | Ġdepicting | Ġhim | Ġtechnological | Ġtheir
+Virtual Token 16: ę | Ġ[& | ĝ | .''. | InstoreAndOnline
+Virtual Token 17: Ġnicotine | ĠNicotine | Ġiod | ĠObi | Iv
+Virtual Token 18: ĠConsumption | Ġdosage | Ġantioxidants | Ġantioxidant | %:
+Virtual Token 19: Ġbadly | Please | Additional | HH | Aud
+Virtual Token 20: Ġ[* | Ġ[| | <mask> | ĠWATCHED | Nitrome
+Virtual Token 21: <pad> | InstoreAndOnline | ĠVegeta | Ġsubparagraph | ĠDPRK
+Virtual Token 22: Ġdeemed | Ġprotracted | ĠQuite | ĠBecome | Ġindu
+Virtual Token 23: Ġ-------------------- | %%%% | Ġâī¥ | Ġ................ | Ġ--------
+Virtual Token 24: Ġbenefited | Ġrecipient | ä¸Ń | Ġdiscriminated | Ġadvantageous
+Virtual Token 25: ocrin | ĠDM | ĠTC | Ġdermat | TL
+Virtual Token 26: ĠHex | Ġmethyl | Ġgl | ĠHendricks | lycer
+Virtual Token 27: ĠLaos | neau | Ġdebian | aceae | ĠNieto
+Virtual Token 28: Ġ`` | Ġpredictor | Ġstimuli | ĠInterestingly | twitch
+Virtual Token 29: \\\\ | Ę | ;;;;;;;; | Ġabnormalities | Ġautoimmune
+Virtual Token 30: ĠSymptoms | Îº | ;;;;;;;; | Ġopio | Ġ<@
+Virtual Token 31: Ġherpes | Ġ/** | :: | Interstitial | ::::
+Virtual Token 32: esity | oglobin | ocrin | osaurs | ĠNeurolog
+Virtual Token 33: ĠFemales | ĠMakoto | ĠMasquerade | ĠDMCA | ĠWinds
+Virtual Token 34: apsed | Ġey | \": | estinal | nesium
+Virtual Token 35: Ġomega | ĠNicotine | ĠEVE | ĠTayyip | ĠSakuya
+Virtual Token 36: ĠEN | ĠSAL | HAEL | ĠJOHN | ĠGEN
+Virtual Token 37: Ġinjecting | esthes | Ġadministering | Ġinjected | Ġanalges
+Virtual Token 38: ĠAsuka | ĠXu | :: | Ġhypotheses | Ġ:=
+Virtual Token 39: </s> | <s> | <mask> | Ġto | ÙĴ
+Virtual Token 40: Ġbeyond | Ġmicrobiota | ĠArtemis | ĠBeyond | Ġsuppl
+Virtual Token 41: ĠAdditionally | Exception | Additionally | ĠConversely | ĠWhereas
+Virtual Token 42: ĠGleaming | (_ | ĠAndersen | ĠKejriwal | anse
+Virtual Token 43: ãģ¦ | ãĥ¼ãĤ¯ | Ġexch | ©¶æ | ĠFrieza
+Virtual Token 44: Ġopio | Ġ(âĪĴ | Ġvariability | Ġflaw | Ġejac
+Virtual Token 45: Ġdischarged | Ġsymptom | ĠSymptoms | ĠguiActive | ĠSurvivors
+Virtual Token 46: Ġequitable | ĠOpportunity | Request | ĠOpportun | ĠDeals
+Virtual Token 47: ĠConversely | Ġ................ | ogene | ĠEST | ĠBarrier
+Virtual Token 48: Ġns | Ġ(). | Ġspons | Ġmicrobiota | Ġï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+Virtual Token 49: However | Compared | Ġgreatly | Ear | Understanding
+Virtual Token 50: Ġ$\ | ĠRetrieved | ĠEinstein | :::: | Ġ\(\
+
+
+CONFIGURAZIONE ESPERIMENTO
+Modello:  roberta-base-uncased
+Dataset:  disi-unibo-nlp/bc5cdr
+Prefix:   50 token
+LR:       0.0001
+Output:   model_roberta-base-uncased_bc5cdr_len50_lr0.0001.pth
+
+
+AVVIO ANALISI REVERSE EMBEDDING
+
+Analisi Soft Prompt (Salvati in: model_roberta-base-uncased_bc5cdr_len50_lr0.0001_prefix_embeds.pt)
+Virtual Token 01: <s> | <mask> | </s> | Ġsuscept | Ġovershadowed
+Virtual Token 02: Ġrecruited | Ġimmersive | Ġadapted | Ġdiverted | Ġmobilized
+Virtual Token 03: inguishable | ĠMining | ĠPatriarch | Ġbishops | Ġbrewers
+Virtual Token 04: ğ | ĠValve | ãģĹ | Ġ+= | >>\
+Virtual Token 05: Ħ¢ | Ġ<- | ă | Ġdeal | Ġpolicies
+Virtual Token 06: bnb | ĠâĪ¼ | perty | iew | ğ
+Virtual Token 07: AppData | ĠRemastered | Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯ | ĠCrosby | Ġ+---
+Virtual Token 08: Ġoverdose | Ġsubstance | Ġsubstances | Ġproducts | Ġrefinery
+Virtual Token 09: Ġanyways | ?". | ĠInterestingly | ?", | ĠTherefore
+Virtual Token 10: Gameplay | ĠâĪ¼ | Ġvertex | Ġphylogen | Nintendo
+Virtual Token 11: Ġ0004 | ĠShy | Ġsushi | Ġthyroid | Ġfentanyl
+Virtual Token 12: Ġdebuted | Ġexpect | Ġfamously | Ġunderstandably | Ġunderestimated
+Virtual Token 13: .................. | Ġexplains | Ġcauses | Ġcausing | Ġcaused
+Virtual Token 14: Ġcreatine | Ġsaline | ĠGMOs | ĠOEM | ructose
+Virtual Token 15: displayText | Ġ0004 | ĠMODULE | Ġ]; | SpaceEngineers
+Virtual Token 16: tank | Ġtank | Ġlot | Ė | Ġpinpoint
+Virtual Token 17: Ġvaccinated | Ġhealed | Ġinhibitor | Ġcorrelated | Ġtherapies
+Virtual Token 18: uyomi | . | Ġafterwards | phrine | OND
+Virtual Token 19: Ġinhal | Ġnanop | Ġpenalty | Ġallergy | Ġvap
+Virtual Token 20: ĠToxic | Ġresistant | Ġexacerb | apsed | ĠReduce
+Virtual Token 21: Ġevolve | Ġtasty | Ġevolves | Ġmature | Ġnarrower
+Virtual Token 22: Ġtransitioned | Ġinfection | Ġmolecule | Ġmetabol | ĠCBD
+Virtual Token 23: Ġago | Ġ). | Ġawhile | ?) | ))
+Virtual Token 24: athom | agin | IDER | offer | unction
+Virtual Token 25: Featured | Ġrevamped | .ï¿½ | Ġredesigned | Ġrevised
+Virtual Token 26: >>\ | Ġ]; | Ġ................ | )\ | âĶĢâĶĢâĶĢâĶĢ
+Virtual Token 27: ĠâĪ¼ | Ġforeskin | </s> | Ġâĸł | ĠÂµ
+Virtual Token 28: ĻĤ | ãĤ¨ | Ġmicrobiota | Ļ½ | Ġdiabetes
+Virtual Token 29: Ġcreatine | Ġvape | armac | ageddon | Ġrefinery
+Virtual Token 30: Ġdated | Ġwhich | Ġeve | Ġachieved | Ġcaused
+Virtual Token 31: <mask> | Ġto | <s> | ĠâĹ | âĸĦ
+Virtual Token 32: </s> | ĠâĢ¢ | ĠÂ» | .. | !.
+Virtual Token 33: ĠGSL | ĠFinals | ĠDroid | FREE | ĠProtoss
+Virtual Token 34: othal | inia | ĠArizona | react | Ġconsciousness
+Virtual Token 35: Ġdespite | ĠDespite | Ġcontraception | Ġmight | Ġtaboo
+Virtual Token 36: Ġtainted | Ġravaged | Ġbrewed | Ġcortisol | Ġrecovering
+Virtual Token 37: Ġmaneuvers | ĠâĪ¼ | Ġpedals | Ġoffseason | Ġmitochond
+Virtual Token 38: ĠGarner | Ġdex | ĠBrowne | Ġ0004 | ĠRazor
+Virtual Token 39: ãĤ¸ | irlf | ractions | ĠUltr | Ġoffenses
+Virtual Token 40: Ġdepiction | ĠEven | Ġportrayed | >>\ | Even
+Virtual Token 41: ĠAccordingly | ĠSimilarly | ĠLikewise | ĠExample | ĠNotwithstanding
+Virtual Token 42: '. | ." | ĠIncluding | Ġeffective | Ġconsisting
+Virtual Token 43: Ġclinicians | Ġmetabolic | Ġtransmit | Ġphysicians | Ġuterus
+Virtual Token 44: Ġsymptoms | Ġpsychosis | Ġantidote | Ġcontraception | Ġmedication
+Virtual Token 45: >>\ | ĠCanaveral | .* | Ġ({ | ,'
+Virtual Token 46: obyl | Ġdespicable | Ġ<!-- | /** | endif
+Virtual Token 47: prev | Ġ------ | isSpecial | Ġrebounds | Ġundrafted
+Virtual Token 48: immune | Ġvolatility | Ġnausea | Ġallergy | Ġinverse
+Virtual Token 49: Ġexacerbated | Ġcausation | ĝ | Ġinducing | Ġdebilitating
+Virtual Token 50: Ġoxidation | Ġantiv | Ġignition | Ġmolecules | Ġmetabol
