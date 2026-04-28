@@ -84,9 +84,9 @@ def prepare_data(dataset_name, model_name, max_seq_len, subset_size, batch_size,
     processed_ds.set_format(type="torch", columns=['input_ids', 'attention_mask', 'labels'])
     
     dataloaders = {
-        'train': DataLoader(processed_ds['train'], batch_size=batch_size, shuffle=True),
-        'validation': DataLoader(processed_ds['validation'], batch_size=batch_size),
-        'test': DataLoader(processed_ds['test'], batch_size=batch_size)
+        'train': DataLoader(processed_ds['train'], batch_size=batch_size, num_workers=2, shuffle=True),
+        'validation': DataLoader(processed_ds['validation'], batch_size=batch_size, num_workers=2),
+        'test': DataLoader(processed_ds['test'], batch_size=batch_size, num_workers=2)
     }
     
     return dataloaders, ner_tags, tokenizer
@@ -181,6 +181,8 @@ def train_ner_prefix_tuning_model(
         
         all_validation_losses.append(avg_val_loss)
         eprint(f"Epoca {epoch+1}: Train Loss {avg_train_loss:.4f}, Val Loss {avg_val_loss:.4f}")
+        # TODO: Remove
+        print(f"Epoca {epoch+1}: Train Loss {avg_train_loss:.4f}, Val Loss {avg_val_loss:.4f}")
 
         # Logica di Early Stopping: se la loss di validazione scende, salviamo il modello
         if avg_val_loss < best_validation_loss:
