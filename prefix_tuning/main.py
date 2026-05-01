@@ -44,7 +44,7 @@ def test(args, device, in_file_name):
 def reverse_embedding(args, device, in_file_name):
     
     print("\nAVVIO ANALISI REVERSE EMBEDDING")
-    dataloaders, ner_tags, tokenizer = prepare_data(dataset_name=args.dataset, model_name=args.model, max_seq_len=args.max_seq_len, subset_size=10, batch_size=args.batch_size, device=device)
+    dataloaders, ner_tags, tokenizer = prepare_data(dataset_name=args.dataset, model_name=args.model, max_seq_len=args.max_seq_len, subset_size=-1, batch_size=args.batch_size, device=device)
     if "roberta-base-uncased" in args.model.lower():
         args.model = "roberta-base"
     model = NERSoftPromptModel(model_name=args.model, ner_tags=ner_tags, prefix_length=args.prefix_length, mid_dim=args.mid_dim).to(device)
@@ -104,9 +104,9 @@ if __name__ == "__main__":
     print(f"Output:   {file_save_name}")
     print()
     
-    train(args, device, file_save_name)
+    #train(args, device, file_save_name)
     
-    test(args, device, file_save_name)
+    #test(args, device, file_save_name)
     
     reverse_embedding(args, device, file_save_name)
     

@@ -182,7 +182,7 @@ def train_ner_prefix_tuning_model(
         all_validation_losses.append(avg_val_loss)
         eprint(f"Epoca {epoch+1}: Train Loss {avg_train_loss:.4f}, Val Loss {avg_val_loss:.4f}")
         # TODO: Remove
-        print(f"Epoca {epoch+1}: Train Loss {avg_train_loss:.4f}, Val Loss {avg_val_loss:.4f}")
+        #print(f"Epoca {epoch+1}: Train Loss {avg_train_loss:.4f}, Val Loss {avg_val_loss:.4f}")
 
         # Logica di Early Stopping: se la loss di validazione scende, salviamo il modello
         if avg_val_loss < best_validation_loss:
