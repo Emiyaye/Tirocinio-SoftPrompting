@@ -1,0 +1,155 @@
+CONFIGURAZIONE ESPERIMENTO
+Modello:  bert-base-cased
+Dataset:  disi-unibo-nlp/anatem
+Prefix:   100 token
+LR:       0.0001
+Output:   model_bert-base-cased_anatem_len100_lr0.0001.pth
+
+
+Training concluso. Risultati per epoca:
+Epoch 01: Train Loss 0.6372 | Val Loss 0.2147
+Epoch 02: Train Loss 0.2247 | Val Loss 0.1488
+Epoch 03: Train Loss 0.1668 | Val Loss 0.1144
+Epoch 04: Train Loss 0.1340 | Val Loss 0.0945
+Epoch 05: Train Loss 0.1148 | Val Loss 0.0761
+Epoch 06: Train Loss 0.1023 | Val Loss 0.1007
+Epoch 07: Train Loss 0.0956 | Val Loss 0.0732
+Epoch 08: Train Loss 0.0864 | Val Loss 0.0662
+Epoch 09: Train Loss 0.0821 | Val Loss 0.0676
+Epoch 10: Train Loss 0.0786 | Val Loss 0.0626
+Epoch 11: Train Loss 0.0758 | Val Loss 0.0616
+Epoch 12: Train Loss 0.0715 | Val Loss 0.0610
+Epoch 13: Train Loss 0.0704 | Val Loss 0.0605
+Epoch 14: Train Loss 0.0677 | Val Loss 0.0878
+Epoch 15: Train Loss 0.0657 | Val Loss 0.0592
+Epoch 16: Train Loss 0.0631 | Val Loss 0.0584
+Epoch 17: Train Loss 0.0621 | Val Loss 0.0587
+Epoch 18: Train Loss 0.0615 | Val Loss 0.0530
+Epoch 19: Train Loss 0.0591 | Val Loss 0.0576
+Epoch 20: Train Loss 0.0565 | Val Loss 0.0674
+Epoch 21: Train Loss 0.0565 | Val Loss 0.0619
+Epoch 22: Train Loss 0.0566 | Val Loss 0.0566
+Epoch 23: Train Loss 0.0544 | Val Loss 0.0552
+Epoch 24: Train Loss 0.0522 | Val Loss 0.0570
+CONFIGURAZIONE ESPERIMENTO
+Modello:  bert-base-uncased
+Dataset:  disi-unibo-nlp/anatem
+Prefix:   100 token
+LR:       0.0001
+Output:   model_bert-base-uncased_anatem_len100_lr0.0001.pth
+
+
+Training concluso. Risultati per epoca:
+Epoch 01: Train Loss 0.6316 | Val Loss 0.2486
+Epoch 02: Train Loss 0.2473 | Val Loss 0.1395
+Epoch 03: Train Loss 0.1675 | Val Loss 0.1187
+Epoch 04: Train Loss 0.1324 | Val Loss 0.0938
+Epoch 05: Train Loss 0.1140 | Val Loss 0.0805
+Epoch 06: Train Loss 0.1032 | Val Loss 0.0722
+Epoch 07: Train Loss 0.0939 | Val Loss 0.0658
+Epoch 08: Train Loss 0.0888 | Val Loss 0.0718
+Epoch 09: Train Loss 0.0859 | Val Loss 0.0616
+Epoch 10: Train Loss 0.0806 | Val Loss 0.0631
+Epoch 11: Train Loss 0.0787 | Val Loss 0.0624
+Epoch 12: Train Loss 0.0748 | Val Loss 0.0640
+Epoch 13: Train Loss 0.0737 | Val Loss 0.0796
+Epoch 14: Train Loss 0.0699 | Val Loss 0.0684
+Epoch 15: Train Loss 0.0689 | Val Loss 0.0597
+Epoch 16: Train Loss 0.0681 | Val Loss 0.0628
+Epoch 17: Train Loss 0.0649 | Val Loss 0.0617
+Epoch 18: Train Loss 0.0645 | Val Loss 0.0687
+Epoch 19: Train Loss 0.0635 | Val Loss 0.0654
+Epoch 20: Train Loss 0.0611 | Val Loss 0.0654
+Epoch 21: Train Loss 0.0615 | Val Loss 0.0609
+CONFIGURAZIONE ESPERIMENTO
+Modello:  medicalai/ClinicalBERT
+Dataset:  disi-unibo-nlp/anatem
+Prefix:   100 token
+LR:       0.0001
+Output:   model_ClinicalBERT_anatem_len100_lr0.0001.pth
+
+
+Training concluso. Risultati per epoca:
+Epoch 01: Train Loss 0.5835 | Val Loss 0.2661
+Epoch 02: Train Loss 0.2664 | Val Loss 0.1682
+Epoch 03: Train Loss 0.1914 | Val Loss 0.1287
+Epoch 04: Train Loss 0.1498 | Val Loss 0.1019
+Epoch 05: Train Loss 0.1265 | Val Loss 0.1049
+Epoch 06: Train Loss 0.1131 | Val Loss 0.0918
+Epoch 07: Train Loss 0.1030 | Val Loss 0.0792
+Epoch 08: Train Loss 0.0965 | Val Loss 0.0740
+Epoch 09: Train Loss 0.0910 | Val Loss 0.0724
+Epoch 10: Train Loss 0.0858 | Val Loss 0.0690
+Epoch 11: Train Loss 0.0822 | Val Loss 0.0691
+Epoch 12: Train Loss 0.0789 | Val Loss 0.0693
+Epoch 13: Train Loss 0.0750 | Val Loss 0.0682
+Epoch 14: Train Loss 0.0736 | Val Loss 0.0625
+Epoch 15: Train Loss 0.0719 | Val Loss 0.0648
+Epoch 16: Train Loss 0.0686 | Val Loss 0.0631
+Epoch 17: Train Loss 0.0675 | Val Loss 0.0605
+Epoch 18: Train Loss 0.0655 | Val Loss 0.0683
+Epoch 19: Train Loss 0.0648 | Val Loss 0.0637
+Epoch 20: Train Loss 0.0619 | Val Loss 0.0668
+Epoch 21: Train Loss 0.0608 | Val Loss 0.0624
+Epoch 22: Train Loss 0.0595 | Val Loss 0.0645
+Epoch 23: Train Loss 0.0581 | Val Loss 0.0615
+CONFIGURAZIONE ESPERIMENTO
+Modello:  roberta-base
+Dataset:  disi-unibo-nlp/anatem
+Prefix:   100 token
+LR:       0.0001
+Output:   model_roberta-base_anatem_len100_lr0.0001.pth
+
+
+Training concluso. Risultati per epoca:
+Epoch 01: Train Loss 0.6841 | Val Loss 0.2249
+Epoch 02: Train Loss 0.2214 | Val Loss 0.1341
+Epoch 03: Train Loss 0.1595 | Val Loss 0.1092
+Epoch 04: Train Loss 0.1314 | Val Loss 0.0872
+Epoch 05: Train Loss 0.1088 | Val Loss 0.0712
+Epoch 06: Train Loss 0.0930 | Val Loss 0.0710
+Epoch 07: Train Loss 0.0837 | Val Loss 0.0840
+Epoch 08: Train Loss 0.0756 | Val Loss 0.0643
+Epoch 09: Train Loss 0.0723 | Val Loss 0.0585
+Epoch 10: Train Loss 0.0689 | Val Loss 0.0648
+Epoch 11: Train Loss 0.0645 | Val Loss 0.0683
+Epoch 12: Train Loss 0.0633 | Val Loss 0.0620
+Epoch 13: Train Loss 0.0610 | Val Loss 0.0558
+Epoch 14: Train Loss 0.0598 | Val Loss 0.0568
+Epoch 15: Train Loss 0.0573 | Val Loss 0.0604
+Epoch 16: Train Loss 0.0537 | Val Loss 0.0580
+Epoch 17: Train Loss 0.0532 | Val Loss 0.0599
+Epoch 18: Train Loss 0.0518 | Val Loss 0.0621
+Epoch 19: Train Loss 0.0509 | Val Loss 0.0586
+CONFIGURAZIONE ESPERIMENTO
+Modello:  roberta-base-uncased
+Dataset:  disi-unibo-nlp/anatem
+Prefix:   100 token
+LR:       0.0001
+Output:   model_roberta-base-uncased_anatem_len100_lr0.0001.pth
+
+
+Training concluso. Risultati per epoca:
+Epoch 01: Train Loss 0.6766 | Val Loss 0.2507
+Epoch 02: Train Loss 0.2660 | Val Loss 0.1721
+Epoch 03: Train Loss 0.1900 | Val Loss 0.1236
+Epoch 04: Train Loss 0.1524 | Val Loss 0.1073
+Epoch 05: Train Loss 0.1301 | Val Loss 0.0871
+Epoch 06: Train Loss 0.1090 | Val Loss 0.0802
+Epoch 07: Train Loss 0.0968 | Val Loss 0.0766
+Epoch 08: Train Loss 0.0873 | Val Loss 0.0654
+Epoch 09: Train Loss 0.0807 | Val Loss 0.0691
+Epoch 10: Train Loss 0.0772 | Val Loss 0.0626
+Epoch 11: Train Loss 0.0733 | Val Loss 0.0604
+Epoch 12: Train Loss 0.0678 | Val Loss 0.0724
+Epoch 13: Train Loss 0.0659 | Val Loss 0.0597
+Epoch 14: Train Loss 0.0635 | Val Loss 0.0574
+Epoch 15: Train Loss 0.0596 | Val Loss 0.0599
+Epoch 16: Train Loss 0.0599 | Val Loss 0.0622
+Epoch 17: Train Loss 0.0563 | Val Loss 0.0517
+Epoch 18: Train Loss 0.0559 | Val Loss 0.0648
+Epoch 19: Train Loss 0.0534 | Val Loss 0.0574
+Epoch 20: Train Loss 0.0533 | Val Loss 0.0629
+Epoch 21: Train Loss 0.0523 | Val Loss 0.0557
+Epoch 22: Train Loss 0.0503 | Val Loss 0.0569
+Epoch 23: Train Loss 0.0485 | Val Loss 0.0633
