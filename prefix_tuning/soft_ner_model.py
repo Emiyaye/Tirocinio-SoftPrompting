@@ -29,7 +29,7 @@ class NERSoftPromptModel(nn.Module):
         self.prefix_module = NERSoftModule(
             encoder_config=encoder_config,
             prefix_length=prefix_length,
-            mid_dim=mid_dim
+            mid_dim=mid_dim,
         )
             
         # Un layer di classificazione finale

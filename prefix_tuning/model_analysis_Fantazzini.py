@@ -67,34 +67,69 @@ def compute_f1(model, loader, device, id_to_tag,
     current_f1 = f1_score(true_labels, predicted_labels)
 
     return current_f1
- 
- 
- 
+
+
+def _convert_loader_to_list(loader):
+    """
+    Convert a DataLoader to a list of batches to avoid deadlock issues
+    with num_workers > 0 when iterating multiple times in a loop.
+    This is necessary because repeatedly iterating through a DataLoader
+    with num_workers > 0 can cause worker processes to deadlock.
+    """
+    batches = []
+    for batch in loader:
+        batches.append(batch)
+    return batches
+
+
+def _list_to_loader(batches):
+    """
+    Wrap a list of batches as an iterable that behaves like a DataLoader.
+    """
+    class BatchIterator:
+        def __init__(self, batch_list):
+            self.batches = batch_list
+        
+        def __iter__(self):
+            return iter(self.batches)
+    
+    return BatchIterator(batches)
+
+
 #####################
 # Position ablation #
 #####################
- 
+
 # Remove one soft token at the time to better measure the F1 chages
 # This way we can see which prefix positions are most important for the model's performance
- 
+
 def ablation_analysis(model, val_loader, device, id_to_tag, file_name = ""):
     """Zero out one prefix position at a time, measure F1 drop."""
-    baseline = compute_f1(model, val_loader, device, id_to_tag)
+    
+    # Convert the DataLoader to a list of batches to prevent deadlocks
+    # when calling compute_f1 multiple times in the loop below
+    print("Converting DataLoader to batch list (this may take a moment)...")
+    batches = _convert_loader_to_list(val_loader)
+    batch_loader = _list_to_loader(batches)
+    
+    baseline = compute_f1(model, batch_loader, device, id_to_tag)
     print(f"Baseline F1: {baseline:.4f}")
- 
+
     prefix_len = model.prefix_module.preseqlen
     with torch.no_grad():
         full_prefix = model.prefix_module(bsz=1)     # (1, L, H)
- 
+
     drops = []
     for i in range(prefix_len):
         ablated = full_prefix.clone()
         ablated[:, i, :] = 0
-        f1 = compute_f1(model, val_loader, device, id_to_tag,
+        # Recreate the batch loader for each iteration to avoid iterator exhaustion
+        batch_loader = _list_to_loader(batches)
+        f1 = compute_f1(model, batch_loader, device, id_to_tag,
                         prefix_override=ablated)
         drops.append(baseline - f1)
         print(f"  position {i:02d}: F1 = {f1:.4f}  (drop = {baseline - f1:+.4f})")
- 
+
     plt.figure(figsize=(12, 4))
     plt.bar(range(prefix_len), drops)
     plt.xlabel("Prefix position"); plt.ylabel("F1 drop when ablated")
@@ -201,11 +236,9 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     
-    # Configurazione encoding per evitare errori su Windows
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
     device = torch.device(args.device)
 
-    # 1. Costruzione nome file (Logica identica al tuo trainer per trovare il modello giusto)
     if args.model_path is None:
         clean_model_name = args.model.split('/')[-1]
         clean_dataset_name = args.dataset.split('/')[-1]
@@ -218,9 +251,12 @@ if __name__ == "__main__":
     id_to_tag = {i: tag for i, tag in enumerate(ner_tags)}
     model = NERSoftPromptModel(model_name=args.model, ner_tags=ner_tags, prefix_length=args.prefix_length).to(device)
     model.load_state_dict(torch.load(file_name, map_location=device))
+    if hasattr(model.encoder, "config"):
+        model.encoder.config._attn_implementation = "eager"
+
     val_loader = dataloaders['test']   # or 'validation'
    
     pca_analysis(model, file_name = file_name)
     attention_analysis(model, val_loader, device, file_name= file_name)
-    ablation_analysis(model, val_loader, device, id_to_tag, file_name= file_name)
+    #ablation_analysis(model, val_loader, device, id_to_tag, file_name= file_name)
  
