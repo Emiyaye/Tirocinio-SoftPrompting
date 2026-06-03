@@ -291,7 +291,8 @@ def attention_entropy_analysis(model, val_loader, device, n_batches=5):
             last_layer_attn = enc_out.attentions[-1]                         # (B, heads, seq, seq)
             to_prefix = last_layer_attn[:, :, prefix_len:, :prefix_len]      # (B, heads, real, pref)
             
-            to_prefix_probs = F.softmax(to_prefix, dim=-1).cpu().numpy() + 1e-12
+            to_prefix_sum = to_prefix.sum(dim=-1, keepdim=True) + 1e-12
+            to_prefix_probs = (to_prefix / to_prefix_sum).cpu().numpy() + 1e-12
             
             entropy = -np.sum(to_prefix_probs * np.log(to_prefix_probs), axis=-1)
             all_entropies.append(entropy.mean())
