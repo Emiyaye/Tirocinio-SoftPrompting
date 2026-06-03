@@ -7,6 +7,8 @@ import argparse
 from trainer import prepare_data
 from soft_ner_model import NERSoftPromptModel
 from sklearn.decomposition import PCA
+from sklearn.manifold import TSNE
+import torch.nn.functional as F
 from seqeval.metrics import f1_score, classification_report
  
  
@@ -209,10 +211,94 @@ def pca_analysis(model, n_vocab=5000, seed=0, file_name=""):
     plt.legend(); plt.title("Prefix embeddings vs vocabulary (PCA)")
     file_name = file_name.removesuffix(".pth")
     plt.tight_layout(); plt.savefig("pca_" + file_name + ".png" , dpi=120); plt.show()
+
+
+##########
+# t-SNE #
+##########
+
+def tsne_analysis(model, n_vocab=5000, seed=0, file_name=""):
+    """Genera una proiezione non lineare dei token virtuali e del vocabolario tramite t-SNE."""
+    rng = np.random.default_rng(seed)
+    model.eval()
+    with torch.no_grad():
+        prefix = model.prefix_module(bsz=1).squeeze(0).cpu().numpy()          # (L, H)
+        vocab  = model.encoder.get_input_embeddings().weight.cpu().numpy()    # (V, H)
  
+    idx = rng.choice(vocab.shape[0], size=min(n_vocab, vocab.shape[0]), replace=False)
+    vocab_s = vocab[idx]
+
+
+    proj = TSNE(n_components=2, perplexity=15, random_state=seed, n_iter=1000).fit_transform(np.vstack([vocab_s, prefix]))
+    v2d, p2d = proj[:len(vocab_s)], proj[len(vocab_s):]
  
- 
- 
+    plt.figure(figsize=(8, 7))
+    plt.scatter(v2d[:, 0], v2d[:, 1], alpha=0.25, s=6, label="Vocabulary", color="lightblue")
+    plt.scatter(p2d[:, 0], p2d[:, 1], color="red", s=60, marker="x", label="Prefix tokens")
+    for i, (x, y) in enumerate(p2d):
+        plt.annotate(str(i), (x, y), fontsize=7)
+    plt.legend(); plt.title("Prefix embeddings vs vocabulary (t-SNE)")
+    file_name = file_name.removesuffix(".pth")
+    plt.tight_layout(); plt.savefig("tsne_" + file_name + ".png" , dpi=120); plt.show()
+
+
+#############################
+# Cosine Similarity Distr.  #
+#############################
+
+def cosine_similarity_distribution(model, file_name=""):
+    """Calcola la distribuzione statistica della similarità cosinale rispetto al vocabolario."""
+    model.eval()
+    with torch.no_grad():
+        soft_embeddings = model.prefix_module(bsz=1).squeeze(0)               # (L, H)
+        word_embeddings = model.encoder.get_input_embeddings().weight         # (V, H)
+        
+        soft_norm = F.normalize(soft_embeddings, dim=-1)
+        word_norm = F.normalize(word_embeddings, dim=-1)
+        
+        similarity_matrix = torch.matmul(soft_norm, word_norm.T).cpu().numpy() # (L, V)
+        max_similarities = np.max(similarity_matrix, axis=1)
+        
+        plt.figure(figsize=(8, 5))
+        plt.hist(max_similarities, bins=15, alpha=0.7, edgecolor='black')
+        plt.axvline(np.mean(max_similarities), color='red', linestyle='dashed', label=f'Media: {np.mean(max_similarities):.3f}')
+        plt.xlabel('Massima Cosine Similarity'); plt.ylabel('Frequenza (Conteggio dei Token Virtuali)')
+        plt.title('Distribuzione della Massima Affinità Semantica dei Prompt')
+        plt.legend()
+        file_name = file_name.removesuffix(".pth")
+        plt.tight_layout(); plt.savefig("cosine_" + file_name + ".png", dpi=120); plt.show()
+
+
+#############################
+# Attention Entropy        #
+#############################
+
+def attention_entropy_analysis(model, val_loader, device, n_batches=5):
+    """Calcola l'entropia di Shannon sui pesi di attenzione per misurare la selettività."""
+    model.eval()
+    all_entropies = []
+    prefix_len = model.prefix_module.preseqlen
+    
+    with torch.no_grad():
+        for b, batch in enumerate(val_loader):
+            if b >= n_batches:
+                break
+            input_ids = batch['input_ids'].to(device)
+            attn      = batch['attention_mask'].to(device)
+            
+            _, enc_out = forward_custom(model, input_ids, attn, output_attentions=True)
+            
+            last_layer_attn = enc_out.attentions[-1]                         # (B, heads, seq, seq)
+            to_prefix = last_layer_attn[:, :, prefix_len:, :prefix_len]      # (B, heads, real, pref)
+            
+            to_prefix_probs = F.softmax(to_prefix, dim=-1).cpu().numpy() + 1e-12
+            
+            entropy = -np.sum(to_prefix_probs * np.log(to_prefix_probs), axis=-1)
+            all_entropies.append(entropy.mean())
+            
+    print(f"\n[Analisi Entropia] Entropia Media dell'Attenzione verso i Prompt: {np.mean(all_entropies):.4f}")
+
+
 # Example
  
 if __name__ == "__main__":
@@ -256,7 +342,10 @@ if __name__ == "__main__":
 
     val_loader = dataloaders['test']   # or 'validation'
    
+    # Esecuzione della pipeline completa di analisi visive e quantitative
     pca_analysis(model, file_name = file_name)
+    tsne_analysis(model, file_name = file_name)
+    cosine_similarity_distribution(model, file_name = file_name)
     attention_analysis(model, val_loader, device, file_name= file_name)
+    attention_entropy_analysis(model, val_loader, device)
     #ablation_analysis(model, val_loader, device, id_to_tag, file_name= file_name)
- 
