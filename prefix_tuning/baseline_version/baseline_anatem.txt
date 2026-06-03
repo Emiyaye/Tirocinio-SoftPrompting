@@ -1,0 +1,60 @@
+AVVIO ESPERIMENTO: BASELINE FULL FINE-TUNING
+Modello Backbone: dmis-lab/biobert-v1.1
+Dataset:          disi-unibo-nlp/anatem
+Learning Rate:    1e-05
+Batch Size:       8
+Output File:      baseline_biobert-v1.1_anatem.pth
+Dispositivo:      cuda
+
+Epoca 1: Train Loss 0.4912, Val Loss 0.0994
+Epoca 2: Train Loss 0.0670, Val Loss 0.0427
+Epoca 3: Train Loss 0.0279, Val Loss 0.0410
+Epoca 4: Train Loss 0.0154, Val Loss 0.0433
+Epoca 5: Train Loss 0.0100, Val Loss 0.0442
+Epoca 6: Train Loss 0.0054, Val Loss 0.0466
+Epoca 7: Train Loss 0.0034, Val Loss 0.0562
+Epoca 8: Train Loss 0.0032, Val Loss 0.0566
+
+Addestramento terminato con successo.
+Modello migliore salvato in: baseline_biobert-v1.1_anatem.pth
+
+Valutazione delle prestazioni sul Test Set...
+
+Report di classificazione finale Baseline:
+              precision    recall  f1-score   support
+
+     ANATOMY     0.8567    0.8673    0.8619      4582
+
+   micro avg     0.8567    0.8673    0.8619      4582
+   macro avg     0.8567    0.8673    0.8619      4582
+weighted avg     0.8567    0.8673    0.8619      4582
+
+AVVIO ESPERIMENTO: BASELINE FULL FINE-TUNING
+Modello Backbone: dmis-lab/biobert-v1.1
+Dataset:          disi-unibo-nlp/anatem
+Learning Rate:    0.0001
+Batch Size:       8
+Output File:      baseline_biobert-v1.1_anatem.pth
+Dispositivo:      cuda
+
+Epoca 1: Train Loss 0.1942, Val Loss 0.0375
+Epoca 2: Train Loss 0.0259, Val Loss 0.0548
+Epoca 3: Train Loss 0.0213, Val Loss 0.0435
+Epoca 4: Train Loss 0.0211, Val Loss 0.0550
+Epoca 5: Train Loss 0.0154, Val Loss 0.0590
+Epoca 6: Train Loss 0.0163, Val Loss 0.0615
+
+Addestramento terminato con successo.
+Modello migliore salvato in: baseline_biobert-v1.1_anatem.pth
+
+Valutazione delle prestazioni sul Test Set...
+
+Report di classificazione finale Baseline:
+              precision    recall  f1-score   support
+
+     ANATOMY     0.8454    0.8686    0.8568      4582
+
+   micro avg     0.8454    0.8686    0.8568      4582
+   macro avg     0.8454    0.8686    0.8568      4582
+weighted avg     0.8454    0.8686    0.8568      4582
+
