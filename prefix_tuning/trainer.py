@@ -1,3 +1,5 @@
+import string
+import numpy as np
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
@@ -242,30 +244,111 @@ def evaluate_model(model_name, dataset_name, file_name, prefix_length, mid_dim, 
     print(report)
     return report
 
-def interpret_soft_tokens(model, tokenizer, file_name, k=5):
+def interpret_soft_tokens(model, tokenizer, file_name, k=10, bio_lexicon=None):
     model.eval()
     with torch.no_grad():
-        # Genera i soft prompt finali passandoli per l'MLP
-        # Forma: (prefix_length, hidden_size)
+        # Estrazione degli embedding dei soft token
         soft_embeddings = model.prefix_module(bsz=1).squeeze(0)
         
         # Salva il tensore degli embeddings per analisi future
         tensor_save_path = file_name.replace(".pth", "_prefix_embeds.pt")
         torch.save(soft_embeddings.cpu(), tensor_save_path)
         
+        # Recupero della matrice dei pesi del vocabolario del backbone (V x H)
         word_embeddings = model.encoder.get_input_embeddings().weight
         
-        # Normalizzazione
+        # Normalizzazione per il calcolo della Cosine Similarity
         soft_norm = F.normalize(soft_embeddings, dim=-1)
         word_norm = F.normalize(word_embeddings, dim=-1)
         
-        # Cosine similarity
-        scores = torch.matmul(soft_norm, word_norm.T)
+        # Cosine similarity (L x V)
+        scores_matrix = torch.matmul(soft_norm, word_norm.T)
+    
+    vocab_size = word_embeddings.size(0)
+    valid_vocab_indices = []
+    valid_tokens = []
+    punct_set = set(string.punctuation)
+    
+    # 5. Filtro del vocabolario per rimuovere i token rumorosi
+    for idx in range(vocab_size):
+        token = tokenizer.convert_ids_to_tokens(idx)
         
-        # Estrai i top-k token
-        top_tokens, top_indices = torch.topk(scores, k=k, dim=-1)
+        # Skip token del Transformer
+        if token in [tokenizer.cls_token, tokenizer.sep_token, tokenizer.mask_token, tokenizer.pad_token, tokenizer.unk_token]:
+            continue
+        if token.startswith("[unused") or token.startswith("<") or token.endswith(">"):
+            continue
+            
+        # SKip  subword dei modelli (BERT, RoBERTa..)
+        if token.startswith("##") or token.startswith("Ġ") or token.startswith("â"):
+            continue
+            
+        # Skip token di punteggiatura
+        if len(token) <= 1 and token in punct_set:
+            continue
+        if all(c in punct_set for c in token):
+            continue
+            
+        valid_vocab_indices.append(idx)
+        valid_tokens.append(token)
         
-        print(f"\nAnalisi Soft Prompt (Salvati in: {tensor_save_path})")
-        for i in range(soft_embeddings.size(0)):
-            tokens = tokenizer.convert_ids_to_tokens(top_indices[i])
-            print(f"Virtual Token {i+1:02d}: {' | '.join(tokens)}")
+    valid_vocab_indices = torch.tensor(valid_vocab_indices, device=scores_matrix.device)
+    
+    # (L x V_filtrato)
+    filtered_scores = scores_matrix[:, valid_vocab_indices]
+    
+    # Estrazione dei top-k punteggi e indici locali relativi al vocabolario filtrato
+    top_scores, top_filtered_indices = torch.topk(filtered_scores, k=k, dim=-1)
+    
+    print()
+    print(f"NEAREST-NEIGHBOR ANALYSIS(Top-{k})")
+    print(f"Contrassegno: * = token identificato come dominio biomedicale")
+    print(f"Tensore dei prompt salvato in: {tensor_save_path}\n")
+    
+    total_bio_count = 0
+    total_tokens_evaluated = soft_embeddings.size(0)
+    all_top_scores = []
+    
+    for i in range(total_tokens_evaluated):
+        neighbor_strings = []
+        bio_matches_in_top_k = 0
+        
+        for j in range(k):
+            local_idx = top_filtered_indices[i, j].item()
+            score = top_scores[i, j].item()
+            token_text = valid_tokens[local_idx]
+            all_top_scores.append(score)
+            
+            # Controllo dell'appartenenza al dominio (Domain Alignment)
+            is_bio = False
+            if bio_lexicon is not None:
+                if token_text.lower() in bio_lexicon:
+                    is_bio = True
+            else:
+                # Euristica basata su pattern medici comuni
+                bio_patterns = ('tion', 'gical', 'itis', 'path', 'acid', 'gene', 'protein', 
+                                'cell', 'mab', 'ase', 'cine', 'vir', 'num', 'tox', 'in', 'med')
+                
+                if any(ext in token_text.lower() for ext in bio_patterns) or (len(token_text) > 3 and any(c.isdigit() for c in token_text)):
+                    is_bio = True
+            
+            if is_bio:
+                bio_matches_in_top_k += 1
+                token_display = f"{token_text}*( {score:.2f} )"
+            else:
+                token_display = f"{token_text}( {score:.2f} )"
+                
+            neighbor_strings.append(token_display)
+            
+        bio_percentage_per_token = (bio_matches_in_top_k / k) * 100
+        total_bio_count += bio_matches_in_top_k
+        
+        print(f"Virtual Token {i+1:02d} [Bio: {bio_percentage_per_token:5.1f}%]: {' | '.join(neighbor_strings)}")
+        
+    global_bio_ratio = (total_bio_count / (total_tokens_evaluated * k)) * 100
+    mean_top_cosine = np.mean(all_top_scores)
+    
+    print(f"DOMAIN ALIGNMENT SCORE (Percentuale Bio): {global_bio_ratio:.2f}%")
+    print(f"COSINE SIMILARITY MEDIA (Top-{k}):         {mean_top_cosine:.4f}")
+    
+    return global_bio_ratio, mean_top_cosine
