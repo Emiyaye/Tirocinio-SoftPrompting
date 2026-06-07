@@ -50,7 +50,7 @@ def reverse_embedding(args, device, in_file_name):
     model = NERSoftPromptModel(model_name=args.model, ner_tags=ner_tags, prefix_length=args.prefix_length, mid_dim=args.mid_dim).to(device)
     model.load_state_dict(torch.load(in_file_name, map_location=device))
     
-    interpret_soft_tokens(model, tokenizer, in_file_name, k=5)
+    interpret_soft_tokens(model, tokenizer, in_file_name)
 
 
 if __name__ == "__main__":
