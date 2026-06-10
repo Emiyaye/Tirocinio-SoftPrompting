@@ -347,8 +347,8 @@ def interpret_soft_tokens(model, tokenizer, file_name, k=10, bio_lexicon=None):
         
     global_bio_ratio = (total_bio_count / (total_tokens_evaluated * k)) * 100
     mean_top_cosine = np.mean(all_top_scores)
-    
+    print("\n\n")
     print(f"DOMAIN ALIGNMENT SCORE (Percentuale Bio): {global_bio_ratio:.2f}%")
     print(f"COSINE SIMILARITY MEDIA (Top-{k}):         {mean_top_cosine:.4f}")
-    
+    print("\n\n")
     return global_bio_ratio, mean_top_cosine

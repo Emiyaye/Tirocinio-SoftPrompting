@@ -1,0 +1,447 @@
+CONFIGURAZIONE ESPERIMENTO
+Modello:  dmis-lab/biobert-v1.1
+Dataset:  disi-unibo-nlp/bc5cdr
+Prefix:   50 token
+LR:       0.0001
+Output:   model_biobert-v1.1_bc5cdr_len50_lr0.0001.pth
+
+
+AVVIO ANALISI REVERSE EMBEDDING
+
+NEAREST-NEIGHBOR ANALYSIS(Top-10)
+Contrassegno: * = token identificato come dominio biomedicale
+Tensore dei prompt salvato in: model_biobert-v1.1_bc5cdr_len50_lr0.0001_prefix_embeds.pt
+
+Virtual Token 01 [Bio:   0.0%]: ᵥ( 0.14 ) | ệ( 0.13 ) | ₜ( 0.13 ) | winked( 0.13 ) | Redesignated( 0.13 ) | ύ( 0.13 ) | 夫( 0.13 ) | cure( 0.12 ) | premiership( 0.12 ) | ợ( 0.12 )
+Virtual Token 02 [Bio:  40.0%]: prevention( 0.15 ) | pathways*( 0.14 ) | prevent( 0.14 ) | cases( 0.13 ) | mechanisms*( 0.13 ) | survivors*( 0.13 ) | bin( 0.12 ) | deaths( 0.12 ) | lesions*( 0.12 ) | entity( 0.12 )
+Virtual Token 03 [Bio:   0.0%]: playback( 0.15 ) | groundwater( 0.14 ) | Allmusic( 0.14 ) | für( 0.14 ) | Kerman( 0.14 ) | outs( 0.14 ) | Estadio( 0.14 ) | olds( 0.14 ) | Sweeney( 0.13 ) | Instead( 0.13 )
+Virtual Token 04 [Bio:  10.0%]: repetition( 0.13 ) | imaging( 0.12 ) | image( 0.12 ) | wavelength( 0.11 ) | fluorescent*( 0.11 ) | using( 0.11 ) | therefore( 0.11 ) | RBI( 0.11 ) | shootout( 0.11 ) | applying( 0.11 )
+Virtual Token 05 [Bio:   0.0%]: diminished( 0.13 ) | III( 0.12 ) | progressed( 0.12 ) | •( 0.12 ) | insufficient( 0.12 ) | reopened( 0.12 ) | Congressman( 0.11 ) | except( 0.11 ) | ⇌( 0.11 ) | inadequate( 0.11 )
+Virtual Token 06 [Bio:  10.0%]: correction( 0.13 ) | propagation( 0.12 ) | requires( 0.12 ) | educational( 0.12 ) | clinic*( 0.12 ) | entertainment( 0.11 ) | algorithms( 0.11 ) | convenient( 0.11 ) | ±( 0.11 ) | algorithm( 0.11 )
+Virtual Token 07 [Bio:   0.0%]: environment( 0.12 ) | breeding( 0.11 ) | dam( 0.11 ) | renovations( 0.11 ) | physiology( 0.11 ) | Declan( 0.11 ) | reservoir( 0.11 ) | mothers( 0.11 ) | flicked( 0.10 ) | claw( 0.10 )
+Virtual Token 08 [Bio:   0.0%]: ᵢ( 0.16 ) | ე( 0.16 ) | Deportivo( 0.16 ) | வ( 0.16 ) | ى( 0.15 ) | Niall( 0.15 ) | ।( 0.15 ) | 》( 0.15 ) | ₒ( 0.15 ) | ể( 0.14 )
+Virtual Token 09 [Bio:   0.0%]: survival( 0.18 ) | prevention( 0.13 ) | Prevention( 0.12 ) | methods( 0.12 ) | healthcare( 0.12 ) | rehabilitation( 0.12 ) | mortality( 0.12 ) | incidence( 0.12 ) | Cochrane( 0.12 ) | healer( 0.11 )
+Virtual Token 10 [Bio:  10.0%]: survival( 0.13 ) | was( 0.10 ) | incidence( 0.10 ) | Thus( 0.10 ) | diffusion( 0.10 ) | diagnosis*( 0.10 ) | Considering( 0.09 ) | technique( 0.09 ) | alive( 0.09 ) | canal( 0.09 )
+Virtual Token 11 [Bio:   0.0%]: •( 0.15 ) | ⁻( 0.13 ) | 」( 0.13 ) | ₀( 0.13 ) | cruiser( 0.13 ) | Congressman( 0.12 ) | ⇌( 0.12 ) | Survivor( 0.12 ) | NO( 0.12 ) | plus( 0.12 )
+Virtual Token 12 [Bio:  20.0%]: consistent( 0.15 ) | summary( 0.15 ) | concentrations*( 0.15 ) | finding( 0.15 ) | concentration*( 0.14 ) | died( 0.13 ) | confirm( 0.13 ) | reproduced( 0.13 ) | confirmed( 0.13 ) | confirms( 0.13 )
+Virtual Token 13 [Bio:  10.0%]: SP( 0.12 ) | substrate*( 0.12 ) | switch( 0.11 ) | SL( 0.11 ) | 12( 0.11 ) | ABS( 0.11 ) | sealing( 0.10 ) | S( 0.10 ) | strand( 0.10 ) | cigarettes( 0.10 )
+Virtual Token 14 [Bio:   0.0%]: ⇌( 0.14 ) | back( 0.10 ) | mothers( 0.10 ) | vol( 0.10 ) | unopposed( 0.10 ) | ≥( 0.09 ) | efficacy( 0.09 ) | filly( 0.09 ) | ERA( 0.09 ) | Deportivo( 0.09 )
+Virtual Token 15 [Bio:   0.0%]: emerald( 0.16 ) | Knight( 0.15 ) | Did( 0.15 ) | Grandpa( 0.15 ) | Her( 0.15 ) | Jarrett( 0.14 ) | Christi( 0.14 ) | nobles( 0.14 ) | Megan( 0.14 ) | Bernie( 0.14 )
+Virtual Token 16 [Bio:  10.0%]: and( 0.12 ) | Omega( 0.11 ) | paternal( 0.11 ) | societal( 0.11 ) | Erik( 0.11 ) | ecosystem( 0.10 ) | AC( 0.10 ) | actions( 0.10 ) | instead( 0.10 ) | neurons*( 0.10 )
+Virtual Token 17 [Bio:   0.0%]: eyelids( 0.13 ) | SL( 0.13 ) | 年( 0.13 ) | 10( 0.13 ) | η( 0.12 ) | Actress( 0.12 ) | regarding( 0.12 ) | NASCAR( 0.12 ) | SEC( 0.12 ) | SBS( 0.12 )
+Virtual Token 18 [Bio:   0.0%]: werewolf( 0.14 ) | Dracula( 0.14 ) | Archie( 0.12 ) | ₜ( 0.12 ) | 美( 0.12 ) | Although( 0.12 ) | 〜( 0.12 ) | 』( 0.12 ) | Stadion( 0.12 ) | Saturday( 0.12 )
+Virtual Token 19 [Bio:   0.0%]: synthesized( 0.14 ) | evaluated( 0.13 ) | during( 0.13 ) | This( 0.12 ) | evaluating( 0.11 ) | this( 0.11 ) | was( 0.11 ) | and( 0.10 ) | Japanese( 0.10 ) | 1( 0.10 )
+Virtual Token 20 [Bio:   0.0%]: enforcement( 0.13 ) | disciplinary( 0.12 ) | broadband( 0.12 ) | OF( 0.12 ) | ւ( 0.11 ) | Martial( 0.11 ) | ィ( 0.11 ) | image( 0.11 ) | Albums( 0.11 ) | Broadcast( 0.11 )
+Virtual Token 21 [Bio:   0.0%]: occupational( 0.14 ) | averaged( 0.14 ) | FIBA( 0.12 ) | CBN( 0.11 ) | was( 0.11 ) | deficit( 0.11 ) | Tel( 0.11 ) | Owen( 0.11 ) | cinematographer( 0.11 ) | photo( 0.11 )
+Virtual Token 22 [Bio:   0.0%]: Chevalier( 0.14 ) | villages( 0.12 ) | from( 0.12 ) | survival( 0.11 ) | sensory( 0.11 ) | principally( 0.11 ) | or( 0.11 ) | fertility( 0.11 ) | progressed( 0.11 ) | Wesleyan( 0.11 )
+Virtual Token 23 [Bio:   0.0%]: ≥( 0.14 ) | •( 0.14 ) | Eileen( 0.13 ) | plus( 0.13 ) | pressures( 0.12 ) | ⇌( 0.12 ) | balloons( 0.12 ) | Everest( 0.12 ) | ±( 0.12 ) | comedies( 0.12 )
+Virtual Token 24 [Bio:  10.0%]: ு( 0.12 ) | was( 0.12 ) | survivors*( 0.11 ) | than( 0.11 ) | ⇌( 0.11 ) | decreases( 0.11 ) | neck( 0.10 ) | ⁻( 0.10 ) | Prevention( 0.10 ) | anime( 0.10 )
+Virtual Token 25 [Bio:  30.0%]: Nobel( 0.12 ) | soil( 0.11 ) | enzyme*( 0.11 ) | investigation( 0.11 ) | receptor*( 0.11 ) | protein*( 0.11 ) | Healthcare( 0.11 ) | Tri( 0.11 ) | mood( 0.11 ) | ecosystem( 0.11 )
+Virtual Token 26 [Bio:   0.0%]: kinds( 0.15 ) | severely( 0.14 ) | reddish( 0.13 ) | disappearance( 0.13 ) | kind( 0.12 ) | occasional( 0.12 ) | frequently( 0.12 ) | tinged( 0.12 ) | catastrophic( 0.12 ) | culturally( 0.12 )
+Virtual Token 27 [Bio:  10.0%]: limb( 0.14 ) | CB( 0.12 ) | intervention( 0.11 ) | workplace( 0.11 ) | Louise( 0.11 ) | controlling( 0.11 ) | tool( 0.11 ) | cerebral*( 0.11 ) | WC( 0.11 ) | withdrawal( 0.11 )
+Virtual Token 28 [Bio:  10.0%]: calcium*( 0.13 ) | indicates( 0.12 ) | AG( 0.12 ) | indicating( 0.12 ) | TD( 0.12 ) | Thus( 0.12 ) | continued( 0.11 ) | decreased( 0.11 ) | ACT( 0.11 ) | prolonged( 0.11 )
+Virtual Token 29 [Bio:   0.0%]: disturbance( 0.12 ) | reduction( 0.12 ) | deposited( 0.11 ) | destruction( 0.11 ) | ≈( 0.11 ) | eruption( 0.11 ) | overly( 0.11 ) | hull( 0.11 ) | breakup( 0.11 ) | restoration( 0.11 )
+Virtual Token 30 [Bio:  10.0%]: survivors*( 0.15 ) | deaths( 0.14 ) | WHO( 0.14 ) | fatal( 0.13 ) | Cambodia( 0.13 ) | mortality( 0.13 ) | mothers( 0.13 ) | mother( 0.13 ) | survivor( 0.12 ) | outbreak( 0.12 )
+Virtual Token 31 [Bio:  10.0%]: entity( 0.12 ) | situations( 0.12 ) | diagnosis*( 0.12 ) | 2d( 0.11 ) | serious( 0.10 ) | corrected( 0.10 ) | worry( 0.10 ) | cause( 0.10 ) | posed( 0.10 ) | county( 0.10 )
+Virtual Token 32 [Bio:  10.0%]: output( 0.16 ) | survival( 0.13 ) | classification( 0.13 ) | restoration( 0.13 ) | Winfield( 0.13 ) | final( 0.13 ) | allocation( 0.13 ) | transportation( 0.12 ) | transcription*( 0.12 ) | productions( 0.12 )
+Virtual Token 33 [Bio:   0.0%]: and( 0.15 ) | younger( 0.12 ) | des( 0.11 ) | newer( 0.11 ) | dimensions( 0.11 ) | variables( 0.11 ) | dimension( 0.10 ) | youngest( 0.10 ) | configurations( 0.10 ) | diameter( 0.10 )
+Virtual Token 34 [Bio:   0.0%]: examine( 0.10 ) | currents( 0.10 ) | maze( 0.10 ) | research( 0.10 ) | Gill( 0.10 ) | assembly( 0.09 ) | caution( 0.09 ) | paradigm( 0.09 ) | deal( 0.09 ) | reared( 0.09 )
+Virtual Token 35 [Bio:   0.0%]: ±( 0.16 ) | Willy( 0.15 ) | wipe( 0.14 ) | gable( 0.14 ) | FIFA( 0.14 ) | ⇌( 0.14 ) | painters( 0.14 ) | expulsion( 0.13 ) | Congregational( 0.13 ) | FIBA( 0.13 )
+Virtual Token 36 [Bio:   0.0%]: Chevalier( 0.14 ) | Deportivo( 0.14 ) | jewels( 0.14 ) | Lviv( 0.13 ) | ˢ( 0.13 ) | flees( 0.13 ) | ERA( 0.13 ) | abuse( 0.13 ) | quantity( 0.13 ) | Fanny( 0.13 )
+Virtual Token 37 [Bio:  10.0%]: acidic( 0.14 ) | node( 0.14 ) | dire( 0.14 ) | watershed( 0.13 ) | environmental( 0.13 ) | flora( 0.13 ) | inflammatory*( 0.13 ) | religious( 0.13 ) | motor( 0.13 ) | Rules( 0.12 )
+Virtual Token 38 [Bio:  10.0%]: and( 0.12 ) | imaging( 0.11 ) | using( 0.10 ) | measurement( 0.10 ) | ւ( 0.10 ) | discrimination( 0.09 ) | therefore( 0.09 ) | X( 0.09 ) | differentiation*( 0.09 ) | wavelength( 0.09 )Caricamento del dataset disi-unibo-nlp/bc5cdr su cuda...
+
+Virtual Token 39 [Bio:  20.0%]: poisoning( 0.21 ) | gasoline( 0.18 ) | gable( 0.17 ) | werewolf( 0.17 ) | Enforcement( 0.17 ) | toxic*( 0.17 ) | toxicity*( 0.17 ) | 郡( 0.17 ) | CBE( 0.17 ) | ：( 0.17 )
+Virtual Token 40 [Bio:  20.0%]: and( 0.15 ) | maternal*( 0.14 ) | configurations( 0.13 ) | placement( 0.13 ) | mothers( 0.13 ) | pairing( 0.12 ) | mother( 0.11 ) | beam( 0.11 ) | environmental( 0.11 ) | chloride*( 0.11 )
+Virtual Token 41 [Bio:  10.0%]: worries( 0.12 ) | rumors( 0.11 ) | receptor*( 0.11 ) | mental( 0.11 ) | rating( 0.11 ) | executive( 0.11 ) | ủ( 0.10 ) | psychiatric( 0.10 ) | Tri( 0.10 ) | neck( 0.10 )
+Virtual Token 42 [Bio:  30.0%]: forensic( 0.17 ) | injuries*( 0.15 ) | slick( 0.15 ) | humidity( 0.15 ) | collision( 0.15 ) | ŋ( 0.14 ) | accident( 0.14 ) | chloride*( 0.14 ) | Serbs( 0.14 ) | injury*( 0.14 )
+Virtual Token 43 [Bio:   0.0%]: ñ( 0.19 ) | ị( 0.17 ) | ì( 0.17 ) | Himself( 0.16 ) | SMS( 0.16 ) | প( 0.16 ) | ́( 0.16 ) | ˢ( 0.15 ) | ữ( 0.15 ) | ύ( 0.15 )
+Virtual Token 44 [Bio:  10.0%]: score( 0.13 ) | survival( 0.12 ) | This( 0.12 ) | Advances( 0.12 ) | neurons*( 0.11 ) | salvation( 0.11 ) | favorable( 0.11 ) | variables( 0.11 ) | Score( 0.11 ) | Also( 0.11 )
+Virtual Token 45 [Bio:  10.0%]: ±( 0.15 ) | ratings( 0.15 ) | soils( 0.14 ) | Clinical*( 0.14 ) | painters( 0.14 ) | Eurovision( 0.13 ) | sink( 0.13 ) | mothers( 0.13 ) | Bahá( 0.13 ) | Sword( 0.13 )
+Virtual Token 46 [Bio:  10.0%]: survival( 0.15 ) | alive( 0.14 ) | expressed*( 0.13 ) | recorded( 0.13 ) | included( 0.12 ) | estuary( 0.12 ) | bathing( 0.12 ) | recording( 0.12 ) | assessed( 0.12 ) | undertaken( 0.12 )
+Virtual Token 47 [Bio:   0.0%]: ≥( 0.18 ) | •( 0.15 ) | ⁻( 0.15 ) | ‐( 0.14 ) | ≤( 0.14 ) | ‖( 0.13 ) | →( 0.13 ) | ⇌( 0.13 ) | townland( 0.13 ) | insufficient( 0.13 )
+Virtual Token 48 [Bio:   0.0%]: Congregational( 0.14 ) | ₀( 0.13 ) | ּ( 0.13 ) | failures( 0.12 ) | murmured( 0.12 ) | Abby( 0.12 ) | ệ( 0.12 ) | ŋ( 0.12 ) | Cathy( 0.11 ) | coldly( 0.11 )
+Virtual Token 49 [Bio:  10.0%]: DS( 0.14 ) | thinner( 0.14 ) | Alejandro( 0.14 ) | Martínez( 0.14 ) | OBE( 0.14 ) | プ( 0.14 ) | film( 0.14 ) | fluorescent*( 0.14 ) | ˢ( 0.14 ) | CDP( 0.14 )
+Virtual Token 50 [Bio:   0.0%]: None( 0.13 ) | ी( 0.12 ) | ু( 0.12 ) | ῆ( 0.11 ) | attitudes( 0.11 ) | 版( 0.11 ) | Citadel( 0.11 ) | ュ( 0.11 ) | absorb( 0.11 ) | 事( 0.11 )
+
+
+
+DOMAIN ALIGNMENT SCORE (Percentuale Bio): 6.80%
+COSINE SIMILARITY MEDIA (Top-10):         0.1236
+
+
+
+Caricamento del dataset disi-unibo-nlp/bc5cdr su cuda...
+CONFIGURAZIONE ESPERIMENTO
+Modello:  bert-base-cased
+Dataset:  disi-unibo-nlp/bc5cdr
+Prefix:   50 token
+LR:       0.0001
+Output:   model_bert-base-cased_bc5cdr_len50_lr0.0001.pth
+
+
+AVVIO ANALISI REVERSE EMBEDDING
+Map:   0%|          | 0/4581 [00:00<?, ? examples/s]Map:  22%|██▏       | 1000/4581 [00:00<00:00, 4640.13 examples/s]Map:  44%|████▎     | 2000/4581 [00:00<00:00, 4769.03 examples/s]Map:  65%|██████▌   | 3000/4581 [00:00<00:00, 4707.41 examples/s]Map:  87%|████████▋ | 4000/4581 [00:00<00:00, 4797.35 examples/s]Map: 100%|██████████| 4581/4581 [00:00<00:00, 4702.60 examples/s]Map: 100%|██████████| 4581/4581 [00:01<00:00, 4560.75 examples/s]
+NEAREST-NEIGHBOR ANALYSIS(Top-10)
+Contrassegno: * = token identificato come dominio biomedicale
+Tensore dei prompt salvato in: model_bert-base-cased_bc5cdr_len50_lr0.0001_prefix_embeds.pt
+
+Virtual Token 01 [Bio:   0.0%]: aka( 0.13 ) | depending( 0.13 ) | writer( 0.13 ) | appoint( 0.12 ) | ibn( 0.12 ) | composer( 0.12 ) | Verlag( 0.12 ) | explorer( 0.12 ) | Turkic( 0.12 ) | Ibn( 0.12 )
+Virtual Token 02 [Bio:   0.0%]: victim( 0.16 ) | Roche( 0.15 ) | Foley( 0.15 ) | Celebrity( 0.15 ) | Mercy( 0.14 ) | য়( 0.14 ) | Delaney( 0.14 ) | 龸( 0.14 ) | Garland( 0.14 ) | blackness( 0.14 )
+Virtual Token 03 [Bio:   0.0%]: −( 0.16 ) | kW( 0.16 ) | lbs( 0.15 ) | Gotta( 0.15 ) | depend( 0.15 ) | unsuccessful( 0.15 ) | instinct( 0.15 ) | tool( 0.15 ) | lb( 0.15 ) | Teenage( 0.14 )
+Virtual Token 04 [Bio:  40.0%]: Freud( 0.15 ) | secondly( 0.15 ) | hormone*( 0.14 ) | highlighted( 0.14 ) | maternal*( 0.13 ) | enzyme*( 0.13 ) | patron( 0.13 ) | subway( 0.13 ) | mitochondrial*( 0.13 ) | export( 0.13 )
+Virtual Token 05 [Bio:   0.0%]: robbed( 0.14 ) | basically( 0.14 ) | practically( 0.14 ) | Cromwell( 0.14 ) | firstly( 0.14 ) | （( 0.13 ) | Akbar( 0.13 ) | neither( 0.13 ) | Madagascar( 0.13 ) | confirmed( 0.13 )
+Virtual Token 06 [Bio:   0.0%]: Collection( 0.15 ) | regardless( 0.15 ) | shopping( 0.15 ) | Elaine( 0.13 ) | Archives( 0.13 ) | ֶ( 0.13 ) | Abby( 0.13 ) | ť( 0.13 ) | Angie( 0.13 ) | Lois( 0.12 )
+Virtual Token 07 [Bio:  20.0%]: 侍( 0.18 ) | AIDS*( 0.18 ) | ὶ( 0.17 ) | demonic( 0.17 ) | harmful( 0.17 ) | adaptive( 0.17 ) | Alzheimer*( 0.16 ) | embarrassing( 0.16 ) | deteriorated( 0.16 ) | Jared( 0.16 )
+Virtual Token 08 [Bio:   0.0%]: butter( 0.14 ) | hoped( 0.14 ) | grown( 0.14 ) | inaugural( 0.14 ) | ★( 0.14 ) | generous( 0.14 ) | dough( 0.13 ) | Quaker( 0.13 ) | Ankara( 0.13 ) | proud( 0.13 )
+Virtual Token 09 [Bio:   0.0%]: Authority( 0.16 ) | Saskatchewan( 0.15 ) | contestant( 0.15 ) | Manitoba( 0.15 ) | Leeds( 0.14 ) | vertex( 0.14 ) | shareholder( 0.14 ) | Greatest( 0.14 ) | Ontario( 0.13 ) | integer( 0.13 )
+Virtual Token 10 [Bio:   0.0%]: afterwards( 0.17 ) | Ontario( 0.14 ) | after( 0.13 ) | legally( 0.13 ) | later( 0.12 ) | ế( 0.11 ) | Edmonton( 0.11 ) | NHS( 0.11 ) | acclaimed( 0.11 ) | subsequently( 0.10 )
+Virtual Token 11 [Bio:   0.0%]: labelled( 0.15 ) | designated( 0.14 ) | displayed( 0.14 ) | labeled( 0.14 ) | constituted( 0.13 ) | exceptional( 0.13 ) | inscribed( 0.13 ) | manifest( 0.13 ) | constructed( 0.13 ) | demonstrated( 0.12 )
+Virtual Token 12 [Bio:   0.0%]: ‖( 0.17 ) | ‘( 0.16 ) | “( 0.16 ) | ”( 0.16 ) | erection( 0.15 ) | 龸( 0.15 ) | ן( 0.15 ) | Terence( 0.15 ) | Langdon( 0.15 ) | BWV( 0.15 )
+Virtual Token 13 [Bio:   0.0%]: induce( 0.16 ) | breakthrough( 0.16 ) | medium( 0.15 ) | outlet( 0.14 ) | Mt( 0.14 ) | treat( 0.14 ) | flared( 0.13 ) | gateway( 0.13 ) | beverage( 0.13 ) | resistant( 0.13 )
+Virtual Token 14 [Bio:   0.0%]: secondly( 0.13 ) | someday( 0.13 ) | savings( 0.13 ) | enabling( 0.13 ) | sweetheart( 0.13 ) | promotional( 0.13 ) | besides( 0.13 ) | basic( 0.12 ) | enabled( 0.12 ) | swiped( 0.12 )
+Virtual Token 15 [Bio: 100.0%]: lesions*( 0.19 ) | disorder*( 0.19 ) | treatment*( 0.19 ) | disorders*( 0.18 ) | Treatment*( 0.17 ) | injury*( 0.17 ) | symptoms*( 0.16 ) | treatments*( 0.16 ) | disease*( 0.16 ) | diseases*( 0.15 )
+Virtual Token 16 [Bio:   0.0%]: achieved( 0.14 ) | advice( 0.12 ) | attained( 0.11 ) | generally( 0.11 ) | reluctantly( 0.11 ) | usually( 0.11 ) | Raceway( 0.10 ) | typically( 0.10 ) | slipping( 0.10 ) | clinched( 0.10 )
+Virtual Token 17 [Bio:   0.0%]: predecessor( 0.14 ) | Thin( 0.13 ) | Kaladin( 0.13 ) | Zagreb( 0.12 ) | İ( 0.12 ) | Frank( 0.12 ) | BCE( 0.12 ) | Presidential( 0.11 ) | Dinamo( 0.11 ) | John( 0.11 )
+Virtual Token 18 [Bio:  10.0%]: prevented( 0.15 ) | induce( 0.15 ) | psychedelic( 0.14 ) | underwent( 0.14 ) | Effect( 0.14 ) | undergone( 0.14 ) | Treatment*( 0.13 ) | bacterium( 0.13 ) | ј( 0.13 ) | compared( 0.13 )
+Virtual Token 19 [Bio:   0.0%]: Brigham( 0.15 ) | ⱼ( 0.15 ) | Lennon( 0.15 ) | （( 0.15 ) | MacArthur( 0.14 ) | ‖( 0.14 ) | Cerambycidae( 0.14 ) | Markus( 0.14 ) | Fender( 0.14 ) | Motors( 0.14 )
+Virtual Token 20 [Bio:  10.0%]: Majority( 0.15 ) | NGO( 0.15 ) | stepfather( 0.14 ) | Minority( 0.14 ) | beverage( 0.14 ) | trainer( 0.14 ) | capita( 0.14 ) | Cultural( 0.14 ) | Anglican( 0.14 ) | hormone*( 0.14 )
+Virtual Token 21 [Bio:   0.0%]: enhanced( 0.18 ) | shook( 0.17 ) | grimaced( 0.15 ) | commented( 0.15 ) | reduced( 0.15 ) | winced( 0.15 ) | trembled( 0.15 ) | reacted( 0.15 ) | chuckled( 0.15 ) | hugged( 0.15 )
+Virtual Token 22 [Bio:   0.0%]: Panic( 0.13 ) | failure( 0.13 ) | cruelty( 0.12 ) | distortion( 0.12 ) | Madness( 0.12 ) | Noise( 0.12 ) | madness( 0.12 ) | Pain( 0.12 ) | defects( 0.12 ) | tone( 0.12 )
+Virtual Token 23 [Bio:  20.0%]: prevention( 0.15 ) | enzyme*( 0.15 ) | stronger( 0.15 ) | epidemic( 0.15 ) | incentive( 0.15 ) | fewer( 0.15 ) | receptor*( 0.15 ) | stimulus( 0.14 ) | provoked( 0.14 ) | stab( 0.14 )
+Virtual Token 24 [Bio:  10.0%]: smelled( 0.17 ) | ₊( 0.16 ) | ∘( 0.16 ) | wives( 0.15 ) | Eileen( 0.15 ) | ₍( 0.15 ) | ）( 0.15 ) | ⟩( 0.15 ) | unsuccessful( 0.15 ) | receptors*( 0.15 )
+Virtual Token 25 [Bio:  20.0%]: grinding( 0.12 ) | maize( 0.11 ) | molecular*( 0.11 ) | mouse( 0.11 ) | Baptist( 0.10 ) | Sarawak( 0.10 ) | substrate*( 0.10 ) | shore( 0.10 ) | Neolithic( 0.10 ) | fierce( 0.10 )
+Virtual Token 26 [Bio:  20.0%]: Honours( 0.16 ) | hormone*( 0.15 ) | pressed( 0.15 ) | accelerated( 0.15 ) | Officers( 0.14 ) | discrimination( 0.14 ) | provoked( 0.13 ) | Married( 0.13 ) | cortex*( 0.13 ) | emigrated( 0.13 )
+Virtual Token 27 [Bio:   0.0%]: pills( 0.17 ) | pill( 0.17 ) | Angelina( 0.17 ) | Thorpe( 0.16 ) | Springs( 0.16 ) | pumped( 0.16 ) | Ion( 0.15 ) | Pharmacy( 0.15 ) | UV( 0.15 ) | medicinal( 0.15 )
+Virtual Token 28 [Bio:   0.0%]: vitamin( 0.16 ) | pharmaceutical( 0.15 ) | clarinet( 0.15 ) | threatening( 0.15 ) | Sul( 0.15 ) | banjo( 0.14 ) | ệ( 0.14 ) | Benz( 0.14 ) | alcoholic( 0.14 ) | snuck( 0.14 )
+Virtual Token 29 [Bio:   0.0%]: Masonic( 0.16 ) | stripe( 0.14 ) | £( 0.14 ) | ᵤ( 0.13 ) | pseudonym( 0.13 ) | ₒ( 0.13 ) | ”( 0.12 ) | Schuster( 0.12 ) | stripes( 0.12 ) | hilt( 0.12 )
+Virtual Token 30 [Bio:   0.0%]: centimetres( 0.14 ) | dragging( 0.14 ) | Harcourt( 0.14 ) | Copyright( 0.13 ) | Wingspan( 0.13 ) | trillion( 0.12 ) | Orion( 0.12 ) | heaving( 0.12 ) | eldest( 0.12 ) | posterior( 0.12 )
+Virtual Token 31 [Bio:  70.0%]: AIDS*( 0.20 ) | autism*( 0.20 ) | symptoms*( 0.17 ) | diabetes*( 0.17 ) | Scientology( 0.17 ) | HIV*( 0.16 ) | urine*( 0.16 ) | loneliness( 0.16 ) | Emergency( 0.16 ) | tuberculosis*( 0.16 )
+Virtual Token 32 [Bio:  20.0%]: NGO( 0.16 ) | Quaker( 0.14 ) | ‖( 0.14 ) | ː( 0.14 ) | happier( 0.14 ) | dental*( 0.14 ) | Bahá( 0.14 ) | nearer( 0.13 ) | Cultural( 0.13 ) | Molecular*( 0.13 )
+Virtual Token 33 [Bio:  70.0%]: diabetes*( 0.20 ) | mice( 0.19 ) | PMID( 0.18 ) | receptor*( 0.18 ) | antibodies*( 0.18 ) | receptors*( 0.18 ) | gene*( 0.17 ) | diseases*( 0.17 ) | cats( 0.17 ) | Dental*( 0.17 )
+Virtual Token 34 [Bio:   0.0%]: business( 0.11 ) | hoped( 0.11 ) | signing( 0.10 ) | dollar( 0.10 ) | branch( 0.10 ) | Toronto( 0.10 ) | Senators( 0.10 ) | Leafs( 0.10 ) | mice( 0.10 ) | thing( 0.10 )
+Virtual Token 35 [Bio:  20.0%]: outbreak( 0.17 ) | headline( 0.17 ) | treatment*( 0.17 ) | profile( 0.16 ) | Bachelor( 0.15 ) | incidence( 0.15 ) | stench( 0.15 ) | Treatment*( 0.15 ) | accusations( 0.15 ) | tragedy( 0.15 )
+Virtual Token 36 [Bio:   0.0%]: otherwise( 0.13 ) | vacated( 0.12 ) | rights( 0.12 ) | ⅓( 0.12 ) | gubernatorial( 0.12 ) | Lama( 0.12 ) | ầ( 0.12 ) | Constable( 0.11 ) | habitat( 0.11 ) | faculties( 0.11 )
+Virtual Token 37 [Bio:   0.0%]: gears( 0.15 ) | sparked( 0.15 ) | glowing( 0.15 ) | masked( 0.15 ) | poking( 0.14 ) | slang( 0.14 ) | Principles( 0.14 ) | cows( 0.14 ) | bacon( 0.14 ) | monkeys( 0.14 )
+Virtual Token 38 [Bio:   0.0%]: ‖( 0.17 ) | 의( 0.14 ) | terrifying( 0.14 ) | Eliot( 0.14 ) | wrinkled( 0.14 ) | 河( 0.14 ) | slung( 0.13 ) | Carmine( 0.13 ) | Eisenhower( 0.13 ) | overwhelming( 0.13 )
+Virtual Token 39 [Bio:   0.0%]: mouse( 0.14 ) | patron( 0.13 ) | happily( 0.13 ) | werewolf( 0.12 ) | Baku( 0.12 ) | Lutheran( 0.12 ) | shareholder( 0.12 ) | deer( 0.11 ) | »( 0.11 ) | cabinet( 0.11 )
+
+Virtual Token 40 [Bio:  10.0%]: ᴵ( 0.19 ) | ‖( 0.19 ) | exposing( 0.16 ) | reduces( 0.16 ) | ₍( 0.16 ) | ∘( 0.16 ) | lesions*( 0.16 ) | Featuring( 0.16 ) | ¨( 0.16 ) | Eileen( 0.16 )
+Virtual Token 41 [Bio:   0.0%]: Na( 0.12 ) | Magazine( 0.11 ) | Fear( 0.11 ) | sounded( 0.11 ) | featuring( 0.11 ) | Scream( 0.11 ) | Features( 0.11 ) | Volume( 0.11 ) | Are( 0.10 ) | noticed( 0.10 )
+Virtual Token 42 [Bio:   0.0%]: secondly( 0.16 ) | happier( 0.15 ) | unrelated( 0.15 ) | ᴵ( 0.14 ) | Bavaria( 0.14 ) | psychic( 0.13 ) | ż( 0.13 ) | unemployed( 0.13 ) | Bihar( 0.13 ) | ń( 0.13 )
+Virtual Token 43 [Bio:  20.0%]: cortex*( 0.17 ) | 龸( 0.17 ) | ầ( 0.16 ) | ‑( 0.16 ) | receptors*( 0.16 ) | sensations( 0.15 ) | 『( 0.15 ) | ‘( 0.15 ) | physiology( 0.15 ) | ，( 0.15 )
+Virtual Token 44 [Bio:   0.0%]: FM( 0.13 ) | Steam( 0.12 ) | Plays( 0.12 ) | reviewers( 0.12 ) | Bank( 0.11 ) | Press( 0.11 ) | The( 0.11 ) | outlets( 0.11 ) | rumored( 0.11 ) | widespread( 0.11 )
+Virtual Token 45 [Bio:   0.0%]: whereas( 0.16 ) | aka( 0.14 ) | loomed( 0.14 ) | presenting( 0.13 ) | ो( 0.13 ) | slamming( 0.13 ) | accusing( 0.12 ) | lifelong( 0.12 ) | focal( 0.12 ) | Bradshaw( 0.12 )
+Virtual Token 46 [Bio:   0.0%]: monarch( 0.14 ) | steak( 0.13 ) | Traditionally( 0.13 ) | honesty( 0.13 ) | Normally( 0.13 ) | Turkic( 0.13 ) | whatever( 0.13 ) | ་( 0.13 ) | Whatever( 0.13 ) | giving( 0.13 )
+Virtual Token 47 [Bio:  20.0%]: PMID( 0.18 ) | underwent( 0.16 ) | enzymes*( 0.16 ) | née( 0.15 ) | awaiting( 0.15 ) | glands( 0.15 ) | awaited( 0.15 ) | receptor*( 0.15 ) | °F( 0.15 ) | inclusive( 0.15 )
+Virtual Token 48 [Bio:   0.0%]: speculated( 0.15 ) | doubted( 0.15 ) | hoped( 0.14 ) | sufficient( 0.14 ) | importantly( 0.14 ) | bet( 0.13 ) | Both( 0.12 ) | Stevenson( 0.12 ) | surpassed( 0.12 ) | firstly( 0.12 )
+Virtual Token 49 [Bio:   0.0%]: secondly( 0.15 ) | context( 0.15 ) | crystal( 0.14 ) | insight( 0.13 ) | PDF( 0.13 ) | how( 0.13 ) | differently( 0.13 ) | relationship( 0.13 ) | XML( 0.12 ) | leverage( 0.12 )
+Virtual Token 50 [Bio:   0.0%]: meat( 0.14 ) | Updated( 0.14 ) | aggregator( 0.14 ) | secondly( 0.13 ) | lumber( 0.13 ) | Print( 0.13 ) | grown( 0.13 ) | depended( 0.13 ) | donated( 0.13 ) | mollusk( 0.13 )
+
+
+
+DOMAIN ALIGNMENT SCORE (Percentuale Bio): 9.60%
+COSINE SIMILARITY MEDIA (Top-10):         0.1388
+
+
+
+Caricamento del dataset disi-unibo-nlp/bc5cdr su cuda...
+CONFIGURAZIONE ESPERIMENTO
+Modello:  bert-base-uncased
+Dataset:  disi-unibo-nlp/bc5cdr
+Prefix:   50 token
+LR:       0.0001
+Output:   model_bert-base-uncased_bc5cdr_len50_lr0.0001.pth
+
+
+AVVIO ANALISI REVERSE EMBEDDING
+Map:   0%|          | 0/4581 [00:00<?, ? examples/s]Map:  22%|██▏       | 1000/4581 [00:00<00:00, 4959.42 examples/s]Map:  44%|████▎     | 2000/4581 [00:00<00:00, 4934.55 examples/s]Map:  65%|██████▌   | 3000/4581 [00:00<00:00, 4817.59 examples/s]Map:  87%|████████▋ | 4000/4581 [00:00<00:00, 4894.01 examples/s]Map: 100%|██████████| 4581/4581 [00:00<00:00, 4773.11 examples/s]Map: 100%|██████████| 4581/4581 [00:00<00:00, 4654.29 examples/s]
+NEAREST-NEIGHBOR ANALYSIS(Top-10)
+Contrassegno: * = token identificato come dominio biomedicale
+Tensore dei prompt salvato in: model_bert-base-uncased_bc5cdr_len50_lr0.0001_prefix_embeds.pt
+
+Virtual Token 01 [Bio:   0.0%]: archived( 0.13 ) | 》( 0.13 ) | 1016( 0.13 ) | deluxe( 0.13 ) | assassin( 0.13 ) | ／( 0.13 ) | serialized( 0.13 ) | kerman( 0.13 ) | none( 0.13 ) | tensions( 0.13 )
+Virtual Token 02 [Bio:   0.0%]: ry( 0.14 ) | ¿( 0.14 ) | bwf( 0.13 ) | ¨( 0.13 ) | nr( 0.12 ) | natasha( 0.12 ) | ا( 0.12 ) | sweetheart( 0.12 ) | della( 0.12 ) | †( 0.12 )
+Virtual Token 03 [Bio:   0.0%]: 鈴( 0.15 ) | medicine( 0.15 ) | 仮( 0.14 ) | sacrament( 0.14 ) | regents( 0.13 ) | appropriations( 0.13 ) | democratic( 0.13 ) | prescription( 0.13 ) | ／( 0.13 ) | 「( 0.13 )
+Virtual Token 04 [Bio:   0.0%]: condom( 0.16 ) | vhs( 0.16 ) | boyfriend( 0.15 ) | smashwords( 0.15 ) | afb( 0.15 ) | laundering( 0.15 ) | dinamo( 0.15 ) | 、( 0.14 ) | 」( 0.14 ) | 』( 0.14 )
+Virtual Token 05 [Bio:   0.0%]: classes( 0.11 ) | clubs( 0.10 ) | minor( 0.10 ) | major( 0.10 ) | churches( 0.09 ) | chord( 0.09 ) | pants( 0.09 ) | greek( 0.09 ) | steps( 0.09 ) | cadet( 0.09 )
+Virtual Token 06 [Bio:   0.0%]: peripheral( 0.10 ) | confederate( 0.09 ) | asked( 0.09 ) | nipple( 0.09 ) | asks( 0.09 ) | earned( 0.08 ) | occasional( 0.08 ) | although( 0.08 ) | such( 0.08 ) | championship( 0.08 )
+Virtual Token 07 [Bio:  20.0%]: larvae( 0.19 ) | thoughts( 0.18 ) | hips( 0.17 ) | symptoms*( 0.16 ) | neurons*( 0.16 ) | verbs( 0.16 ) | grandmother( 0.16 ) | speaker( 0.16 ) | adults( 0.16 ) | servants( 0.16 )
+Virtual Token 08 [Bio:  10.0%]: ি( 0.11 ) | membrane*( 0.11 ) | speedway( 0.11 ) | pmid( 0.11 ) | ᅵ( 0.11 ) | could( 0.10 ) | ং( 0.10 ) | icao( 0.10 ) | howard( 0.10 ) | seals( 0.10 )
+Virtual Token 09 [Bio:   0.0%]: rowing( 0.14 ) | nomination( 0.13 ) | acting( 0.12 ) | prospect( 0.12 ) | lodge( 0.12 ) | bank( 0.12 ) | qualifications( 0.12 ) | ascent( 0.12 ) | ᅵ( 0.12 ) | theatre( 0.12 )
+Virtual Token 10 [Bio:   0.0%]: louisa( 0.12 ) | branded( 0.11 ) | chest( 0.11 ) | chests( 0.10 ) | byzantine( 0.10 ) | mapped( 0.10 ) | modeled( 0.10 ) | typical( 0.10 ) | motives( 0.10 ) | trader( 0.10 )
+Virtual Token 11 [Bio:   0.0%]: judge( 0.14 ) | remembrance( 0.13 ) | venture( 0.13 ) | queen( 0.13 ) | semifinal( 0.12 ) | kirk( 0.12 ) | lots( 0.12 ) | ops( 0.12 ) | houghton( 0.12 ) | ely( 0.12 )
+Virtual Token 12 [Bio:   0.0%]: bree( 0.14 ) | edmonton( 0.14 ) | salford( 0.13 ) | shuffled( 0.13 ) | cal( 0.12 ) | goo( 0.12 ) | om( 0.12 ) | wolfe( 0.12 ) | damien( 0.12 ) | skylar( 0.12 )
+Virtual Token 13 [Bio:  50.0%]: syndrome*( 0.18 ) | contamination( 0.17 ) | pathogen*( 0.17 ) | causal( 0.17 ) | susceptible( 0.16 ) | symptoms*( 0.16 ) | daemon( 0.15 ) | plague( 0.15 ) | virus*( 0.14 ) | infection*( 0.14 )
+Virtual Token 14 [Bio:   0.0%]: smackdown( 0.11 ) | mighty( 0.11 ) | playoff( 0.11 ) | buenos( 0.11 ) | shove( 0.11 ) | righteous( 0.11 ) | brisbane( 0.11 ) | lions( 0.10 ) | simpsons( 0.10 ) | carts( 0.10 )
+Virtual Token 15 [Bio:   0.0%]: brit( 0.16 ) | rr( 0.16 ) | eps( 0.16 ) | tong( 0.15 ) | ska( 0.15 ) | raphael( 0.15 ) | nee( 0.15 ) | tin( 0.15 ) | destiny( 0.15 ) | churchill( 0.15 )
+Virtual Token 16 [Bio:   0.0%]: constellation( 0.12 ) | 》( 0.11 ) | amadeus( 0.11 ) | ה( 0.10 ) | inactivated( 0.10 ) | 《( 0.10 ) | janata( 0.10 ) | geometridae( 0.10 ) | uhf( 0.10 ) | ₍( 0.10 )
+Virtual Token 17 [Bio:   0.0%]: pmid( 0.16 ) | aquatics( 0.15 ) | bacterium( 0.15 ) | medalist( 0.15 ) | lucius( 0.15 ) | ་( 0.14 ) | grossed( 0.14 ) | biomedical( 0.14 ) | evolved( 0.14 ) | 耳( 0.14 )
+Virtual Token 18 [Bio:   0.0%]: phillies( 0.14 ) | certificate( 0.13 ) | lucha( 0.13 ) | certification( 0.12 ) | supervision( 0.12 ) | waivers( 0.12 ) | 仮( 0.12 ) | 場( 0.12 ) | segunda( 0.12 ) | inactivated( 0.12 )
+Virtual Token 19 [Bio:   0.0%]: you( 0.18 ) | katherine( 0.13 ) | your( 0.12 ) | bold( 0.12 ) | wolves( 0.12 ) | shifter( 0.12 ) | dialed( 0.12 ) | sweetheart( 0.12 ) | fork( 0.12 ) | suppose( 0.12 )
+Virtual Token 20 [Bio:   0.0%]: clement( 0.13 ) | bookstore( 0.13 ) | publishing( 0.12 ) | frowned( 0.12 ) | welcomed( 0.12 ) | novels( 0.12 ) | werewolf( 0.12 ) | dragons( 0.12 ) | handbook( 0.11 ) | putting( 0.11 )
+Virtual Token 21 [Bio:   0.0%]: bbc( 0.16 ) | breaths( 0.15 ) | 《( 0.15 ) | bulgarian( 0.15 ) | 艹( 0.14 ) | gonna( 0.14 ) | scottish( 0.14 ) | nutrient( 0.14 ) | southeastern( 0.14 ) | discuss( 0.14 )
+Virtual Token 22 [Bio:   0.0%]: cromwell( 0.17 ) | entrusted( 0.16 ) | 帝( 0.16 ) | ■( 0.15 ) | ¦( 0.15 ) | traced( 0.15 ) | lexi( 0.15 ) | patrons( 0.15 ) | detective( 0.15 ) | accountability( 0.15 )
+Virtual Token 23 [Bio:   0.0%]: failing( 0.12 ) | after( 0.10 ) | books( 0.10 ) | subway( 0.10 ) | degree( 0.10 ) | arnold( 0.10 ) | under( 0.10 ) | alarm( 0.10 ) | due( 0.10 ) | motto( 0.10 )
+Virtual Token 24 [Bio:   0.0%]: venerable( 0.10 ) | uhf( 0.10 ) | philippine( 0.10 ) | upgraded( 0.10 ) | ufc( 0.09 ) | municipal( 0.09 ) | cerambycidae( 0.09 ) | itf( 0.09 ) | lankan( 0.09 ) | video( 0.09 )
+Virtual Token 25 [Bio:  10.0%]: hepatitis*( 0.14 ) | ᅪ( 0.13 ) | ᅢ( 0.13 ) | ᅡ( 0.13 ) | palatinate( 0.13 ) | laundering( 0.13 ) | ᅴ( 0.12 ) | ᅭ( 0.12 ) | security( 0.12 ) | ァ( 0.12 )
+Virtual Token 26 [Bio:   0.0%]: mutiny( 0.10 ) | recorded( 0.09 ) | congress( 0.09 ) | scratch( 0.09 ) | anybody( 0.09 ) | caught( 0.09 ) | games( 0.09 ) | something( 0.08 ) | captured( 0.08 ) | conference( 0.08 )
+Virtual Token 27 [Bio:   0.0%]: athenian( 0.12 ) | roman( 0.12 ) | percussion( 0.11 ) | clapped( 0.10 ) | clean( 0.10 ) | multiplication( 0.09 ) | romans( 0.09 ) | allegro( 0.09 ) | forth( 0.09 ) | jacques( 0.09 )
+Virtual Token 28 [Bio:   0.0%]: ᅪ( 0.13 ) | jalan( 0.12 ) | succeeded( 0.12 ) | ongoing( 0.12 ) | ბ( 0.12 ) | bedside( 0.12 ) | ो( 0.12 ) | hinges( 0.12 ) | 書( 0.11 ) | accompanied( 0.11 )
+Virtual Token 29 [Bio:  60.0%]: scare( 0.16 ) | prevalence( 0.14 ) | doll( 0.14 ) | clinical*( 0.14 ) | symptoms*( 0.14 ) | disorder*( 0.14 ) | congenital*( 0.13 ) | stigma( 0.13 ) | diagnosis*( 0.13 ) | patients*( 0.12 )
+Virtual Token 30 [Bio:   0.0%]: blouse( 0.17 ) | isbn( 0.17 ) | issn( 0.16 ) | 『( 0.15 ) | ¨( 0.15 ) | ballots( 0.14 ) | ⟨( 0.14 ) | supplements( 0.14 ) | ₍( 0.13 ) | dagger( 0.13 )
+Virtual Token 31 [Bio:  20.0%]: cbn( 0.17 ) | motorway( 0.17 ) | bwv( 0.17 ) | prescription( 0.17 ) | ᵒ( 0.16 ) | khmer( 0.16 ) | ァ( 0.16 ) | potassium*( 0.16 ) | tuition( 0.16 ) | insulin*( 0.16 )
+Virtual Token 32 [Bio:   0.0%]: flank( 0.12 ) | extinct( 0.12 ) | deputy( 0.11 ) | ronan( 0.11 ) | bbc( 0.11 ) | fork( 0.11 ) | throne( 0.11 ) | options( 0.10 ) | lawn( 0.10 ) | whispers( 0.10 )
+Virtual Token 33 [Bio:   0.0%]: guys( 0.11 ) | unincorporated( 0.11 ) | upgraded( 0.11 ) | ბ( 0.11 ) | apocalypse( 0.11 ) | gonna( 0.10 ) | increasingly( 0.10 ) | waivers( 0.10 ) | mcintyre( 0.10 ) | unanimously( 0.10 )
+Virtual Token 34 [Bio:  10.0%]: hull( 0.11 ) | wicket( 0.11 ) | oclc( 0.11 ) | onboard( 0.11 ) | template( 0.11 ) | inspired( 0.11 ) | netflix( 0.11 ) | perfectly( 0.11 ) | gameplay( 0.11 ) | compound*( 0.11 )
+Virtual Token 35 [Bio:   0.0%]: affair( 0.14 ) | nodded( 0.13 ) | throughout( 0.13 ) | glanced( 0.12 ) | glance( 0.12 ) | meal( 0.12 ) | bias( 0.12 ) | etc( 0.12 ) | price( 0.11 ) | attention( 0.11 )
+Virtual Token 36 [Bio:  10.0%]: breuning( 0.16 ) | whether( 0.16 ) | intersects( 0.16 ) | sonata( 0.16 ) | sweetheart( 0.16 ) | °f( 0.15 ) | bwv( 0.15 ) | fluorescent*( 0.15 ) | ་( 0.15 ) | precedence( 0.15 )
+Virtual Token 37 [Bio:   0.0%]: referendum( 0.12 ) | werewolf( 0.12 ) | suppose( 0.11 ) | options( 0.11 ) | olympics( 0.11 ) | guess( 0.10 ) | gonna( 0.10 ) | your( 0.10 ) | depending( 0.10 ) | publishing( 0.10 )
+Virtual Token 38 [Bio:   0.0%]: ian( 0.12 ) | stared( 0.12 ) | averaging( 0.12 ) | averaged( 0.12 ) | suppose( 0.11 ) | traveled( 0.11 ) | subcommittee( 0.11 ) | secondly( 0.11 ) | mouse( 0.11 ) | bwf( 0.11 )
+Virtual Token 39 [Bio:   0.0%]: hemingway( 0.16 ) | cyprus( 0.14 ) | miniatures( 0.13 ) | atari( 0.13 ) | iucn( 0.13 ) | niccolo( 0.13 ) | owner( 0.13 ) | shooter( 0.13 ) | odyssey( 0.13 ) | seamus( 0.12 )
+
+Virtual Token 40 [Bio:   0.0%]: smashwords( 0.17 ) | nitrate( 0.16 ) | tortricidae( 0.15 ) | lithium( 0.15 ) | jasmine( 0.15 ) | oxide( 0.14 ) | turnpike( 0.14 ) | sensitivity( 0.14 ) | poverty( 0.14 ) | luxury( 0.14 )
+Virtual Token 41 [Bio:   0.0%]: typically( 0.17 ) | generally( 0.17 ) | commonly( 0.16 ) | often( 0.16 ) | usually( 0.16 ) | pmid( 0.14 ) | coroner( 0.14 ) | potentially( 0.13 ) | arguably( 0.13 ) | some( 0.13 )
+Virtual Token 42 [Bio:  50.0%]: diseases*( 0.18 ) | impairment( 0.17 ) | disease*( 0.16 ) | brain*( 0.16 ) | blurred( 0.15 ) | passport( 0.15 ) | birth*( 0.14 ) | bladder( 0.14 ) | disability( 0.14 ) | enzyme*( 0.14 )
+Virtual Token 43 [Bio:   0.0%]: cremated( 0.14 ) | tightened( 0.14 ) | ་( 0.14 ) | siberia( 0.14 ) | 》( 0.13 ) | cocked( 0.13 ) | ‖( 0.12 ) | cannes( 0.12 ) | pmid( 0.12 ) | dalai( 0.12 )
+Virtual Token 44 [Bio:   0.0%]: raw( 0.12 ) | righteous( 0.11 ) | peacekeeping( 0.11 ) | largest( 0.11 ) | rhino( 0.11 ) | wwf( 0.10 ) | dinner( 0.10 ) | joo( 0.10 ) | sheep( 0.10 ) | vuelta( 0.10 )
+Virtual Token 45 [Bio:   0.0%]: explorer( 0.12 ) | sensed( 0.11 ) | ᵗ( 0.11 ) | scales( 0.11 ) | assumed( 0.11 ) | layne( 0.11 ) | peripheral( 0.10 ) | dawned( 0.10 ) | instituto( 0.10 ) | scrolling( 0.10 )
+Virtual Token 46 [Bio:   0.0%]: ᵘ( 0.17 ) | ᵒ( 0.16 ) | ᆫ( 0.16 ) | yeah( 0.15 ) | hapoel( 0.15 ) | ර( 0.15 ) | ‒( 0.15 ) | feasibility( 0.15 ) | ♯( 0.15 ) | —( 0.15 )
+Virtual Token 47 [Bio:  10.0%]: correctional( 0.16 ) | ་( 0.16 ) | ¨( 0.15 ) | pmid( 0.15 ) | brigham( 0.15 ) | cubs( 0.14 ) | đ( 0.13 ) | 『( 0.13 ) | congenital*( 0.13 ) | therapeutic( 0.13 )
+Virtual Token 48 [Bio:   0.0%]: ་( 0.12 ) | techniques( 0.12 ) | julie( 0.12 ) | 的( 0.11 ) | quentin( 0.11 ) | °c( 0.11 ) | ‿( 0.11 ) | bryce( 0.11 ) | consecutive( 0.11 ) | đ( 0.11 )
+Virtual Token 49 [Bio:   0.0%]: cesar( 0.12 ) | zoning( 0.12 ) | censorship( 0.12 ) | ko( 0.12 ) | charlotte( 0.12 ) | scoring( 0.11 ) | artwork( 0.11 ) | lighting( 0.11 ) | execution( 0.11 ) | classification( 0.11 )
+Virtual Token 50 [Bio:  30.0%]: complications( 0.16 ) | symptoms*( 0.16 ) | damage( 0.16 ) | medications( 0.16 ) | bacterium( 0.15 ) | malaria*( 0.15 ) | pathogen*( 0.15 ) | qaeda( 0.15 ) | headline( 0.15 ) | gaddafi( 0.15 )
+
+
+
+DOMAIN ALIGNMENT SCORE (Percentuale Bio): 5.60%
+COSINE SIMILARITY MEDIA (Top-10):         0.1263
+
+
+
+Caricamento del dataset disi-unibo-nlp/bc5cdr su cuda...
+CONFIGURAZIONE ESPERIMENTO
+Modello:  medicalai/ClinicalBERT
+Dataset:  disi-unibo-nlp/bc5cdr
+Prefix:   50 token
+LR:       0.0001
+Output:   model_ClinicalBERT_bc5cdr_len50_lr0.0001.pth
+
+
+AVVIO ANALISI REVERSE EMBEDDING
+Map:   0%|          | 0/4581 [00:00<?, ? examples/s]Map:  22%|██▏       | 1000/4581 [00:00<00:00, 5317.56 examples/s]Map:  44%|████▎     | 2000/4581 [00:00<00:00, 5364.01 examples/s]Map:  65%|██████▌   | 3000/4581 [00:00<00:00, 5294.44 examples/s]Map:  87%|████████▋ | 4000/4581 [00:00<00:00, 5359.77 examples/s]Map: 100%|██████████| 4581/4581 [00:00<00:00, 5106.28 examples/s]Map: 100%|██████████| 4581/4581 [00:00<00:00, 5031.16 examples/s]
+NEAREST-NEIGHBOR ANALYSIS(Top-10)
+Contrassegno: * = token identificato come dominio biomedicale
+Tensore dei prompt salvato in: model_ClinicalBERT_bc5cdr_len50_lr0.0001_prefix_embeds.pt
+
+Virtual Token 01 [Bio:   0.0%]: পানিহান( 0.18 ) | kasagaran( 0.17 ) | галаксија( 0.17 ) | لمشيخة( 0.17 ) | Safonwyd( 0.17 ) | нөмірге( 0.16 ) | єктів( 0.16 ) | अलावा( 0.16 ) | асанехь( 0.16 ) | planetisimal( 0.16 )
+Virtual Token 02 [Bio:   0.0%]: gjithë( 0.14 ) | краљ( 0.14 ) | vattenytor( 0.14 ) | अलावा( 0.14 ) | เช่น( 0.14 ) | liber( 0.14 ) | llogaters( 0.14 ) | нысанды( 0.14 ) | llogats( 0.14 ) | vomas( 0.14 )
+Virtual Token 03 [Bio:   0.0%]: matoari( 0.20 ) | beubeulahan( 0.19 ) | contestants( 0.18 ) | Republici( 0.17 ) | 缢( 0.16 ) | 冻( 0.16 ) | ایلینده( 0.16 ) | ектаў( 0.16 ) | učilišta( 0.16 ) | dále( 0.16 )
+Virtual Token 04 [Bio:   0.0%]: Sjön( 0.16 ) | धासा( 0.15 ) | მიეკუთვნება( 0.15 ) | இந்தப்( 0.15 ) | 윈( 0.15 ) | 这( 0.15 ) | NGC( 0.15 ) | بۇ( 0.15 ) | ובכך( 0.15 ) | voms( 0.15 )
+Virtual Token 05 [Bio:   0.0%]: kabanay( 0.16 ) | kolovoza( 0.15 ) | юьртан( 0.15 ) | engelska( 0.15 ) | slutet( 0.14 ) | flesta( 0.14 ) | castellán( 0.14 ) | exempelvis( 0.14 ) | viele( 0.14 ) | miaka( 0.14 )
+Virtual Token 06 [Bio:   0.0%]: Калифорнија( 0.16 ) | زمانی( 0.15 ) | کندی( 0.15 ) | gerekend( 0.14 ) | lågvuxen( 0.14 ) | министерстви( 0.14 ) | sjöarna( 0.14 ) | 诽( 0.14 ) | الشرقي( 0.14 ) | resolved( 0.13 )
+Virtual Token 07 [Bio:   0.0%]: 加( 0.14 ) | Parmi( 0.13 ) | Kroatien( 0.12 ) | 톡( 0.12 ) | niger( 0.12 ) | ฆ( 0.12 ) | amelynek( 0.12 ) | 衫( 0.12 ) | 濮( 0.12 ) | videtü( 0.11 )
+Virtual Token 08 [Bio:   0.0%]: создана( 0.15 ) | команд( 0.14 ) | 蚬( 0.14 ) | обладает( 0.14 ) | Armii( 0.14 ) | 沭( 0.14 ) | флот( 0.13 ) | comunistas( 0.13 ) | armadas( 0.13 ) | osoby( 0.13 )
+Virtual Token 09 [Bio:   0.0%]: 折( 0.14 ) | მისი( 0.13 ) | 鼻( 0.13 ) | сјај( 0.13 ) | gant( 0.13 ) | 啞( 0.13 ) | 幕( 0.13 ) | guanyar( 0.13 ) | һ( 0.13 ) | folosit( 0.13 )
+Virtual Token 10 [Bio:   0.0%]: 评( 0.13 ) | havien( 0.12 ) | 鉴( 0.11 ) | ireo( 0.11 ) | возглавил( 0.11 ) | єр( 0.11 ) | 磁( 0.11 ) | приликом( 0.11 ) | 炼( 0.11 ) | Среди( 0.11 )
+Virtual Token 11 [Bio:   0.0%]: شود( 0.17 ) | plutôt( 0.17 ) | озын( 0.16 ) | карьере( 0.16 ) | 보존된( 0.16 ) | ассоциации( 0.16 ) | luận( 0.16 ) | Lamerikän( 0.16 ) | thù( 0.16 ) | 문서에서( 0.15 )
+Virtual Token 12 [Bio:   0.0%]: 168( 0.13 ) | szócikk( 0.12 ) | exhaustif( 0.12 ) | 】( 0.11 ) | ర( 0.11 ) | 喙( 0.11 ) | 丸( 0.11 ) | oer( 0.11 ) | ranging( 0.11 ) | troch( 0.11 )
+Virtual Token 13 [Bio:  10.0%]: pagina( 0.15 ) | species( 0.14 ) | Aquitania( 0.13 ) | bisbe( 0.12 ) | prison( 0.12 ) | verið( 0.12 ) | ill( 0.12 ) | Players( 0.12 ) | patient*( 0.12 ) | vita( 0.12 )
+Virtual Token 14 [Bio:   0.0%]: gebuer( 0.15 ) | municipalitat( 0.13 ) | dzimis( 0.13 ) | helyi( 0.12 ) | nombreux( 0.12 ) | worn( 0.12 ) | Orchidaceae( 0.12 ) | ennen( 0.12 ) | genyn( 0.11 ) | ایتالیاجا( 0.11 )
+Virtual Token 15 [Bio:   0.0%]: அது( 0.12 ) | olisi( 0.11 ) | 없이( 0.11 ) | soient( 0.11 ) | باعث( 0.11 ) | 欠( 0.11 ) | friendly( 0.10 ) | としても( 0.10 ) | famülas( 0.10 ) | ״( 0.10 )
+Virtual Token 16 [Bio:   0.0%]: שלו( 0.16 ) | mengebor( 0.13 ) | neidr( 0.12 ) | કરે( 0.12 ) | ၌( 0.12 ) | હોય( 0.12 ) | цхьаьна( 0.12 ) | નથી( 0.12 ) | Wikipedije( 0.12 ) | мекунад( 0.11 )
+Virtual Token 17 [Bio:   0.0%]: കിലോമീറ്റർ( 0.17 ) | ingkang( 0.16 ) | حول( 0.15 ) | เช่น( 0.15 ) | követő( 0.15 ) | századi( 0.15 ) | juuli( 0.15 ) | hét( 0.15 ) | illər( 0.15 ) | menengah( 0.15 )
+Virtual Token 18 [Bio:   0.0%]: 球( 0.11 ) | augmentation( 0.09 ) | vor( 0.09 ) | шарахь( 0.09 ) | cn( 0.09 ) | ant( 0.08 ) | 幽( 0.08 ) | mit( 0.08 ) | con( 0.08 ) | ent( 0.08 )
+Virtual Token 19 [Bio:   0.0%]: descrisă( 0.17 ) | завършва( 0.16 ) | Aragó( 0.14 ) | Göteborgs( 0.14 ) | Aragona( 0.14 ) | Cornell( 0.14 ) | 样( 0.14 ) | Deși( 0.14 ) | Castella( 0.13 ) | această( 0.13 )
+Virtual Token 20 [Bio:   0.0%]: Tots( 0.14 ) | neskôr( 0.13 ) | Altres( 0.12 ) | també( 0.12 ) | yng( 0.11 ) | İstifadə( 0.11 ) | بنسبة( 0.11 ) | ottelussa( 0.11 ) | Millor( 0.11 ) | frae( 0.11 )
+Virtual Token 21 [Bio:   0.0%]: Spesies( 0.15 ) | Province( 0.15 ) | Omgivningarna( 0.15 ) | allra( 0.14 ) | kroppen( 0.14 ) | Dalí( 0.14 ) | департаментінде( 0.14 ) | Rosemary( 0.14 ) | weltweit( 0.14 ) | ロバート( 0.14 )
+Virtual Token 22 [Bio:   0.0%]: yards( 0.15 ) | Plaza( 0.15 ) | eesti( 0.15 ) | geldig( 0.15 ) | 1764( 0.15 ) | Île( 0.15 ) | 1623( 0.14 ) | артист( 0.14 ) | teatral( 0.14 ) | Brest( 0.14 )
+Virtual Token 23 [Bio:   0.0%]: 船( 0.12 ) | 指( 0.11 ) | （( 0.11 ) | руски( 0.11 ) | 改( 0.10 ) | نه( 0.10 ) | 鼠( 0.10 ) | rein( 0.10 ) | 兵( 0.10 ) | 占( 0.10 )
+Virtual Token 24 [Bio:   0.0%]: lawah( 0.19 ) | পানিহান( 0.19 ) | крају( 0.19 ) | тӀуьна( 0.18 ) | beubeulahan( 0.18 ) | баттахь( 0.18 ) | richting( 0.18 ) | Lwowie( 0.18 ) | বর্গমাইল( 0.18 ) | провинциясының( 0.18 )
+Virtual Token 25 [Bio:   0.0%]: vlinder( 0.13 ) | polski( 0.13 ) | banco( 0.13 ) | എന്നിവ( 0.12 ) | quelque( 0.12 ) | lando( 0.12 ) | giver( 0.12 ) | કરે( 0.12 ) | moyenne( 0.11 ) | saving( 0.11 )
+Virtual Token 26 [Bio:   0.0%]: 白( 0.12 ) | dl( 0.09 ) | 年( 0.09 ) | 人( 0.09 ) | ep( 0.09 ) | Né( 0.09 ) | 血( 0.09 ) | tat( 0.09 ) | metais( 0.09 ) | 素( 0.09 )
+Virtual Token 27 [Bio:   0.0%]: яўляецца( 0.11 ) | 捐( 0.10 ) | en( 0.10 ) | 亏( 0.10 ) | viaje( 0.10 ) | 除( 0.09 ) | Liv( 0.09 ) | Abs( 0.09 ) | prostire( 0.09 ) | としては( 0.09 )
+Virtual Token 28 [Bio:   0.0%]: animales( 0.14 ) | defend( 0.14 ) | spre( 0.13 ) | urdd( 0.13 ) | 면( 0.13 ) | democracia( 0.13 ) | teulu( 0.13 ) | carro( 0.13 ) | 棋( 0.13 ) | arma( 0.12 )
+Virtual Token 29 [Bio:   0.0%]: »( 0.12 ) | მისი( 0.11 ) | andre( 0.11 ) | zijn( 0.10 ) | Bilbo( 0.10 ) | groep( 0.10 ) | kallaste( 0.10 ) | となる( 0.10 ) | 」( 0.10 ) | muu( 0.09 )
+Virtual Token 30 [Bio:   0.0%]: gia( 0.13 ) | 많은( 0.13 ) | 劝( 0.12 ) | 哥( 0.12 ) | 朴( 0.12 ) | 狛( 0.12 ) | במשחק( 0.12 ) | 즈( 0.12 ) | Stakes( 0.11 ) | 和( 0.11 )
+Virtual Token 31 [Bio:   0.0%]: jolla( 0.15 ) | solution( 0.15 ) | dzimis( 0.14 ) | suggests( 0.14 ) | Turing( 0.14 ) | solutions( 0.14 ) | surfaces( 0.14 ) | apie( 0.14 ) | proteínas( 0.14 ) | 胞( 0.13 )
+Virtual Token 32 [Bio:   0.0%]: n( 0.12 ) | wird( 0.11 ) | mid( 0.11 ) | Lakosainak( 0.10 ) | česky( 0.10 ) | erschienen( 0.10 ) | szeptember( 0.10 ) | few( 0.10 ) | of( 0.10 ) | oft( 0.10 )
+Virtual Token 33 [Bio:   0.0%]: allo( 0.19 ) | born( 0.18 ) | sju( 0.17 ) | dzimis( 0.17 ) | koje( 0.17 ) | obtenu( 0.16 ) | spons( 0.16 ) | accent( 0.16 ) | koja( 0.15 ) | Afsluss( 0.15 )
+Virtual Token 34 [Bio:   0.0%]: hilabihan( 0.17 ) | сайтындағы( 0.16 ) | ydy( 0.15 ) | કરે( 0.15 ) | внесении( 0.15 ) | kelurahan( 0.15 ) | SpeciesFile( 0.15 ) | геоинформация( 0.15 ) | pertsonek( 0.15 ) | юхса( 0.14 )
+Virtual Token 35 [Bio:   0.0%]: шарахь( 0.17 ) | piramidea( 0.16 ) | чемпионом( 0.14 ) | чкъор( 0.14 ) | юк( 0.14 ) | באליפות( 0.14 ) | বর্গমাইল( 0.14 ) | сборную( 0.13 ) | Բնակավայրը( 0.13 ) | bikoteak( 0.13 )
+Virtual Token 36 [Bio:   0.0%]: vele( 0.16 ) | później( 0.16 ) | cztery( 0.16 ) | 磁( 0.16 ) | けられ( 0.16 ) | kasneje( 0.16 ) | potem( 0.15 ) | saj( 0.15 ) | 梶( 0.15 ) | えられ( 0.15 )
+Virtual Token 37 [Bio:   0.0%]: наук( 0.14 ) | urbs( 0.12 ) | huvudstaden( 0.12 ) | atque( 0.12 ) | Mathematik( 0.12 ) | Planck( 0.12 ) | acest( 0.11 ) | usque( 0.11 ) | Universitat( 0.11 ) | genyn( 0.11 )
+Virtual Token 38 [Bio:   0.0%]: департаментінде( 0.16 ) | পানিহান( 0.16 ) | Аьхка( 0.16 ) | planetisimal( 0.16 ) | faptul( 0.16 ) | kasagaran( 0.16 ) | jewografik( 0.16 ) | баттахь( 0.16 ) | sabuak( 0.16 ) | галаксија( 0.16 )
+
+Virtual Token 39 [Bio:   0.0%]: 簸( 0.15 ) | 畴( 0.15 ) | వారం( 0.14 ) | tuleb( 0.14 ) | 毋( 0.14 ) | صالح( 0.14 ) | terbaik( 0.14 ) | 비해( 0.14 ) | mungkin( 0.13 ) | berbanding( 0.13 )
+Virtual Token 40 [Bio:   0.0%]: का( 0.15 ) | Đây( 0.13 ) | 100m( 0.13 ) | 暂( 0.12 ) | kasagaran( 0.12 ) | Rabbit( 0.12 ) | mengebor( 0.12 ) | perbandaran( 0.12 ) | 잠( 0.11 ) | Ceratopogonidae( 0.11 )
+Virtual Token 41 [Bio:   0.0%]: 枪( 0.14 ) | paghatag( 0.13 ) | kilomètres( 0.13 ) | tiilan( 0.13 ) | клубу( 0.13 ) | тата( 0.12 ) | Fransya( 0.12 ) | parcours( 0.12 ) | komon( 0.12 ) | pagasta( 0.12 )
+Virtual Token 42 [Bio:   0.0%]: 鲶( 0.15 ) | peuvent( 0.15 ) | Omaha( 0.15 ) | Velika( 0.14 ) | daitezke( 0.14 ) | 鳄( 0.14 ) | 该( 0.14 ) | 鎏( 0.14 ) | machos( 0.13 ) | sentenced( 0.13 )
+Virtual Token 43 [Bio:   0.0%]: voms( 0.18 ) | vaikka( 0.17 ) | obwohl( 0.16 ) | tipli( 0.16 ) | баттахь( 0.16 ) | ในปี( 0.16 ) | のような( 0.15 ) | haavon( 0.15 ) | azaleran( 0.15 ) | 때문이다( 0.15 )
+Virtual Token 44 [Bio:   0.0%]: value( 0.16 ) | amount( 0.16 ) | described( 0.16 ) | ricerca( 0.15 ) | measured( 0.15 ) | seconds( 0.15 ) | być( 0.15 ) | parola( 0.15 ) | amounts( 0.15 ) | ucciso( 0.15 )
+Virtual Token 45 [Bio:  10.0%]: юхса( 0.15 ) | percorso( 0.14 ) | 訶( 0.14 ) | débute( 0.14 ) | NXT( 0.14 ) | Numéro( 0.14 ) | nächsten( 0.13 ) | sequences( 0.13 ) | mRNA*( 0.13 ) | debuut( 0.13 )
+Virtual Token 46 [Bio:   0.0%]: koje( 0.15 ) | koji( 0.15 ) | koja( 0.14 ) | iz( 0.14 ) | anque( 0.14 ) | unu( 0.13 ) | постоянного( 0.13 ) | característica( 0.13 ) | norbanakoentzako( 0.13 ) | nije( 0.13 )
+Virtual Token 47 [Bio:   0.0%]: inning( 0.18 ) | pagasta( 0.18 ) | Meyrick( 0.17 ) | promedio( 0.17 ) | threw( 0.17 ) | omna( 0.17 ) | 罚( 0.17 ) | tabel( 0.16 ) | laskettiin( 0.16 ) | qualsiasi( 0.16 )
+Virtual Token 48 [Bio:   0.0%]: био( 0.14 ) | magnitud( 0.13 ) | провинция( 0.13 ) | башкы( 0.13 ) | diri( 0.13 ) | Papst( 0.13 ) | sound( 0.13 ) | energy( 0.13 ) | provinsen( 0.13 ) | power( 0.13 )
+Virtual Token 49 [Bio:   0.0%]: аьхкенан( 0.19 ) | beubeulahan( 0.18 ) | memulai( 0.18 ) | галаксија( 0.18 ) | Lemesed( 0.18 ) | برنامههای( 0.18 ) | հեռավորության( 0.18 ) | હોય( 0.18 ) | jarak( 0.17 ) | баттахь( 0.17 )
+Virtual Token 50 [Bio:   0.0%]: appeared( 0.15 ) | interpretazione( 0.15 ) | interpretation( 0.14 ) | wave( 0.14 ) | belong( 0.14 ) | cannot( 0.14 ) | leaf( 0.14 ) | interprétation( 0.14 ) | not( 0.14 ) | sword( 0.14 )
+
+
+
+DOMAIN ALIGNMENT SCORE (Percentuale Bio): 0.40%
+COSINE SIMILARITY MEDIA (Top-10):         0.1357
+
+
+
+Caricamento del dataset disi-unibo-nlp/bc5cdr su cuda...
+CONFIGURAZIONE ESPERIMENTO
+Modello:  roberta-base
+Dataset:  disi-unibo-nlp/bc5cdr
+Prefix:   50 token
+LR:       0.0001
+Output:   model_roberta-base_bc5cdr_len50_lr0.0001.pth
+
+
+AVVIO ANALISI REVERSE EMBEDDING
+Map:   0%|          | 0/4581 [00:00<?, ? examples/s]Map:  22%|██▏       | 1000/4581 [00:00<00:00, 5233.48 examples/s]Map:  44%|████▎     | 2000/4581 [00:00<00:00, 5297.82 examples/s]Map:  65%|██████▌   | 3000/4581 [00:00<00:00, 5343.20 examples/s]Map:  87%|████████▋ | 4000/4581 [00:00<00:00, 5415.18 examples/s]Map: 100%|██████████| 4581/4581 [00:00<00:00, 5301.48 examples/s]Map: 100%|██████████| 4581/4581 [00:00<00:00, 5141.66 examples/s]Some weights of RobertaModel were not initialized from the model checkpoint at roberta-base and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+
+NEAREST-NEIGHBOR ANALYSIS(Top-10)
+Contrassegno: * = token identificato come dominio biomedicale
+Tensore dei prompt salvato in: model_roberta-base_bc5cdr_len50_lr0.0001_prefix_embeds.pt
+
+Virtual Token 01 [Bio:   0.0%]: gil( 0.14 ) | y( 0.14 ) | with( 0.11 ) | ih( 0.11 ) | at( 0.11 ) | rike( 0.11 ) | For( 0.11 ) | to( 0.10 ) | Ã«( 0.10 ) | kish( 0.10 )
+Virtual Token 02 [Bio:   0.0%]: Prosecut( 0.17 ) | Market( 0.17 ) | Visit( 0.16 ) | 052( 0.16 ) | Attorney( 0.15 ) | Transform( 0.14 ) | Applic( 0.14 ) | ÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤ( 0.14 ) | verty( 0.14 ) | Tickets( 0.14 )
+Virtual Token 03 [Bio:   0.0%]: phrine( 0.16 ) | tes( 0.13 ) | environment( 0.13 ) | igor( 0.13 ) | effic( 0.13 ) | philis( 0.13 ) | ission( 0.13 ) | othermal( 0.13 ) | cule( 0.12 ) | peria( 0.12 )
+Virtual Token 04 [Bio:   0.0%]: Congratulations( 0.13 ) | second( 0.12 ) | mate( 0.11 ) | highest( 0.11 ) | ogeneity( 0.11 ) | First( 0.11 ) | maker( 0.11 ) | ÅĤ( 0.11 ) | oggles( 0.11 ) | job( 0.11 )
+Virtual Token 05 [Bio:   0.0%]: Trans( 0.13 ) | Äį( 0.13 ) | madeupword0002( 0.12 ) | ibel( 0.12 ) | ā( 0.12 ) | é¾įå¥( 0.12 ) | .ï¿½( 0.12 ) | uvian( 0.12 ) | TPPStreamerBot( 0.12 ) | cart( 0.11 )
+Virtual Token 06 [Bio:   0.0%]: dayName( 0.12 ) | oreAndOnline( 0.11 ) | rawdownload( 0.11 ) | quickShipAvailable( 0.10 ) | anqu( 0.10 ) | arc( 0.10 ) | madeupword0001( 0.10 ) | é¾įå¥ĳå£«( 0.10 ) | cler( 0.09 ) | rav( 0.09 )
+Virtual Token 07 [Bio:   0.0%]: efully( 0.14 ) | verett( 0.13 ) | izabeth( 0.12 ) | Ã±( 0.12 ) | planes( 0.12 ) | soType( 0.12 ) | azon( 0.12 ) | To( 0.12 ) | senal( 0.12 ) | yl( 0.12 )
+Virtual Token 08 [Bio:  20.0%]: Skin( 0.17 ) | upuncture( 0.14 ) | ellar( 0.14 ) | protein*( 0.13 ) | aturday( 0.13 ) | Brain*( 0.12 ) | mination( 0.12 ) | otin( 0.12 ) | skin( 0.12 ) | Beta( 0.11 )
+Virtual Token 09 [Bio:   0.0%]: Exactly( 0.15 ) | 00200000( 0.15 ) | Nature( 0.14 ) | Inc( 0.14 ) | utterstock( 0.14 ) | reating( 0.14 ) | Asset( 0.14 ) | Regarding( 0.13 ) | Exception( 0.13 ) | organisms( 0.13 )
+Virtual Token 10 [Bio:   0.0%]: uming( 0.14 ) | geoning( 0.14 ) | riger( 0.14 ) | izoph( 0.14 ) | iven( 0.14 ) | apsed( 0.14 ) | URES( 0.14 ) | ãģ®æ( 0.14 ) | ophe( 0.13 ) | enance( 0.13 )
+Virtual Token 11 [Bio:   0.0%]: akeru( 0.17 ) | jriwal( 0.17 ) | ratom( 0.17 ) | otonin( 0.16 ) | ylan( 0.16 ) | upuncture( 0.16 ) | etchup( 0.15 ) | ĺħ( 0.15 ) | £ı( 0.15 ) | ylene( 0.15 )
+Virtual Token 12 [Bio:   0.0%]: ocytes( 0.18 ) | 00007( 0.17 ) | 024( 0.17 ) | riott( 0.16 ) | 157( 0.16 ) | gregation( 0.16 ) | icago( 0.15 ) | intendo( 0.15 ) | ĸļ( 0.15 ) | 022( 0.15 )
+Virtual Token 13 [Bio:   0.0%]: ô( 0.20 ) | ocusing( 0.19 ) | anoia( 0.19 ) | ĻĤ( 0.18 ) | ²¾( 0.17 ) | ctx( 0.16 ) | ģ«( 0.16 ) | Ĥİ( 0.16 ) | atonin( 0.16 ) | izoph( 0.16 )
+Virtual Token 14 [Bio:   0.0%]: Were( 0.14 ) | Market( 0.14 ) | Even( 0.13 ) | ò( 0.13 ) | quickShipAvailable( 0.13 ) | Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯( 0.13 ) | madeupword0002( 0.12 ) | madeupword0001( 0.12 ) | InstoreAndOnline( 0.12 ) | Are( 0.11 )
+Virtual Token 15 [Bio:   0.0%]: assetsadobe( 0.12 ) | Ď( 0.12 ) | InstoreAndOnline( 0.12 ) | Nitrome( 0.12 ) | Enc( 0.12 ) | resses( 0.12 ) | rawdownload( 0.12 ) | Buyable( 0.11 ) | shapeshifter( 0.11 ) | ãģ¦( 0.11 )
+Virtual Token 16 [Bio:   0.0%]: ę( 0.21 ) | ĝ( 0.20 ) | InstoreAndOnline( 0.19 ) | ?ãĢį( 0.18 ) | GoldMagikarp( 0.18 ) | ãĢı( 0.18 ) | ÃĥÃĤ( 0.18 ) | cffff( 0.17 ) | ē( 0.17 ) | ĊÂł( 0.17 )
+Virtual Token 17 [Bio:   0.0%]: Iv( 0.18 ) | jriwal( 0.16 ) | ļé( 0.16 ) | selected( 0.16 ) | Kate( 0.16 ) | izabeth( 0.16 ) | HAEL( 0.15 ) | ricia( 0.15 ) | à¸( 0.15 ) | åĭ( 0.15 )
+Virtual Token 18 [Bio:   0.0%]: iazep( 0.15 ) | oxicity( 0.15 ) | arijuana( 0.14 ) | ococ( 0.14 ) | ð( 0.14 ) | flation( 0.13 ) | abetes( 0.13 ) | lycer( 0.13 ) | anking( 0.13 ) | Â¢( 0.13 )
+Virtual Token 19 [Bio:   0.0%]: Please( 0.14 ) | Additional( 0.13 ) | HH( 0.13 ) | Aud( 0.13 ) | 882( 0.13 ) | camp( 0.13 ) | Bottom( 0.12 ) | Senior( 0.12 ) | Eth( 0.12 ) | Beaut( 0.12 )
+Virtual Token 20 [Bio:   0.0%]: Nitrome( 0.20 ) | InstoreAndOnline( 0.19 ) | cffff( 0.19 ) | ãħĭ( 0.18 ) | Ě( 0.18 ) | DragonMagazine( 0.17 ) | ãħĭãħĭ( 0.17 ) | é¾įåĸļå£«( 0.17 ) | printf( 0.17 ) | endif( 0.17 )
+Virtual Token 21 [Bio:   0.0%]: InstoreAndOnline( 0.18 ) | ¥µ( 0.17 ) | £ı( 0.17 ) | ē( 0.16 ) | FactoryReloaded( 0.16 ) | Á( 0.16 ) | PsyNetMessage( 0.16 ) | Ń·( 0.16 ) | åİ( 0.15 ) | ģ«( 0.15 )
+Virtual Token 22 [Bio:  10.0%]: repre( 0.14 ) | Rating( 0.13 ) | Quite( 0.13 ) | Exception( 0.13 ) | JUST( 0.13 ) | err( 0.12 ) | reatment( 0.12 ) | Failure( 0.12 ) | treatment*( 0.12 ) | Inc( 0.12 )
+Virtual Token 23 [Bio:   0.0%]: AppData( 0.14 ) | FontSize( 0.14 ) | iton( 0.13 ) | ìĿ( 0.13 ) | Buy( 0.13 ) | Send( 0.13 ) | ilyn( 0.12 ) | FILE( 0.12 ) | Apply( 0.12 ) | She( 0.12 )
+Virtual Token 24 [Bio:   0.0%]: ä¸Ń( 0.14 ) | ă( 0.13 ) | TPPStreamerBot( 0.13 ) | 024( 0.12 ) | wrap( 0.12 ) | ä¸ī( 0.12 ) | Reloaded( 0.11 ) | reb( 0.11 ) | ĸļ( 0.11 ) | Ā( 0.11 )
+Virtual Token 25 [Bio:   0.0%]: ocrin( 0.17 ) | TL( 0.16 ) | TING( 0.14 ) | DM( 0.14 ) | HT( 0.13 ) | tl( 0.13 ) | TG( 0.13 ) | ocused( 0.13 ) | yz( 0.12 ) | sin( 0.12 )
+Virtual Token 26 [Bio:   0.0%]: lycer( 0.15 ) | iazep( 0.14 ) | arijuana( 0.14 ) | ×ĳ( 0.14 ) | ÂłÂłÂł( 0.13 ) | ÙĴ( 0.13 ) | kw( 0.13 ) | anol( 0.13 ) | amphetamine( 0.13 ) | Ð²( 0.13 )
+Virtual Token 27 [Bio:   0.0%]: neau( 0.17 ) | aceae( 0.16 ) | naissance( 0.15 ) | anyl( 0.15 ) | achine( 0.15 ) | uminum( 0.14 ) | uces( 0.14 ) | Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯( 0.14 ) | VERSION( 0.14 ) | oreAndOnline( 0.14 )
+Virtual Token 28 [Bio:   0.0%]: twitch( 0.16 ) | ivariate( 0.15 ) | Anyway( 0.15 ) | Below( 0.15 ) | Result( 0.14 ) | Setup( 0.14 ) | Applic( 0.14 ) | MRI( 0.14 ) | Changed( 0.14 ) | Compared( 0.14 )
+Virtual Token 29 [Bio:   0.0%]: Ę( 0.18 ) | ãĤ£( 0.17 ) | ãĥ£( 0.17 ) | ğ( 0.16 ) | icidal( 0.16 ) | ãĤ½( 0.16 ) | Ð°( 0.16 ) | abolic( 0.16 ) | ãĤ©( 0.16 ) | ÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤ( 0.16 )
+Virtual Token 30 [Bio:   0.0%]: Îº( 0.18 ) | ô( 0.17 ) | Sym( 0.17 ) | Instance( 0.16 ) | ÂłÂłÂłÂłÂłÂłÂłÂłÂłÂłÂłÂłÂłÂłÂłÂł( 0.16 ) | Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯( 0.16 ) | April( 0.15 ) | Initialized( 0.15 ) | Warning( 0.15 ) | Interstitial( 0.15 )
+Virtual Token 31 [Bio:   0.0%]: Interstitial( 0.17 ) | Â¨( 0.16 ) | Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯( 0.16 ) | î( 0.16 ) | áµ( 0.16 ) | ãģ®æ( 0.15 ) | ãģ®ç( 0.15 ) | Gallery( 0.14 ) | Image( 0.14 ) | 1016( 0.14 )
+Virtual Token 32 [Bio:   0.0%]: esity( 0.18 ) | oglobin( 0.18 ) | ocrin( 0.18 ) | osaurs( 0.17 ) | ratom( 0.16 ) | nesium( 0.16 ) | ãĤ¨( 0.16 ) | uracy( 0.16 ) | insula( 0.16 ) | ÙĴ( 0.16 )
+Virtual Token 33 [Bio:   0.0%]: figured( 0.14 ) | pired( 0.14 ) | ONSORED( 0.13 ) | ensical( 0.13 ) | violence( 0.12 ) | ivalry( 0.12 ) | atial( 0.12 ) | acts( 0.12 ) | eligible( 0.12 ) | comings( 0.12 )
+Virtual Token 34 [Bio:   0.0%]: apsed( 0.19 ) | estinal( 0.16 ) | nesium( 0.16 ) | olated( 0.16 ) | healthy( 0.16 ) | ulner( 0.15 ) | ascular( 0.15 ) | rored( 0.15 ) | ossible( 0.15 ) | ometimes( 0.15 )
+Virtual Token 35 [Bio:   0.0%]: nea( 0.15 ) | ãĤ¦ãĤ¹( 0.15 ) | jriwal( 0.15 ) | methyl( 0.14 ) | ãĥ¢( 0.14 ) | ãĥ³( 0.14 ) | ãĤ¬( 0.14 ) | POSE( 0.13 ) | å£«( 0.13 ) | ãĥį( 0.13 )
+Virtual Token 36 [Bio:   0.0%]: HAEL( 0.16 ) | Ĥ¬( 0.15 ) | INESS( 0.15 ) | ATION( 0.15 ) | GGGG( 0.14 ) | RAL( 0.14 ) | RN( 0.14 ) | ORE( 0.14 ) | otide( 0.14 ) | AY( 0.14 )
+Virtual Token 37 [Bio:   0.0%]: esthes( 0.17 ) | ĊĊ( 0.14 ) | ratom( 0.13 ) | ositories( 0.13 ) | inse( 0.12 ) | upuncture( 0.12 ) | esting( 0.12 ) | ylum( 0.12 ) | ritic( 0.12 ) | ©¶æ( 0.11 )
+
+Virtual Token 38 [Bio:   0.0%]: ÂłÂł( 0.17 ) | ãģ®æ( 0.17 ) | ctory( 0.17 ) | ÂłÂłÂłÂłÂłÂłÂłÂłÂłÂłÂłÂłÂłÂłÂłÂł( 0.16 ) | ptives( 0.16 ) | /âĢĭ( 0.16 ) | hematically( 0.16 ) | ikuman( 0.16 ) | imens( 0.16 ) | inctions( 0.16 )
+Virtual Token 39 [Bio:   0.0%]: ÙĴ( 0.15 ) | I( 0.14 ) | profile( 0.13 ) | n( 0.13 ) | USS( 0.13 ) | 's( 0.13 ) | AH( 0.12 ) | Ð°( 0.12 ) | thy( 0.12 ) | MG( 0.12 )
+Virtual Token 40 [Bio:   0.0%]: Beyond( 0.14 ) | outhern( 0.14 ) | ocity( 0.14 ) | wx( 0.13 ) | obyl( 0.13 ) | ËĪ( 0.13 ) | Handle( 0.13 ) | eworld( 0.13 ) | odynam( 0.13 ) | luent( 0.13 )
+Virtual Token 41 [Bio:   0.0%]: Exception( 0.16 ) | Additionally( 0.16 ) | Likewise( 0.16 ) | Moreover( 0.15 ) | Whereas( 0.14 ) | Uncommon( 0.14 ) | Beginning( 0.14 ) | Furthermore( 0.13 ) | oother( 0.13 ) | FILE( 0.13 )
+Virtual Token 42 [Bio:   0.0%]: anse( 0.16 ) | uming( 0.16 ) | chev( 0.16 ) | owsky( 0.15 ) | Incre( 0.15 ) | ãģ¦( 0.15 ) | ersen( 0.14 ) | estial( 0.14 ) | advertisement( 0.14 ) | awed( 0.14 )
+Virtual Token 43 [Bio:   0.0%]: ãģ¦( 0.19 ) | ãĥ¼ãĤ¯( 0.18 ) | ©¶æ( 0.17 ) | ãĤĭ( 0.16 ) | ?ãĢį( 0.16 ) | ãĥķãĤ©( 0.16 ) | byss( 0.16 ) | ç«( 0.15 ) | ãĢİ( 0.15 ) | ãģ®ç( 0.15 )
+Virtual Token 44 [Bio:   0.0%]: OURCE( 0.16 ) | î( 0.14 ) | 033( 0.14 ) | ļé( 0.14 ) | ğ( 0.14 ) | 436( 0.13 ) | UTF( 0.13 ) | 045( 0.13 ) | visory( 0.13 ) | NECT( 0.13 )
+Virtual Token 45 [Bio:   0.0%]: Tickets( 0.14 ) | ©¶æ( 0.14 ) | Component( 0.13 ) | Crystal( 0.13 ) | Benef( 0.13 ) | ă( 0.13 ) | otherapy( 0.13 ) | actionDate( 0.12 ) | Detect( 0.12 ) | Damage( 0.12 )
+Virtual Token 46 [Bio:   0.0%]: Request( 0.15 ) | Players( 0.15 ) | Political( 0.15 ) | Scene( 0.14 ) | ignment( 0.14 ) | idates( 0.14 ) | Saturday( 0.13 ) | IDER( 0.13 ) | offer( 0.13 ) | ITION( 0.13 )
+Virtual Token 47 [Bio:   0.0%]: ogene( 0.14 ) | uters( 0.12 ) | uter( 0.12 ) | ensional( 0.12 ) | 1016( 0.11 ) | pmwiki( 0.11 ) | aucuses( 0.11 ) | 1900( 0.11 ) | Maria( 0.11 ) | PLIED( 0.11 )
+Virtual Token 48 [Bio:   0.0%]: Interstitial( 0.16 ) | /âĢĭ( 0.15 ) | ğ( 0.14 ) | ãģ®æ( 0.14 ) | unctions( 0.14 ) | VERS( 0.13 ) | xxxx( 0.13 ) | interstitial( 0.13 ) | imens( 0.13 ) | intendo( 0.13 )
+Virtual Token 49 [Bio:   0.0%]: However( 0.16 ) | Compared( 0.16 ) | Ear( 0.16 ) | Understanding( 0.15 ) | Uncommon( 0.15 ) | Close( 0.15 ) | Fortunately( 0.15 ) | Sadly( 0.15 ) | Previous( 0.15 ) | Shape( 0.15 )
+Virtual Token 50 [Bio:  10.0%]: Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯( 0.17 ) | malink( 0.16 ) | áµ( 0.16 ) | Handle( 0.15 ) | ä¹ĭ( 0.15 ) | Bloom( 0.15 ) | ãģ¦( 0.15 ) | ocrine( 0.15 ) | Increases( 0.14 ) | Brain*( 0.14 )
+
+
+
+DOMAIN ALIGNMENT SCORE (Percentuale Bio): 0.80%
+COSINE SIMILARITY MEDIA (Top-10):         0.1414
+
+
+
+Caricamento del dataset disi-unibo-nlp/bc5cdr su cuda...
+CONFIGURAZIONE ESPERIMENTO
+Modello:  roberta-base-uncased
+Dataset:  disi-unibo-nlp/bc5cdr
+Prefix:   50 token
+LR:       0.0001
+Output:   model_roberta-base-uncased_bc5cdr_len50_lr0.0001.pth
+
+
+AVVIO ANALISI REVERSE EMBEDDING
+Map:   0%|          | 0/4581 [00:00<?, ? examples/s]Map:  22%|██▏       | 1000/4581 [00:00<00:00, 5240.55 examples/s]Map:  44%|████▎     | 2000/4581 [00:00<00:00, 5374.19 examples/s]Map:  65%|██████▌   | 3000/4581 [00:00<00:00, 5337.83 examples/s]Map:  87%|████████▋ | 4000/4581 [00:00<00:00, 5407.61 examples/s]Map: 100%|██████████| 4581/4581 [00:00<00:00, 5270.11 examples/s]Map: 100%|██████████| 4581/4581 [00:00<00:00, 5153.82 examples/s]Some weights of RobertaModel were not initialized from the model checkpoint at roberta-base and are newly initialized: ['pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+
+NEAREST-NEIGHBOR ANALYSIS(Top-10)
+Contrassegno: * = token identificato come dominio biomedicale
+Tensore dei prompt salvato in: model_roberta-base-uncased_bc5cdr_len50_lr0.0001_prefix_embeds.pt
+
+Virtual Token 01 [Bio:   0.0%]: Henry( 0.13 ) | thus( 0.13 ) | mut( 0.12 ) | åĮ( 0.12 ) | ilic( 0.11 ) | Ð°( 0.11 ) | Champ( 0.11 ) | 2( 0.11 ) | ÙĴ( 0.11 ) | ãģ«( 0.11 )
+Virtual Token 02 [Bio:   0.0%]: depending( 0.15 ) | Removed( 0.14 ) | derived( 0.13 ) | fitted( 0.13 ) | fps( 0.13 ) | toggle( 0.12 ) | focused( 0.12 ) | Changed( 0.12 ) | Increased( 0.11 ) | ìĿ( 0.11 )
+Virtual Token 03 [Bio:   0.0%]: inguishable( 0.15 ) | adas( 0.13 ) | Ã¥( 0.13 ) | ministic( 0.13 ) | ÅĤ( 0.13 ) | apsed( 0.13 ) | Ã¡n( 0.13 ) | parts( 0.12 ) | urgy( 0.12 ) | Ã¡( 0.12 )
+Virtual Token 04 [Bio:   0.0%]: ğ( 0.18 ) | ãģĹ( 0.17 ) | bnb( 0.15 ) | juries( 0.14 ) | ãģ£( 0.14 ) | ãģ¾( 0.14 ) | cedes( 0.14 ) | à¼( 0.13 ) | ãĥķãĤ©( 0.13 ) | ÑĮ( 0.13 )
+Virtual Token 05 [Bio:   0.0%]: Ħ¢( 0.17 ) | ă( 0.16 ) | them( 0.13 ) | pd( 0.13 ) | ortunately( 0.13 ) | ÃĥÃĤÃĥÃĤ( 0.13 ) | Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯( 0.13 ) | ÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤ( 0.12 ) | Decre( 0.12 ) | olve( 0.12 )
+Virtual Token 06 [Bio:   0.0%]: bnb( 0.17 ) | perty( 0.16 ) | iew( 0.16 ) | ğ( 0.16 ) | LEY( 0.15 ) | bush( 0.15 ) | Widget( 0.15 ) | steamapps( 0.15 ) | Wik( 0.14 ) | Ð°( 0.14 )
+Virtual Token 07 [Bio:   0.0%]: AppData( 0.17 ) | Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯( 0.16 ) | Îµ( 0.15 ) | heny( 0.15 ) | ðĿ( 0.15 ) | guided( 0.15 ) | XXXX( 0.15 ) | wx( 0.14 ) | ipedia( 0.14 ) | pixel( 0.14 )
+Virtual Token 08 [Bio:   0.0%]: plant( 0.13 ) | Products( 0.12 ) | use( 0.12 ) | umatic( 0.11 ) | wealth( 0.11 ) | arijuana( 0.11 ) | bilt( 0.11 ) | xual( 0.11 ) | gar( 0.11 ) | X( 0.10 )
+Virtual Token 09 [Bio:   0.0%]: romeda( 0.13 ) | Trivia( 0.13 ) | Score( 0.13 ) | atched( 0.13 ) | Yep( 0.13 ) | Next( 0.13 ) | phthal( 0.12 ) | Probably( 0.12 ) | Alright( 0.12 ) | thens( 0.12 )
+Virtual Token 10 [Bio:  10.0%]: Gameplay( 0.18 ) | Nintendo( 0.14 ) | Line( 0.14 ) | tackle( 0.13 ) | Learn( 0.13 ) | switch( 0.12 ) | Explore( 0.12 ) | Remove( 0.12 ) | brain*( 0.12 ) | Ear( 0.12 )
+Virtual Token 11 [Bio:   0.0%]: ħĭ( 0.17 ) | ãģ®å®( 0.16 ) | ratom( 0.16 ) | apsed( 0.16 ) | ģĸ( 0.15 ) | 66666666( 0.15 ) | ä¹ĭ( 0.15 ) | SET( 0.15 ) | TEXTURE( 0.14 ) | ü( 0.14 )
+Virtual Token 12 [Bio:   0.0%]: Having( 0.13 ) | ÃŃs( 0.12 ) | Added( 0.12 ) | Increased( 0.12 ) | ernaut( 0.11 ) | Ultimately( 0.11 ) | Extra( 0.11 ) | Uncommon( 0.11 ) | esteem( 0.11 ) | Consider( 0.11 )
+Virtual Token 13 [Bio:   0.0%]: Allows( 0.14 ) | ricting( 0.14 ) | secution( 0.14 ) | inguishable( 0.13 ) | Diff( 0.13 ) | Haunted( 0.13 ) | Rather( 0.13 ) | Safety( 0.13 ) | Cause( 0.13 ) | usually( 0.13 )
+Virtual Token 14 [Bio:   0.0%]: ructose( 0.18 ) | esity( 0.16 ) | akeru( 0.16 ) | nesium( 0.15 ) | ¥µ( 0.14 ) | XP( 0.14 ) | vP( 0.14 ) | otech( 0.13 ) | android( 0.13 ) | ĻĤ( 0.13 )
+Virtual Token 15 [Bio:   0.0%]: displayText( 0.18 ) | SpaceEngineers( 0.17 ) | ortunately( 0.16 ) | ÃĥÃĤ( 0.16 ) | isSpecial( 0.16 ) | .ãĢį( 0.16 ) | FINEST( 0.14 ) | reportprint( 0.14 ) | MpServer( 0.14 ) | TEXTURE( 0.14 )
+Virtual Token 16 [Bio:   0.0%]: tank( 0.15 ) | Ė( 0.12 ) | Reviewer( 0.12 ) | Bott( 0.11 ) | cook( 0.11 ) | dozen( 0.11 ) | added( 0.11 ) | sheet( 0.11 ) | ÷( 0.11 ) | target( 0.11 )
+Virtual Token 17 [Bio:   0.0%]: icative( 0.15 ) | otherapy( 0.14 ) | upuncture( 0.14 ) | rogens( 0.14 ) | iology( 0.14 ) | phthal( 0.13 ) | ascular( 0.13 ) | istrate( 0.13 ) | Remove( 0.13 ) | idepress( 0.13 )
+Virtual Token 18 [Bio:   0.0%]: uyomi( 0.17 ) | phrine( 0.15 ) | OND( 0.14 ) | aution( 0.14 ) | Compat( 0.14 ) | burse( 0.14 ) | GoldMagikarp( 0.14 ) | erences( 0.14 ) | iciary( 0.14 ) | NECT( 0.14 )
+Virtual Token 19 [Bio:   0.0%]: lycer( 0.14 ) | éĢ( 0.13 ) | ãģ( 0.13 ) | ï¿½ï¿½( 0.13 ) | kw( 0.12 ) | éĩ( 0.12 ) | ieth( 0.12 ) | album( 0.12 ) | Ã©r( 0.12 ) | ãģį( 0.12 )
+Virtual Token 20 [Bio:   0.0%]: apsed( 0.17 ) | ã( 0.14 ) | izophren( 0.14 ) | Stre( 0.13 ) | Multiple( 0.13 ) | apses( 0.12 ) | Multi( 0.12 ) | Dead( 0.12 ) | izoph( 0.12 ) | Diff( 0.12 )
+Virtual Token 21 [Bio:   0.0%]: includes( 0.13 ) | Everybody( 0.13 ) | FINEST( 0.13 ) | This( 0.13 ) | ÃįÃį( 0.13 ) | pread( 0.13 ) | aucuses( 0.13 ) | Impl( 0.12 ) | Often( 0.12 ) | MpServer( 0.12 )
+Virtual Token 22 [Bio:  20.0%]: cancer*( 0.14 ) | developed( 0.14 ) | Brazil( 0.14 ) | ĭ( 0.12 ) | roxy( 0.12 ) | protein*( 0.12 ) | ratom( 0.12 ) | associated( 0.12 ) | Together( 0.12 ) | inated( 0.12 )
+Virtual Token 23 [Bio:   0.0%]: pdf( 0.17 ) | pictured( 0.16 ) | PDF( 0.15 ) | htm( 0.15 ) | Besides( 0.15 ) | Copyright( 0.15 ) | html( 0.14 ) | Advertisements( 0.14 ) | Yesterday( 0.14 ) | Since( 0.14 )
+Virtual Token 24 [Bio:   0.0%]: athom( 0.14 ) | agin( 0.12 ) | IDER( 0.12 ) | offer( 0.12 ) | unction( 0.12 ) | align( 0.12 ) | idget( 0.12 ) | Requires( 0.11 ) | ivating( 0.11 ) | Ă( 0.11 )
+Virtual Token 25 [Bio:   0.0%]: Featured( 0.18 ) | .ï¿½( 0.17 ) | InstoreAndOnline( 0.16 ) | swer( 0.14 ) | framework( 0.14 ) | ctory( 0.14 ) | Throughout( 0.14 ) | eaturing( 0.13 ) | ÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤ( 0.13 ) | worked( 0.13 )
+Virtual Token 26 [Bio:   0.0%]: ğ( 0.17 ) | bledon( 0.16 ) | ãĤĬ( 0.16 ) | Mbps( 0.15 ) | ÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤ( 0.15 ) | 're( 0.15 ) | ï¸( 0.15 ) | å½( 0.15 ) | Interstitial( 0.15 ) | elist( 0.15 )
+Virtual Token 27 [Bio:  10.0%]: ġ( 0.13 ) | ococ( 0.13 ) | rawdownloadcloneembedreportprint( 0.13 ) | leground( 0.13 ) | userc( 0.13 ) | brain*( 0.13 ) | ãĢģ( 0.12 ) | Byte( 0.12 ) | Â¶( 0.12 ) | .ï¿½( 0.12 )
+Virtual Token 28 [Bio:   0.0%]: ĻĤ( 0.20 ) | ãĤ¨( 0.20 ) | Ļ½( 0.19 ) | ó( 0.19 ) | ģĸ( 0.19 ) | ãĥ¼ãĥĨãĤ£( 0.19 ) | ãĥ´( 0.19 ) | æ©( 0.19 ) | å¤©( 0.19 ) | à¨( 0.18 )
+Virtual Token 29 [Bio:   0.0%]: armac( 0.20 ) | ageddon( 0.20 ) | ahime( 0.18 ) | arcity( 0.18 ) | entanyl( 0.18 ) | aq( 0.17 ) | rared( 0.17 ) | unction( 0.17 ) | phrine( 0.17 ) | mpeg( 0.17 )
+Virtual Token 30 [Bio:   0.0%]: OURCE( 0.12 ) | uyomi( 0.12 ) | omething( 0.12 ) | irable( 0.12 ) | ãģ®ç( 0.12 ) | dayName( 0.12 ) | 052( 0.12 ) | apego( 0.11 ) | 055( 0.11 ) | atever( 0.11 )
+Virtual Token 31 [Bio:   0.0%]: ä¸( 0.13 ) | changed( 0.13 ) | Creating( 0.13 ) | Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯( 0.13 ) | ivariate( 0.13 ) | tnc( 0.13 ) | intuitive( 0.13 ) | circle( 0.13 ) | ÂłÂłÂłÂłÂłÂłÂłÂłÂłÂłÂłÂłÂłÂłÂłÂł( 0.13 ) | ovych( 0.13 )
+Virtual Token 32 [Bio:   0.0%]: ISTER( 0.14 ) | ãĢĳ( 0.14 ) | Applic( 0.14 ) | .ï¿½( 0.14 ) | Scroll( 0.13 ) | ãģ®é( 0.13 ) | ÏĤ( 0.13 ) | ï¸( 0.13 ) | Files( 0.13 ) | Downloadha( 0.13 )
+Virtual Token 33 [Bio:   0.0%]: FREE( 0.16 ) | 259( 0.15 ) | NULL( 0.14 ) | ä»£( 0.14 ) | ORTS( 0.14 ) | SHARE( 0.14 ) | æŃ¦( 0.14 ) | ategories( 0.14 ) | oÄŁan( 0.14 ) | ymes( 0.14 )
+Virtual Token 34 [Bio:   0.0%]: othal( 0.18 ) | inia( 0.14 ) | react( 0.13 ) | Poly( 0.13 ) | angular( 0.13 ) | errilla( 0.13 ) | Theme( 0.13 ) | Layout( 0.12 ) | auldron( 0.12 ) | nesia( 0.12 )
+Virtual Token 35 [Bio:   0.0%]: Despite( 0.14 ) | utics( 0.14 ) | ãĢĲ( 0.13 ) | ÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤ( 0.13 ) | aditional( 0.12 ) | IDER( 0.12 ) | Consider( 0.12 ) | Sphere( 0.12 ) | ă( 0.12 ) | Widget( 0.12 )
+Virtual Token 36 [Bio:   0.0%]: ratom( 0.15 ) | arijuana( 0.14 ) | idates( 0.14 ) | Cond( 0.13 ) | licted( 0.12 ) | induced( 0.12 ) | brance( 0.12 ) | iazep( 0.12 ) | entanyl( 0.12 ) | ptives( 0.12 )
+Virtual Token 37 [Bio:   0.0%]: obyl( 0.17 ) | Þ( 0.17 ) | ithub( 0.16 ) | llular( 0.16 ) | juries( 0.15 ) | 00007( 0.15 ) | ickr( 0.15 ) | edIn( 0.15 ) | ü( 0.15 ) | uv( 0.15 )
+
+Virtual Token 38 [Bio:   0.0%]: Instance( 0.15 ) | jriwal( 0.15 ) | 006( 0.14 ) | ÃŃn( 0.14 ) | inction( 0.14 ) | acan( 0.14 ) | 00000( 0.14 ) | ruciating( 0.13 ) | Increases( 0.13 ) | hement( 0.13 )
+Virtual Token 39 [Bio:   0.0%]: ãĤ¸( 0.18 ) | irlf( 0.17 ) | ractions( 0.17 ) | ãĤ¶( 0.15 ) | occ( 0.15 ) | iants( 0.15 ) | oxic( 0.15 ) | violent( 0.15 ) | enf( 0.15 ) | Urban( 0.14 )
+Virtual Token 40 [Bio:   0.0%]: Even( 0.15 ) | Impl( 0.14 ) | Similarly( 0.13 ) | Authent( 0.13 ) | Applic( 0.13 ) | PsyNetMessage( 0.12 ) | Contribut( 0.12 ) | ā( 0.12 ) | Model( 0.12 ) | ą( 0.12 )
+Virtual Token 41 [Bio:   0.0%]: PLIED( 0.15 ) | emporary( 0.15 ) | opoly( 0.15 ) | Examples( 0.14 ) | ARDIS( 0.14 ) | Likewise( 0.14 ) | incible( 0.14 ) | idential( 0.14 ) | cially( 0.14 ) | inyl( 0.13 )
+Virtual Token 42 [Bio:   0.0%]: pract( 0.13 ) | urther( 0.12 ) | omething( 0.12 ) | utherland( 0.12 ) | dayName( 0.12 ) | ieve( 0.12 ) | ources( 0.12 ) | 115( 0.11 ) | piring( 0.11 ) | who( 0.11 )
+Virtual Token 43 [Bio:   0.0%]: ĝ( 0.14 ) | ocytes( 0.14 ) | CONCLUS( 0.14 ) | Acknowled( 0.13 ) | iasm( 0.13 ) | activate( 0.13 ) | ę( 0.13 ) | Researchers( 0.13 ) | helial( 0.12 ) | Probably( 0.12 )
+Virtual Token 44 [Bio:   0.0%]: ptoms( 0.20 ) | atonin( 0.15 ) | ratom( 0.15 ) | arijuana( 0.15 ) | chedel( 0.15 ) | hetamine( 0.15 ) | psych( 0.15 ) | rogens( 0.15 ) | killers( 0.14 ) | philis( 0.14 )
+Virtual Token 45 [Bio:   0.0%]: ġ( 0.12 ) | 012( 0.12 ) | 292( 0.12 ) | 018( 0.12 ) | Ğ( 0.12 ) | actionDate( 0.12 ) | ÃĥÃĤ( 0.11 ) | ãģ¾( 0.11 ) | ğ( 0.11 ) | ÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤ( 0.11 )
+Virtual Token 46 [Bio:   0.0%]: obyl( 0.18 ) | endif( 0.16 ) | ÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤÃĥÃĤ( 0.16 ) | ricting( 0.15 ) | Try( 0.15 ) | Impl( 0.15 ) | Exactly( 0.15 ) | soDeliveryDate( 0.15 ) | Parameters( 0.15 ) | luaj( 0.14 )
+Virtual Token 47 [Bio:   0.0%]: prev( 0.15 ) | isSpecial( 0.15 ) | ampoo( 0.14 ) | pointer( 0.14 ) | insert( 0.14 ) | malink( 0.13 ) | pointers( 0.13 ) | umbnails( 0.13 ) | roach( 0.13 ) | wage( 0.13 )
+Virtual Token 48 [Bio:   0.0%]: immune( 0.16 ) | cemic( 0.14 ) | balance( 0.14 ) | immigrant( 0.13 ) | Safety( 0.13 ) | ricane( 0.13 ) | Strength( 0.13 ) | imoto( 0.12 ) | walker( 0.12 ) | rise( 0.12 )
+Virtual Token 49 [Bio:   0.0%]: ĝ( 0.18 ) | ÂłÂłÂłÂłÂłÂłÂłÂł( 0.17 ) | inducing( 0.16 ) | ÂłÂłÂłÂłÂłÂłÂłÂłÂłÂłÂłÂłÂłÂłÂłÂł( 0.16 ) | omething( 0.15 ) | Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯( 0.15 ) | induced( 0.15 ) | ü( 0.15 ) | ß( 0.15 ) | enario( 0.14 )
+Virtual Token 50 [Bio:   0.0%]: fecture( 0.14 ) | Applications( 0.13 ) | external( 0.13 ) | rogens( 0.12 ) | Effective( 0.12 ) | ceptor( 0.12 ) | oglobin( 0.12 ) | ciation( 0.12 ) | actively( 0.11 ) | powerful( 0.11 )
+
+
+
+DOMAIN ALIGNMENT SCORE (Percentuale Bio): 0.80%
+COSINE SIMILARITY MEDIA (Top-10):         0.1368
+
+
+
