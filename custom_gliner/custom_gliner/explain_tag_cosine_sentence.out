@@ -1,0 +1,51 @@
+Device: cuda
+Building GLiNER + soft prompt ...
+Loading checkpoint: C:\Users\Franco\Downloads\Tirocinio-SoftPrompting\custom_gliner\custom_gliner\soft_gliner_1\best_f1.pt
+  copied=44  missing=0  unexpected=0
+
+Sentence: Barack Obama visited Paris last summer .
+Tags:     ['person', 'location', 'date', 'organization']
+
+
+########################################################################
+#  COSINE PROBE OF THE *PERTURBED* TAG REPRESENTATION
+#  (for each tag: nearest vocabulary words before vs. after the soft prompt)
+########################################################################
+Reference: mean ||vocab embedding|| = 3.490
+
+Tag "person" [cosine(orig,perturbed) = 0.120]
+  ||original||  = 3.456   (vocab ref: 3.490)
+  ||perturbed|| = 87.387   (vocab ref: 3.490)
+  ||delta||     = 87.041
+  max cos before = 1.000   max cos after = 0.179  max cos delta = 0.161
+  before: person( 1.00 ) | Person( 0.81 ) | PERSON( 0.76 ) | persons( 0.75 ) | people( 0.71 ) | Persons( 0.67 ) | man( 0.66 ) | someone( 0.65 ) | woman( 0.65 ) | People( 0.63 )
+  after : slur( 0.18 ) | NETWORK( 0.17 ) | jus( 0.17 ) | Clearview( 0.17 ) | Rauner( 0.17 ) | disservice( 0.17 ) | horn( 0.16 ) | shabby( 0.16 ) | likeness( 0.16 ) | Pima( 0.16 )
+  delta : slur( 0.16 ) | NETWORK( 0.16 ) | Clearview( 0.15 ) | jus( 0.15 ) | Rauner( 0.15 ) | disservice( 0.15 ) | shabby( 0.15 ) | horn( 0.15 ) | likeness( 0.15 ) | PerimeterX( 0.14 )
+
+Tag "location" [cosine(orig,perturbed) = 0.124]
+  ||original||  = 3.437   (vocab ref: 3.490)
+  ||perturbed|| = 87.621   (vocab ref: 3.490)
+  ||delta||     = 87.262
+  max cos before = 1.000   max cos after = 0.164  max cos delta = 0.150
+  before: location( 1.00 ) | locations( 0.87 ) | Location( 0.79 ) | Locations( 0.69 ) | located( 0.67 ) | LOCATION( 0.65 ) | locate( 0.63 ) | Located( 0.62 ) | locale( 0.61 ) | locating( 0.61 )
+  after : cloth( 0.16 ) | 유( 0.16 ) | Canine( 0.16 ) | Rauner( 0.16 ) | misdemeanor( 0.15 ) | discussion( 0.15 ) | DeWine( 0.15 ) | Aotearoa( 0.15 ) | WGN( 0.15 ) | NETWORK( 0.15 )
+  delta : 유( 0.15 ) | cloth( 0.15 ) | Canine( 0.14 ) | Rauner( 0.14 ) | misdemeanor( 0.14 ) | Aotearoa( 0.14 ) | NETWORK( 0.14 ) | WGN( 0.14 ) | AIA( 0.14 ) | Mulch( 0.14 )
+
+Tag "date" [cosine(orig,perturbed) = 0.077]
+  ||original||  = 3.575   (vocab ref: 3.490)
+  ||perturbed|| = 113.324   (vocab ref: 3.490)
+  ||delta||     = 113.103
+  max cos before = 1.000   max cos after = 0.172  max cos delta = 0.159
+  before: date( 1.00 ) | dates( 0.86 ) | Date( 0.79 ) | DATE( 0.76 ) | Dates( 0.71 ) | dated( 0.65 ) | dating( 0.65 ) | Dating( 0.59 ) | Dated( 0.57 ) | day( 0.56 )
+  after : slur( 0.17 ) | Pima( 0.16 ) | jus( 0.16 ) | Roaming( 0.16 ) | likeness( 0.16 ) | disservice( 0.15 ) | 유( 0.15 ) | Fink( 0.15 ) | Stifel( 0.15 ) | Rauner( 0.15 )
+  delta : slur( 0.16 ) | Pima( 0.15 ) | jus( 0.15 ) | Roaming( 0.15 ) | likeness( 0.14 ) | 유( 0.14 ) | disservice( 0.14 ) | Stifel( 0.14 ) | Fink( 0.14 ) | Rauner( 0.14 )
+
+Tag "organization" [cosine(orig,perturbed) = 0.081]
+  ||original||  = 3.477   (vocab ref: 3.490)
+  ||perturbed|| = 111.850   (vocab ref: 3.490)
+  ||delta||     = 111.621
+  max cos before = 1.000   max cos after = 0.179  max cos delta = 0.169
+  before: organization( 1.00 ) | organizations( 0.88 ) | organisation( 0.83 ) | organisations( 0.78 ) | organizational( 0.75 ) | Organization( 0.72 ) | Organizations( 0.71 ) | ORGANIZATION( 0.71 ) | organized( 0.67 ) | organizing( 0.67 )
+  after : 유( 0.18 ) | NETWORK( 0.17 ) | misdemeanor( 0.16 ) | GAIN( 0.16 ) | DeV( 0.16 ) | Shade( 0.16 ) | Rauner( 0.16 ) | distortion( 0.16 ) | Finlay( 0.16 ) | adulteration( 0.16 )
+  delta : 유( 0.17 ) | NETWORK( 0.15 ) | GAIN( 0.15 ) | misdemeanor( 0.15 ) | DeV( 0.15 ) | Shade( 0.14 ) | Rauner( 0.14 ) | Finlay( 0.14 ) | adulteration( 0.14 ) | distortion( 0.14 )
+
