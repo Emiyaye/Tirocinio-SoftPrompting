@@ -215,11 +215,7 @@ def main() -> None:
     
     # tag for CoNLL2003
     tags = ["person", "location", "organization", "miscellaneous"]
-    
-    num_examples_to_probe = 3
-    subset_to_probe = ds["validation"].select(range(num_examples_to_probe))
-        
-
+   
     # Let GLiNER build its own input_ids in the "[ENT] tag [ENT] tag ... [SEP] sentence"
     # format. `ner=[]` because we don't need gold labels for explainability.
     collator = SpanDataCollator(
@@ -227,6 +223,12 @@ def main() -> None:
         data_processor=model.data_processor,
         prepare_labels=False,
     )
+    
+    num_examples_to_probe = 3
+    subset_to_probe = ds["validation"].select(range(num_examples_to_probe))
+        
+
+   
     for idx, example in enumerate(subset_to_probe):
         sentence = example["tokens"]  # Estrazione della lista di token dal dataset
         
@@ -272,16 +274,25 @@ def main() -> None:
         vocab_norm_mean = vocab_weight.norm(dim=-1).mean().item()
         print(f"Reference: mean ||vocab embedding|| = {vocab_norm_mean:.3f}\n")
 
-        for (start, end) in spans[0]:
-            subword_ids = input_ids[0, start:end].tolist()
-            tag_text = tokenizer.decode(subword_ids).strip()
+        for i in range(input_ids.size(1)):
+            token_id = input_ids[0, i].item()
+            token_text = tokenizer.convert_ids_to_tokens(token_id)
+            
+            # Skip padding
+            if token_id == tokenizer.pad_token_id:
+                continue
 
             # One vector per tag = mean over its subword pieces.
-            original_repr = embeds[0, start:end].mean(dim=0)            # before soft prompt
-            perturbed_repr = perturbed_embeds[0, start:end].mean(dim=0)  # AFTER soft prompt
+            original_repr = embeds[0, i]            # before soft prompt
+            perturbed_repr = perturbed_embeds[0, i]  # AFTER soft prompt
 
             # How far did the soft prompt move the tag? 1.0 = unchanged, ~0 = orthogonal.
             displacement = F.cosine_similarity(original_repr, perturbed_repr, dim=0).item()
+            
+            # filter unperturbed
+            if displacement > 0.99:
+                continue
+            
             orig_norm = original_repr.norm().item()
             pert_norm = perturbed_repr.norm().item()
 
@@ -290,18 +301,20 @@ def main() -> None:
             
             delta = perturbed_repr - original_repr
             delta_norm = delta.norm().item()
-            delta_neighbours = nearest_words(delta, norm_vocab, valid_indices, valid_tokens, TOP_K)
+            
 
-            print(f"Tag \"{tag_text}\" [cosine(orig,perturbed) = {displacement:.3f}]")
+            print(f"Token [{i}] \"{token_text}\" [cosine(orig,perturbed) = {displacement:.3f}]")
             print(f"  ||original||  = {orig_norm:.3f}   (vocab ref: {vocab_norm_mean:.3f})")
             print(f"  ||perturbed|| = {pert_norm:.3f}   (vocab ref: {vocab_norm_mean:.3f})")
-            print(f"  ||delta||     = {delta_norm:.3f}")
-            print(f"  max cos before = {orig_neighbours[0][1]:.3f}   "
-                  f"max cos after = {pert_neighbours[0][1]:.3f}  "
-                  f"max cos delta = {delta_neighbours[0][1]:.3f}")
             print(f"  before: {fmt(orig_neighbours)}")
             print(f"  after : {fmt(pert_neighbours)}")
-            print(f"  delta : {fmt(delta_neighbours)}")
+            
+            if delta_norm > 1e-4:
+                print(f"  ||delta||     = {delta_norm:.3f}")
+                delta_neighbours = nearest_words(delta, norm_vocab, valid_indices, valid_tokens, TOP_K)
+                print(f"  delta : {fmt(delta_neighbours)}")
+            else:
+                print(f"  [Token unperturbed by soft prompt]")
             print()
 
 
