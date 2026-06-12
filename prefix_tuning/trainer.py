@@ -211,7 +211,7 @@ def evaluate_model(model_name, dataset_name, file_name, prefix_length, mid_dim, 
     model = NERSoftPromptModel(model_name=model_name, ner_tags=ner_tags, prefix_length=prefix_length, mid_dim=mid_dim).to(device)
     
     if os.path.exists(file_name):
-        model.load_state_dict(torch.load(file_name, map_location=device))
+        model.load_state_dict(torch.load(file_name, map_location=device, weights_only=True))
         eprint(f"Modello caricato da {file_name}")
     
     model.eval()
