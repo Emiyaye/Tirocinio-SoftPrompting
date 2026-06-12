@@ -48,7 +48,7 @@ def reverse_embedding(args, device, in_file_name):
     if "roberta-base-uncased" in args.model.lower():
         args.model = "roberta-base"
     model = NERSoftPromptModel(model_name=args.model, ner_tags=ner_tags, prefix_length=args.prefix_length, mid_dim=args.mid_dim).to(device)
-    model.load_state_dict(torch.load(in_file_name, map_location=device, weights_only=true))
+    model.load_state_dict(torch.load(in_file_name, map_location=device, weights_only=True))
     
     from build_bio_lexicon import load_bio_lexicon
     bio_lexicon = load_bio_lexicon("./outputs/bio_lexicon.txt")
