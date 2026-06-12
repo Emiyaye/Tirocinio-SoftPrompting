@@ -201,6 +201,13 @@ def main() -> None:
     embed_layer = model.model.token_rep_layer.bert_layer.model.get_input_embeddings()
     vocab_weight = embed_layer.weight.detach().to(device)        # (V, D)
     norm_vocab = F.normalize(vocab_weight, dim=-1)               # normalize once
+    
+    
+    # Filter out specials / sub-word pieces / punctuation
+    valid_indices, valid_tokens = build_valid_vocab(
+        tokenizer, vocab_weight.size(0), device
+    )
+    
 
     # --- 2. Load dataset from Hugging Face ----------------------------------
     print("\nLoading dataset: DFKI-SLT/cross_ner (conll2003)...")
@@ -212,11 +219,6 @@ def main() -> None:
     num_examples_to_probe = 3
     subset_to_probe = ds["validation"].select(range(num_examples_to_probe))
         
-    # Filter out specials / sub-word pieces / punctuation
-    valid_indices, valid_tokens = build_valid_vocab(
-        tokenizer, vocab_weight.size(0), device
-    )
-
 
     # Let GLiNER build its own input_ids in the "[ENT] tag [ENT] tag ... [SEP] sentence"
     # format. `ner=[]` because we don't need gold labels for explainability.
@@ -225,75 +227,82 @@ def main() -> None:
         data_processor=model.data_processor,
         prepare_labels=False,
     )
-    sample = {"tokenized_text": sentence, "ner": []}
-    batch = collator([sample], entity_types=tags)
-    input_ids = batch["input_ids"].to(device)                   # (1, L)
-
-    # --- 3. Original input embeddings of every token ------------------------
-    with torch.no_grad():
-        embeds = embed_layer(input_ids)                         # (1, L, D)
-
-        # --- 4. Perturb the tag subwords with the prompt encoder -----------
-        # `_find_entity_spans` returns, per row, the (start, end) subword span of
-        # each tag (the pieces between consecutive [ENT] markers).
-        spans = _find_entity_spans(input_ids, class_token_index, sep_id)
-        packed, kpm, flat = _pack(embeds, spans)                # pack tags together
-        pe_dtype = next(model.model.prompt_encoder.parameters()).dtype
-        perturbed = model.model.prompt_encoder(packed.to(pe_dtype), kpm)
-        perturbed_embeds = _scatter_back(embeds, perturbed.to(embeds.dtype), flat)
-
-    # --- 5. For each tag, run the cosine probe on its PERTURBED representation -
-    # We represent each tag by ONE vector (the mean of its subword embeddings),
-    # both before and after the soft prompt, and look up the nearest vocabulary
-    # words for each. The ORIGINAL is just a baseline/sanity check; the line we
-    # actually care about is the PERTURBED one.
-    def fmt(neighbours):
-        return " | ".join(f"{w}( {s:.2f} )" for w, s in neighbours)
-
-    print("\n" + "#" * 72)
-    print("#  COSINE PROBE OF THE *PERTURBED* TAG REPRESENTATION")
-    print("#  (for each tag: nearest vocabulary words before vs. after the soft prompt)")
-    print("#" * 72)
-    
-    vocab_norm_mean = vocab_weight.norm(dim=-1).mean().item()
-    print(f"Reference: mean ||vocab embedding|| = {vocab_norm_mean:.3f}\n")
-
-
-    for (start, end) in spans[0]:                               # spans[0] = first (only) row
-        subword_ids = input_ids[0, start:end].tolist()
-        tag_text = tokenizer.decode(subword_ids).strip()
+    for idx, example in enumerate(subset_to_probe):
+        sentence = example["tokens"]  # Estrazione della lista di token dal dataset
         
+        print("\n" + "=" * 80)
+        print(f"Processing Example {idx + 1}/{num_examples_to_probe}")
+        print(f"Sentence: {' '.join(sentence)}")
+        print(f"Tags:     {tags}")
+        print("=" * 80)
 
-        # One vector per tag = mean over its subword pieces.
-        original_repr = embeds[0, start:end].mean(dim=0)            # before soft prompt
-        perturbed_repr = perturbed_embeds[0, start:end].mean(dim=0)  # AFTER soft prompt
+        sample = {"tokenized_text": sentence, "ner": []}
+        batch = collator([sample], entity_types=tags)
+        input_ids = batch["input_ids"].to(device)                   # (1, L)
 
-        # How far did the soft prompt move the tag? 1.0 = unchanged, ~0 = orthogonal.
-        displacement = F.cosine_similarity(original_repr, perturbed_repr, dim=0).item()
-        
-        orig_norm = original_repr.norm().item()
-        pert_norm = perturbed_repr.norm().item()
+        # --- 3. Original input embeddings of every token ------------------------
+        with torch.no_grad():
+            embeds = embed_layer(input_ids)                         # (1, L, D)
 
-        
-        orig_neighbours = nearest_words(original_repr, norm_vocab, valid_indices, valid_tokens, TOP_K)
-        pert_neighbours = nearest_words(perturbed_repr, norm_vocab, valid_indices, valid_tokens, TOP_K)
-        
-        delta = perturbed_repr - original_repr
-        delta_norm = delta.norm().item()
-        delta_neighbours = nearest_words(delta, norm_vocab, valid_indices, valid_tokens, TOP_K)
-        
+            # --- 4. Perturb the tag subwords with the prompt encoder -----------
+            # `_find_entity_spans` returns, per row, the (start, end) subword span of
+            # each tag (the pieces between consecutive [ENT] markers).
+            spans = _find_entity_spans(input_ids, class_token_index, sep_id)
+            if not spans or len(spans[0]) == 0:
+                print("No entity spans found for this sequence.")
+                continue
 
-        print(f"Tag \"{tag_text}\" [cosine(orig,perturbed) = {displacement:.3f}]")
-        print(f"  ||original||  = {orig_norm:.3f}   (vocab ref: {vocab_norm_mean:.3f})")
-        print(f"  ||perturbed|| = {pert_norm:.3f}   (vocab ref: {vocab_norm_mean:.3f})")
-        print(f"  ||delta||     = {delta_norm:.3f}")
-        print(f"  max cos before = {orig_neighbours[0][1]:.3f}   "
-              f"max cos after = {pert_neighbours[0][1]:.3f}  "
-              f"max cos delta = {delta_neighbours[0][1]:.3f}")
-        print(f"  before: {fmt(orig_neighbours)}")
-        print(f"  after : {fmt(pert_neighbours)}")
-        print(f"  delta : {fmt(delta_neighbours)}")
-        print()
+            packed, kpm, flat = _pack(embeds, spans)                # pack tags together
+            pe_dtype = next(model.model.prompt_encoder.parameters()).dtype
+            perturbed = model.model.prompt_encoder(packed.to(pe_dtype), kpm)
+            perturbed_embeds = _scatter_back(embeds, perturbed.to(embeds.dtype), flat)
+
+        # --- 5. For each tag, run the cosine probe on its PERTURBED representation -
+        # We represent each tag by ONE vector (the mean of its subword embeddings),
+        # both before and after the soft prompt, and look up the nearest vocabulary
+        # words for each. The ORIGINAL is just a baseline/sanity check; the line we
+        # actually care about is the PERTURBED one.
+        def fmt(neighbours):
+            return " | ".join(f"{w}( {s:.2f} )" for w, s in neighbours)
+
+        print("\n" + "#" * 72)
+        print("#   COSINE PROBE OF THE *PERTURBED* TAG REPRESENTATION")
+        print("#" * 72)
+        
+        vocab_norm_mean = vocab_weight.norm(dim=-1).mean().item()
+        print(f"Reference: mean ||vocab embedding|| = {vocab_norm_mean:.3f}\n")
+
+        for (start, end) in spans[0]:
+            subword_ids = input_ids[0, start:end].tolist()
+            tag_text = tokenizer.decode(subword_ids).strip()
+
+            # One vector per tag = mean over its subword pieces.
+            original_repr = embeds[0, start:end].mean(dim=0)            # before soft prompt
+            perturbed_repr = perturbed_embeds[0, start:end].mean(dim=0)  # AFTER soft prompt
+
+            # How far did the soft prompt move the tag? 1.0 = unchanged, ~0 = orthogonal.
+            displacement = F.cosine_similarity(original_repr, perturbed_repr, dim=0).item()
+            orig_norm = original_repr.norm().item()
+            pert_norm = perturbed_repr.norm().item()
+
+            orig_neighbours = nearest_words(original_repr, norm_vocab, valid_indices, valid_tokens, TOP_K)
+            pert_neighbours = nearest_words(perturbed_repr, norm_vocab, valid_indices, valid_tokens, TOP_K)
+            
+            delta = perturbed_repr - original_repr
+            delta_norm = delta.norm().item()
+            delta_neighbours = nearest_words(delta, norm_vocab, valid_indices, valid_tokens, TOP_K)
+
+            print(f"Tag \"{tag_text}\" [cosine(orig,perturbed) = {displacement:.3f}]")
+            print(f"  ||original||  = {orig_norm:.3f}   (vocab ref: {vocab_norm_mean:.3f})")
+            print(f"  ||perturbed|| = {pert_norm:.3f}   (vocab ref: {vocab_norm_mean:.3f})")
+            print(f"  ||delta||     = {delta_norm:.3f}")
+            print(f"  max cos before = {orig_neighbours[0][1]:.3f}   "
+                  f"max cos after = {pert_neighbours[0][1]:.3f}  "
+                  f"max cos delta = {delta_neighbours[0][1]:.3f}")
+            print(f"  before: {fmt(orig_neighbours)}")
+            print(f"  after : {fmt(pert_neighbours)}")
+            print(f"  delta : {fmt(delta_neighbours)}")
+            print()
 
 
 
