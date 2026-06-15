@@ -38,12 +38,8 @@ import sys
 
 import torch
 import torch.nn.functional as F
-
 import string
-from datasets import load_dataset
 
-# The tokenizer prints the SentencePiece "▁" marker; force UTF-8 so it doesn't
-# crash on a Windows cp1252 console.
 try:
     sys.stdout.reconfigure(encoding="utf-8")
 except Exception:
@@ -69,18 +65,11 @@ from soft_gliner import (  # noqa: E402
 )
 
 
-def _freeze_backbone(model) -> None:
-    """Freeze the DeBERTa encoder, exactly like training. Keeps the checkpoint
-    loader from flagging the (untrained) backbone weights as 'missing'."""
-    for p in model.model.token_rep_layer.bert_layer.parameters():
-        p.requires_grad = False
-
-
 # ---------------------------------------------------------------------------
 # Settings — must match the architecture the checkpoint was trained with
 # (train.py used microsoft/deberta-v3-base, hidden_size=512).
 # ---------------------------------------------------------------------------
-BACKBONE = "microsoft/deberta-v3-base"
+BACKBONE = "microsoft/deberta-v3-small"
 HIDDEN_SIZE = 512
 MAX_WIDTH = 12
 MAX_LEN = 384
@@ -93,6 +82,85 @@ CHECKPOINT = os.path.join(HERE, "soft_gliner_1", "best_f1.pt")
 
 # How many nearest vocabulary words to print per tag.
 TOP_K = 10
+
+# ---------------------------------------------------------------------------
+# CrossNER split definitions
+# Each entry: (domain_name, list_of_entity_tags, representative_sentence)
+# The sentence is intentionally generic but domain-flavoured so the tokenizer
+# produces a realistic context around the entity spans.
+# ---------------------------------------------------------------------------
+CROSSNER_SPLITS = [
+    (
+        "ai",
+        [
+            "algorithm", "conference", "else", "field", "metrics",
+            "organisation", "person", "product", "programlang",
+            "researcher", "task", "university",
+        ],
+        (
+            "The researcher presented a novel neural network algorithm at the "
+            "NeurIPS conference, achieving state-of-the-art metrics on the "
+            "image classification task."
+        ),
+    ),
+    (
+        "literature",
+        [
+            "award", "book", "country", "else", "event", "literarygenre",
+            "magazine", "misc", "organisation", "person", "poem", "writer",
+        ],
+        (
+            "The writer received the Booker Award for her novel set in France, "
+            "a work blending the literary genre of magical realism with poetry."
+        ),
+    ),
+    (
+        "music",
+        [
+            "album", "award", "band", "country", "else", "event", "misc",
+            "musicalartist", "musicalinstrument", "musicgenre",
+            "organisation", "person", "song",
+        ],
+        (
+            "The band released their debut album and won a Grammy Award at the "
+            "festival, blending jazz and rock genres with saxophone solos."
+        ),
+    ),
+    (
+        "politics",
+        [
+            "country", "election", "else", "event", "misc", "organisation",
+            "person", "politician", "politicalparty",
+        ],
+        (
+            "The politician won the general election representing the Labour "
+            "Party and signed a treaty between France and Germany."
+        ),
+    ),
+    (
+        "science",
+        [
+            "academicjournal", "award", "chemicalelement", "chemicalcompound",
+            "country", "discipline", "else", "enzyme", "event", "misc",
+            "organisation", "person", "protein", "scientist",
+            "theory", "university",
+        ],
+        (
+            "The scientist published findings on the protein structure of an "
+            "enzyme in the journal Nature, advancing the theory of molecular "
+            "biology at MIT."
+        ),
+    ),
+]
+
+
+# ---------------------------------------------------------------------------
+# Helpers (identical to explain_tag_cosine.py)
+# ---------------------------------------------------------------------------
+
+def _freeze_backbone(model) -> None:
+    for p in model.model.token_rep_layer.bert_layer.parameters():
+        p.requires_grad = False
 
 
 def build_model() -> GLiNER:
@@ -112,7 +180,7 @@ def build_model() -> GLiNER:
         dropout=DROPOUT,
         num_rnn_layers=NUM_RNN_LAYERS,
     )
-    # Same defensive dispatch as train.py (handles GLiNER 0.2.x quirks).
+   # Same defensive dispatch as train.py (handles GLiNER 0.2.x quirks).
     if hasattr(GLiNER, "_get_gliner_class"):
         cls = GLiNER._get_gliner_class(config)
         if hasattr(cls, "load_from_config"):
@@ -122,35 +190,33 @@ def build_model() -> GLiNER:
         return GLiNER.load_from_config(config, backbone_from_pretrained=True)
     return GLiNER(config)
 
+
 def build_valid_vocab(tokenizer, vocab_size, device):
-    """Filter out special/sub-word/punctuation tokens, so the nearest-neighbour lists only show
-    readable whole-word tokens."""
+    """Keep only whole-word, non-special, non-punctuation tokens."""
     punct_set = set(string.punctuation)
-    valid_indices = []
-    valid_tokens = []
- 
+    valid_indices, valid_tokens = [], []
+
     for idx in range(vocab_size):
         token = tokenizer.convert_ids_to_tokens(idx)
- 
-        if token in [tokenizer.cls_token, tokenizer.sep_token, tokenizer.mask_token,
-                      tokenizer.pad_token, tokenizer.unk_token]:
+        if token in [
+            tokenizer.cls_token, tokenizer.sep_token,
+            tokenizer.mask_token, tokenizer.pad_token, tokenizer.unk_token,
+        ]:
             continue
         if token.startswith("[unused") or token.startswith("<") or token.endswith(">"):
             continue
-        # skip __
         if not token.startswith("▁"):
             continue
         bare = token[1:]
-        if len(bare) == 0:
+        if not bare:
             continue
-        if len(bare) <= 1 and bare in punct_set:
+        if len(bare) == 1 and bare in punct_set:
             continue
         if all(c in punct_set for c in bare):
             continue
- 
         valid_indices.append(idx)
-        valid_tokens.append(bare)  # drop the "▁" for display
- 
+        valid_tokens.append(bare)
+
     valid_indices = torch.tensor(valid_indices, device=device)
     return valid_indices, valid_tokens
 
@@ -174,12 +240,19 @@ def nearest_words(vec, norm_vocab, valid_indices, valid_tokens, top_k, exclude_i
     return list(zip(tokens, values.tolist()))
 
 
+def fmt(neighbours):
+    return " | ".join(f"{w}({s:.2f})" for w, s in neighbours)
+
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
 
 def main() -> None:
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    print(f"Device: {device}")
+    print(f"Device: {device}\n")
 
-    # --- 1. Build model, attach soft prompt, load the trained weights ------
+    # --- 1. Build model + soft prompt, load checkpoint ---------------------
     print("Building GLiNER + soft prompt ...")
     model = build_model()
     prompt_encoder = make_prompt_encoder_for(model)
@@ -190,11 +263,11 @@ def main() -> None:
     print(f"Loading checkpoint: {CHECKPOINT}")
     info = load_trainable_state(model, CHECKPOINT, device=device)
     print(f"  copied={info['copied']}  missing={len(info['missing'])}  "
-          f"unexpected={len(info['unexpected'])}")
+          f"unexpected={len(info['unexpected'])}\n")
 
-    tokenizer = model.data_processor.transformer_tokenizer
-    class_token_index = model.config.class_token_index           # the [ENT] id
-    sep_id = tokenizer.convert_tokens_to_ids(model.config.sep_token)
+    tokenizer        = model.data_processor.transformer_tokenizer
+    class_token_index = model.config.class_token_index
+    sep_id           = tokenizer.convert_tokens_to_ids(model.config.sep_token)
 
     # The vocabulary embedding matrix (V, D): every row is a real word's vector.
     embed_layer = model.model.token_rep_layer.bert_layer.model.get_input_embeddings()
@@ -206,75 +279,48 @@ def main() -> None:
     valid_indices, valid_tokens = build_valid_vocab(
         tokenizer, vocab_weight.size(0), device
     )
-    
 
-    # --- 2. Load dataset from Hugging Face ----------------------------------
-    print("\nLoading dataset: DFKI-SLT/cross_ner (conll2003)...")
-    ds = load_dataset("DFKI-SLT/cross_ner", "conll2003")
-    
-    # tag for CoNLL2003
-    tags = ["person", "location", "organization", "miscellaneous"]
-   
-    # Let GLiNER build its own input_ids in the "[ENT] tag [ENT] tag ... [SEP] sentence"
-    # format. `ner=[]` because we don't need gold labels for explainability.
+    vocab_norm_mean = vocab_weight.norm(dim=-1).mean().item()
+
     collator = SpanDataCollator(
         config=model.config,
         data_processor=model.data_processor,
         prepare_labels=False,
     )
-    
-    num_examples_to_probe = 3
-    subset_to_probe = ds["validation"].select(range(num_examples_to_probe))
-        
 
-   
-    for idx, example in enumerate(subset_to_probe):
-        sentence = example["tokens"]  # Estrazione della lista di token dal dataset
-        
+    # --- 2. Iterate over CrossNER splits -----------------------------------
+    for domain, tags, sentence in CROSSNER_SPLITS:
         print("\n" + "=" * 80)
-        print(f"Processing Example {idx + 1}/{num_examples_to_probe}")
-        print(f"Sentence: {' '.join(sentence)}")
-        print(f"Tags:     {tags}")
+        print(f"  DOMAIN : {domain.upper()}")
+        print(f"  TAGS   : {tags}")
+        print(f"  SENTENCE: {sentence}")
         print("=" * 80)
 
-        sample = {"tokenized_text": sentence, "ner": []}
-        batch = collator([sample], entity_types=tags)
-        input_ids = batch["input_ids"].to(device)                   # (1, L)
+        tokens = sentence.split()          # simple whitespace tokenisation
+        sample = {"tokenized_text": tokens, "ner": []}
+        batch  = collator([sample], entity_types=tags)
+        input_ids = batch["input_ids"].to(device)   # (1, L)
 
-        # --- 3. Original input embeddings of every token ------------------------
         with torch.no_grad():
-            embeds = embed_layer(input_ids)                         # (1, L, D)
+            embeds = embed_layer(input_ids)          # (1, L, D)
 
-            # --- 4. Perturb the tag subwords with the prompt encoder -----------
-            # `_find_entity_spans` returns, per row, the (start, end) subword span of
-            # each tag (the pieces between consecutive [ENT] markers).
             spans = _find_entity_spans(input_ids, class_token_index, sep_id)
             if not spans or len(spans[0]) == 0:
-                print("No entity spans found for this sequence.")
+                print("  [!] No entity spans found — skipping.")
                 continue
 
-            packed, kpm, flat = _pack(embeds, spans)                # pack tags together
-            pe_dtype = next(model.model.prompt_encoder.parameters()).dtype
+            packed, kpm, flat = _pack(embeds, spans)
+            pe_dtype  = next(model.model.prompt_encoder.parameters()).dtype
             perturbed = model.model.prompt_encoder(packed.to(pe_dtype), kpm)
-            perturbed_embeds = _scatter_back(embeds, perturbed.to(embeds.dtype), flat)
+            perturbed_embeds = _scatter_back(
+                embeds, perturbed.to(embeds.dtype), flat
+            )
 
-        # --- 5. For each tag, run the cosine probe on its PERTURBED representation -
-        # We represent each tag by ONE vector (the mean of its subword embeddings),
-        # both before and after the soft prompt, and look up the nearest vocabulary
-        # words for each. The ORIGINAL is just a baseline/sanity check; the line we
-        # actually care about is the PERTURBED one.
-        def fmt(neighbours):
-            return " | ".join(f"{w}( {s:.2f} )" for w, s in neighbours)
-
-        print("\n" + "#" * 72)
-        print("#   COSINE PROBE OF THE *PERTURBED* TAG REPRESENTATION")
-        print("#" * 72)
-        
-        vocab_norm_mean = vocab_weight.norm(dim=-1).mean().item()
-        print(f"Reference: mean ||vocab embedding|| = {vocab_norm_mean:.3f}\n")
+        # --- 3. Per-token cosine probe ------------------------------------
+        print(f"\n  Reference: mean ||vocab emb|| = {vocab_norm_mean:.3f}\n")
 
         for i in range(input_ids.size(1)):
-            token_id = input_ids[0, i].item()
+            token_id   = input_ids[0, i].item()
             token_text = tokenizer.convert_ids_to_tokens(token_id)
             
             # Skip padding
@@ -291,31 +337,34 @@ def main() -> None:
             # filter unperturbed
             if displacement > 0.99:
                 continue
-            
+
             orig_norm = original_repr.norm().item()
             pert_norm = perturbed_repr.norm().item()
-
-            orig_neighbours = nearest_words(original_repr, norm_vocab, valid_indices, valid_tokens, TOP_K)
-            pert_neighbours = nearest_words(perturbed_repr, norm_vocab, valid_indices, valid_tokens, TOP_K)
-            
-            delta = perturbed_repr - original_repr
+            delta     = perturbed_repr - original_repr
             delta_norm = delta.norm().item()
-            
 
-            print(f"Token [{i}] \"{token_text}\" [cosine(orig,perturbed) = {displacement:.3f}]")
-            print(f"  ||original||  = {orig_norm:.3f}   (vocab ref: {vocab_norm_mean:.3f})")
-            print(f"  ||perturbed|| = {pert_norm:.3f}   (vocab ref: {vocab_norm_mean:.3f})")
-            print(f"  before: {fmt(orig_neighbours)}")
-            print(f"  after : {fmt(pert_neighbours)}")
-            
+            orig_nbrs = nearest_words(
+                original_repr, norm_vocab, valid_indices, valid_tokens, TOP_K
+            )
+            pert_nbrs = nearest_words(
+                perturbed_repr, norm_vocab, valid_indices, valid_tokens, TOP_K
+            )
+
+            print(f"  Token [{i:3d}] \"{token_text}\"  "
+                  f"cosine(orig,pert) = {displacement:.3f}")
+            print(f"    ||orig|| = {orig_norm:.3f}   ||pert|| = {pert_norm:.3f}   "
+                  f"||delta|| = {delta_norm:.3f}")
+            print(f"    before : {fmt(orig_nbrs)}")
+            print(f"    after  : {fmt(pert_nbrs)}")
+
             if delta_norm > 1e-4:
-                print(f"  ||delta||     = {delta_norm:.3f}")
-                delta_neighbours = nearest_words(delta, norm_vocab, valid_indices, valid_tokens, TOP_K)
-                print(f"  delta : {fmt(delta_neighbours)}")
-            else:
-                print(f"  [Token unperturbed by soft prompt]")
+                delta_nbrs = nearest_words(
+                    delta, norm_vocab, valid_indices, valid_tokens, TOP_K
+                )
+                print(f"    delta  : {fmt(delta_nbrs)}")
             print()
 
+    print("\nDone.")
 
 
 if __name__ == "__main__":

@@ -1,138 +1,479 @@
 Device: cuda
+
 Building GLiNER + soft prompt ...
 Loading checkpoint: C:\Users\Franco\Downloads\Tirocinio-SoftPrompting\custom_gliner\custom_gliner\soft_gliner_1\best_f1.pt
   copied=44  missing=0  unexpected=0
 
-Loading dataset: DFKI-SLT/cross_ner (conll2003)...
 
 ================================================================================
-Processing Example 1/3
-Sentence: CRICKET - LEICESTERSHIRE TAKE OVER AT TOP AFTER INNINGS VICTORY .
-Tags:     ['person', 'location', 'organization', 'miscellaneous']
+  DOMAIN : AI
+  TAGS   : ['algorithm', 'conference', 'else', 'field', 'metrics', 'organisation', 'person', 'product', 'programlang', 'researcher', 'task', 'university']
+  SENTENCE: The researcher presented a novel neural network algorithm at the NeurIPS conference, achieving state-of-the-art metrics on the image classification task.
 ================================================================================
 
-########################################################################
-#   COSINE PROBE OF THE *PERTURBED* TAG REPRESENTATION
-########################################################################
-Reference: mean ||vocab embedding|| = 3.490
+  Reference: mean ||vocab emb|| = 1.795
 
-Token [2] "▁person" [cosine(orig,perturbed) = 0.120]
-  ||original||  = 3.456   (vocab ref: 3.490)
-  ||perturbed|| = 87.387   (vocab ref: 3.490)
-  before: person( 1.00 ) | Person( 0.81 ) | PERSON( 0.76 ) | persons( 0.75 ) | people( 0.71 ) | Persons( 0.67 ) | man( 0.66 ) | someone( 0.65 ) | woman( 0.65 ) | People( 0.63 )
-  after : slur( 0.18 ) | NETWORK( 0.17 ) | jus( 0.17 ) | Clearview( 0.17 ) | Rauner( 0.17 ) | disservice( 0.17 ) | horn( 0.16 ) | shabby( 0.16 ) | likeness( 0.16 ) | Pima( 0.16 )
-  ||delta||     = 87.041
-  delta : slur( 0.16 ) | NETWORK( 0.16 ) | Clearview( 0.15 ) | jus( 0.15 ) | Rauner( 0.15 ) | disservice( 0.15 ) | shabby( 0.15 ) | horn( 0.15 ) | likeness( 0.15 ) | PerimeterX( 0.14 )
+  Token [  2] "▁algorithm"  cosine(orig,pert) = 0.240
+    ||orig|| = 2.079   ||pert|| = 107.692   ||delta|| = 107.212
+    before : algorithm(1.00) | algorithms(0.85) | Algorithm(0.70) | Algorithms(0.60) | algorithmic(0.53) | Algorithmic(0.37) | heuristics(0.30) | formulas(0.29) | formula(0.28) | methodology(0.28)
+    after  : Algorithm(0.25) | algorithm(0.24) | algorithms(0.23) | Algorithms(0.23) | SVM(0.20) | Uncertainty(0.20) | classifiers(0.20) | GAN(0.20) | epistemology(0.19) | Cryptography(0.19)
+    delta  : Algorithm(0.23) | algorithm(0.22) | algorithms(0.22) | Algorithms(0.22) | Uncertainty(0.20) | SVM(0.20) | classifiers(0.20) | GAN(0.20) | epistemology(0.19) | Cryptography(0.19)
 
-Token [4] "▁location" [cosine(orig,perturbed) = 0.124]
-  ||original||  = 3.437   (vocab ref: 3.490)
-  ||perturbed|| = 87.621   (vocab ref: 3.490)
-  before: location( 1.00 ) | locations( 0.87 ) | Location( 0.79 ) | Locations( 0.69 ) | located( 0.67 ) | LOCATION( 0.65 ) | locate( 0.63 ) | Located( 0.62 ) | locale( 0.61 ) | locating( 0.61 )
-  after : cloth( 0.16 ) | 유( 0.16 ) | Canine( 0.16 ) | Rauner( 0.16 ) | misdemeanor( 0.15 ) | discussion( 0.15 ) | DeWine( 0.15 ) | Aotearoa( 0.15 ) | WGN( 0.15 ) | NETWORK( 0.15 )
-  ||delta||     = 87.262
-  delta : 유( 0.15 ) | cloth( 0.15 ) | Canine( 0.14 ) | Rauner( 0.14 ) | misdemeanor( 0.14 ) | Aotearoa( 0.14 ) | NETWORK( 0.14 ) | WGN( 0.14 ) | AIA( 0.14 ) | Mulch( 0.14 )
+  Token [  4] "▁conference"  cosine(orig,pert) = 0.182
+    ||orig|| = 2.145   ||pert|| = 76.087   ||delta|| = 75.726
+    before : conference(1.00) | conferences(0.84) | Conference(0.77) | Conferences(0.60) | CONFERENCE(0.58) | symposium(0.42) | Symposium(0.38) | convention(0.36) | seminar(0.35) | Summit(0.33)
+    after  : conferences(0.21) | Conferences(0.19) | CONFERENCE(0.19) | conference(0.18) | attended(0.18) | LNCS(0.18) | Yearly(0.18) | qualitative(0.18) | Conference(0.18) | Magazines(0.18)
+    delta  : conferences(0.19) | Yearly(0.18) | attended(0.18) | qualitative(0.18) | LNCS(0.18) | Magazines(0.17) | Conferences(0.17) | timezone(0.17) | adwords(0.17) | CONFERENCE(0.17)
 
-Token [6] "▁organization" [cosine(orig,perturbed) = 0.081]
-  ||original||  = 3.477   (vocab ref: 3.490)
-  ||perturbed|| = 111.850   (vocab ref: 3.490)
-  before: organization( 1.00 ) | organizations( 0.88 ) | organisation( 0.83 ) | organisations( 0.78 ) | organizational( 0.75 ) | Organization( 0.72 ) | Organizations( 0.71 ) | ORGANIZATION( 0.71 ) | organized( 0.67 ) | organizing( 0.67 )
-  after : 유( 0.18 ) | NETWORK( 0.17 ) | misdemeanor( 0.16 ) | GAIN( 0.16 ) | DeV( 0.16 ) | Shade( 0.16 ) | Rauner( 0.16 ) | distortion( 0.16 ) | Finlay( 0.16 ) | adulteration( 0.16 )
-  ||delta||     = 111.621
-  delta : 유( 0.17 ) | NETWORK( 0.15 ) | GAIN( 0.15 ) | misdemeanor( 0.15 ) | DeV( 0.15 ) | Shade( 0.14 ) | Rauner( 0.14 ) | Finlay( 0.14 ) | adulteration( 0.14 ) | distortion( 0.14 )
+  Token [  6] "▁else"  cosine(orig,pert) = 0.004
+    ||orig|| = 2.186   ||pert|| = 110.963   ||delta|| = 110.976
+    before : else(1.00) | ELSE(0.65) | Else(0.61) | other(0.35) | others(0.30) | elsewhere(0.29) | otherwise(0.28) | OTHER(0.27) | Otherwise(0.27) | Other(0.23)
+    after  : literacies(0.20) | hectares(0.19) | espanol(0.19) | Slovacka(0.19) | hominem(0.19) | retreived(0.19) | ☀(0.18) | Majeure(0.18) | unbecoming(0.18) | Picchu(0.18)
+    delta  : literacies(0.20) | Slovacka(0.19) | espanol(0.19) | hectares(0.19) | hominem(0.19) | retreived(0.19) | ☀(0.18) | Majeure(0.18) | unbecoming(0.18) | shirtless(0.18)
 
-Token [8] "▁miscellaneous" [cosine(orig,perturbed) = 0.019]
-  ||original||  = 3.347   (vocab ref: 3.490)
-  ||perturbed|| = 211.467   (vocab ref: 3.490)
-  before: miscellaneous( 1.00 ) | Miscellaneous( 0.63 ) | various( 0.57 ) | assorted( 0.55 ) | Other( 0.52 ) | Assorted( 0.51 ) | Various( 0.51 ) | item( 0.51 ) | some( 0.51 ) | Misc( 0.51 )
-  after : 유( 0.12 ) | remiss( 0.12 ) | adulteration( 0.11 ) | deciding( 0.11 ) | Mulch( 0.11 ) | SAVE( 0.11 ) | Crossref( 0.11 ) | worsening( 0.11 ) | Sickle( 0.10 ) | Allstate( 0.10 )
-  ||delta||     = 211.430
-  delta : 유( 0.11 ) | remiss( 0.11 ) | adulteration( 0.11 ) | deciding( 0.11 ) | Mulch( 0.11 ) | SAVE( 0.10 ) | Crossref( 0.10 ) | worsening( 0.10 ) | Sickle( 0.10 ) | Allstate( 0.10 )
+  Token [  8] "▁field"  cosine(orig,pert) = 0.138
+    ||orig|| = 2.300   ||pert|| = 137.777   ||delta|| = 137.479
+    before : field(1.00) | fields(0.78) | Field(0.72) | FIELD(0.65) | Fields(0.45) | battlefield(0.32) | fielded(0.32) | area(0.29) | fielding(0.27) | areas(0.26)
+    after  : ☀(0.21) | MARIE(0.19) | adwords(0.18) | Yuhao(0.18) | tactful(0.18) | elliptic(0.18) | Summoned(0.18) | MediaCopyright(0.18) | disches(0.17) | BDO(0.17)
+    delta  : ☀(0.21) | MARIE(0.19) | adwords(0.18) | Yuhao(0.18) | tactful(0.18) | Summoned(0.18) | elliptic(0.18) | MediaCopyright(0.18) | disches(0.17) | BDO(0.17)
 
+  Token [ 10] "▁metrics"  cosine(orig,pert) = 0.173
+    ||orig|| = 1.969   ||pert|| = 102.333   ||delta|| = 102.010
+    before : metrics(1.00) | metric(0.53) | Metrics(0.53) | KPIs(0.48) | analytics(0.41) | stats(0.40) | statistics(0.37) | parameters(0.34) | indicators(0.33) | statistic(0.32)
+    after  : FreakScore(0.20) | Bankrate(0.20) | bottleneck(0.19) | ACCURATE(0.18) | CAGR(0.18) | adwords(0.18) | uncertainties(0.18) | statistic(0.18) | alphanumeric(0.18) | Capgemini(0.18)
+    delta  : FreakScore(0.20) | Bankrate(0.19) | bottleneck(0.19) | ACCURATE(0.18) | adwords(0.18) | CAGR(0.18) | uncertainties(0.18) | alphanumeric(0.18) | MARIE(0.17) | Capgemini(0.17)
 
-================================================================================
-Processing Example 2/3
-Sentence: LONDON 1996-08-30
-Tags:     ['person', 'location', 'organization', 'miscellaneous']
-================================================================================
+  Token [ 12] "▁organisation"  cosine(orig,pert) = 0.163
+    ||orig|| = 2.133   ||pert|| = 97.875   ||delta|| = 97.549
+    before : organisation(1.00) | organization(0.80) | organisations(0.79) | organizations(0.66) | organisational(0.62) | Organisation(0.61) | Organisations(0.59) | Organization(0.56) | ORGANIZATION(0.53) | organizational(0.52)
+    after  : microalgae(0.21) | SMSF(0.20) | FlashScore(0.20) | mineralization(0.19) | microorganisms(0.19) | DHgate(0.19) | cichlid(0.19) | morphogenesis(0.18) | cerevisiae(0.18) | HYIP(0.18)
+    delta  : microalgae(0.21) | FlashScore(0.20) | SMSF(0.20) | mineralization(0.19) | microorganisms(0.19) | DHgate(0.19) | cichlid(0.18) | morphogenesis(0.18) | cerevisiae(0.18) | HYIP(0.18)
 
-########################################################################
-#   COSINE PROBE OF THE *PERTURBED* TAG REPRESENTATION
-########################################################################
-Reference: mean ||vocab embedding|| = 3.490
+  Token [ 14] "▁person"  cosine(orig,pert) = 0.043
+    ||orig|| = 2.264   ||pert|| = 234.898   ||delta|| = 234.812
+    before : person(1.00) | Person(0.67) | PERSON(0.61) | persons(0.60) | people(0.53) | People(0.41) | Persons(0.41) | someone(0.41) | man(0.40) | woman(0.38)
+    after  : FreakScore(0.20) | ServerPlease(0.18) | Mintel(0.18) | 1916(0.18) | ResponseAre(0.18) | householder(0.17) | surname(0.17) | surnames(0.17) | Napkin(0.17) | YouTuber(0.17)
+    delta  : FreakScore(0.20) | ServerPlease(0.18) | Mintel(0.18) | 1916(0.18) | ResponseAre(0.18) | householder(0.17) | surname(0.17) | surnames(0.17) | Napkin(0.17) | Breivik(0.17)
 
-Token [2] "▁person" [cosine(orig,perturbed) = 0.120]
-  ||original||  = 3.456   (vocab ref: 3.490)
-  ||perturbed|| = 87.387   (vocab ref: 3.490)
-  before: person( 1.00 ) | Person( 0.81 ) | PERSON( 0.76 ) | persons( 0.75 ) | people( 0.71 ) | Persons( 0.67 ) | man( 0.66 ) | someone( 0.65 ) | woman( 0.65 ) | People( 0.63 )
-  after : slur( 0.18 ) | NETWORK( 0.17 ) | jus( 0.17 ) | Clearview( 0.17 ) | Rauner( 0.17 ) | disservice( 0.17 ) | horn( 0.16 ) | shabby( 0.16 ) | likeness( 0.16 ) | Pima( 0.16 )
-  ||delta||     = 87.041
-  delta : slur( 0.16 ) | NETWORK( 0.16 ) | Clearview( 0.15 ) | jus( 0.15 ) | Rauner( 0.15 ) | disservice( 0.15 ) | shabby( 0.15 ) | horn( 0.15 ) | likeness( 0.15 ) | PerimeterX( 0.14 )
+  Token [ 16] "▁product"  cosine(orig,pert) = 0.162
+    ||orig|| = 2.244   ||pert|| = 324.862   ||delta|| = 324.506
+    before : product(1.00) | products(0.80) | Product(0.78) | PRODUCT(0.57) | Products(0.55) | PRODUCTS(0.44) | Produkt(0.36) | produkt(0.36) | produit(0.36) | item(0.35)
+    after  : PRODUCTS(0.19) | unreadable(0.19) | upsell(0.18) | beautification(0.18) | vender(0.18) | Produkt(0.18) | Products(0.18) | enthusiast(0.18) | LCA(0.18) | products(0.17)
+    delta  : PRODUCTS(0.19) | unreadable(0.19) | upsell(0.18) | beautification(0.18) | vender(0.18) | enthusiast(0.18) | Produkt(0.18) | LCA(0.18) | Products(0.17) | hobby(0.17)
 
-Token [4] "▁location" [cosine(orig,perturbed) = 0.124]
-  ||original||  = 3.437   (vocab ref: 3.490)
-  ||perturbed|| = 87.621   (vocab ref: 3.490)
-  before: location( 1.00 ) | locations( 0.87 ) | Location( 0.79 ) | Locations( 0.69 ) | located( 0.67 ) | LOCATION( 0.65 ) | locate( 0.63 ) | Located( 0.62 ) | locale( 0.61 ) | locating( 0.61 )
-  after : cloth( 0.16 ) | 유( 0.16 ) | Canine( 0.16 ) | Rauner( 0.16 ) | misdemeanor( 0.15 ) | discussion( 0.15 ) | DeWine( 0.15 ) | Aotearoa( 0.15 ) | WGN( 0.15 ) | NETWORK( 0.15 )
-  ||delta||     = 87.262
-  delta : 유( 0.15 ) | cloth( 0.15 ) | Canine( 0.14 ) | Rauner( 0.14 ) | misdemeanor( 0.14 ) | Aotearoa( 0.14 ) | NETWORK( 0.14 ) | WGN( 0.14 ) | AIA( 0.14 ) | Mulch( 0.14 )
+  Token [ 18] "▁program"  cosine(orig,pert) = 0.164
+    ||orig|| = 2.278   ||pert|| = 59.767   ||delta|| = 59.437
+    before : program(1.00) | programs(0.87) | Program(0.83) | programme(0.75) | programmes(0.67) | PROGRAM(0.61) | Programs(0.61) | Programme(0.56) | programming(0.46) | Programmes(0.44)
+    after  : LANGUAGE(0.21) | natively(0.20) | syntax(0.18) | programming(0.18) | dialects(0.18) | qualifier(0.18) | anthology(0.18) | opcode(0.18) | languages(0.18) | codec(0.18)
+    delta  : LANGUAGE(0.21) | natively(0.20) | syntax(0.18) | dialects(0.18) | anthology(0.18) | qualifier(0.18) | opcode(0.18) | codec(0.17) | languages(0.17) | TEFL(0.17)
 
-Token [6] "▁organization" [cosine(orig,perturbed) = 0.081]
-  ||original||  = 3.477   (vocab ref: 3.490)
-  ||perturbed|| = 111.850   (vocab ref: 3.490)
-  before: organization( 1.00 ) | organizations( 0.88 ) | organisation( 0.83 ) | organisations( 0.78 ) | organizational( 0.75 ) | Organization( 0.72 ) | Organizations( 0.71 ) | ORGANIZATION( 0.71 ) | organized( 0.67 ) | organizing( 0.67 )
-  after : 유( 0.18 ) | NETWORK( 0.17 ) | misdemeanor( 0.16 ) | GAIN( 0.16 ) | DeV( 0.16 ) | Shade( 0.16 ) | Rauner( 0.16 ) | distortion( 0.16 ) | Finlay( 0.16 ) | adulteration( 0.16 )
-  ||delta||     = 111.621
-  delta : 유( 0.17 ) | NETWORK( 0.15 ) | GAIN( 0.15 ) | misdemeanor( 0.15 ) | DeV( 0.15 ) | Shade( 0.14 ) | Rauner( 0.14 ) | Finlay( 0.14 ) | adulteration( 0.14 ) | distortion( 0.14 )
+  Token [ 19] "lang"  cosine(orig,pert) = 0.130
+    ||orig|| = 2.091   ||pert|| = 61.638   ||delta|| = 61.401
+    before : lang(0.36) | Lang(0.27) | LANG(0.24) | langue(0.22) | language(0.21) | languages(0.21) | toolset(0.20) | clang(0.20) | Multilingual(0.20) | MEAN(0.20)
+    after  : TEFL(0.20) | natively(0.19) | PROGRAMS(0.19) | Detour(0.19) | programming(0.19) | LANGUAGE(0.18) | programme(0.18) | Keygen(0.18) | LEC(0.18) | republish(0.18)
+    delta  : TEFL(0.19) | natively(0.19) | PROGRAMS(0.19) | Detour(0.19) | programming(0.18) | programme(0.18) | LANGUAGE(0.18) | Keygen(0.18) | republish(0.18) | LEC(0.18)
 
-Token [8] "▁miscellaneous" [cosine(orig,perturbed) = 0.019]
-  ||original||  = 3.347   (vocab ref: 3.490)
-  ||perturbed|| = 211.467   (vocab ref: 3.490)
-  before: miscellaneous( 1.00 ) | Miscellaneous( 0.63 ) | various( 0.57 ) | assorted( 0.55 ) | Other( 0.52 ) | Assorted( 0.51 ) | Various( 0.51 ) | item( 0.51 ) | some( 0.51 ) | Misc( 0.51 )
-  after : 유( 0.12 ) | remiss( 0.12 ) | adulteration( 0.11 ) | deciding( 0.11 ) | Mulch( 0.11 ) | SAVE( 0.11 ) | Crossref( 0.11 ) | worsening( 0.11 ) | Sickle( 0.10 ) | Allstate( 0.10 )
-  ||delta||     = 211.430
-  delta : 유( 0.11 ) | remiss( 0.11 ) | adulteration( 0.11 ) | deciding( 0.11 ) | Mulch( 0.11 ) | SAVE( 0.10 ) | Crossref( 0.10 ) | worsening( 0.10 ) | Sickle( 0.10 ) | Allstate( 0.10 )
+  Token [ 21] "▁researcher"  cosine(orig,pert) = 0.113
+    ||orig|| = 1.957   ||pert|| = 84.988   ||delta|| = 84.789
+    before : researcher(1.00) | researchers(0.72) | Researcher(0.70) | Researchers(0.62) | research(0.52) | Research(0.46) | researches(0.44) | RESEARCH(0.43) | researched(0.43) | scientist(0.41)
+    after  : MediaCopyright(0.19) | ▼(0.19) | BDO(0.19) | adwords(0.19) | 353146195169779(0.18) | FreakScore(0.18) | 1818005(0.18) | Mintel(0.17) | SpyFu(0.17) | MARIE(0.17)
+    delta  : MediaCopyright(0.19) | ▼(0.19) | BDO(0.19) | adwords(0.19) | 353146195169779(0.18) | FreakScore(0.18) | 1818005(0.17) | SpyFu(0.17) | Mintel(0.17) | MARIE(0.17)
+
+  Token [ 23] "▁task"  cosine(orig,pert) = 0.128
+    ||orig|| = 2.203   ||pert|| = 117.334   ||delta|| = 117.072
+    before : task(1.00) | tasks(0.74) | Task(0.63) | TASK(0.55) | Tasks(0.52) | tasked(0.35) | job(0.34) | chore(0.31) | challenge(0.31) | assignments(0.30)
+    after  : abaout(0.21) | beautify(0.19) | 위한(0.18) | quod(0.18) | automate(0.17) | Upwork(0.17) | outperforms(0.17) | указания(0.17) | arborists(0.17) | 10600(0.17)
+    delta  : abaout(0.21) | beautify(0.19) | 위한(0.18) | quod(0.18) | automate(0.17) | arborists(0.17) | outperforms(0.17) | 10600(0.17) | Upwork(0.17) | указания(0.17)
+
+  Token [ 25] "▁university"  cosine(orig,pert) = 0.215
+    ||orig|| = 2.153   ||pert|| = 83.393   ||delta|| = 82.957
+    before : university(1.00) | universities(0.74) | University(0.67) | Universities(0.57) | college(0.53) | UNIVERSITY(0.51) | colleges(0.41) | Univ(0.40) | Université(0.38) | College(0.37)
+    after  : universities(0.23) | university(0.21) | thcheap(0.20) | Universities(0.20) | 1818005(0.20) | UNIVERSITY(0.20) | campuses(0.19) | Faculties(0.19) | Prerequisite(0.18) | Universitas(0.18)
+    delta  : universities(0.21) | thcheap(0.20) | 1818005(0.20) | university(0.19) | Universities(0.19) | UNIVERSITY(0.19) | Faculties(0.18) | ▼(0.18) | campuses(0.18) | Prerequisite(0.18)
 
 
 ================================================================================
-Processing Example 3/3
-Sentence: West Indian all-rounder Phil Simmons took four for 38 on Friday as Leicestershire beat Somerset by an innings and 39 runs in two days to take over at the head of the county championship .
-Tags:     ['person', 'location', 'organization', 'miscellaneous']
+  DOMAIN : LITERATURE
+  TAGS   : ['award', 'book', 'country', 'else', 'event', 'literarygenre', 'magazine', 'misc', 'organisation', 'person', 'poem', 'writer']
+  SENTENCE: The writer received the Booker Award for her novel set in France, a work blending the literary genre of magical realism with poetry.
 ================================================================================
 
-########################################################################
-#   COSINE PROBE OF THE *PERTURBED* TAG REPRESENTATION
-########################################################################
-Reference: mean ||vocab embedding|| = 3.490
+  Reference: mean ||vocab emb|| = 1.795
 
-Token [2] "▁person" [cosine(orig,perturbed) = 0.120]
-  ||original||  = 3.456   (vocab ref: 3.490)
-  ||perturbed|| = 87.387   (vocab ref: 3.490)
-  before: person( 1.00 ) | Person( 0.81 ) | PERSON( 0.76 ) | persons( 0.75 ) | people( 0.71 ) | Persons( 0.67 ) | man( 0.66 ) | someone( 0.65 ) | woman( 0.65 ) | People( 0.63 )
-  after : slur( 0.18 ) | NETWORK( 0.17 ) | jus( 0.17 ) | Clearview( 0.17 ) | Rauner( 0.17 ) | disservice( 0.17 ) | horn( 0.16 ) | shabby( 0.16 ) | likeness( 0.16 ) | Pima( 0.16 )
-  ||delta||     = 87.041
-  delta : slur( 0.16 ) | NETWORK( 0.16 ) | Clearview( 0.15 ) | jus( 0.15 ) | Rauner( 0.15 ) | disservice( 0.15 ) | shabby( 0.15 ) | horn( 0.15 ) | likeness( 0.15 ) | PerimeterX( 0.14 )
+  Token [  2] "▁award"  cosine(orig,pert) = 0.142
+    ||orig|| = 2.205   ||pert|| = 110.323   ||delta|| = 110.032
+    before : award(1.00) | awards(0.80) | Award(0.77) | AWARD(0.63) | Awards(0.59) | awarding(0.52) | awarded(0.52) | AWARDS(0.48) | Awarded(0.48) | awardees(0.39)
+    after  : ☀(0.19) | 😉(0.19) | OLBERMANN(0.19) | 🙁(0.19) | Hereinafter(0.19) | 😦(0.18) | Charmant(0.18) | globulin(0.18) | Prerequisites(0.18) | honoree(0.18)
+    delta  : ☀(0.19) | 😉(0.19) | OLBERMANN(0.19) | 🙁(0.19) | Hereinafter(0.19) | 😦(0.18) | Charmant(0.18) | globulin(0.18) | Prerequisites(0.18) | honoree(0.17)
 
-Token [4] "▁location" [cosine(orig,perturbed) = 0.124]
-  ||original||  = 3.437   (vocab ref: 3.490)
-  ||perturbed|| = 87.621   (vocab ref: 3.490)
-  before: location( 1.00 ) | locations( 0.87 ) | Location( 0.79 ) | Locations( 0.69 ) | located( 0.67 ) | LOCATION( 0.65 ) | locate( 0.63 ) | Located( 0.62 ) | locale( 0.61 ) | locating( 0.61 )
-  after : cloth( 0.16 ) | 유( 0.16 ) | Canine( 0.16 ) | Rauner( 0.16 ) | misdemeanor( 0.15 ) | discussion( 0.15 ) | DeWine( 0.15 ) | Aotearoa( 0.15 ) | WGN( 0.15 ) | NETWORK( 0.15 )
-  ||delta||     = 87.262
-  delta : 유( 0.15 ) | cloth( 0.15 ) | Canine( 0.14 ) | Rauner( 0.14 ) | misdemeanor( 0.14 ) | Aotearoa( 0.14 ) | NETWORK( 0.14 ) | WGN( 0.14 ) | AIA( 0.14 ) | Mulch( 0.14 )
+  Token [  4] "▁book"  cosine(orig,pert) = 0.109
+    ||orig|| = 2.345   ||pert|| = 105.152   ||delta|| = 104.923
+    before : book(1.00) | books(0.82) | Book(0.75) | BOOK(0.64) | Books(0.54) | BOOKS(0.45) | film(0.40) | libro(0.35) | booked(0.34) | story(0.34)
+    after  : audiobook(0.23) | bestseller(0.20) | BOOKS(0.20) | unreadable(0.20) | audiobooks(0.20) | Magazines(0.20) | bestsellers(0.19) | anthologies(0.19) | textual(0.19) | cookbooks(0.18)
+    delta  : audiobook(0.23) | unreadable(0.20) | bestseller(0.20) | Magazines(0.19) | audiobooks(0.19) | BOOKS(0.19) | bestsellers(0.19) | anthologies(0.19) | textual(0.19) | republish(0.18)
 
-Token [6] "▁organization" [cosine(orig,perturbed) = 0.081]
-  ||original||  = 3.477   (vocab ref: 3.490)
-  ||perturbed|| = 111.850   (vocab ref: 3.490)
-  before: organization( 1.00 ) | organizations( 0.88 ) | organisation( 0.83 ) | organisations( 0.78 ) | organizational( 0.75 ) | Organization( 0.72 ) | Organizations( 0.71 ) | ORGANIZATION( 0.71 ) | organized( 0.67 ) | organizing( 0.67 )
-  after : 유( 0.18 ) | NETWORK( 0.17 ) | misdemeanor( 0.16 ) | GAIN( 0.16 ) | DeV( 0.16 ) | Shade( 0.16 ) | Rauner( 0.16 ) | distortion( 0.16 ) | Finlay( 0.16 ) | adulteration( 0.16 )
-  ||delta||     = 111.621
-  delta : 유( 0.17 ) | NETWORK( 0.15 ) | GAIN( 0.15 ) | misdemeanor( 0.15 ) | DeV( 0.15 ) | Shade( 0.14 ) | Rauner( 0.14 ) | Finlay( 0.14 ) | adulteration( 0.14 ) | distortion( 0.14 )
+  Token [  6] "▁country"  cosine(orig,pert) = 0.131
+    ||orig|| = 2.204   ||pert|| = 156.930   ||delta|| = 156.657
+    before : country(1.00) | Country(0.70) | COUNTRY(0.64) | countries(0.57) | nation(0.50) | Countries(0.45) | país(0.44) | nations(0.34) | countrymen(0.32) | national(0.30)
+    after  : Prelinger(0.22) | militaries(0.21) | embassies(0.20) | retreived(0.19) | 01131(0.19) | BidaskClub(0.19) | navies(0.19) | secede(0.19) | Analyse(0.18) | Prefecture(0.18)
+    delta  : Prelinger(0.22) | militaries(0.21) | embassies(0.20) | retreived(0.19) | 01131(0.19) | BidaskClub(0.19) | navies(0.19) | Analyse(0.18) | secede(0.18) | Prefecture(0.18)
 
-Token [8] "▁miscellaneous" [cosine(orig,perturbed) = 0.019]
-  ||original||  = 3.347   (vocab ref: 3.490)
-  ||perturbed|| = 211.467   (vocab ref: 3.490)
-  before: miscellaneous( 1.00 ) | Miscellaneous( 0.63 ) | various( 0.57 ) | assorted( 0.55 ) | Other( 0.52 ) | Assorted( 0.51 ) | Various( 0.51 ) | item( 0.51 ) | some( 0.51 ) | Misc( 0.51 )
-  after : 유( 0.12 ) | remiss( 0.12 ) | adulteration( 0.11 ) | deciding( 0.11 ) | Mulch( 0.11 ) | SAVE( 0.11 ) | Crossref( 0.11 ) | worsening( 0.11 ) | Sickle( 0.10 ) | Allstate( 0.10 )
-  ||delta||     = 211.430
-  delta : 유( 0.11 ) | remiss( 0.11 ) | adulteration( 0.11 ) | deciding( 0.11 ) | Mulch( 0.11 ) | SAVE( 0.10 ) | Crossref( 0.10 ) | worsening( 0.10 ) | Sickle( 0.10 ) | Allstate( 0.10 )
+  Token [  8] "▁else"  cosine(orig,pert) = 0.004
+    ||orig|| = 2.186   ||pert|| = 110.963   ||delta|| = 110.976
+    before : else(1.00) | ELSE(0.65) | Else(0.61) | other(0.35) | others(0.30) | elsewhere(0.29) | otherwise(0.28) | OTHER(0.27) | Otherwise(0.27) | Other(0.23)
+    after  : literacies(0.20) | hectares(0.19) | espanol(0.19) | Slovacka(0.19) | hominem(0.19) | retreived(0.19) | ☀(0.18) | Majeure(0.18) | unbecoming(0.18) | Picchu(0.18)
+    delta  : literacies(0.20) | Slovacka(0.19) | espanol(0.19) | hectares(0.19) | hominem(0.19) | retreived(0.19) | ☀(0.18) | Majeure(0.18) | unbecoming(0.18) | shirtless(0.18)
 
+  Token [ 10] "▁event"  cosine(orig,pert) = 0.078
+    ||orig|| = 2.239   ||pert|| = 208.589   ||delta|| = 208.426
+    before : event(1.00) | events(0.77) | Event(0.76) | EVENT(0.61) | Events(0.58) | EVENTS(0.49) | occasion(0.30) | meeting(0.29) | incident(0.28) | festival(0.27)
+    after  : 1919(0.21) | centenary(0.21) | adwords(0.21) | 1924(0.20) | 1913(0.19) | july(0.19) | 1904(0.19) | utc(0.19) | 1854(0.19) | 1935(0.19)
+    delta  : 1919(0.21) | adwords(0.21) | centenary(0.21) | 1924(0.20) | 1913(0.19) | july(0.19) | 1904(0.19) | utc(0.19) | 1854(0.19) | 1935(0.19)
+
+  Token [ 12] "▁literary"  cosine(orig,pert) = 0.132
+    ||orig|| = 1.994   ||pert|| = 61.804   ||delta|| = 61.573
+    before : literary(1.00) | Literary(0.61) | literature(0.35) | poetic(0.35) | artistic(0.34) | linguistic(0.34) | Literatur(0.33) | poet(0.32) | bookish(0.32) | scholarly(0.32)
+    after  : genre(0.25) | subculture(0.23) | genres(0.22) | coloriage(0.21) | stylistically(0.20) | subgenre(0.20) | majorly(0.19) | metagame(0.19) | transdisciplinary(0.19) | bpm(0.19)
+    delta  : genre(0.24) | subculture(0.23) | genres(0.22) | coloriage(0.20) | stylistically(0.19) | subgenre(0.19) | majorly(0.19) | metagame(0.19) | bpm(0.19) | transdisciplinary(0.18)
+
+  Token [ 13] "genre"  cosine(orig,pert) = 0.248
+    ||orig|| = 1.860   ||pert|| = 60.388   ||delta|| = 59.954
+    before : genre(0.66) | subgenre(0.61) | genres(0.58) | Genre(0.53) | subfield(0.39) | tropes(0.37) | subcategory(0.33) | typologies(0.33) | trope(0.33) | historiography(0.32)
+    after  : genre(0.26) | genres(0.23) | subculture(0.22) | coloriage(0.21) | stylistically(0.20) | subgenre(0.20) | Genre(0.19) | CGC(0.19) | bpm(0.19) | mediums(0.19)
+    delta  : genre(0.24) | genres(0.21) | subculture(0.21) | coloriage(0.20) | stylistically(0.19) | CGC(0.19) | bpm(0.19) | hawaiian(0.18) | mediums(0.18) | subgenre(0.18)
+
+  Token [ 15] "▁magazine"  cosine(orig,pert) = 0.231
+    ||orig|| = 2.150   ||pert|| = 109.986   ||delta|| = 109.510
+    before : magazine(1.00) | magazines(0.80) | Magazine(0.77) | MAGAZINE(0.56) | Magazines(0.53) | mags(0.43) | newspaper(0.41) | publications(0.37) | zine(0.36) | mag(0.36)
+    after  : magazine(0.23) | magazines(0.23) | Magazines(0.23) | Magazine(0.22) | anthologies(0.21) | lazada(0.20) | MAGAZINE(0.20) | zines(0.19) | Hebdo(0.19) | fanzine(0.19)
+    delta  : Magazines(0.22) | magazines(0.21) | magazine(0.21) | anthologies(0.20) | Magazine(0.20) | lazada(0.20) | MAGAZINE(0.19) | zines(0.19) | Hebdo(0.19) | adwords(0.19)
+
+  Token [ 17] "▁misc"  cosine(orig,pert) = 0.129
+    ||orig|| = 1.889   ||pert|| = 146.467   ||delta|| = 146.234
+    before : misc(1.00) | Misc(0.59) | miscellaneous(0.39) | Miscellaneous(0.37) | intermingle(0.34) | hodgepodge(0.32) | Assorted(0.32) | mishmash(0.31) | intermingled(0.30) | polymath(0.30)
+    after  : hectares(0.19) | glyphs(0.19) | reminiscing(0.18) | coloriage(0.18) | ☀(0.18) | Cypriot(0.17) | beginnings(0.17) | OTU(0.16) | unbecoming(0.16) | NPL(0.16)
+    delta  : hectares(0.19) | glyphs(0.18) | reminiscing(0.18) | coloriage(0.18) | ☀(0.17) | Cypriot(0.17) | beginnings(0.16) | OTU(0.16) | VIOLATION(0.16) | sentiment(0.16)
+
+  Token [ 19] "▁organisation"  cosine(orig,pert) = 0.163
+    ||orig|| = 2.133   ||pert|| = 97.875   ||delta|| = 97.549
+    before : organisation(1.00) | organization(0.80) | organisations(0.79) | organizations(0.66) | organisational(0.62) | Organisation(0.61) | Organisations(0.59) | Organization(0.56) | ORGANIZATION(0.53) | organizational(0.52)
+    after  : microalgae(0.21) | SMSF(0.20) | FlashScore(0.20) | mineralization(0.19) | microorganisms(0.19) | DHgate(0.19) | cichlid(0.19) | morphogenesis(0.18) | cerevisiae(0.18) | HYIP(0.18)
+    delta  : microalgae(0.21) | FlashScore(0.20) | SMSF(0.20) | mineralization(0.19) | microorganisms(0.19) | DHgate(0.19) | cichlid(0.18) | morphogenesis(0.18) | cerevisiae(0.18) | HYIP(0.18)
+
+  Token [ 21] "▁person"  cosine(orig,pert) = 0.043
+    ||orig|| = 2.264   ||pert|| = 234.898   ||delta|| = 234.812
+    before : person(1.00) | Person(0.67) | PERSON(0.61) | persons(0.60) | people(0.53) | People(0.41) | Persons(0.41) | someone(0.41) | man(0.40) | woman(0.38)
+    after  : FreakScore(0.20) | ServerPlease(0.18) | Mintel(0.18) | 1916(0.18) | ResponseAre(0.18) | householder(0.17) | surname(0.17) | surnames(0.17) | Napkin(0.17) | YouTuber(0.17)
+    delta  : FreakScore(0.20) | ServerPlease(0.18) | Mintel(0.18) | 1916(0.18) | ResponseAre(0.18) | householder(0.17) | surname(0.17) | surnames(0.17) | Napkin(0.17) | Breivik(0.17)
+
+  Token [ 23] "▁poem"  cosine(orig,pert) = 0.172
+    ||orig|| = 2.036   ||pert|| = 63.464   ||delta|| = 63.145
+    before : poem(1.00) | poems(0.81) | Poem(0.63) | poetry(0.57) | poet(0.56) | Poems(0.52) | poets(0.49) | sonnet(0.45) | Poetry(0.41) | Poet(0.39)
+    after  : setlist(0.21) | altarpiece(0.20) | Yuhao(0.20) | glyphs(0.19) | 😦(0.18) | cantata(0.18) | MOVIE(0.18) | haplogroup(0.18) | MYTH(0.18) | 🙁(0.18)
+    delta  : setlist(0.21) | Yuhao(0.20) | altarpiece(0.20) | glyphs(0.18) | 😦(0.18) | haplogroup(0.18) | 🙁(0.17) | repainting(0.17) | MOVIE(0.17) | MYTH(0.17)
+
+  Token [ 25] "▁writer"  cosine(orig,pert) = 0.123
+    ||orig|| = 2.144   ||pert|| = 97.699   ||delta|| = 97.459
+    before : writer(1.00) | writers(0.80) | Writer(0.72) | Writers(0.58) | WRITER(0.54) | writing(0.54) | write(0.48) | writes(0.45) | author(0.45) | wrote(0.43)
+    after  : unreadable(0.18) | adwords(0.17) | linguists(0.17) | linguist(0.17) | 1818005(0.17) | Pingback(0.17) | WGBH(0.17) | REVIEWS(0.17) | Pinker(0.17) | unpopularity(0.17)
+    delta  : unreadable(0.17) | adwords(0.17) | 1818005(0.17) | Pingback(0.17) | WGBH(0.17) | linguists(0.17) | unpopularity(0.17) | linguist(0.17) | Pinker(0.17) | retreived(0.17)
+
+
+================================================================================
+  DOMAIN : MUSIC
+  TAGS   : ['album', 'award', 'band', 'country', 'else', 'event', 'misc', 'musicalartist', 'musicalinstrument', 'musicgenre', 'organisation', 'person', 'song']
+  SENTENCE: The band released their debut album and won a Grammy Award at the festival, blending jazz and rock genres with saxophone solos.
+================================================================================
+
+  Reference: mean ||vocab emb|| = 1.795
+
+  Token [  2] "▁album"  cosine(orig,pert) = 0.168
+    ||orig|| = 2.218   ||pert|| = 106.350   ||delta|| = 106.000
+    before : album(1.00) | albums(0.83) | Album(0.67) | ALBUM(0.59) | Albums(0.50) | EP(0.41) | LP(0.40) | LPs(0.39) | mixtape(0.39) | song(0.38)
+    after  : setlist(0.20) | ALBUM(0.19) | 😦(0.18) | holo(0.17) | EBOOKEE(0.17) | Dawes(0.17) | kegs(0.17) | suitcases(0.17) | album(0.17) | NSAID(0.16)
+    delta  : setlist(0.19) | ALBUM(0.18) | 😦(0.18) | holo(0.17) | EBOOKEE(0.17) | Dawes(0.17) | kegs(0.17) | suitcases(0.17) | Assignors(0.16) | NSAID(0.16)
+
+  Token [  4] "▁award"  cosine(orig,pert) = 0.142
+    ||orig|| = 2.205   ||pert|| = 110.323   ||delta|| = 110.032
+    before : award(1.00) | awards(0.80) | Award(0.77) | AWARD(0.63) | Awards(0.59) | awarding(0.52) | awarded(0.52) | AWARDS(0.48) | Awarded(0.48) | awardees(0.39)
+    after  : ☀(0.19) | 😉(0.19) | OLBERMANN(0.19) | 🙁(0.19) | Hereinafter(0.19) | 😦(0.18) | Charmant(0.18) | globulin(0.18) | Prerequisites(0.18) | honoree(0.18)
+    delta  : ☀(0.19) | 😉(0.19) | OLBERMANN(0.19) | 🙁(0.19) | Hereinafter(0.19) | 😦(0.18) | Charmant(0.18) | globulin(0.18) | Prerequisites(0.18) | honoree(0.17)
+
+  Token [  6] "▁band"  cosine(orig,pert) = 0.162
+    ||orig|| = 2.254   ||pert|| = 97.318   ||delta|| = 96.979
+    before : band(1.00) | bands(0.83) | Band(0.71) | Bands(0.60) | BAND(0.51) | song(0.34) | music(0.33) | musician(0.31) | songs(0.30) | orchestra(0.30)
+    after  : bandmates(0.21) | bandmate(0.20) | subculture(0.19) | setlist(0.19) | WCW(0.18) | cartels(0.18) | Kbps(0.18) | NWA(0.18) | unreached(0.18) | ÷(0.18)
+    delta  : bandmates(0.20) | bandmate(0.19) | subculture(0.19) | setlist(0.19) | WCW(0.18) | Kbps(0.18) | cartels(0.18) | unreached(0.18) | NWA(0.17) | ÷(0.17)
+
+  Token [  8] "▁country"  cosine(orig,pert) = 0.131
+    ||orig|| = 2.204   ||pert|| = 156.930   ||delta|| = 156.657
+    before : country(1.00) | Country(0.70) | COUNTRY(0.64) | countries(0.57) | nation(0.50) | Countries(0.45) | país(0.44) | nations(0.34) | countrymen(0.32) | national(0.30)
+    after  : Prelinger(0.22) | militaries(0.21) | embassies(0.20) | retreived(0.19) | 01131(0.19) | BidaskClub(0.19) | navies(0.19) | secede(0.19) | Analyse(0.18) | Prefecture(0.18)
+    delta  : Prelinger(0.22) | militaries(0.21) | embassies(0.20) | retreived(0.19) | 01131(0.19) | BidaskClub(0.19) | navies(0.19) | Analyse(0.18) | secede(0.18) | Prefecture(0.18)
+
+  Token [ 10] "▁else"  cosine(orig,pert) = 0.004
+    ||orig|| = 2.186   ||pert|| = 110.963   ||delta|| = 110.976
+    before : else(1.00) | ELSE(0.65) | Else(0.61) | other(0.35) | others(0.30) | elsewhere(0.29) | otherwise(0.28) | OTHER(0.27) | Otherwise(0.27) | Other(0.23)
+    after  : literacies(0.20) | hectares(0.19) | espanol(0.19) | Slovacka(0.19) | hominem(0.19) | retreived(0.19) | ☀(0.18) | Majeure(0.18) | unbecoming(0.18) | Picchu(0.18)
+    delta  : literacies(0.20) | Slovacka(0.19) | espanol(0.19) | hectares(0.19) | hominem(0.19) | retreived(0.19) | ☀(0.18) | Majeure(0.18) | unbecoming(0.18) | shirtless(0.18)
+
+  Token [ 12] "▁event"  cosine(orig,pert) = 0.078
+    ||orig|| = 2.239   ||pert|| = 208.589   ||delta|| = 208.426
+    before : event(1.00) | events(0.77) | Event(0.76) | EVENT(0.61) | Events(0.58) | EVENTS(0.49) | occasion(0.30) | meeting(0.29) | incident(0.28) | festival(0.27)
+    after  : 1919(0.21) | centenary(0.21) | adwords(0.21) | 1924(0.20) | 1913(0.19) | july(0.19) | 1904(0.19) | utc(0.19) | 1854(0.19) | 1935(0.19)
+    delta  : 1919(0.21) | adwords(0.21) | centenary(0.21) | 1924(0.20) | 1913(0.19) | july(0.19) | 1904(0.19) | utc(0.19) | 1854(0.19) | 1935(0.19)
+
+  Token [ 14] "▁misc"  cosine(orig,pert) = 0.129
+    ||orig|| = 1.889   ||pert|| = 146.467   ||delta|| = 146.234
+    before : misc(1.00) | Misc(0.59) | miscellaneous(0.39) | Miscellaneous(0.37) | intermingle(0.34) | hodgepodge(0.32) | Assorted(0.32) | mishmash(0.31) | intermingled(0.30) | polymath(0.30)
+    after  : hectares(0.19) | glyphs(0.19) | reminiscing(0.18) | coloriage(0.18) | ☀(0.18) | Cypriot(0.17) | beginnings(0.17) | OTU(0.16) | unbecoming(0.16) | NPL(0.16)
+    delta  : hectares(0.19) | glyphs(0.18) | reminiscing(0.18) | coloriage(0.18) | ☀(0.17) | Cypriot(0.17) | beginnings(0.16) | OTU(0.16) | VIOLATION(0.16) | sentiment(0.16)
+
+  Token [ 16] "▁musical"  cosine(orig,pert) = 0.082
+    ||orig|| = 2.120   ||pert|| = 79.121   ||delta|| = 78.975
+    before : musical(1.00) | Musical(0.69) | musicals(0.52) | musically(0.46) | music(0.42) | Music(0.40) | MUSIC(0.39) | Musically(0.36) | musicians(0.35) | musician(0.34)
+    after  : YouTubers(0.18) | linuxstb(0.18) | BFA(0.18) | Llorean(0.17) | ℗(0.16) | BTS(0.16) | bietet(0.16) | Assignors(0.16) | WGBH(0.16) | Conservatoire(0.16)
+    delta  : linuxstb(0.18) | YouTubers(0.18) | BFA(0.18) | Assignors(0.16) | Llorean(0.16) | ℗(0.16) | bietet(0.16) | BTS(0.16) | utc(0.16) | Goto(0.16)
+
+  Token [ 17] "artist"  cosine(orig,pert) = 0.177
+    ||orig|| = 1.855   ||pert|| = 70.998   ||delta|| = 70.694
+    before : artist(0.68) | Artist(0.66) | artists(0.61) | ARTIST(0.58) | Artists(0.54) | artistry(0.47) | artistes(0.43) | artiste(0.43) | artistic(0.38) | artsy(0.37)
+    after  : linuxstb(0.18) | YouTubers(0.18) | BFA(0.17) | ℗(0.17) | Llorean(0.17) | 그리고(0.16) | LPC(0.16) | bietet(0.16) | 🙁(0.16) | BTS(0.16)
+    delta  : linuxstb(0.18) | YouTubers(0.17) | BFA(0.17) | ℗(0.17) | Llorean(0.17) | 그리고(0.16) | 🙁(0.16) | BTS(0.16) | streamer(0.16) | bietet(0.16)
+
+  Token [ 19] "▁musical"  cosine(orig,pert) = 0.056
+    ||orig|| = 2.120   ||pert|| = 72.131   ||delta|| = 72.043
+    before : musical(1.00) | Musical(0.69) | musicals(0.52) | musically(0.46) | music(0.42) | Music(0.40) | MUSIC(0.39) | Musically(0.36) | musicians(0.35) | musician(0.34)
+    after  : instrument(0.21) | instruments(0.19) | ensembles(0.17) | CGC(0.17) | Goto(0.17) | jS(0.16) | senza(0.15) | harley(0.15) | 964(0.15) | Supposedly(0.15)
+    delta  : instrument(0.20) | instruments(0.19) | Goto(0.17) | CGC(0.17) | ensembles(0.17) | jS(0.16) | senza(0.15) | leroy(0.15) | Supposedly(0.15) | 964(0.15)
+
+  Token [ 20] "instrument"  cosine(orig,pert) = 0.144
+    ||orig|| = 1.853   ||pert|| = 77.495   ||delta|| = 77.251
+    before : instrument(0.69) | Instrument(0.66) | instruments(0.65) | INSTRUMENT(0.63) | instrumentation(0.50) | Instruments(0.47) | Instrumentation(0.47) | instrumentalists(0.43) | Instrumental(0.39) | Mandolin(0.38)
+    after  : instrument(0.22) | instruments(0.21) | ensembles(0.18) | CGC(0.18) | jS(0.17) | Supposedly(0.16) | senza(0.16) | Goto(0.16) | soloist(0.16) | IDE(0.16)
+    delta  : instrument(0.21) | instruments(0.19) | CGC(0.17) | ensembles(0.17) | jS(0.17) | Supposedly(0.16) | senza(0.16) | IDE(0.16) | Goto(0.16) | arborists(0.16)
+
+  Token [ 22] "▁music"  cosine(orig,pert) = 0.125
+    ||orig|| = 2.218   ||pert|| = 63.312   ||delta|| = 63.074
+    before : music(1.00) | Music(0.78) | MUSIC(0.56) | songs(0.49) | tunes(0.44) | song(0.44) | musical(0.42) | musik(0.38) | música(0.38) | Musik(0.37)
+    after  : genre(0.23) | subculture(0.22) | genres(0.21) | stylistically(0.21) | metagame(0.21) | Musically(0.20) | lyrically(0.20) | bpm(0.19) | OLBERMANN(0.19) | culturally(0.18)
+    delta  : genre(0.23) | subculture(0.22) | genres(0.21) | metagame(0.20) | stylistically(0.20) | lyrically(0.19) | Musically(0.19) | bpm(0.19) | OLBERMANN(0.19) | coloriage(0.18)
+
+  Token [ 23] "genre"  cosine(orig,pert) = 0.219
+    ||orig|| = 1.860   ||pert|| = 64.432   ||delta|| = 64.050
+    before : genre(0.66) | subgenre(0.61) | genres(0.58) | Genre(0.53) | subfield(0.39) | tropes(0.37) | subcategory(0.33) | typologies(0.33) | trope(0.33) | historiography(0.32)
+    after  : genre(0.24) | genres(0.21) | stylistically(0.20) | Musically(0.20) | subculture(0.20) | metagame(0.20) | bpm(0.20) | coloriage(0.19) | lyrically(0.18) | DISCLAIMS(0.18)
+    delta  : genre(0.22) | Musically(0.20) | genres(0.20) | stylistically(0.19) | subculture(0.19) | bpm(0.19) | metagame(0.19) | coloriage(0.18) | DISCLAIMS(0.18) | lyrically(0.18)
+
+  Token [ 25] "▁organisation"  cosine(orig,pert) = 0.163
+    ||orig|| = 2.133   ||pert|| = 97.875   ||delta|| = 97.549
+    before : organisation(1.00) | organization(0.80) | organisations(0.79) | organizations(0.66) | organisational(0.62) | Organisation(0.61) | Organisations(0.59) | Organization(0.56) | ORGANIZATION(0.53) | organizational(0.52)
+    after  : microalgae(0.21) | SMSF(0.20) | FlashScore(0.20) | mineralization(0.19) | microorganisms(0.19) | DHgate(0.19) | cichlid(0.19) | morphogenesis(0.18) | cerevisiae(0.18) | HYIP(0.18)
+    delta  : microalgae(0.21) | FlashScore(0.20) | SMSF(0.20) | mineralization(0.19) | microorganisms(0.19) | DHgate(0.19) | cichlid(0.18) | morphogenesis(0.18) | cerevisiae(0.18) | HYIP(0.18)
+
+  Token [ 27] "▁person"  cosine(orig,pert) = 0.043
+    ||orig|| = 2.264   ||pert|| = 234.898   ||delta|| = 234.812
+    before : person(1.00) | Person(0.67) | PERSON(0.61) | persons(0.60) | people(0.53) | People(0.41) | Persons(0.41) | someone(0.41) | man(0.40) | woman(0.38)
+    after  : FreakScore(0.20) | ServerPlease(0.18) | Mintel(0.18) | 1916(0.18) | ResponseAre(0.18) | householder(0.17) | surname(0.17) | surnames(0.17) | Napkin(0.17) | YouTuber(0.17)
+    delta  : FreakScore(0.20) | ServerPlease(0.18) | Mintel(0.18) | 1916(0.18) | ResponseAre(0.18) | householder(0.17) | surname(0.17) | surnames(0.17) | Napkin(0.17) | Breivik(0.17)
+
+  Token [ 29] "▁song"  cosine(orig,pert) = 0.186
+    ||orig|| = 2.202   ||pert|| = 124.931   ||delta|| = 124.541
+    before : song(1.00) | songs(0.82) | Song(0.55) | Songs(0.48) | SONG(0.47) | music(0.44) | ballad(0.39) | tunes(0.39) | lyrics(0.38) | album(0.38)
+    after  : setlist(0.21) | OLBERMANN(0.19) | song(0.19) | lyrically(0.18) | TUNE(0.18) | CONCERT(0.18) | NSP(0.18) | tenor(0.18) | Jepsen(0.18) | lyrics(0.18)
+    delta  : setlist(0.20) | OLBERMANN(0.19) | TUNE(0.18) | CONCERT(0.18) | lyrically(0.18) | NSP(0.18) | tenor(0.18) | Jepsen(0.18) | Yuhao(0.18) | unreached(0.17)
+
+
+================================================================================
+  DOMAIN : POLITICS
+  TAGS   : ['country', 'election', 'else', 'event', 'misc', 'organisation', 'person', 'politician', 'politicalparty']
+  SENTENCE: The politician won the general election representing the Labour Party and signed a treaty between France and Germany.
+================================================================================
+
+  Reference: mean ||vocab emb|| = 1.795
+
+  Token [  2] "▁country"  cosine(orig,pert) = 0.131
+    ||orig|| = 2.204   ||pert|| = 156.930   ||delta|| = 156.657
+    before : country(1.00) | Country(0.70) | COUNTRY(0.64) | countries(0.57) | nation(0.50) | Countries(0.45) | país(0.44) | nations(0.34) | countrymen(0.32) | national(0.30)
+    after  : Prelinger(0.22) | militaries(0.21) | embassies(0.20) | retreived(0.19) | 01131(0.19) | BidaskClub(0.19) | navies(0.19) | secede(0.19) | Analyse(0.18) | Prefecture(0.18)
+    delta  : Prelinger(0.22) | militaries(0.21) | embassies(0.20) | retreived(0.19) | 01131(0.19) | BidaskClub(0.19) | navies(0.19) | Analyse(0.18) | secede(0.18) | Prefecture(0.18)
+
+  Token [  4] "▁election"  cosine(orig,pert) = 0.111
+    ||orig|| = 2.263   ||pert|| = 65.916   ||delta|| = 65.703
+    before : election(1.00) | elections(0.79) | Election(0.74) | ELECTION(0.64) | Elections(0.62) | elected(0.47) | electoral(0.46) | electing(0.42) | reelection(0.42) | Elected(0.40)
+    after  : 🙁(0.21) | 😦(0.20) | centenary(0.19) | INEC(0.19) | MANILA(0.19) | adwords(0.18) | bifurcated(0.18) | TALLAHASSEE(0.18) | rematch(0.17) | 2024(0.17)
+    delta  : 🙁(0.21) | 😦(0.20) | centenary(0.19) | MANILA(0.19) | INEC(0.19) | adwords(0.18) | bifurcated(0.18) | TALLAHASSEE(0.17) | doozy(0.17) | rematch(0.17)
+
+  Token [  6] "▁else"  cosine(orig,pert) = 0.004
+    ||orig|| = 2.186   ||pert|| = 110.963   ||delta|| = 110.976
+    before : else(1.00) | ELSE(0.65) | Else(0.61) | other(0.35) | others(0.30) | elsewhere(0.29) | otherwise(0.28) | OTHER(0.27) | Otherwise(0.27) | Other(0.23)
+    after  : literacies(0.20) | hectares(0.19) | espanol(0.19) | Slovacka(0.19) | hominem(0.19) | retreived(0.19) | ☀(0.18) | Majeure(0.18) | unbecoming(0.18) | Picchu(0.18)
+    delta  : literacies(0.20) | Slovacka(0.19) | espanol(0.19) | hectares(0.19) | hominem(0.19) | retreived(0.19) | ☀(0.18) | Majeure(0.18) | unbecoming(0.18) | shirtless(0.18)
+
+  Token [  8] "▁event"  cosine(orig,pert) = 0.078
+    ||orig|| = 2.239   ||pert|| = 208.589   ||delta|| = 208.426
+    before : event(1.00) | events(0.77) | Event(0.76) | EVENT(0.61) | Events(0.58) | EVENTS(0.49) | occasion(0.30) | meeting(0.29) | incident(0.28) | festival(0.27)
+    after  : 1919(0.21) | centenary(0.21) | adwords(0.21) | 1924(0.20) | 1913(0.19) | july(0.19) | 1904(0.19) | utc(0.19) | 1854(0.19) | 1935(0.19)
+    delta  : 1919(0.21) | adwords(0.21) | centenary(0.21) | 1924(0.20) | 1913(0.19) | july(0.19) | 1904(0.19) | utc(0.19) | 1854(0.19) | 1935(0.19)
+
+  Token [ 10] "▁misc"  cosine(orig,pert) = 0.129
+    ||orig|| = 1.889   ||pert|| = 146.467   ||delta|| = 146.234
+    before : misc(1.00) | Misc(0.59) | miscellaneous(0.39) | Miscellaneous(0.37) | intermingle(0.34) | hodgepodge(0.32) | Assorted(0.32) | mishmash(0.31) | intermingled(0.30) | polymath(0.30)
+    after  : hectares(0.19) | glyphs(0.19) | reminiscing(0.18) | coloriage(0.18) | ☀(0.18) | Cypriot(0.17) | beginnings(0.17) | OTU(0.16) | unbecoming(0.16) | NPL(0.16)
+    delta  : hectares(0.19) | glyphs(0.18) | reminiscing(0.18) | coloriage(0.18) | ☀(0.17) | Cypriot(0.17) | beginnings(0.16) | OTU(0.16) | VIOLATION(0.16) | sentiment(0.16)
+
+  Token [ 12] "▁organisation"  cosine(orig,pert) = 0.163
+    ||orig|| = 2.133   ||pert|| = 97.875   ||delta|| = 97.549
+    before : organisation(1.00) | organization(0.80) | organisations(0.79) | organizations(0.66) | organisational(0.62) | Organisation(0.61) | Organisations(0.59) | Organization(0.56) | ORGANIZATION(0.53) | organizational(0.52)
+    after  : microalgae(0.21) | SMSF(0.20) | FlashScore(0.20) | mineralization(0.19) | microorganisms(0.19) | DHgate(0.19) | cichlid(0.19) | morphogenesis(0.18) | cerevisiae(0.18) | HYIP(0.18)
+    delta  : microalgae(0.21) | FlashScore(0.20) | SMSF(0.20) | mineralization(0.19) | microorganisms(0.19) | DHgate(0.19) | cichlid(0.18) | morphogenesis(0.18) | cerevisiae(0.18) | HYIP(0.18)
+
+  Token [ 14] "▁person"  cosine(orig,pert) = 0.043
+    ||orig|| = 2.264   ||pert|| = 234.898   ||delta|| = 234.812
+    before : person(1.00) | Person(0.67) | PERSON(0.61) | persons(0.60) | people(0.53) | People(0.41) | Persons(0.41) | someone(0.41) | man(0.40) | woman(0.38)
+    after  : FreakScore(0.20) | ServerPlease(0.18) | Mintel(0.18) | 1916(0.18) | ResponseAre(0.18) | householder(0.17) | surname(0.17) | surnames(0.17) | Napkin(0.17) | YouTuber(0.17)
+    delta  : FreakScore(0.20) | ServerPlease(0.18) | Mintel(0.18) | 1916(0.18) | ResponseAre(0.18) | householder(0.17) | surname(0.17) | surnames(0.17) | Napkin(0.17) | Breivik(0.17)
+
+  Token [ 16] "▁politician"  cosine(orig,pert) = 0.123
+    ||orig|| = 1.976   ||pert|| = 71.119   ||delta|| = 70.903
+    before : politician(1.00) | politicians(0.74) | Politicians(0.60) | Politician(0.60) | lawmaker(0.44) | politics(0.41) | political(0.40) | politicking(0.40) | politico(0.39) | bureaucrat(0.39)
+    after  : Pingback(0.18) | adwords(0.17) | unpopularity(0.17) | utc(0.17) | Tocqueville(0.17) | NerdWallet(0.16) | bln(0.16) | Bletchley(0.16) | Orthopé(0.16) | madman(0.16)
+    delta  : Pingback(0.17) | adwords(0.17) | utc(0.17) | unpopularity(0.17) | Tocqueville(0.17) | NerdWallet(0.16) | Bletchley(0.16) | bln(0.16) | volvo(0.16) | Orthopé(0.16)
+
+  Token [ 18] "▁political"  cosine(orig,pert) = 0.082
+    ||orig|| = 2.159   ||pert|| = 87.060   ||delta|| = 86.910
+    before : political(1.00) | Political(0.74) | politically(0.65) | Politically(0.55) | politics(0.55) | POLITICAL(0.50) | politicians(0.44) | sociopolitical(0.43) | Politics(0.43) | politician(0.40)
+    after  : VND(0.19) | unpopularity(0.19) | Revisited(0.18) | ideologies(0.18) | MORE(0.18) | subculture(0.18) | extremly(0.17) | LDP(0.17) | CANDIDATE(0.17) | 😉(0.17)
+    delta  : VND(0.19) | unpopularity(0.19) | Revisited(0.18) | ideologies(0.18) | extremly(0.17) | subculture(0.17) | MORE(0.17) | 😉(0.17) | 1689(0.17) | impeached(0.17)
+
+  Token [ 19] "party"  cosine(orig,pert) = 0.105
+    ||orig|| = 2.090   ||pert|| = 94.980   ||delta|| = 94.784
+    before : party(0.73) | parties(0.65) | Party(0.62) | PARTY(0.58) | Parties(0.50) | PARTIES(0.46) | partied(0.31) | partying(0.26) | soiree(0.26) | RNC(0.23)
+    after  : unpopularity(0.20) | VND(0.19) | LDP(0.19) | ideologies(0.18) | impeached(0.18) | extremly(0.18) | CANDIDATE(0.17) | 1689(0.17) | Revisited(0.17) | 😉(0.17)
+    delta  : unpopularity(0.19) | VND(0.19) | LDP(0.18) | impeached(0.18) | ideologies(0.18) | extremly(0.18) | 😉(0.17) | CANDIDATE(0.17) | 1689(0.17) | Revisited(0.17)
+
+
+================================================================================
+  DOMAIN : SCIENCE
+  TAGS   : ['academicjournal', 'award', 'chemicalelement', 'chemicalcompound', 'country', 'discipline', 'else', 'enzyme', 'event', 'misc', 'organisation', 'person', 'protein', 'scientist', 'theory', 'university']
+  SENTENCE: The scientist published findings on the protein structure of an enzyme in the journal Nature, advancing the theory of molecular biology at MIT.
+================================================================================
+
+  Reference: mean ||vocab emb|| = 1.795
+
+  Token [  2] "▁academic"  cosine(orig,pert) = 0.008
+    ||orig|| = 2.082   ||pert|| = 85.577   ||delta|| = 85.586
+    before : academic(1.00) | Academic(0.68) | academics(0.65) | academically(0.50) | academia(0.44) | scholarly(0.40) | scholastic(0.40) | educational(0.34) | scientific(0.33) | professors(0.32)
+    after  : Magazines(0.24) | ▼(0.19) | bimonthly(0.19) | lazada(0.19) | databases(0.19) | reclassify(0.18) | misdiagnosed(0.18) | Magazine(0.18) | publishers(0.17) | magazine(0.17)
+    delta  : Magazines(0.24) | ▼(0.19) | lazada(0.19) | bimonthly(0.19) | databases(0.19) | reclassify(0.18) | misdiagnosed(0.18) | Magazine(0.17) | publishers(0.17) | magazine(0.17)
+
+  Token [  3] "journal"  cosine(orig,pert) = 0.099
+    ||orig|| = 1.960   ||pert|| = 76.991   ||delta|| = 76.821
+    before : journal(0.48) | journals(0.42) | Journal(0.41) | Journals(0.36) | LiveJournal(0.35) | JOURNAL(0.35) | journaling(0.29) | encyclopedia(0.28) | encyclopaedia(0.28) | diary(0.26)
+    after  : Magazines(0.21) | misdiagnosed(0.20) | reclassify(0.19) | ▼(0.18) | 353146195169779(0.18) | bimonthly(0.18) | Fraternity(0.18) | jS(0.18) | ADVERTISER(0.17) | lazada(0.17)
+    delta  : Magazines(0.21) | misdiagnosed(0.19) | reclassify(0.18) | ▼(0.18) | 353146195169779(0.18) | Fraternity(0.17) | jS(0.17) | lazada(0.17) | ADVERTISER(0.17) | bimonthly(0.17)
+
+  Token [  5] "▁award"  cosine(orig,pert) = 0.142
+    ||orig|| = 2.205   ||pert|| = 110.323   ||delta|| = 110.032
+    before : award(1.00) | awards(0.80) | Award(0.77) | AWARD(0.63) | Awards(0.59) | awarding(0.52) | awarded(0.52) | AWARDS(0.48) | Awarded(0.48) | awardees(0.39)
+    after  : ☀(0.19) | 😉(0.19) | OLBERMANN(0.19) | 🙁(0.19) | Hereinafter(0.19) | 😦(0.18) | Charmant(0.18) | globulin(0.18) | Prerequisites(0.18) | honoree(0.18)
+    delta  : ☀(0.19) | 😉(0.19) | OLBERMANN(0.19) | 🙁(0.19) | Hereinafter(0.19) | 😦(0.18) | Charmant(0.18) | globulin(0.18) | Prerequisites(0.18) | honoree(0.17)
+
+  Token [  7] "▁chemical"  cosine(orig,pert) = 0.124
+    ||orig|| = 2.093   ||pert|| = 83.975   ||delta|| = 83.741
+    before : chemical(1.00) | chemicals(0.71) | Chemical(0.64) | chemically(0.55) | Chemicals(0.49) | biochemical(0.45) | CHEMICAL(0.44) | chemistry(0.37) | pesticide(0.37) | petrochemical(0.35)
+    after  : isotopes(0.21) | radioisotope(0.20) | ZnO(0.19) | exoplanet(0.19) | nanotube(0.19) | atoms(0.19) | element(0.19) | isotope(0.19) | DFT(0.19) | exoplanets(0.19)
+    delta  : isotopes(0.20) | radioisotope(0.20) | ZnO(0.19) | exoplanet(0.19) | nanotube(0.19) | element(0.19) | exoplanets(0.19) | atoms(0.18) | 77891(0.18) | DFT(0.18)
+
+  Token [  8] "element"  cosine(orig,pert) = 0.140
+    ||orig|| = 1.843   ||pert|| = 71.440   ||delta|| = 71.206
+    before : element(0.54) | ELEMENT(0.54) | Element(0.51) | elements(0.49) | Elements(0.45) | elemental(0.29) | elementary(0.27) | Fragment(0.26) | Aspect(0.26) | CONCEPT(0.26)
+    after  : 77891(0.21) | isotope(0.20) | isotopes(0.19) | radioisotope(0.19) | ZnO(0.18) | DFT(0.18) | element(0.18) | EMF(0.18) | radionuclide(0.18) | ppm(0.18)
+    delta  : 77891(0.21) | isotope(0.19) | isotopes(0.19) | ZnO(0.18) | radioisotope(0.18) | DFT(0.18) | ppm(0.18) | EMF(0.18) | eV(0.18) | radionuclide(0.18)
+
+  Token [ 10] "▁chemical"  cosine(orig,pert) = 0.197
+    ||orig|| = 2.093   ||pert|| = 131.122   ||delta|| = 130.726
+    before : chemical(1.00) | chemicals(0.71) | Chemical(0.64) | chemically(0.55) | Chemicals(0.49) | biochemical(0.45) | CHEMICAL(0.44) | chemistry(0.37) | pesticide(0.37) | petrochemical(0.35)
+    after  : moiety(0.25) | compounds(0.24) | metabolites(0.24) | molecules(0.23) | precursors(0.22) | molecule(0.22) | polynucleotide(0.21) | carbonyl(0.21) | substituent(0.21) | aldehyde(0.21)
+    delta  : moiety(0.25) | compounds(0.24) | metabolites(0.23) | molecules(0.22) | precursors(0.22) | molecule(0.22) | polynucleotide(0.21) | carbonyl(0.21) | substituent(0.21) | aldehyde(0.20)
+
+  Token [ 11] "compound"  cosine(orig,pert) = 0.095
+    ||orig|| = 1.813   ||pert|| = 106.686   ||delta|| = 106.528
+    before : compound(0.65) | Compound(0.63) | Compounds(0.51) | compounds(0.49) | compounded(0.47) | compounding(0.45) | Compounding(0.39) | COMPLEX(0.38) | stabiliser(0.35) | mélange(0.35)
+    after  : moiety(0.24) | metabolites(0.23) | compounds(0.22) | molecules(0.21) | precursors(0.21) | molecule(0.21) | 77891(0.20) | aldehyde(0.19) | covalently(0.19) | substituent(0.19)
+    delta  : moiety(0.24) | metabolites(0.22) | compounds(0.21) | molecules(0.21) | precursors(0.21) | molecule(0.20) | 77891(0.20) | aldehyde(0.19) | mM(0.19) | covalently(0.19)
+
+  Token [ 13] "▁country"  cosine(orig,pert) = 0.131
+    ||orig|| = 2.204   ||pert|| = 156.930   ||delta|| = 156.657
+    before : country(1.00) | Country(0.70) | COUNTRY(0.64) | countries(0.57) | nation(0.50) | Countries(0.45) | país(0.44) | nations(0.34) | countrymen(0.32) | national(0.30)
+    after  : Prelinger(0.22) | militaries(0.21) | embassies(0.20) | retreived(0.19) | 01131(0.19) | BidaskClub(0.19) | navies(0.19) | secede(0.19) | Analyse(0.18) | Prefecture(0.18)
+    delta  : Prelinger(0.22) | militaries(0.21) | embassies(0.20) | retreived(0.19) | 01131(0.19) | BidaskClub(0.19) | navies(0.19) | Analyse(0.18) | secede(0.18) | Prefecture(0.18)
+
+  Token [ 15] "▁discipline"  cosine(orig,pert) = 0.164
+    ||orig|| = 2.116   ||pert|| = 56.240   ||delta|| = 55.931
+    before : discipline(1.00) | Discipline(0.66) | disciplined(0.62) | disciplines(0.59) | disciplinary(0.56) | disciplining(0.49) | Disciplinary(0.37) | disciplinarian(0.35) | undisciplined(0.32) | punishments(0.28)
+    after  : transdisciplinary(0.23) | subculture(0.21) | abreast(0.21) | ☀(0.20) | electives(0.20) | zoned(0.19) | intensively(0.19) | subfield(0.19) | skillset(0.19) | metagame(0.19)
+    delta  : transdisciplinary(0.22) | abreast(0.21) | subculture(0.21) | ☀(0.20) | electives(0.19) | intensively(0.19) | zoned(0.19) | metagame(0.19) | skillset(0.19) | subfield(0.18)
+
+  Token [ 17] "▁else"  cosine(orig,pert) = 0.004
+    ||orig|| = 2.186   ||pert|| = 110.963   ||delta|| = 110.976
+    before : else(1.00) | ELSE(0.65) | Else(0.61) | other(0.35) | others(0.30) | elsewhere(0.29) | otherwise(0.28) | OTHER(0.27) | Otherwise(0.27) | Other(0.23)
+    after  : literacies(0.20) | hectares(0.19) | espanol(0.19) | Slovacka(0.19) | hominem(0.19) | retreived(0.19) | ☀(0.18) | Majeure(0.18) | unbecoming(0.18) | Picchu(0.18)
+    delta  : literacies(0.20) | Slovacka(0.19) | espanol(0.19) | hectares(0.19) | hominem(0.19) | retreived(0.19) | ☀(0.18) | Majeure(0.18) | unbecoming(0.18) | shirtless(0.18)
+
+  Token [ 19] "▁enzyme"  cosine(orig,pert) = 0.191
+    ||orig|| = 1.922   ||pert|| = 120.458   ||delta|| = 120.105
+    before : enzyme(1.00) | enzymes(0.73) | Enzyme(0.56) | enzymatic(0.55) | Enzymes(0.51) | protease(0.37) | proteins(0.36) | protein(0.34) | biochemical(0.33) | cytochrome(0.32)
+    after  : isoforms(0.21) | NADH(0.20) | NADPH(0.20) | operon(0.19) | acidophilus(0.19) | enzyme(0.19) | mitochondrial(0.19) | bioinformatics(0.19) | outperforms(0.19) | archaea(0.18)
+    delta  : isoforms(0.21) | NADH(0.20) | NADPH(0.20) | operon(0.19) | acidophilus(0.19) | outperforms(0.19) | mitochondrial(0.18) | bioinformatics(0.18) | archaea(0.18) | ganglia(0.18)
+
+  Token [ 21] "▁event"  cosine(orig,pert) = 0.078
+    ||orig|| = 2.239   ||pert|| = 208.589   ||delta|| = 208.426
+    before : event(1.00) | events(0.77) | Event(0.76) | EVENT(0.61) | Events(0.58) | EVENTS(0.49) | occasion(0.30) | meeting(0.29) | incident(0.28) | festival(0.27)
+    after  : 1919(0.21) | centenary(0.21) | adwords(0.21) | 1924(0.20) | 1913(0.19) | july(0.19) | 1904(0.19) | utc(0.19) | 1854(0.19) | 1935(0.19)
+    delta  : 1919(0.21) | adwords(0.21) | centenary(0.21) | 1924(0.20) | 1913(0.19) | july(0.19) | 1904(0.19) | utc(0.19) | 1854(0.19) | 1935(0.19)
+
+  Token [ 23] "▁misc"  cosine(orig,pert) = 0.129
+    ||orig|| = 1.889   ||pert|| = 146.467   ||delta|| = 146.234
+    before : misc(1.00) | Misc(0.59) | miscellaneous(0.39) | Miscellaneous(0.37) | intermingle(0.34) | hodgepodge(0.32) | Assorted(0.32) | mishmash(0.31) | intermingled(0.30) | polymath(0.30)
+    after  : hectares(0.19) | glyphs(0.19) | reminiscing(0.18) | coloriage(0.18) | ☀(0.18) | Cypriot(0.17) | beginnings(0.17) | OTU(0.16) | unbecoming(0.16) | NPL(0.16)
+    delta  : hectares(0.19) | glyphs(0.18) | reminiscing(0.18) | coloriage(0.18) | ☀(0.17) | Cypriot(0.17) | beginnings(0.16) | OTU(0.16) | VIOLATION(0.16) | sentiment(0.16)
+
+  Token [ 25] "▁organisation"  cosine(orig,pert) = 0.163
+    ||orig|| = 2.133   ||pert|| = 97.875   ||delta|| = 97.549
+    before : organisation(1.00) | organization(0.80) | organisations(0.79) | organizations(0.66) | organisational(0.62) | Organisation(0.61) | Organisations(0.59) | Organization(0.56) | ORGANIZATION(0.53) | organizational(0.52)
+    after  : microalgae(0.21) | SMSF(0.20) | FlashScore(0.20) | mineralization(0.19) | microorganisms(0.19) | DHgate(0.19) | cichlid(0.19) | morphogenesis(0.18) | cerevisiae(0.18) | HYIP(0.18)
+    delta  : microalgae(0.21) | FlashScore(0.20) | SMSF(0.20) | mineralization(0.19) | microorganisms(0.19) | DHgate(0.19) | cichlid(0.18) | morphogenesis(0.18) | cerevisiae(0.18) | HYIP(0.18)
+
+  Token [ 27] "▁person"  cosine(orig,pert) = 0.043
+    ||orig|| = 2.264   ||pert|| = 234.898   ||delta|| = 234.812
+    before : person(1.00) | Person(0.67) | PERSON(0.61) | persons(0.60) | people(0.53) | People(0.41) | Persons(0.41) | someone(0.41) | man(0.40) | woman(0.38)
+    after  : FreakScore(0.20) | ServerPlease(0.18) | Mintel(0.18) | 1916(0.18) | ResponseAre(0.18) | householder(0.17) | surname(0.17) | surnames(0.17) | Napkin(0.17) | YouTuber(0.17)
+    delta  : FreakScore(0.20) | ServerPlease(0.18) | Mintel(0.18) | 1916(0.18) | ResponseAre(0.18) | householder(0.17) | surname(0.17) | surnames(0.17) | Napkin(0.17) | Breivik(0.17)
+
+  Token [ 29] "▁protein"  cosine(orig,pert) = 0.172
+    ||orig|| = 2.110   ||pert|| = 169.418   ||delta|| = 169.069
+    before : protein(1.00) | proteins(0.79) | Protein(0.78) | Proteins(0.59) | PROTEIN(0.49) | polypeptide(0.43) | glycoprotein(0.42) | peptide(0.40) | peptides(0.35) | lipid(0.35)
+    after  : kDa(0.23) | proteins(0.22) | isoforms(0.22) | molecules(0.22) | lncRNA(0.22) | GTPase(0.21) | macromolecules(0.20) | GPCR(0.20) | homologue(0.20) | proteasome(0.20)
+    delta  : kDa(0.23) | isoforms(0.22) | molecules(0.22) | lncRNA(0.21) | proteins(0.21) | GTPase(0.20) | macromolecules(0.20) | GPCR(0.20) | homologue(0.20) | proteasome(0.20)
+
+  Token [ 31] "▁scientist"  cosine(orig,pert) = 0.076
+    ||orig|| = 2.045   ||pert|| = 100.311   ||delta|| = 100.176
+    before : scientist(1.00) | scientists(0.80) | Scientist(0.64) | Scientists(0.60) | science(0.55) | biologist(0.49) | physicist(0.47) | scientific(0.47) | Science(0.45) | sciences(0.44)
+    after  : genus(0.19) | MediaCopyright(0.19) | bietet(0.19) | Trobe(0.18) | Mintel(0.18) | MARIE(0.18) | FreakScore(0.18) | cultivars(0.18) | misdiagnosed(0.18) | diverged(0.18)
+    delta  : MediaCopyright(0.19) | genus(0.19) | bietet(0.18) | Trobe(0.18) | Mintel(0.18) | MARIE(0.18) | FreakScore(0.18) | cultivars(0.18) | misdiagnosed(0.18) | 의해(0.17)
+
+  Token [ 33] "▁theory"  cosine(orig,pert) = 0.180
+    ||orig|| = 2.190   ||pert|| = 102.935   ||delta|| = 102.562
+    before : theory(1.00) | theories(0.76) | Theory(0.75) | Theories(0.58) | theorists(0.57) | theoretical(0.54) | theorist(0.54) | THEORY(0.52) | theoretically(0.46) | theorizing(0.45)
+    after  : epistemology(0.21) | ☀(0.20) | philosophic(0.20) | BEIJING(0.19) | epistemological(0.19) | transdisciplinary(0.19) | 의해(0.19) | singularities(0.19) | eV(0.19) | combinatorial(0.19)
+    delta  : epistemology(0.20) | ☀(0.20) | philosophic(0.20) | BEIJING(0.19) | transdisciplinary(0.19) | 의해(0.19) | epistemological(0.19) | singularities(0.19) | eV(0.19) | glabrous(0.19)
+
+  Token [ 35] "▁university"  cosine(orig,pert) = 0.215
+    ||orig|| = 2.153   ||pert|| = 83.393   ||delta|| = 82.957
+    before : university(1.00) | universities(0.74) | University(0.67) | Universities(0.57) | college(0.53) | UNIVERSITY(0.51) | colleges(0.41) | Univ(0.40) | Université(0.38) | College(0.37)
+    after  : universities(0.23) | university(0.21) | thcheap(0.20) | Universities(0.20) | 1818005(0.20) | UNIVERSITY(0.20) | campuses(0.19) | Faculties(0.19) | Prerequisite(0.18) | Universitas(0.18)
+    delta  : universities(0.21) | thcheap(0.20) | 1818005(0.20) | university(0.19) | Universities(0.19) | UNIVERSITY(0.19) | Faculties(0.18) | ▼(0.18) | campuses(0.18) | Prerequisite(0.18)
+
+
+Done.
