@@ -123,8 +123,7 @@ def build_model() -> GLiNER:
     return GLiNER(config)
 
 def build_valid_vocab(tokenizer, vocab_size, device):
-    """Filter out special/sub-word/punctuation tokens, same heuristic used in
-    `interpret_soft_tokens` (main.py), so the nearest-neighbour lists only show
+    """Filter out special/sub-word/punctuation tokens, so the nearest-neighbour lists only show
     readable whole-word tokens."""
     punct_set = set(string.punctuation)
     valid_indices = []
