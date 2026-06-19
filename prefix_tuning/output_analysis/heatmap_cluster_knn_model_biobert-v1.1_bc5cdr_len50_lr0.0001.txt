@@ -1,0 +1,34 @@
+Estrazione completata: 50 soft token rilevati.
+ANALISI DI COERENZA LOCALE (KNN) VS STRUTTURA GLOBALE (CLUSTER)
+Purezza media dei 5-vicini sull'intero set: 58.80%
+  -> Purezza media nel Cluster 01: 52.50%
+  -> Purezza media nel Cluster 02: 40.00%
+  -> Purezza media nel Cluster 03: 54.29%
+  -> Purezza media nel Cluster 04: 88.89%
+  -> Purezza media nel Cluster 05: 40.00%
+  -> Purezza media nel Cluster 06: 68.57%
+INTERPRETAZIONE SEMANTICA DEI CLUSTER TRAMITE VOCABOLARIO
+\ CLUSTER 01 (Dimensione: 16 token)
+Virtual Token inclusi: [np.int64(1), np.int64(6), np.int64(9), np.int64(10), np.int64(12), np.int64(15), np.int64(19), np.int64(21), np.int64(22), np.int64(27), np.int64(28), np.int64(32), np.int64(34), np.int64(43), np.int64(44), np.int64(46)]
+Top 10 parole reali più vicine al centroide del cluster:
+  'survival' (sim: 0.153), '##sors' (sim: 0.140), 'influx' (sim: 0.127), 'Survivor' (sim: 0.126), '##vigator' (sim: 0.125), '」' (sim: 0.122), '[unused86]' (sim: 0.121), '[unused36]' (sim: 0.121), '[CLS]' (sim: 0.120), 'Survival' (sim: 0.118)
+\ CLUSTER 02 (Dimensione: 7 token)
+Virtual Token inclusi: [np.int64(3), np.int64(16), np.int64(18), np.int64(25), np.int64(29), np.int64(41), np.int64(50)]
+Top 10 parole reali più vicine al centroide del cluster:
+  'ւ' (sim: 0.145), '##陽' (sim: 0.142), 'Bahá' (sim: 0.138), 'BYU' (sim: 0.137), 'ी' (sim: 0.136), '##`' (sim: 0.135), '##氵' (sim: 0.133), '##ブ' (sim: 0.133), '##ʲ' (sim: 0.133), '،' (sim: 0.132)
+\ CLUSTER 03 (Dimensione: 7 token)
+Virtual Token inclusi: [np.int64(4), np.int64(20), np.int64(36), np.int64(38), np.int64(39), np.int64(42), np.int64(49)]
+Top 10 parole reali più vicine al centroide del cluster:
+  '[SEP]' (sim: 0.167), 'ŋ' (sim: 0.165), '##MLL' (sim: 0.159), '##ų' (sim: 0.158), '##ồ' (sim: 0.156), '##ნ' (sim: 0.156), '[unused39]' (sim: 0.153), '###' (sim: 0.152), '##„' (sim: 0.151), 'fluorescent' (sim: 0.150)
+\ CLUSTER 04 (Dimensione: 9 token)
+Virtual Token inclusi: [np.int64(2), np.int64(5), np.int64(8), np.int64(11), np.int64(14), np.int64(23), np.int64(24), np.int64(31), np.int64(47)]
+Top 10 parole reali più vicine al centroide del cluster:
+  '⇌' (sim: 0.155), '•' (sim: 0.144), '##⟩' (sim: 0.135), '⁻' (sim: 0.128), '##ہ' (sim: 0.125), '[unused54]' (sim: 0.122), 'Himself' (sim: 0.121), 'ு' (sim: 0.121), 'Survivor' (sim: 0.121), '##車' (sim: 0.120)
+\ CLUSTER 05 (Dimensione: 4 token)
+Virtual Token inclusi: [np.int64(7), np.int64(13), np.int64(17), np.int64(37)]
+Top 10 parole reali più vicine al centroide del cluster:
+  'Actress' (sim: 0.140), 'Allmusic' (sim: 0.127), 'defender' (sim: 0.127), 'wink' (sim: 0.124), '##áil' (sim: 0.124), 'acidic' (sim: 0.124), 'NCAA' (sim: 0.123), '##ticus' (sim: 0.123), 'greatest' (sim: 0.122), '##uerre' (sim: 0.122)
+\ CLUSTER 06 (Dimensione: 7 token)
+Virtual Token inclusi: [np.int64(26), np.int64(30), np.int64(33), np.int64(35), np.int64(40), np.int64(45), np.int64(48)]
+Top 10 parole reali più vicine al centroide del cluster:
+  'mothers' (sim: 0.147), 'maternal' (sim: 0.136), 'and' (sim: 0.135), '±' (sim: 0.134), 'Cambodia' (sim: 0.132), '##neer' (sim: 0.130), 'Congregational' (sim: 0.129), 'mother' (sim: 0.129), 'variables' (sim: 0.128), 'habitats' (sim: 0.126)

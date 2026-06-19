@@ -1,6 +1,6 @@
 AVVIO ESPERIMENTO: BASELINE FULL FINE-TUNING
 Modello Backbone: dmis-lab/biobert-v1.1
-Dataset:          disi-unibo-nlp/jnlpba
+Dataset:          disi-unibo-nlp/JNLPBA
 Learning Rate:    1e-05
 Batch Size:       8
 Output File:      baseline_biobert-v1.1_jnlpba.pth
@@ -36,7 +36,7 @@ weighted avg     0.6956    0.7888    0.7376      8649
 
 AVVIO ESPERIMENTO: BASELINE FULL FINE-TUNING
 Modello Backbone: dmis-lab/biobert-v1.1
-Dataset:          disi-unibo-nlp/jnlpba
+Dataset:          disi-unibo-nlp/JNLPBA
 Learning Rate:    0.0001
 Batch Size:       8
 Output File:      baseline_biobert-v1.1_jnlpba.pth

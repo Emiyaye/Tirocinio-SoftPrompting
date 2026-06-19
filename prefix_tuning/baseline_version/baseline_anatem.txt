@@ -1,6 +1,6 @@
 AVVIO ESPERIMENTO: BASELINE FULL FINE-TUNING
 Modello Backbone: dmis-lab/biobert-v1.1
-Dataset:          disi-unibo-nlp/anatem
+Dataset:          disi-unibo-nlp/AnatEM	
 Learning Rate:    1e-05
 Batch Size:       8
 Output File:      baseline_biobert-v1.1_anatem.pth
@@ -31,7 +31,7 @@ weighted avg     0.8567    0.8673    0.8619      4582
 
 AVVIO ESPERIMENTO: BASELINE FULL FINE-TUNING
 Modello Backbone: dmis-lab/biobert-v1.1
-Dataset:          disi-unibo-nlp/anatem
+Dataset:          disi-unibo-nlp/AnatEM	
 Learning Rate:    0.0001
 Batch Size:       8
 Output File:      baseline_biobert-v1.1_anatem.pth
