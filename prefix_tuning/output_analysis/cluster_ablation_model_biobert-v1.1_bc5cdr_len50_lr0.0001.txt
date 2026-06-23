@@ -1,0 +1,8 @@
+Baseline F1: 0.8424
+=== ANALISI DI ABLAZIONE PER CLUSTER ===
+Rimozione Cluster 01 (Dimensione: 16 token) -> F1 = 0.8368 (drop = +0.0056)
+Rimozione Cluster 02 (Dimensione: 7 token) -> F1 = 0.8333 (drop = +0.0091)
+Rimozione Cluster 03 (Dimensione: 7 token) -> F1 = 0.7809 (drop = +0.0614)
+Rimozione Cluster 04 (Dimensione: 9 token) -> F1 = 0.8323 (drop = +0.0101)
+Rimozione Cluster 05 (Dimensione: 4 token) -> F1 = 0.8380 (drop = +0.0044)
+Rimozione Cluster 06 (Dimensione: 7 token) -> F1 = 0.8127 (drop = +0.0297)

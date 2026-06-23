@@ -1,0 +1,19 @@
+Estrazione completata: 80 soft token rilevati.
+ANALISI DI COERENZA LOCALE (KNN) VS STRUTTURA GLOBALE (CLUSTER)
+Purezza media dei 5-vicini sull'intero set: 79.25%
+  -> Purezza media nel Cluster 01: 71.67%
+  -> Purezza media nel Cluster 02: 80.00%
+  -> Purezza media nel Cluster 03: 83.78%
+INTERPRETAZIONE SEMANTICA DEI CLUSTER TRAMITE VOCABOLARIO
+\ CLUSTER 01 (Dimensione: 24 token)
+Virtual Token inclusi: [np.int64(1), np.int64(2), np.int64(4), np.int64(8), np.int64(16), np.int64(18), np.int64(24), np.int64(26), np.int64(29), np.int64(35), np.int64(37), np.int64(38), np.int64(45), np.int64(48), np.int64(50), np.int64(52), np.int64(53), np.int64(54), np.int64(56), np.int64(57), np.int64(68), np.int64(74), np.int64(77), np.int64(79)]
+Top 10 parole reali più vicine al centroide del cluster:
+  '[CLS]' (sim: 0.231), '.' (sim: 0.229), '[MASK]' (sim: 0.203), '[SEP]' (sim: 0.194), 'to' (sim: 0.190), 'of' (sim: 0.179), 'and' (sim: 0.175), ',' (sim: 0.167), 'in' (sim: 0.162), '-' (sim: 0.142)
+\ CLUSTER 02 (Dimensione: 19 token)
+Virtual Token inclusi: [np.int64(3), np.int64(10), np.int64(11), np.int64(14), np.int64(15), np.int64(27), np.int64(30), np.int64(41), np.int64(44), np.int64(47), np.int64(61), np.int64(62), np.int64(65), np.int64(69), np.int64(72), np.int64(73), np.int64(75), np.int64(76), np.int64(80)]
+Top 10 parole reali più vicine al centroide del cluster:
+  '.' (sim: 0.154), 'genome' (sim: 0.129), 'unreliable' (sim: 0.128), 'insufficient' (sim: 0.127), 'stimulus' (sim: 0.125), 'enzyme' (sim: 0.124), 'and' (sim: 0.123), 'reliable' (sim: 0.119), '##idae' (sim: 0.118), 'adequately' (sim: 0.116)
+\ CLUSTER 03 (Dimensione: 37 token)
+Virtual Token inclusi: [np.int64(5), np.int64(6), np.int64(7), np.int64(9), np.int64(12), np.int64(13), np.int64(17), np.int64(19), np.int64(20), np.int64(21), np.int64(22), np.int64(23), np.int64(25), np.int64(28), np.int64(31), np.int64(32), np.int64(33), np.int64(34), np.int64(36), np.int64(39), np.int64(40), np.int64(42), np.int64(43), np.int64(46), np.int64(49), np.int64(51), np.int64(55), np.int64(58), np.int64(59), np.int64(60), np.int64(63), np.int64(64), np.int64(66), np.int64(67), np.int64(70), np.int64(71), np.int64(78)]
+Top 10 parole reali più vicine al centroide del cluster:
+  'Copyright' (sim: 0.182), 'Declan' (sim: 0.171), 'enzyme' (sim: 0.166), 'Reacher' (sim: 0.164), 'concussion' (sim: 0.163), 'Honours' (sim: 0.162), 'ু' (sim: 0.161), '##氵' (sim: 0.161), '[unused64]' (sim: 0.160), '##xham' (sim: 0.159)

@@ -1,5 +1,6 @@
 from pathlib import Path
 import re
+import os
 
 import numpy as np
 import pandas as pd
@@ -10,6 +11,75 @@ import seaborn as sns
 from IPython.display import display
 from seqeval.metrics import classification_report, f1_score
 from seqeval.metrics.sequence_labeling import get_entities
+
+def forward_custom(model, input_ids, attention_mask,
+                   prefix_override=None, output_attentions=False):
+    """
+    Run the model, optionally replacing the prefix with a given one.
+    """
+    bsz = input_ids.shape[0]
+    if prefix_override is None:
+        prefix = model.prefix_module(bsz=bsz)
+    else:
+        prefix = prefix_override.expand(bsz, -1, -1)
+
+    inp_emb = model.encoder.get_input_embeddings()(input_ids)
+    enc_in  = torch.cat([prefix, inp_emb], dim=1)
+
+    pref_mask = torch.ones(bsz, prefix.shape[1], device=input_ids.device)
+    full_mask = torch.cat([pref_mask, attention_mask], dim=1)
+
+    out = model.encoder(inputs_embeds=enc_in,
+                        attention_mask=full_mask,
+                        output_attentions=output_attentions)
+    text_hidden = out.last_hidden_state[:, prefix.shape[1]:]
+    logits = model.classifier(text_hidden)
+    return logits, out
+
+
+def compute_f1(model, loader, device, id_to_tag,
+               prefix_override=None, print_report=False):
+
+    model.eval()
+    true_labels, predicted_labels = [], []
+    with torch.no_grad():
+        for batch in loader:
+            input_ids = batch['input_ids'].to(device)
+            attn      = batch['attention_mask'].to(device)
+            labels    = batch['labels'].to(device)
+
+            logits, _ = forward_custom(model, input_ids, attn,
+                                       prefix_override=prefix_override)
+            preds = logits.argmax(-1)
+
+            for i in range(labels.shape[0]):
+                t_tags, p_tags = [], []
+                for j in range(labels.shape[1]):
+                    if labels[i, j] != -100:
+                        t_tags.append(id_to_tag[labels[i, j].item()])
+                        p_tags.append(id_to_tag[preds[i, j].item()])
+                true_labels.append(t_tags)
+                predicted_labels.append(p_tags)
+
+    if print_report:
+        print(classification_report(true_labels, predicted_labels, digits=4))
+
+    current_f1 = f1_score(true_labels, predicted_labels)
+    return current_f1
+
+def _convert_loader_to_list(loader):
+    batches = []
+    for batch in loader:
+        batches.append(batch)
+    return batches
+
+def _list_to_loader(batches):
+    class BatchIterator:
+        def __init__(self, batch_list):
+            self.batches = batch_list
+        def __iter__(self):
+            return iter(self.batches)
+    return BatchIterator(batches)
 
 
 def forward_with_prefix(model, input_ids, attention_mask, prefix_override=None, output_attentions=False):
@@ -301,23 +371,28 @@ def hyperparameter_heatmaps(df, method, model_name=None, dataset_name=None):
         plt.show()
 
 
-def cumulative_ablation_analysis(model, loader, device, id_to_tag, drops=None):
+def cumulative_ablation_analysis(model, loader, device, id_to_tag, file_name, drops=None):
     if drops is None:
         raise ValueError("Passa i drops restituiti da ablation_analysis oppure calcolali prima.")
 
     batches = list(loader)
     prefix_len = model.prefix_module.preseqlen
-    order = np.argsort(np.asarray(drops))[::-1]
+
+    drops_tensor = torch.tensor(drops, dtype=torch.float32)
+    order = torch.argsort(drops_tensor, descending=True)
 
     with torch.no_grad():
         full_prefix = model.prefix_module(bsz=1)
 
+    log_lines = []
     f1_values = []
     masked_positions = []
+
     for k in range(0, prefix_len + 1):
-        ablated = full_prefix.clone()
+        ablated = full_prefix.clone().detach().contiguous()
         if k > 0:
-            ablated[:, order[:k], :] = 0
+            indices_to_mask = order[:k]
+            ablated[:, indices_to_mask, :] = 0
         y_true, y_pred = collect_predictions(
             model,
             batches,
@@ -325,8 +400,18 @@ def cumulative_ablation_analysis(model, loader, device, id_to_tag, drops=None):
             id_to_tag,
             prefix_override=ablated,
         )
-        f1_values.append(f1_score(y_true, y_pred))
+        current_f1 = f1_score(y_true, y_pred)
+        f1_values.append(current_f1)
         masked_positions.append(k)
+
+        line = f"Rimossi i {k:02d} token più importanti -> Micro F1: {current_f1:.4f}"
+        print(line)
+        log_lines.append(line)
+
+    file_name = file_name.removesuffix(".pth")
+    os.makedirs("output_analysis", exist_ok=True)
+    with open("output_analysis/cumulative_ablation_" + file_name + ".txt", "w", encoding="utf-8") as f:
+        f.write("\n".join(log_lines) + "\n")
 
     plt.figure(figsize=(8, 4))
     plt.plot(masked_positions, f1_values, marker="o")
@@ -334,10 +419,83 @@ def cumulative_ablation_analysis(model, loader, device, id_to_tag, drops=None):
     plt.ylabel("Micro F1")
     plt.title("Ablation cumulativa dei prefix token")
     plt.tight_layout()
+    plt.savefig("output_analysis/cumulative_ablation_" + file_name + ".png", dpi=120)
     plt.show()
 
     return pd.DataFrame({"removed_tokens": masked_positions, "f1": f1_values})
 
+def cluster_ablation_analysis(model, val_loader, device, id_to_tag, cluster_labels, file_name=""):
+    """
+    Ablazione a livello di macro-cluster. Zero-out di interi gruppi funzionali
+    di soft token per misurare l'impatto globale e la specializzazione dei cluster.
+    """
+    model.eval()
+    print("Converting DataLoader to batch list (caching per velocizzare)...")
+    batches = _convert_loader_to_list(val_loader)
+    batch_loader = _list_to_loader(batches)
+    
+    # Calcolo baseline iniziale
+    baseline = compute_f1(model, batch_loader, device, id_to_tag)
+    print(f"Baseline F1: {baseline:.4f}\n")
+
+    unique_clusters = np.unique(cluster_labels)
+    
+    with torch.no_grad():
+        full_prefix = model.prefix_module(bsz=1).clone().detach().contiguous()
+
+    log_lines = []
+    log_lines.append(f"Baseline F1: {baseline:.4f}")
+    log_lines.append("=== ANALISI DI ABLAZIONE PER CLUSTER ===")
+
+    cluster_drops = []
+    cluster_names = []
+
+    for c in unique_clusters:
+        # Trova gli indici dei token che appartengono al cluster corrente (0-indexed per PyTorch)
+        token_indices = np.where(cluster_labels == c)[0]
+        cluster_size = len(token_indices)
+        
+        # Crea la copia contigua e azzera l'intero blocco di token del cluster
+        ablated = full_prefix.clone().detach().contiguous()
+        ablated[:, token_indices, :] = 0
+        
+        # Ricarica il loader calcola le metriche
+        batch_loader = _list_to_loader(batches)
+        f1 = compute_f1(model, batch_loader, device, id_to_tag, prefix_override=ablated)
+        drop = baseline - f1
+        
+        cluster_drops.append(drop)
+        cluster_names.append(f"Cluster {c:02d}\n({cluster_size} tok)")
+        
+        line = f"Rimozione Cluster {c:02d} (Dimensione: {cluster_size} token) -> F1 = {f1:.4f} (drop = {drop:+.4f})"
+        print(line)
+        log_lines.append(line)
+
+    # Salvataggio dei log testuali
+    file_name = file_name.removesuffix(".pth")
+    os.makedirs("output_analysis", exist_ok=True)
+    with open("output_analysis/cluster_ablation_" + file_name + ".txt", "w", encoding="utf-8") as f:
+        f.write("\n".join(log_lines) + "\n")
+
+    # Generazione del grafico a barre comparativo
+    plt.figure(figsize=(8, 4.5))
+    bars = plt.bar(cluster_names, cluster_drops, color='crimson', edgecolor='black', alpha=0.8)
+    plt.axhline(0, color='gray', linestyle='--', linewidth=0.8)
+    
+    # Aggiunge i valori numerici sopra le barre
+    for bar in bars:
+        height = bar.get_height()
+        plt.text(bar.get_x() + bar.get_width()/2., height + 0.002,
+                 f'{height:+.4f}', ha='center', va='bottom', fontsize=9, fontweight='bold')
+
+    plt.xlabel("Macro Cluster Strutturali")
+    plt.ylabel("Crollo F1 (Baseline - Cluster Ablated)")
+    plt.title(f"Impatto Funzionale dei Cluster di Soft Token\n({file_name})")
+    plt.tight_layout()
+    plt.savefig("output_analysis/cluster_ablation_" + file_name + ".png", dpi=120)
+    plt.show()
+
+    return cluster_drops
 
 def attention_by_gold_label(model, loader, device, id_to_tag, n_batches=5):
     model.eval()
