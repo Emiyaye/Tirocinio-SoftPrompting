@@ -8,7 +8,7 @@ from torch.optim import AdamW
 import torch.nn.functional as F
 from typing import List, Dict, Tuple
 from soft_ner_model import NERSoftPromptModel
-from prefix_ner_modul import NERPrefixTuningModel
+from prefix_tuning.prefix_ner_model import NERPrefixTuningModel
 from datasets import load_dataset
 from tqdm import tqdm
 from seqeval.metrics import classification_report
